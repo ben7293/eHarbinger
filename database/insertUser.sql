@@ -1,10 +1,13 @@
-CREATE OR REPLACE PROCEDURE insertUser
-(IN username varchar(255),
-IN password varchar(255))
-IS
+CREATE OR REPLACE FUNCTION insertUser
+(IN in_username varchar(255),
+IN in_password varchar(255))
+RETURNS varchar(255) AS
+$$
+DECLARE
+	out_username varchar(255) DEFAULT 'Failure';
 BEGIN
-	INSERT INTO users VALUES (username, password);
-EXCEPTION
-	raise_application_error( -20001, 'An error was encountered - '||SQLCODE||' -ERROR-'||SQLERRM);
+	INSERT INTO users VALUES (in_username, in_password);
+	SELECT username INTO out_username FROM users WHERE username = in_username;	
 END;
-/
+$$
+LANGUAGE plpgsql;
