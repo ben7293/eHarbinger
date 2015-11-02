@@ -7,7 +7,8 @@ DECLARE
 	out_username varchar(255) DEFAULT 'Failure';
 BEGIN
 	INSERT INTO users VALUES (in_username, in_password);
-	SELECT username INTO out_username FROM users WHERE username = in_username;	
+	SELECT username INTO out_username FROM users WHERE username = in_username;
+	RETURN out_username;
 END;
 $$
 LANGUAGE plpgsql;
