@@ -86,7 +86,7 @@ CREATE TABLE forums(
 -- Needs body
 CREATE TABLE forums_comment(
 	commentId serial PRIMARY KEY,
-	forumId REFERENCES forums,
+	forumId integer REFERENCES forums,
 	username varchar(255) REFERENCES users,
 	commentBody text NOT NULL,
 	commentTimestamp timestamp default current_timestamp
