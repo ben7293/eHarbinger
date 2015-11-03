@@ -26,7 +26,7 @@ CREATE TABLE questions(
 -- For 5 answers, yes yes no no no -> 11000
 -- Not sure if this representation is viable
 -- Will work on more in future
-CREATE TABLE users_private(
+CREATE TABLE users_answer_questions(
 	username varchar(255) REFERENCES users,
 	questionId integer REFERENCES questions,
 	answerSelf integer NOT NULL,
