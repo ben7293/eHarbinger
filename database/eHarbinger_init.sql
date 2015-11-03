@@ -37,17 +37,18 @@ CREATE TABLE users_private(
 
 -- needs gameId and gameConsole. Description optional
 CREATE TABLE games(
-	gameId serial PRIMARY KEY,
 	gameName varchar(255) NOT NULL,
 	gameConsole varchar(255) NOT NULL,
+	PRIMARY KEY( gameName, gameConsole ),
 	gameDesc text
 );
 
 -- a user can only 'like' a game once
 CREATE TABLE users_like_games(
 	username varchar(255) REFERENCES users,
-	gameId integer REFERENCES games,
-	PRIMARY KEY( username, gameId )
+	gameName varchar(255) REFERENCES games,
+	gameConsole varchar(255) REFERENCES games,
+	PRIMARY KEY( username, gameName, gameConsole )
 );
 
 -- a user can only rate another user once
