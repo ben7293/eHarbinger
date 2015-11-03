@@ -6,7 +6,7 @@ $$
 DECLARE
 BEGIN
 	IF EXISTS (SELECT * FROM users_friend_users WHERE username1 = in_username2 and username2 = in_username1) THEN
-		UPDATE TABLE users_friend_users SET accepted = true WHERE username1 = in_username2 and username2 = in_username1;
+		UPDATE users_friend_users SET accepted = true WHERE username1 = in_username2 and username2 = in_username1;
 		IF EXISTS (SELECT * FROM users_friend_users WHERE username1 = in_username2 and username2 = in_username1 and accepted = true) THEN
 			RETURN true;
 		ELSE
