@@ -7,7 +7,7 @@ $$
 DECLARE
 BEGIN
 	INSERT INTO games VALUES (DEFAULT, in_GameName, in_GameConsole, in_GameDesc);
-	IF EXISTS (SELECT * FROM games WHERE gameName = in_gameName AND gameConsole = in_gameConsole and gameDesc = in_gameDesc) THEN
+	IF EXISTS (SELECT * FROM games WHERE gameName = in_gameName AND gameConsole = in_gameConsole) THEN
 		RETURN true;
 	ELSE
 		RETURN false;
