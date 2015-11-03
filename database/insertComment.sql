@@ -8,11 +8,11 @@ DECLARE
 BEGIN
 	INSERT INTO forums_comment VALUES (DEFAULT, in_forumId, in_username, in_commentBody, DEFAULT);
 	
-	IF EXISTS SELECT * FROM forums_comment WHERE forumId = in_forumId and username = in_username and commentBody = in_commentBody;
+	IF EXISTS (SELECT * FROM forums_comment WHERE forumId = in_forumId and username = in_username and commentBody = in_commentBody) THEN
 		RETURN true;
 	ELSE
 		RETURN false;
-	END IF
+	END IF;
 END;
 $$
 LANGUAGE plpgsql;

@@ -8,11 +8,11 @@ DECLARE
 BEGIN
 	INSERT INTO forums VALUES (DEFAULT, in_username, in_forumSubj, in_forumBody, DEFAULT);
 	
-	IF EXISTS SELECT * FROM forums WHERE username = in_username and forumSubj = in_forumSubj and forumBody = in_forumBody;
+	IF EXISTS (SELECT * FROM forums WHERE username = in_username and forumSubj = in_forumSubj and forumBody = in_forumBody) THEN
 		RETURN true;
 	ELSE
 		RETURN false;
-	END IF
+	END IF;
 END;
 $$
 LANGUAGE plpgsql;

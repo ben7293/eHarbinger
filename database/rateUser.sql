@@ -7,11 +7,11 @@ $$
 DECLARE
 BEGIN
 	INSERT INTO users_rate_users VALUES (in_username1, in_username2, in_rating);
-	IF EXISTS SELECT * FROM users_rate_users WHERE username1 = in_username1 and username2 = in_username2 and rating = in_rating;
+	IF EXISTS (SELECT * FROM users_rate_users WHERE username1 = in_username1 and username2 = in_username2 and rating = in_rating) THEN
 		RETURN true;
 	ELSE
 		RETURN false;
-	END IF
+	END IF;
 END;
 $$
 LANGUAGE plpgsql;
