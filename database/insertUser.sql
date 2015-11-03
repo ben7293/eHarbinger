@@ -6,7 +6,11 @@ $$
 DECLARE
 BEGIN
 	INSERT INTO users VALUES (in_username, in_password);
-	RETURN true;
+	IF EXISTS SELECT * FROM users WHERE username = in_username AND password = in_password;
+		RETURN true;
+	ELSE
+		RETURN false;
+	END IF
 END;
 $$
 LANGUAGE plpgsql;
