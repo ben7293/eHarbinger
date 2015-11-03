@@ -46,9 +46,10 @@ CREATE TABLE games(
 -- a user can only 'like' a game once
 CREATE TABLE users_like_games(
 	username varchar(255) REFERENCES users,
-	gameName varchar(255) REFERENCES games,
-	gameConsole varchar(255) REFERENCES games,
-	PRIMARY KEY( username, gameName, gameConsole )
+	gameName varchar(255),
+	gameConsole varchar(255),
+	FOREIGN KEY( gameName, gameConsole ) REFERENCES games,
+	UNIQUE( username, gameName, gameConsole )
 );
 
 -- a user can only rate another user once
