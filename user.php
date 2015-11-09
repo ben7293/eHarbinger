@@ -4,9 +4,12 @@ class User{
 	public function __construct($userID){
 		$this->$userID = userID;
 	}
-	
-	public function getFullName(){
-		return pg_exec($db, "select getFullName($userID)");
+	//Getters
+	public function getFirstName(){
+		return pg_exec($db, "select getFirstName($userID)");
+	}
+	public function getLastName(){
+		return pg_exec($db, "select getLastName($userID)");
 	}
 	public function getUserName(){
 		return pg_exec($db, "select getUserName($userID)");
@@ -14,10 +17,11 @@ class User{
 	public function getUserGames(){
 		return pg_exec($db, "select getUserGames($userID)");
 	}
-	public function getUserSkill(){
+	public function getUserSkill($gameID){
 		return pg_exec($db, "select getUserSkill($userID)");
 	}
 
+	//Modifiers
 	public function updateFullName($fullName){
 		pg_exec($db, "select updateFullName($userID, $fullName)");
 	}
@@ -29,9 +33,11 @@ class User{
 		//Probably want to encrypt before sending
 	}
 	public function updateEmail($email){
-		pg_exec($db, "select updatePreferences($userID, $email)");
+		pg_exec($db, "select updateEmail($userID, $email)");
+		//Exception for already existing email
 	}
 	public function updatePreferences($preferences){
+		//Dictionary comparison, update changed fields
 		pg_exec($db, "select updatePreferences($userID, $preferences)");
 	}
 	public function updateSkills($skills){
@@ -40,23 +46,11 @@ class User{
 	public function updateFeedback($otherUser, $rating){
 		pg_exec($db, "select Feedback($userID, $otherUser, $rating)");
 	}
-
-	public function createProfile(){
-	}
-	public function viewProfile(){
-	}
-	public function giveFeedback(){
-	}
-	public function chatUser(){
-	}
-	public function updateProfile(){
-	}
-	public function deleteProfile(){
-	}
-
 	public function chatWithUser(){
 	}
-	public function updateUser(){
+	
+	//Low level profile maintenance
+	public function viewUser(){
 	}
 	public function deleteUser(){
 		pg_exec($db, "select deleteUser($userID)");
@@ -64,6 +58,8 @@ class User{
 	public function createUser($username, $password){
 		pg_exec($db, "select insertUser($username, $password)");
 	}
+	
+	//Member variables
 	private $userID;
 	
 }
