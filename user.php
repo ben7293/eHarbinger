@@ -1,50 +1,52 @@
 <?php
 
 class User{
-	public function __construct($userID){
-		$this->$userID = userID;
+	public function __construct($username){
+		$this->$username = username;
 	}
+		
+	
 	//Getters
 	public function getFirstName(){
-		return pg_exec($db, "select getFirstName($userID)");
+		return pg_query($db, "select getFirstName($username)");
 	}
 	public function getLastName(){
-		return pg_exec($db, "select getLastName($userID)");
+		return pg_query($db, "select getLastName($username)");
 	}
 	public function getUserName(){
-		return pg_exec($db, "select getUserName($userID)");
+		return pg_query($db, "select getUserName($username)");
 	}
 	public function getUserGames(){
-		return pg_exec($db, "select getUserGames($userID)");
+		return pg_query($db, "select getUserGames($username)");
 	}
 	public function getUserSkill($gameID){
-		return pg_exec($db, "select getUserSkill($userID)");
+		return pg_query($db, "select getUserSkill($username)");
 	}
 
 	//Modifiers
 	public function updateFullName($fullName){
-		pg_exec($db, "select updateFullName($userID, $fullName)");
+		pg_query($db, "select updateFullName($username, $fullName)");
 	}
 	public function updateUserName($userName){
-		pg_exec($db, "select updateUserName($userID, $userName)");
+		pg_query($db, "select updateUserName($username, $userName)");
 	}
 	public function updatePassword($password){
-		pg_exec($db, "select updatePassword($userID, $password)");
+		pg_query($db, "select updatePassword($username, $password)");
 		//Probably want to encrypt before sending
 	}
 	public function updateEmail($email){
-		pg_exec($db, "select updateEmail($userID, $email)");
+		pg_query($db, "select updateEmail($username, $email)");
 		//Exception for already existing email
 	}
 	public function updatePreferences($preferences){
 		//Dictionary comparison, update changed fields
-		pg_exec($db, "select updatePreferences($userID, $preferences)");
+		pg_query($db, "select updatePreferences($username, $preferences)");
 	}
 	public function updateSkills($skills){
-		pg_exec($db, "select updateSkills($userID, $skills)");
+		pg_query($db, "select updateSkills($username, $skills)");
 	}
 	public function updateFeedback($otherUser, $rating){
-		pg_exec($db, "select Feedback($userID, $otherUser, $rating)");
+		pg_query($db, "select Feedback($username, $otherUser, $rating)");
 	}
 	public function chatWithUser(){
 	}
@@ -53,14 +55,15 @@ class User{
 	public function viewUser(){
 	}
 	public function deleteUser(){
-		pg_exec($db, "select deleteUser($userID)");
+		pg_query($db, "select deleteUser($username)");
 	}
 	public function createUser($username, $password){
-		pg_exec($db, "select insertUser($username, $password)");
+		//Password should be encrypted
+		pg_query($db, "select insertUser($username, $password)");
 	}
 	
 	//Member variables
-	private $userID;
+	private $username;
 	
 }
 
