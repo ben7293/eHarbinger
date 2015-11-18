@@ -3,8 +3,8 @@
 </head>
 <body>
 <?php
-include("dbconx.php")
-conn_db();
+include("dbconx.php");
+#conn_db();
 ?>
 
 </body>
