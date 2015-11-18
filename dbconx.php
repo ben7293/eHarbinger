@@ -7,4 +7,6 @@
 	function close_db($db){
 		pg_close($db);
 	}
+
+conn_db();
 ?>
