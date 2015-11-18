@@ -8,5 +8,4 @@
 		pg_close($db);
 	}
 
-conn_db();
 ?>

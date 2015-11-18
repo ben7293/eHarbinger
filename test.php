@@ -4,7 +4,9 @@
 <body>
 <?php
 include("dbconx.php");
-#conn_db();
+
+$db = conn_db();
+
 ?>
 
 </body>
