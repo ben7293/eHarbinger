@@ -5,9 +5,7 @@
 <?php
 include("dbconx.php");
 
-$db = conn_db();
-$result = pg_query($db, "SELECT * FROM users;");
-$num = pg_num_rows($result);
+
 echo $num;
 echo "1";
 // if (!$result){echo "Error!\n";}
