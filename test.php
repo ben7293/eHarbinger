@@ -6,6 +6,7 @@
 include("dbconx.php");
 
 $db = conn_db();
+echo "Success";
 
 ?>
 
