@@ -9,4 +9,5 @@
 $db = conn_db();
 $result = pg_query($db, "SELECT * FROM users;");
 $num = pg_num_rows($result);
+echo $num;
 ?>
