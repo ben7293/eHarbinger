@@ -19,8 +19,8 @@ class Database
 	function queryTrueFalse( $query )
 	{
 		$result = pg_query($query) or die('Query failed: ' . pg_last_error());
-		$fetch = pg_fetch_all($result);
-		return $fetch[0][0];
+		$fetch = pg_fetch_row($result);
+		return $fetch[0];
 	}
 	
 	private $connstring;
@@ -33,10 +33,11 @@ class User
 	{
 		$user = $username;
 		$conn = new Database();
-		$result = $conn->queryTrueFalse( "select authUser($username,$password)" );
-		
-		echo $result;
-		
+		$result = $conn->queryTrueFalse( "select authUser('$username','$password')" );	
+		if( $result == 'f' )
+		{
+			die("Your password is wrong, $username");
+		}
 	}
 
 	private $user;
