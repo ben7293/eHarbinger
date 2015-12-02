@@ -8,6 +8,7 @@
 	}
 $db = conn_db();
 $result = pg_query($db, "SELECT * FROM users;") or die('Query failed: ' . pg_last_error());
+echo $result;
 $fetch = pg_fetch_all($result);
 echo $fetch;
 ?>
