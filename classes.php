@@ -6,6 +6,7 @@ class Database
 	{
 		$connstring = "dbname=bt773 user=bt773 password=bt773";
 		$connection = pg_connect( "$connstring" ) or die('Connection failed: ' . pg_last_error());;
+		echo "success";
 	}
 	
 	// Please sanitize this...
