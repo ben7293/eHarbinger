@@ -1,18 +1,13 @@
 <?php
 	function conn_db(){
-		$db = pg_connect("host=localhost dbname=bt773 user=bt773 password=");
+		$db = pg_connect("dbname=bt773 user=bt773 password=bt773");
 		return $db;
 	}
 	function close_db($db){
 		pg_close($db);
 	}
-echo $db;
-$db = pg_connect("dbname=bt773");
-if (!$db){echo "Empty db\n";}
-echo pg_last_error();
-echo phpversion();
-$result = pg_exec($db, "SELECT * FROM users;");
-$num = pg_num_rows($result);
-echo $num;
-echo "1";
+$db = conn_db();
+$result = pg_query($db, "SELECT * FROM users;") or die('Query failed: ' . pg_last_error());
+$fetch = pg_fetch_all($result);
+echo $fetch;
 ?>
