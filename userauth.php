@@ -1,7 +1,7 @@
 <?php
 
-include("dbconx.php")
-include("user.php")
+include("dbconx.php");
+include("user.php");
 
 //If there is input
 function userAuth(user = $_POST['user'], pxwd = $_POST['pxwd']){
