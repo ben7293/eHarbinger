@@ -18,8 +18,11 @@ class Database
 
 	function queryArray( $query )
 	{
+		echo 'test';
 		$result = pg_query($query) or die('Query failed: ' . pg_last_error());
+		echo 'test';
 		$fetch = pg_fetch_row($result);
+		
 		return $fetch;
 	}
 	
@@ -49,16 +52,22 @@ class User
 	
 	public function getInfo()
 	{
-		$result = $conn->queryArray( "select * from users_public where username='$username';" );
+		$result = $conn->queryArray( "select * from users_public where username='$username';" ); echo 'test';
 		foreach( $result as $data )
 		{
 			echo "field: $data<br/>";
 		}
 	}
-	
+	public function getName()
+	{
+		return $user;
+	}	
 	public function sendMessage( $otherUser, $text )
 	{
+		echo 'here1';
+		echo $otherUser->getName();
 		$user2 = $otherUser->$user;
+		echo 'here2';
 		$result = $conn->queryTrueFalse( "select messageUser( '$user', '$user2', '$text' ");
 		if( $result == 'f' )
 		{
@@ -90,9 +99,14 @@ class User
 
 
 $me = new User( 'bm1549', 'babe' );
-$you = new User( 'bt773', 'baby' );
-$me->getInfo();
+$you = new User( 'ben7293', 'baby' );
+//echo "getinfo";
+//$me->getInfo();
+echo "sendmessage";
 $me->sendMessage( $you,'hello' );
 $me->sendMessage( $you,'how are you?' );
 $you->sendMessage($me, 'im good');
+echo 'getmessages';
+$me->getMessages( $you );
+
 ?>
