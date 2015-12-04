@@ -2,11 +2,18 @@
 <head>
 </head>
 <body>
-<?php
-include("dbconx.php");
+<form id='login' action='userauth.php' method='post'>
+	<label for='username' >UserName*:</label>
+	<input type='text'	name='username' id='username'  maxlength="50" />
+	 
+	<label for='password' >Password*:</label>
+	<input type='password' name='password' id='password' maxlength="50" />
+	 
+	<input type='submit' name='Submit' value='Submit' />
+</form>
 
-$db = conn_db();
-echo $db;
+<?php
+
 
 // $me = new User( 'bm1549', 'babe' );
 // $you = new User( 'ben7293', 'baby' );

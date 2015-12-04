@@ -6,7 +6,7 @@ class Database
 	{
 		$connstring = "dbname=bt773 user=bt773 password=bt773";
 		$connection = pg_connect( "$connstring" ) or die('Connection failed: ' . pg_last_error());;
-		echo "success";
+		echo "db conx success";
 	}
 	
 	// Please sanitize this...
@@ -40,15 +40,23 @@ class Database
 
 class User
 {
-	public function __construct( $username, $password )
+	public function __construct( $username, $password, $db )
 	{
-		$user = $username;
-		$conn = new Database();
-		$result = $conn->queryTrueFalse( "select authUser('$username','$password');" );	
+		$conn = $db;
+		$result = userAuth($username, $password, $conn);
 		if( $result == 'f' )
 		{
 			die("Your password is wrong, $username");
 		}
+		else{
+			echo "userauth successful";
+		}
+	}
+	
+	private function userAuth($username, $password, $db){
+		$result = $db->queryTrueFalse( "select authUser('$username','$password');" );
+		$loggedIn = $result;
+		return $result;
 	}
 	
 	public function getInfo()
@@ -93,9 +101,10 @@ class User
 		echo "</table>";
 	}
 	
-
 	private $user;
 	private $conn;
+	private $loggedIn;
+	
 }
 
 
