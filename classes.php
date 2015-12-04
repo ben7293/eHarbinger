@@ -29,7 +29,7 @@ class Database
 		return $fetch;
 	}
 	
-	function queryTrueFalse( $query )
+	public function queryTrueFalse( $query )
 	{
 		$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 		$fetch = pg_fetch_row($result);
@@ -45,7 +45,7 @@ class User
 
 	private function userAuth($username, $password){
 		echo "Entering userAuth\n";
-		$result = $this->conn->queryTrueFalse( "select authUser('$username','$password');" );
+		$result = $conn->queryTrueFalse( "select authUser('$username','$password');" );
 		$loggedIn = $result;
 		echo $loggedIn;
 		return $result;
