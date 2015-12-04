@@ -47,7 +47,8 @@ class User
 		if ($db){echo "db exists\n";}
 		$conn = $db;
 		if ($conn){echo "conn exists\n";}
-		echo var_dump();
+		echo var_dump($db);
+		echo var_dump($conn);
 		echo "Executing userAuth\n";
 		$result = $this->userAuth($username, $password);
 		echo "userAuth finished\n";
