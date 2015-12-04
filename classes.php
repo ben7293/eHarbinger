@@ -44,7 +44,10 @@ class User
 {
 	public function __construct( $username, $password, $db )
 	{
-		$this->conn = $db;
+		if ($db){echo "db exists\n";}
+		$conn = $db;
+		if ($conn){echo "conn exists\n";}
+		echo var_dump();
 		echo "Executing userAuth\n";
 		$result = $this->userAuth($username, $password);
 		echo "userAuth finished\n";

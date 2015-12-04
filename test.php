@@ -3,11 +3,11 @@
 </head>
 <body>
 <form id='login' action='userauth.php' method='post'>
-	<label for='username' >UserName*:</label>
-	<input type='text'	name='user' id='username'  maxlength="50" />
+	<label for='user' >UserName*:</label>
+	<input type='text' name='user' id='user'  maxlength="50" />
 	 
-	<label for='password' >Password*:</label>
-	<input type='password' name='pxwd' id='password' maxlength="50" />
+	<label for='pxwd' >Password*:</label>
+	<input type='password' name='pxwd' id='pxwd' maxlength="50" />
 	 
 	<input type='submit' name='Submit' value='Submit' />
 </form>
