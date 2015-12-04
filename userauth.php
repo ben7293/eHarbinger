@@ -13,7 +13,7 @@ function userAuth($user, $pxwd){
 	if ($user and $pxwd){ //If both are not empty
 		//Accepts return value from userAuth function in database
 		//Uses PHP5+ password hashing function
-		$db = new Database();
+		$db = conn_db();
 		$newUser = new user($user, $pxwd, $db);
 		
 		// if ($ret){
