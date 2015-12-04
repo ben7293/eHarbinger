@@ -61,7 +61,7 @@ class User
 	
 	private function userAuth($username, $password){
 		echo "Entering userAuth\n";
-		$result = $conn->queryTrueFalse( "select authUser('$username','$password');" );
+		$result = $this->$conn->queryTrueFalse( "select authUser('$username','$password');" );
 		$loggedIn = $result;
 		return $result;
 	}
