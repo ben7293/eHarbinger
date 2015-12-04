@@ -4,7 +4,7 @@
 
 include("dbconx.php");
 include("classes.php");
-
+userAuth($_POST['user'], $_POST['pxwd']);
 //If there is input
 function userAuth($user = $_POST['user'], $pxwd = $_POST['pxwd']){
 
