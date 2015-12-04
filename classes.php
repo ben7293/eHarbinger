@@ -54,11 +54,12 @@ class User
 		}
 		else{
 			$loggedIn = 't';
-			echo "userauth successful";
+			echo "userauth successful\n";
 		}
 	}
 	
 	private function userAuth($username, $password, $db){
+		echo "Entering userAuth\n";
 		$result = $db->queryTrueFalse( "select authUser('$username','$password');" );
 		$loggedIn = $result;
 		return $result;
