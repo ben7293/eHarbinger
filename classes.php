@@ -42,6 +42,14 @@ class Database
 
 class User
 {
+	
+	private function userAuth($username, $password){
+		echo "Entering userAuth\n";
+		$result = $conn->queryTrueFalse( "select authUser('$username','$password');" );
+		$loggedIn = $result;
+		return $result;
+	}
+	
 	public function __construct( $username, $password, $db )
 	{
 		$conn = $db;
@@ -56,13 +64,6 @@ class User
 			$loggedIn = 't';
 			echo "userauth successful\n";
 		}
-	}
-	
-	private function userAuth($username, $password){
-		echo "Entering userAuth\n";
-		$result = $conn->queryTrueFalse( "select authUser('$username','$password');" );
-		$loggedIn = $result;
-		return $result;
 	}
 	
 	public function getInfo()
