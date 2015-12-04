@@ -14,6 +14,7 @@ function userAuth($user, $pxwd){
 		//Accepts return value from userAuth function in database
 		//Uses PHP5+ password hashing function
 		$db = conn_db();
+		if ($db){echo "db exists\n";}
 		$newUser = new User($user, $pxwd, $db);
 		
 		// if ($ret){
