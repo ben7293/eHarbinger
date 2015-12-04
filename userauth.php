@@ -1,3 +1,5 @@
+<html>
+<head>
 <?php
 
 include("dbconx.php");
@@ -24,3 +26,7 @@ function userAuth($user = $_POST['user'], $pxwd = $_POST['pxwd']){
 }
 
 ?>
+</head>
+<body>
+</body>
+</html>
