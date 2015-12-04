@@ -8,6 +8,9 @@ class Database
 	{
 		$connstring = "dbname=bt773 user=bt773 password=bt773";
 		$connection = pg_connect( "$connstring" ) or die('Connection failed: ' . pg_last_error());;
+		$result = pg_query("SELECT * FROM users;") or die('Query failed: ' . pg_last_error());
+		$fetch = pg_fetch_all($result);	
+		echo $fetch;
 		echo var_dump($connection);
 		echo "The object is ";
 		echo var_dump($this);
