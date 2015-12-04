@@ -26,7 +26,7 @@ function userAuth($user, $pxwd){
 
 	}
 }
-echo "$_POST['user']". "$_POST['pxwd']";
+echo $_POST['user'].$_POST['pxwd'];
 userAuth($_POST['user'], $_POST['pxwd']);
 
 ?>
