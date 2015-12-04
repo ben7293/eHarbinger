@@ -14,7 +14,7 @@ function userAuth($user, $pxwd){
 		//Accepts return value from userAuth function in database
 		//Uses PHP5+ password hashing function
 		$db = conn_db();
-		$newUser = new user($user, $pxwd, $db);
+		$newUser = new User($user, $pxwd, $db);
 		
 		// if ($ret){
 			// //Initiates session if authentication is successful
