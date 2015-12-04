@@ -46,7 +46,7 @@ class User
 	{
 		$conn = $db;
 		echo "Executing userAuth\n";
-		$result = userAuth($username, $password, $conn);
+		$result = userAuth($username, $password);
 		echo "userAuth finished\n";
 		if( $result == 'f' )
 		{
@@ -58,9 +58,9 @@ class User
 		}
 	}
 	
-	private function userAuth($username, $password, $db){
+	private function userAuth($username, $password){
 		echo "Entering userAuth\n";
-		$result = $db->queryTrueFalse( "select authUser('$username','$password');" );
+		$result = $conn->queryTrueFalse( "select authUser('$username','$password');" );
 		$loggedIn = $result;
 		return $result;
 	}
