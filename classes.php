@@ -37,8 +37,8 @@ class Database
 		return $fetch[0];
 	}
 	
-	private $connstring;
-	private $connection;	
+	public $connstring;
+	public $connection;	
 }
 
 class User
