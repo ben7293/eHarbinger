@@ -8,7 +8,7 @@ include("classes.php");
 // echo "$_POST['user']"."$_POST['pxwd']";
 
 //If there is input
-function userAuth($user = $_POST['user'], $pxwd = $_POST['pxwd']){
+function userAuth($user, $pxwd){
 
 	if ($user and $pxwd){ //If both are not empty
 		//Accepts return value from userAuth function in database
