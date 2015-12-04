@@ -1,6 +1,6 @@
 <?php
 
-	include("classes.php");
+	include_once("classes.php");
 	function conn_db(){
 		$db = new Database();
 		return $db;
