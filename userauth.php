@@ -7,7 +7,6 @@ include("classes.php");
 
 // echo "$_POST['user']"."$_POST['pxwd']";
 
-userAuth($_POST['user'], $_POST['pxwd']);
 //If there is input
 function userAuth($user = $_POST['user'], $pxwd = $_POST['pxwd']){
 
@@ -27,6 +26,8 @@ function userAuth($user = $_POST['user'], $pxwd = $_POST['pxwd']){
 
 	}
 }
+
+userAuth($_POST['user'], $_POST['pxwd']);
 
 ?>
 </head>
