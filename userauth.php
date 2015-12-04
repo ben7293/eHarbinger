@@ -2,8 +2,8 @@
 <head>
 <?php
 
-include("dbconx.php");
-include("classes.php");
+include_once("dbconx.php");
+include_once("classes.php");
 
 // echo "$_POST['user']"."$_POST['pxwd']";
 
