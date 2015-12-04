@@ -4,10 +4,10 @@
 <body>
 <form id='login' action='userauth.php' method='post'>
 	<label for='username' >UserName*:</label>
-	<input type='text'	name='username' id='user'  maxlength="50" />
+	<input type='text'	name='user' id='username'  maxlength="50" />
 	 
 	<label for='password' >Password*:</label>
-	<input type='password' name='password' id='pass' maxlength="50" />
+	<input type='password' name='pxwd' id='password' maxlength="50" />
 	 
 	<input type='submit' name='Submit' value='Submit' />
 </form>
