@@ -8,7 +8,7 @@ class Database
 	{
 		$connstring = "dbname=bt773 user=bt773 password=bt773";
 		$connection = pg_connect( "$connstring" ) or die('Connection failed: ' . pg_last_error());;
-		echo "db conx success";
+		echo "db conx success\n";
 	}
 	
 	// Please sanitize this...
@@ -45,9 +45,9 @@ class User
 	public function __construct( $username, $password, $db )
 	{
 		$conn = $db;
-		echo "Executing userAuth";
+		echo "Executing userAuth\n";
 		$result = userAuth($username, $password, $conn);
-		echo "userAuth finished";
+		echo "userAuth finished\n";
 		if( $result == 'f' )
 		{
 			die("Your password is wrong, $username");
