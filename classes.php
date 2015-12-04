@@ -63,6 +63,7 @@ class User
 		echo "Entering userAuth\n";
 		$result = $this->conn->queryTrueFalse( "select authUser('$username','$password');" );
 		$loggedIn = $result;
+		echo $loggedIn;
 		return $result;
 	}
 
