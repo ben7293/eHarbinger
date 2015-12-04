@@ -49,6 +49,7 @@ class User
 			die("Your password is wrong, $username");
 		}
 		else{
+			$loggedIn = 't';
 			echo "userauth successful";
 		}
 	}
