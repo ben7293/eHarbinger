@@ -1,5 +1,7 @@
 <?php
 
+include_once("userauth.php");
+
 class Database
 {
 	function __construct()
@@ -43,7 +45,9 @@ class User
 	public function __construct( $username, $password, $db )
 	{
 		$conn = $db;
+		echo "Executing userAuth";
 		$result = userAuth($username, $password, $conn);
+		echo "userAuth finished";
 		if( $result == 'f' )
 		{
 			die("Your password is wrong, $username");
