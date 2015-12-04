@@ -9,6 +9,7 @@ class Database
 		$connstring = "dbname=bt773 user=bt773 password=bt773";
 		$connection = pg_connect( "$connstring" ) or die('Connection failed: ' . pg_last_error());;
 		echo var_dump($connection);
+		echo "The object is ";
 		echo var_dump($this);
 		echo "db conx success\n";
 	}
