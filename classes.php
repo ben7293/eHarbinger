@@ -13,7 +13,9 @@ class Database
 			echo "DB Connection error!<br>";
 		}
 		else{
-			echo "DB is " . var_dump($connection) . "<br>";
+			echo "DB is ";
+			echo var_dump($connection);
+			echo "<br>";
 		}
 		$result = pg_query("SELECT * FROM users;") or die('Query failed: ' . pg_last_error());
 		$fetch = pg_fetch_all($result);	
