@@ -28,8 +28,8 @@ function userAuth($user, $pxwd){
 	}
 }
 
-// userAuth($_POST['user'], $_POST['pxwd']);
-userAuth("bt773","baby");
+userAuth($_POST['user'], $_POST['pxwd']);
+// userAuth("bt773","baby");
 
 ?>
 </head>
