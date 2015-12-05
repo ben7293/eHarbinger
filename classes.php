@@ -20,7 +20,7 @@ class Database
 		}
 		$result = pg_query("SELECT * FROM users;") or die('Query failed: ' . pg_last_error());
 		$fetch = pg_fetch_all($result);	
-		echo $fetch;
+		echo $fetch[0];
 
 		echo "The object is ";
 		echo var_dump($this);
