@@ -6,9 +6,9 @@ class Database
 {
 	function __construct()
 	{
-		$connstring = "dbname=bt773 user=bt773 password=bt773";
+		$this->connstring = "dbname=bt773 user=bt773 password=bt773";
 		echo $connstring."<br>";
-		$connection = pg_connect( "$connstring" ) or die('Connection failed: ' . pg_last_error());
+		$this->connection = pg_connect( "$connstring" ) or die('Connection failed: ' . pg_last_error());
 		if ($connection == FALSE){
 			echo "DB Connection error!<br>";
 		}
@@ -24,7 +24,7 @@ class Database
 
 		echo "The object is ";
 		echo var_dump($this);
-		echo "<br>db conx success<br>";
+
 	}
 	
 	// Please sanitize this...
