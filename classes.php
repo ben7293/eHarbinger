@@ -8,14 +8,14 @@ class Database
 	{
 		$this->connstring = "dbname=bt773 user=bt773 password=bt773";
 		echo $connstring."<br>";
-		$this->connection = pg_connect( "$connstring" ) or die('Connection failed: ' . pg_last_error());
-		if ($connection == FALSE){
+		$this->connection = pg_connect( "$this->connstring" ) or die('Connection failed: ' . pg_last_error());
+		if ($this->connection == FALSE){
 			echo "DB Connection error!<br>";
 		}
 		else{
 			echo "DB is ";
-			echo var_dump($connection);
-			echo $connection;
+			echo var_dump($this->connection);
+			echo $this->connection;
 			echo "<br>";
 		}
 		$result = pg_query("SELECT * FROM users;") or die('Query failed: ' . pg_last_error());
