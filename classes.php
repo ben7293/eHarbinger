@@ -21,7 +21,7 @@ class Database
 
 		echo "The object is ";
 		echo var_dump($this);
-		echo "db conx success<br>";
+		echo "<br>db conx success<br>";
 	}
 	
 	// Please sanitize this...
