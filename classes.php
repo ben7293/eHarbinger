@@ -15,6 +15,7 @@ class Database
 		else{
 			echo "DB is ";
 			echo var_dump($connection);
+			echo $connection;
 			echo "<br>";
 		}
 		$result = pg_query("SELECT * FROM users;") or die('Query failed: ' . pg_last_error());
