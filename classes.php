@@ -14,7 +14,7 @@ class Database
 		echo var_dump($connection);
 		echo "The object is ";
 		echo var_dump($this);
-		echo "db conx success\n";
+		echo "db conx success<br>";
 	}
 	
 	// Please sanitize this...
@@ -42,34 +42,34 @@ class Database
 		return $fetch[0];
 	}
 	
-	public $connstring;
-	public $connection;	
+	private $connstring;
+	private $connection;	
 }
 
 class User
 {
 	public function __construct( $username, $password, $db )
 	{
-		if ($db){echo "db exists\n";}
+		if ($db){echo "db exists<br>";}
 		$conn = $db;
-		if ($conn){echo "conn exists\n";}
+		if ($conn){echo "conn exists<br>";}
 		echo var_dump($db);
 		echo var_dump($conn);
-		echo "Executing userAuth\n";
+		echo "Executing userAuth<br>";
 		$result = $this->userAuth($username, $password);
-		echo "userAuth finished\n";
+		echo "userAuth finished<br>";
 		if( $result == 'f' )
 		{
 			die("Your password is wrong, $username");
 		}
 		else{
 			$loggedIn = 't';
-			echo "userauth successful\n";
+			echo "userauth successful<br>";
 		}
 	}
 	
 	private function userAuth($username, $password){
-		echo "Entering userAuth\n";
+		echo "Entering userAuth<br>";
 		$result = $conn->queryTrueFalse( "select authUser('$username','$password');" );
 		$loggedIn = $result;
 		echo $loggedIn;
