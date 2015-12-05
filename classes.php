@@ -18,9 +18,6 @@ class Database
 			echo $this->connection;
 			echo "<br>";
 		}
-		$result = pg_query("SELECT * FROM users;") or die('Query failed: ' . pg_last_error());
-		$fetch = pg_fetch_all($result);	
-		echo $fetch[0];
 
 		echo "The object is ";
 		echo var_dump($this);
@@ -61,8 +58,8 @@ class User
 	public function __construct( $username, $password, $db )
 	{
 		if ($db){echo "db exists<br>";}
-		$conn = $db;
-		if ($conn){echo "conn exists<br>";}
+		$this->conn = $db;
+		if ($this->conn){echo "conn exists<br>";}
 		echo var_dump($db);
 		echo var_dump($conn);
 		echo "Executing userAuth<br>";
@@ -80,7 +77,7 @@ class User
 	
 	private function userAuth($username, $password){
 		echo "Entering userAuth<br>";
-		$result = $conn->queryTrueFalse( "select authUser('$username','$password');" );
+		$result = $this->conn->queryTrueFalse( "select authUser('$username','$password');" );
 		$loggedIn = $result;
 		echo $loggedIn;
 		return $result;
