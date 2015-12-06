@@ -10,6 +10,7 @@ if ($_SESSION["user"]->isLoggedIn()){
 else{
 	//If there is no session information
 	echo "Session verification failed<br />";
+	Header("Location: index.html");
 
 }
 
