@@ -5,7 +5,7 @@
         <title>eHarbinger</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript" src = "design.js"></script>
-		<?php include("header.php"); ?>
+		<?php include_once("header.php"); ?>
 	</head>
 	<body>
 		<header>
