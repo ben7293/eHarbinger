@@ -9,7 +9,6 @@
 			include_once("header.php");
 			session_start();
 			include_once("session.php");
-			session_start();
 		?>
 	</head>
 	<body>
