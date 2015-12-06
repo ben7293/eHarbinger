@@ -1,10 +1,9 @@
 <html>
 
 <head>
-</head>
-
-<body>
 <?php
+session_save_path("/home/FALL2015/bt773/public_html/eHarbinger/sessions");
+session_start();
 
 include_once("dbconx.php");
 include_once("classes.php");
@@ -20,8 +19,7 @@ function userAuth($user, $pxwd){
 		
 		if ($newUser){
 			//Initiates session if authentication is successful
-			session_save_path("/home/FALL2015/bt773/public_html/eHarbinger");
-			session_start();
+
 			//Stores session information
 			$_SESSION['user'] = $newUser;
 		}
@@ -29,6 +27,11 @@ function userAuth($user, $pxwd){
 	}
 }
 
+?>
+</head>
+
+<body>
+<?php
 
 userAuth("ben7293", "baby");
 
