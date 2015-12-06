@@ -26,10 +26,11 @@ function logout(){
 }
 
 
-
-if ($_GET["logout"] == "1"){
-	logout();
-	header("Location: index.php");
+if (isset($_GET["logout"])){
+	if ($_GET["logout"] == "1"){
+		logout();
+		header("Location: index.php");
+	}
 }
 else{
 	// userAuth($_POST["user"], $_POST["pxwd"]);
