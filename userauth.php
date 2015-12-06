@@ -17,7 +17,7 @@ function userAuth($user, $pxwd){
 		
 	if ($newUser){
 		//Initiates session if authentication is successful
-		// session_start();
+		session_start();
 		//Stores session information
 		$_SESSION['user'] = user;
 		//Perhaps should integrate with user class
@@ -40,7 +40,7 @@ userAuth("ben7293", "baby");
 	// echo "Direct access to this page is not allowed.<br />";
 // }
 
-header("Location: session.php");
+// header("Location: session.php");
 
 ?>
 </body>
