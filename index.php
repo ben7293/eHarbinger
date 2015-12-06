@@ -24,13 +24,13 @@
 				<label for = "pxwd"> Password: </label>
 				<br>
 				<input type = "password" name = "pxwd"> <br>
-				<br>
+				
 				<?php
 					if ($_GET['err'] == 1){
 						echo "<font color=\"red\">Incorrect username and/or password.</font>";
 					}
 				?>				
-				<br>
+				<br><br>
 				<button> Submit </button>
 			</form>
 		</div>
