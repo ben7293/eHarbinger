@@ -1,7 +1,9 @@
 <?php
-session_start();
 include_once("dbconx.php");
 include_once("classes.php");
+
+session_start();
+
 
 function userAuth($user, $pxwd){
 
