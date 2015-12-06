@@ -6,12 +6,13 @@ session_start();
 if (isset($_SESSION["user"])){
 	if ($_SESSION["user"]->isLoggedIn()){
 		echo "Session verification successful<br />";
+		exit;
 	}
 }
 else{
 	//If there is no session information
 	echo "Session verification failed<br />";
-	//Header("Location: index.php");
+	Header("Location: index.php");
 
 }
 
