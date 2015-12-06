@@ -1,7 +1,7 @@
 <?php
 include_once("dbconx.php");
 include_once("classes.php");
-session_save_path("/home/FALL2015/bt773/public_html/eHarbinger/sessions");
+
 session_start();
 
 function userAuth($user, $pxwd){
@@ -27,11 +27,12 @@ function logout(){
 }
 
 
-if (!isset($_GET["logout"])){
-	userAuth($_POST["user"], $_POST["pxwd"]);
+
+if ($_GET['logout'] == 1){
+	logout();
 }
 else{
-	if ($_GET["logout"] == 1) logout();	
+	userAuth($_POST["user"], $_POST["pxwd"]);
 }
 
 
