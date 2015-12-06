@@ -31,6 +31,9 @@ function userAuth($user, $pxwd){
 <body>
 <?php
 
+echo $argv[1];
+echo $argv[2];
+
 if ($argv[1] && $argv[2]){
 	userAuth($argv[1], $argv[2]);
 	header("Location: session.php");	
