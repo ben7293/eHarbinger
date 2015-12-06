@@ -11,7 +11,7 @@
 		?>
 	</head>
 	<body>
-		<img src="resource/logo"></img>
+		<center><img src="resource/logo" height=100px></img></center>
 		<header>
 			Welcome! Please Fill In Your Information:
 			<br>
