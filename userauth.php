@@ -11,7 +11,8 @@ function userAuth($user, $pxwd){
 	//Stores session information
 	if ($newUser->isLoggedIn()){
 		$_SESSION["user"] = $newUser;
-		header("Location: players.php");
+		var_dump($_SESSION["user"]);
+		//header("Location: players.php");
 	}
 	else{
 		unset($newUser);
