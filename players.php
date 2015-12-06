@@ -8,7 +8,7 @@
 		<?php
 			include_once("header.php");
 			include_once("session.php");
-						session_start();
+			//session_start();
 		?>
 	</head>
 	<body>
