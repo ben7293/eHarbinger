@@ -5,11 +5,7 @@
         <title>eHarbinger</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript" src = "design.js"></script>
-		<?php
-			session_save_path("/home/FALL2015/bt773/public_html/eHarbinger/sessions");
-			session_start();
-			include("header.html");
-		?>
+		<?php include("header.php"); ?>
 	</head>
 	<body>
 		<header>

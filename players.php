@@ -5,6 +5,7 @@
         <title>eHarbinger</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript" src = "design.js"></script>
+		<?php include("header.php"); ?>
 	</head>
 	<body>
 		<header> You Have This Many Matches: (2) </header>
