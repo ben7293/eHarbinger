@@ -55,7 +55,7 @@ class User
 	public function __construct($username, $password, $db){
 		$this->conn = $db;
 		if ($this->userAuth($username, $password) == 't'){
-			$this->loggedIn = TRUE;
+			$this->isLoggedIn = TRUE;
 		}
 	}
 	
