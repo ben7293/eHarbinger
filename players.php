@@ -7,6 +7,7 @@
         <script type="text/javascript" src = "design.js"></script>
 		<?php
 			include_once("header.php");
+			session_start();
 			var_dump($_SESSION["user"]);
 			//include_once("session.php");
 		?>
