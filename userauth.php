@@ -35,6 +35,7 @@ if ($_POST['user'] && $_POST['pxwd']){
 }
 else{
 	echo "Direct access to this page is not allowed.<br />";
+	var_dump($_SESSION['user']);
 }
 
 
