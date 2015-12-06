@@ -1,5 +1,9 @@
 <html>
+
 <head>
+</head>
+
+<body>
 <?php
 
 include_once("dbconx.php");
@@ -14,21 +18,21 @@ function userAuth($user, $pxwd){
 		// if ($db){echo "db exists<br>";}
 		$newUser = new User($user, $pxwd, $db);
 		
-	if ($newUser){
-		//Initiates session if authentication is successful
-		session_save_path("/home/FALL2015/bt773/public_html/eHarbinger");
-		session_start();
-		//Stores session information
-		$_SESSION['user'] = $newUser;
-	}
+		if ($newUser){
+			//Initiates session if authentication is successful
+			session_save_path("/home/FALL2015/bt773/public_html/eHarbinger");
+			session_start();
+			//Stores session information
+			$_SESSION['user'] = $newUser;
+		}
 
 	}
 }
 
-?>
-</head>
-<body>
-<?php
+// ?>
+
+
+// <?php
 
 userAuth("ben7293", "baby");
 
@@ -43,4 +47,5 @@ header("Location: session.php");
 
 ?>
 </body>
+
 </html>

@@ -8,13 +8,13 @@ if (!$_SESSION['user']->isLoggedIn()){
 	//If there is no session information
 	echo "Session verification failed<br />";
 	var_dump(!$_SESSION['user']->isLoggedIn());
-
+	header("Location: index.html");
 }
 else{
 	echo "Session verification successful<br />";
 }
 
-session_destroy(); 
+
 
 ?>
 </head>
