@@ -16,6 +16,7 @@ function userAuth($user, $pxwd){
 		
 	if ($newUser){
 		//Initiates session if authentication is successful
+		echo var_dump($newUser);
 		session_start();
 		//Stores session information
 		$_SESSION['user'] = $newUser;
