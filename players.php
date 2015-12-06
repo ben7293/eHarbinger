@@ -5,9 +5,10 @@
         <title>eHarbinger</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript" src = "design.js"></script>
-		<?php include("header.php"); include("session.php")?>
+
 	</head>
 	<body>
+			<?php include("header.php"); include("session.php")?>
 		<header> You Have This Many Matches: (2) </header>
 		<div id = "col-1">
 			<form action="userauth.php">
