@@ -5,10 +5,14 @@
         <title>eHarbinger</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript" src = "design.js"></script>
-
+		<?php
+			include_once("header.php");
+			var_dump($_SESSION["user"]);
+			//include_once("session.php")
+		?>
 	</head>
 	<body>
-			<?php include_once("header.php");session_start(); var_dump($_SESSION["user"]); //include_once("session.php")?>
+			
 		<header> You Have This Many Matches: (2) </header>
 		<div id = "col-1">
 			<form action="userauth.php">
