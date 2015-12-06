@@ -10,8 +10,9 @@
 	<body>
 		<header> You Have This Many Matches: (2) </header>
 		<div id = "col-1">
-			<form action="userauth.php?logout=1">
+			<form action="userauth.php">
 				<button type="submit"> Log Out </button>
+				<input type="hidden" name="logout" value="1">
 			</form>
 			<br>
 			<br>

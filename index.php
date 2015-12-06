@@ -13,7 +13,7 @@
 			<br>
 		</header>
 		<div id = "col-1" class = "twoColumnContainer">
-			<form id="login" action="userauth.php?logout=0" method="post">
+			<form id="login" action="userauth.php" method="post">
 				<legend class = "heading"> Log In: </legend> <br>
 				<label for = "user"> Username: </label>
 				<br>
