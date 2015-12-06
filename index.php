@@ -7,7 +7,6 @@
         <script type="text/javascript" src = "design.js"></script>
 		<?php
 			session_save_path("/home/FALL2015/bt773/public_html/eHarbinger/sessions");
-			include("session.php");
 			session_start();
 		?>
 	</head>
