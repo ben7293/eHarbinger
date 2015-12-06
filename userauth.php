@@ -11,10 +11,10 @@ function userAuth($user, $pxwd){
 		//Accepts return value from userAuth function in database
 		//Uses PHP5+ password hashing function
 		$db = conn_db();
-		// if ($db){echo "db exists<br>";}
 		$newUser = new User($user, $pxwd, $db);
 		//Stores session information
 		$_SESSION["user"] = $newUser;
+		echo "Success";
 	}
 }
 
