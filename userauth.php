@@ -1,4 +1,6 @@
 <?php
+session_save_path("/home/FALL2015/bt773/public_html/eHarbinger/sessions");
+
 session_start();
 include_once("dbconx.php");
 include_once("classes.php");
