@@ -10,7 +10,7 @@
 	<body>
 		<header> You Have This Many Matches: (2) </header>
 		<div id = "col-1">
-			<button action="userauth.php?logout=1"> Log Out </button>
+			<button formaction="userauth.php?logout=1"> Log Out </button>
 			<br>
 			<br>
 			<a href = "messages.html" > Messages </a>
