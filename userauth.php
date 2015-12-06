@@ -18,7 +18,7 @@ function userAuth($user, $pxwd){
 
 if ($_POST["user"] && $_POST["pxwd"]){
 	userAuth($_POST["user"], $_POST["pxwd"]);
-	var_dump($_SESSION["user"]);
+	header("HTTP/1.1 301 Moved Permanently");
 	//header("Location: session.php");	
 }
 else{
