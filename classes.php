@@ -56,6 +56,7 @@ class User
 		$this->conn = $db;
 		if ($this->userAuth($username, $password) == "t"){
 			$this->isLoggedIn = TRUE;
+			$this->user = $username;
 		}
 	}
 	
