@@ -35,7 +35,6 @@ if ($argv[1] && $argv[2]){
 	userAuth($argv[1], $argv[2]);
 	header("Location: session.php");	
 }
-
 // if ($_POST['user'] && $_POST['pxwd']){
 	// userAuth($_POST['user'], $_POST['pxwd']);
 	// header("Location: session.php");	
