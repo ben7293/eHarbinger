@@ -11,6 +11,7 @@
 		?>
 	</head>
 	<body>
+		<img src="resource/logo"></img>
 		<header>
 			Welcome! Please Fill In Your Information:
 			<br>
