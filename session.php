@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once("classes.php");
-var_dump($_SESSION["user"]);
+var_dump($_SESSION["user"]->isLoggedIn());
 
 // if ($_SESSION["user"]->isLoggedIn()){
 	// echo "Session verification successful<br />";
