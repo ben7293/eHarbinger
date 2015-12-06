@@ -9,11 +9,11 @@ CREATE TABLE users(
 -- What did we have here again?
 CREATE TABLE users_public(
 	username varchar(255) REFERENCES users,
-	loginTimestamp timestamp DEFAULT current_timestamp,
 	name text DEFAULT '',
 	location text DEFAULT '',
 	languages text DEFAULT '',
-	description text DEFAULT ''
+	description text DEFAULT '',
+	loginTimestamp timestamp DEFAULT current_timestamp
 );
 
 -- users message other users
