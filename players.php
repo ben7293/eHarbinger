@@ -8,7 +8,7 @@
 
 	</head>
 	<body>
-			<?php include_once("header.php"); include_once("session.php")?>
+			<?php include_once("header.php"); var_dump($_SESSION["user"]; //include_once("session.php")?>
 		<header> You Have This Many Matches: (2) </header>
 		<div id = "col-1">
 			<form action="userauth.php">
