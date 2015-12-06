@@ -1,5 +1,5 @@
 <?php
-session_start()
+session_start();
 include_once("dbconx.php");
 include_once("classes.php");
 
