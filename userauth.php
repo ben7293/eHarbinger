@@ -4,17 +4,18 @@ include_once("classes.php");
 
 session_start();
 
-
 function userAuth($user, $pxwd){
-
-	if ($user && $pxwd){ //If both are not empty
-		//Accepts return value from userAuth function in database
-		//Uses PHP5+ password hashing function
-		$db = conn_db();
-		$newUser = new User($user, $pxwd, $db);
-		//Stores session information
+	//Uses PHP5+ password hashing function
+	$db = conn_db();
+	$newUser = new User($user, $pxwd, $db);
+	//Stores session information
+	if ($newUser->isLoggedIn()){
 		$_SESSION["user"] = $newUser;
 		echo "Success";
+	}
+	else{
+		unset($newUser);
+		header("Location: index.php?err=1");
 	}
 }
 
