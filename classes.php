@@ -7,20 +7,6 @@ class Database
 	function __construct(){
 		$this->connstring = "dbname=bt773 user=bt773 password=bt773";
 		$this->connection = pg_connect( "$this->connstring" ) or die("Connection failed: " . pg_last_error());
-
-		// if ($this->connection == FALSE){
-			// echo "DB Connection error!<br>";
-		// }
-		// else{
-			// echo "DB is ";
-			// echo var_dump($this->connection);
-			// echo $this->connection;
-			// echo "<br>";
-		// }
-
-		// echo "The object is ";
-		// echo var_dump($this);
-
 	}
 	
 	// Please sanitize this...
