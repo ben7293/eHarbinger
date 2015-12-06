@@ -2,8 +2,6 @@
 
 <head>
 <?php
-session_save_path("/home/FALL2015/bt773/public_html/eHarbinger/sessions");
-session_start();
 
 include_once("dbconx.php");
 include_once("classes.php");
@@ -35,8 +33,7 @@ function userAuth($user, $pxwd){
 
 if ($_POST['user'] && $_POST['pxwd']){
 	userAuth($_POST['user'], $_POST['pxwd']);
-	var_dump(!$_SESSION['user']->isLoggedIn());
-	//header("Location: session.php");	
+	header("Location: session.php");	
 }
 else{
 	echo "Direct access to this page is not allowed.<br />";
