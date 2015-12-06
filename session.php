@@ -1,3 +1,5 @@
+<html>
+<head>
 <?php
 
 include_once("classes.php");
@@ -15,3 +17,5 @@ else{
 }
 
 ?>
+</head>
+</html>
