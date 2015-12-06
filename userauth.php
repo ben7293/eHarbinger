@@ -23,13 +23,12 @@ function logout(){
 	unset($_SESSION["user"]);
 	$_SESSION["user"] == NULL;
 	session_destroy();
-	header("Location: index.php?err=0");
+	header("Location: index.php");
 }
 
 
-
-if ($_GET['logout'] == 1){
-	logout();
+if (isset($_GET['logout']){
+	if ($_GET['logout'] == 1) logout();
 }
 else{
 	userAuth($_POST["user"], $_POST["pxwd"]);
