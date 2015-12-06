@@ -5,8 +5,6 @@
 include_once("dbconx.php");
 include_once("classes.php");
 
-// echo "$_POST['user']"."$_POST['pxwd']";
-
 //If there is input
 function userAuth($user, $pxwd){
 
@@ -14,7 +12,7 @@ function userAuth($user, $pxwd){
 		//Accepts return value from userAuth function in database
 		//Uses PHP5+ password hashing function
 		$db = conn_db();
-		if ($db){echo "db exists<br>";}
+		// if ($db){echo "db exists<br>";}
 		$newUser = new User($user, $pxwd, $db);
 		
 	if ($newUser){
