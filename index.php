@@ -13,7 +13,7 @@
 			<br>
 		</header>
 		<div id = "col-1" class = "twoColumnContainer">
-			<form id="login" action="userauth.php?logout=0" method="post">
+			<form id="login" action="userauth.php" method="post">
 				<legend class = "heading"> Log In: </legend> <br>
 				<label for = "user"> Username: </label>
 				<br>
@@ -21,6 +21,7 @@
 				<label for = "pxwd"> Password: </label>
 				<br>
 				<input type = "password" name = "pxwd"> <br>
+				<input type="hidden" name="logout" value=0></input>
 				
 				<?php
 					if ($_GET["err"] == 1){

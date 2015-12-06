@@ -28,7 +28,7 @@ function logout(){
 
 
 
-if ($_GET['logout'] == 1){
+if ($_POST["logout"] == 1){
 	logout();
 }
 else{
