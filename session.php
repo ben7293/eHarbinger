@@ -14,7 +14,7 @@ else{
 	echo "Session verification successful<br />";
 }
 
-
+session_destroy();
 
 ?>
 </head>
