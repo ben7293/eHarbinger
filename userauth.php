@@ -29,10 +29,6 @@ function userAuth($user, $pxwd){
 	}
 }
 
-// ?>
-
-
-// <?php
 
 userAuth("ben7293", "baby");
 
