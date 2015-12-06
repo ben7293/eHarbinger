@@ -58,7 +58,6 @@ class User
 			$this->loggedIn = TRUE;
 		}
 		echo $this->loggedIn;
-		return $this->loggedIn;
 	}
 	
 	private function userAuth($username, $password){
