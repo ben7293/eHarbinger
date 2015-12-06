@@ -16,6 +16,7 @@ function userAuth($user, $pxwd){
 		$newUser = new User($user, $pxwd, $db);
 		//Stores session information
 		$_SESSION['user'] = $newUser;
+		var_dump($_SESSION['user']);		
 	}
 }
 
