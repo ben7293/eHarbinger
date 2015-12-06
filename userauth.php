@@ -27,9 +27,13 @@ function userAuth($user, $pxwd){
 
 	}
 }
+if ($_POST['user'] && $_POST['pxwd']){
+	userAuth($_POST['user'], $_POST['pxwd']);	
+}
+else{
+	echo "Direct access to this page is not allowed.<br />";
+}
 
-userAuth($_POST['user'], $_POST['pxwd']);
-// userAuth("bt773","baby");
 
 ?>
 </head>
