@@ -6,7 +6,7 @@ class Database
 		$this->connstring = "dbname=bt773 user=bt773 password=bt773";
 		$this->connection = pg_connect( "$this->connstring" ) or die("Connection failed: " . pg_last_error());
 	}
-	
+
 	// Please sanitize this...
 	function queryTable($query){
 		$result = pg_query($query) or die("Query failed: " . pg_last_error());

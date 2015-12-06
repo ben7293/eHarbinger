@@ -6,13 +6,13 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript" src = "design.js"></script>
 		<?php 
-			include_once("header.php");
 			session_save_path("/home/FALL2015/bt773/public_html/eHarbinger/sessions");
 			session_start();	
 		?>
 	</head>
 	<body>
 		<header>
+			<img src="resource/logo" height=100px></img>
 			Welcome! Please Fill In Your Information:
 			<br>
 		</header>

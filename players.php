@@ -13,23 +13,7 @@
 	<body>
 			
 		<header> You Have This Many Matches: (2) </header>
-		<div id = "col-1">
-			<form action="userauth.php">
-				<button type="submit"> Log Out </button>
-				<input type="hidden" name="logout" value="1">
-			</form>
-			<br>
-			<br>
-			<a href = "messages.html" > Messages </a>
-			<br>
-			<br>
-			<a href = "players.html" > Search For Players </a>
-			<br>
-			<br>
-			<a href = "contactUs.html"> Meet the Team! </a>
-			<br>
-			<br>
-		</div>
+		<?php include_once("header.php"); ?>
 		<div id = "col-2"  onload = "playerInfo()">
 			<div id = "avatar"> 
 				<img src = "avatar.jpg"> 
