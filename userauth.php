@@ -22,6 +22,7 @@ function userAuth($user, $pxwd){
 function logout(){
 	unset($_SESSION["user"]);
 	$_SESSION["user"] == NULL;
+	echo "logout";
 	session_destroy();
 	header("Location: index.php");
 }
