@@ -1,6 +1,3 @@
-<html>
-
-<head>
 <?php
 
 include_once("dbconx.php");
@@ -19,12 +16,6 @@ function userAuth($user, $pxwd){
 	}
 }
 
-?>
-</head>
-
-<body>
-<?php
-
 if ($_POST['user'] && $_POST['pxwd']){
 	userAuth($_POST['user'], $_POST['pxwd']);
 	header("Location: session.php");	
@@ -36,6 +27,3 @@ else{
 
 
 ?>
-</body>
-
-</html>
