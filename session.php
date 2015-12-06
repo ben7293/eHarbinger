@@ -4,7 +4,7 @@
 
 include_once("classes.php");
 
-	var_dump(!$_SESSION['user']->isLoggedIn());
+var_dump(!$_SESSION['user']->isLoggedIn());
 
 // if (!$_SESSION['user']->isLoggedIn()){
 	// //If there is no session information

@@ -14,14 +14,8 @@ function userAuth($user, $pxwd){
 		$db = conn_db();
 		// if ($db){echo "db exists<br>";}
 		$newUser = new User($user, $pxwd, $db);
-		
-		if ($newUser){
-			//Initiates session if authentication is successful
-
-			//Stores session information
-			$_SESSION['user'] = $newUser;
-		}
-
+		//Stores session information
+		$_SESSION['user'] = $newUser;
 	}
 }
 
