@@ -28,7 +28,12 @@ class Database
 	public function queryTrueFalse($query){
 		$result = pg_query($query) or die("Query failed: " . pg_last_error());
 		$fetch = pg_fetch_row($result);
-		return $fetch[0];
+		if ($fetch[0] == 't') {
+			return TRUE;
+		}
+		else{
+			return FALSE;
+		}
 	}
 	
 	private $connstring;
@@ -39,7 +44,7 @@ class User
 {
 	public function __construct($username, $password, $db){
 		$this->conn = $db;
-		if ($this->userAuth($username, $password) == "t"){
+		if ($this->userAuth($username, $password)){
 			$this->isLoggedIn = TRUE;
 			$this->user = $username;
 		}
