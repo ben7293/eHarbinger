@@ -2,7 +2,7 @@
 <head>
 <?php
 
-include_once("classes.php");
+// include_once("classes.php");
 
 if (!$_SESSION['user']->isLoggedIn()){
 	//If there is no session information
