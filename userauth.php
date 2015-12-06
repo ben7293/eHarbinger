@@ -40,7 +40,7 @@ userAuth("ben7293", "baby");
 	// echo "Direct access to this page is not allowed.<br />";
 // }
 
-// header("Location: session.php");
+header("Location: session.php");
 
 ?>
 </body>

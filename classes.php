@@ -54,23 +54,14 @@ class User
 {
 	public function __construct($username, $password, $db){
 		$this->conn = $db;
-		$result = $this->userAuth($username, $password);
-		if( $result == 'f' )
-		{
-			die("Your password is wrong, $username");
-		}
-		else{
+		if ($this->userAuth($username, $password) == 't'){
 			$this->loggedIn = TRUE;
-			echo "userauth successful<br>";
 		}
+		echo $loggedIn;
 	}
 	
 	private function userAuth($username, $password){
-		echo "Entering userAuth<br>";
-		$result = $this->conn->queryTrueFalse( "select authUser('$username','$password');" );
-		$loggedIn = $result;
-		echo $loggedIn;
-		return $result;
+		return $this->conn->queryTrueFalse( "select authUser('$username','$password');" );
 	}
 		
 	public function getInfo(){
