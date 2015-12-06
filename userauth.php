@@ -32,7 +32,8 @@ if ($_GET["logout"] == "1"){
 	header("Location: index.php");
 }
 else{
-	userAuth($_POST["user"], $_POST["pxwd"]);
+	// userAuth($_POST["user"], $_POST["pxwd"]);
+	userAuth($argv[1], $argv[2]);
 }
 
 
