@@ -8,10 +8,10 @@
 		<?php
 			session_save_path("/home/FALL2015/bt773/public_html/eHarbinger/sessions");
 			session_start();
+			include("header.html");
 		?>
 	</head>
 	<body>
-		<center><img src="resource/logo" height=100px></img></center>
 		<header>
 			Welcome! Please Fill In Your Information:
 			<br>
