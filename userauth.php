@@ -16,7 +16,6 @@ function userAuth($user, $pxwd){
 		
 	if ($newUser){
 		//Initiates session if authentication is successful
-		echo var_dump($newUser);
 		session_save_path("/home/FALL2015/bt773/public_html/eHarbinger");
 		session_start();
 		//Stores session information
