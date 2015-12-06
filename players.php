@@ -5,14 +5,14 @@
         <title>eHarbinger</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript" src = "design.js"></script>
-		<?php include("header.php"); include("session.php")?>
+		<?php include("header.php"); //include("session.php")?>
 	</head>
 	<body>
 		<header> You Have This Many Matches: (2) </header>
 		<div id = "col-1">
 			<form action="userauth.php">
 				<button type="submit"> Log Out </button>
-				<input type="hidden" name="logout" value=1></input>
+				<input type="hidden" name="logout" value="1"></input>
 			</form>
 			<br>
 			<br>
