@@ -60,11 +60,11 @@ class User
 	}
 	
 	private function userAuth($username, $password){
-		return $this->conn->queryTrueFalse( "select authUser("$username","$password");" );
+		return $this->conn->queryTrueFalse( "select authUser('$username','$password');" );
 	}
 		
 	public function getInfo(){
-		$result = $conn->queryArray( "select * from users_public where username="$username";" ); echo "test";
+		$result = $conn->queryArray( "select * from users_public where username='$username';" ); echo "test";
 		foreach( $result as $data )
 		{
 			echo "field: $data<br/>";
@@ -81,7 +81,7 @@ class User
 		echo $otherUser->getName();
 		$user2 = $otherUser->$user;
 		echo "here2";
-		$result = $conn->queryTrueFalse( "select messageUser( "$user", "$user2", "$text" ");
+		$result = $conn->queryTrueFalse( "select messageUser( '$user', '$user2', '$text' ");
 		if( $result == "f" )
 		{
 			die("Message send failed from: $user to: $user2" );
@@ -90,7 +90,7 @@ class User
 	
 	public function getMessages($otherUser){
 		$user2 = $otherUser->$user;
-		$result = $conn->queryTable( "select * from users_message_users where (username1="$user" and username2="$user2") or (username2="$user" and username1="$user2");" );
+		$result = $conn->queryTable( "select * from users_message_users where (username1='$user' and username2='$user2') or (username2='$user' and username1='$user2');" );
 		echo "<table>";
 		foreach( $result as $row )
 		{
