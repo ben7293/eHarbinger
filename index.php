@@ -23,7 +23,7 @@
 				<input type = "password" name = "pxwd"> <br>
 				
 				<?php
-					if ($_GET['err'] == 1){
+					if ($_GET["err"] == 1){
 						echo "<font color=\"red\">Incorrect username and/or password.</font>";
 					}
 				?>				

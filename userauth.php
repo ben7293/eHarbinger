@@ -27,11 +27,11 @@ function logout(){
 }
 
 
-if (!isset($_GET['logout'])){
+if (!isset($_GET["logout"])){
 	userAuth($_POST["user"], $_POST["pxwd"]);
 }
 else{
-	if ($_GET['logout'] == 1) logout();	
+	if ($_GET["logout"] == 1) logout();	
 }
 
 
