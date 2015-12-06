@@ -10,8 +10,8 @@ if (isset($_SESSION["user"])){
 }
 else{
 	//If there is no session information
-	// echo "Session verification failed<br />";
-	// Header("Location: index.php");
+	echo "Session verification failed<br />";
+	Header("Location: index.php");
 
 }
 
