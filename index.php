@@ -28,7 +28,7 @@
 				<br>
 				<?php
 					if ($_GET['err'] == 1){
-						echo "<font color=\"red\">Incorrect username and/or password.</font>"
+						echo "<font color=\"red\">Incorrect username and/or password.</font>";
 					}
 				?>				
 				<br>
