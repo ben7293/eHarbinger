@@ -1,8 +1,12 @@
 <?php
 
-if (empty($_SESSION['user'])){
+if (!$_SESSION['user']->loggedIn)){
 	//If there is no session information
-	header("Location: index.html")
+	header("Location: index.html");
+
+}
+else{
+	echo "Session verification successful<br />";
 }
 
 ?>

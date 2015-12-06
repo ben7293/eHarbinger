@@ -17,26 +17,31 @@ function userAuth($user, $pxwd){
 		if ($db){echo "db exists<br>";}
 		$newUser = new User($user, $pxwd, $db);
 		
-		// if ($ret){
-			// //Initiates session if authentication is successful
-			// session_start();
-			// //Stores session information
-			// $_SESSION['user'] = user;
-			// //Perhaps should integrate with user class
-		// }
+	if ($newUser){
+		//Initiates session if authentication is successful
+		session_start();
+		//Stores session information
+		$_SESSION['user'] = user;
+		//Perhaps should integrate with user class
+	}
 
 	}
 }
+
+?>
+</head>
+<body>
+<?php
+
 if ($_POST['user'] && $_POST['pxwd']){
-	userAuth($_POST['user'], $_POST['pxwd']);	
+	userAuth($_POST['user'], $_POST['pxwd']);
 }
 else{
 	echo "Direct access to this page is not allowed.<br />";
 }
 
+header("Location: session.php");
 
 ?>
-</head>
-<body>
 </body>
 </html>

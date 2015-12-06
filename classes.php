@@ -57,20 +57,14 @@ class User
 {
 	public function __construct( $username, $password, $db )
 	{
-		if ($db){echo "db exists<br>";}
 		$this->conn = $db;
-		if ($this->conn){echo "conn exists<br>";}
-		echo var_dump($db);
-		echo var_dump($conn);
-		echo "Executing userAuth<br>";
 		$result = $this->userAuth($username, $password);
-		echo "userAuth finished<br>";
 		if( $result == 'f' )
 		{
 			die("Your password is wrong, $username");
 		}
 		else{
-			$loggedIn = 't';
+			$this->loggedIn = TRUE;
 			echo "userauth successful<br>";
 		}
 	}
@@ -129,7 +123,7 @@ class User
 	
 	private $user;
 	private $conn;
-	private $loggedIn;
+	private $loggedIn = FALSE;
 	
 }
 
