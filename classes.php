@@ -57,7 +57,8 @@ class User
 		if ($this->userAuth($username, $password) == 't'){
 			$this->loggedIn = TRUE;
 		}
-		echo $loggedIn;
+		echo $this->loggedIn;
+		return $this->loggedIn;
 	}
 	
 	private function userAuth($username, $password){
