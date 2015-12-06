@@ -8,8 +8,7 @@
 		<?php
 			include_once("header.php");
 			session_start();
-			var_dump($_SESSION["user"]);
-			//include_once("session.php");
+			include_once("session.php");
 		?>
 	</head>
 	<body>
