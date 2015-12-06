@@ -4,8 +4,7 @@ include_once("userauth.php");
 
 class Database
 {
-	function __construct()
-	{
+	function __construct(){
 		$this->connstring = "dbname=bt773 user=bt773 password=bt773";
 		echo $connstring."<br>";
 		$this->connection = pg_connect( "$this->connstring" ) or die('Connection failed: ' . pg_last_error());
@@ -25,15 +24,13 @@ class Database
 	}
 	
 	// Please sanitize this...
-	function queryTable( $query )
-	{
+	function queryTable($query){
 		$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 		$fetch = pg_fetch_all($result);
 		return $fetch;
 	}
 
-	function queryArray( $query )
-	{
+	function queryArray($query){
 		echo 'test';
 		$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 		echo 'test';
@@ -42,8 +39,7 @@ class Database
 		return $fetch;
 	}
 	
-	public function queryTrueFalse( $query )
-	{
+	public function queryTrueFalse($query){
 		$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 		$fetch = pg_fetch_row($result);
 		return $fetch[0];
@@ -55,8 +51,7 @@ class Database
 
 class User
 {
-	public function __construct( $username, $password, $db )
-	{
+	public function __construct($username, $password, $db){
 		$this->conn = $db;
 		$result = $this->userAuth($username, $password);
 		if( $result == 'f' )
@@ -77,22 +72,20 @@ class User
 		return $result;
 	}
 		
-
-
-	public function getInfo()
-	{
+	public function getInfo(){
 		$result = $conn->queryArray( "select * from users_public where username='$username';" ); echo 'test';
 		foreach( $result as $data )
 		{
 			echo "field: $data<br/>";
 		}
 	}
-	public function getName()
-	{
+	public function getName(){
 		return $user;
-	}	
-	public function sendMessage( $otherUser, $text )
-	{
+	}
+	public function isLoggedIn(){
+		return $this->isLoggedIn;
+	}
+	public function sendMessage($otherUser, $text){
 		echo 'here1';
 		echo $otherUser->getName();
 		$user2 = $otherUser->$user;
@@ -104,8 +97,7 @@ class User
 		}
 	}
 	
-	public function getMessages( $otherUser )
-	{
+	public function getMessages($otherUser){
 		$user2 = $otherUser->$user;
 		$result = $conn->queryTable( "select * from users_message_users where (username1='$user' and username2='$user2') or (username2='$user' and username1='$user2');" );
 		echo "<table>";
@@ -123,7 +115,7 @@ class User
 	
 	private $user;
 	private $conn;
-	private $loggedIn = FALSE;
+	private $isLoggedIn = FALSE;
 	
 }
 
