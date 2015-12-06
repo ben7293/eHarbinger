@@ -27,7 +27,7 @@ function logout(){
 
 
 
-if ($_POST["logout"] == 1){
+if ($_GET["logout"] == "1"){
 	logout();
 	header("Location: index.php");
 }
