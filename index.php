@@ -21,7 +21,7 @@
 				<label for = "pxwd"> Password: </label>
 				<br>
 				<input type = "password" name = "pxwd"> <br>
-				<input type="hidden" name="logout" value=0></input>
+				<input type="hidden" name="logout" value="0"></input>
 				
 				<?php
 					if ($_GET["err"] == 1){
