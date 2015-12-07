@@ -6,12 +6,6 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript" src = "design.js"></script>
 		<?php
-			$session_path = "/home/FALL2015/bt773/public_html/eHarbinger/sessions";
-			if (session_save_path() != $session_path){
-				echo session_save_path();
-				session_save_path($session_path);
-				session_start();
-			}
 			include_once("session.php");	
 		?>
 	</head>

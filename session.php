@@ -2,9 +2,13 @@
 include_once("dbconx.php");
 include_once("classes.php");
 
+$session_path = "/home/FALL2015/bt773/public_html/eHarbinger/sessions";
+$index_path = "/~bt773/eHarbinger/index.php";
+
+session_save_path($session_path);
 session_start();
 
-$index_path = "/~bt773/eHarbinger/index.php";
+
 
 if (isset($_SESSION["user"])){
 	if ($_SESSION["user"]->isLoggedIn()){
