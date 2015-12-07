@@ -2,12 +2,12 @@
 include_once("dbconx.php");
 include_once("classes.php");
 
-// $session_path = "/home/FALL2015/bt773/public_html/eHarbinger/sessions";
+$session_path = "/home/FALL2015/bt773/public_html/eHarbinger/sessions";
 $root_path = "/~bt773/eHarbinger/";
 $index_path = $root_path . "index.php";
 
 
-// session_save_path($session_path);
+session_save_path($session_path);
 session_start();
 
 
