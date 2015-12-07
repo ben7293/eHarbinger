@@ -14,10 +14,10 @@ session_start();
 
 if (isset($_SESSION["user"])){
 	if ($_SESSION["user"]->isLoggedIn()){
-		echo $_SERVER["REQUEST_URI"];
-		echo $_SESSION["user"]->isLoggedIn();
-		echo "Session verification successful<br />";
-		echo $index_path;
+		// echo $_SERVER["REQUEST_URI"];
+		// echo $_SESSION["user"]->isLoggedIn();
+		// echo "Session verification successful<br />";
+		// echo $index_path;
 		if ($_SERVER["REQUEST_URI"] == $index_path || $_SERVER["REQUEST_URI"] == $root_path){
 			echo "yes";
 			Header("Location: players.php");
@@ -28,7 +28,7 @@ if (isset($_SESSION["user"])){
 }
 else{
 	//If there is no session information
-	echo "Session verification failed<br />";
+	// echo "Session verification failed<br />";
 	if ($_SERVER["REQUEST_URI"] != $index_path){
 		Header("Location: index.php");
 		exit;

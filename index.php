@@ -35,7 +35,7 @@
 			</form>
 		</div>
 		<div id = "col-2" class = "twoColumnContainer">
-			<form id="signup" action="signup.php" method="post">
+			<form id="signup" action="createacct.php" method="post">
 				<legend class = "heading"> Sign Up: </legend>
 				<br>
 				<label for = "Name"> Name: </label>
@@ -46,8 +46,13 @@
 				<input type = "email" name = "email"> <br>
 				<label for = "Password"> Password: </label>
 				<br>
-				<input type = "text" name = "password"> <br>
+				<input type = "password" name = "password"> <br>
 				<br>
+				<?php
+					if ($_GET["err"] == 2){
+						echo "<font color=\"red\">Username already exists.</font>";
+					}
+				?>								
 				<button onclick = "linkInfo()"> Submit </button>
 			</form>
 		</div>

@@ -3,8 +3,9 @@ include_once("dbconx.php");
 include_once("classes.php");
 session_start();
 
+
+
 function userAuth($user, $pxwd){
-	//Uses PHP5+ password hashing function
 	$db = conn_db();
 	$newUser = new User($user, $pxwd, $db);
 	//Stores session information
@@ -25,6 +26,8 @@ function logout(){
 }
 
 
+//=============================================================
+
 if (isset($_GET["logout"])){
 	if ($_GET["logout"] == "1"){
 		logout();
@@ -32,8 +35,8 @@ if (isset($_GET["logout"])){
 	}
 }
 else{
-	userAuth($_POST["user"], $_POST["pxwd"]);
-	// userAuth($argv[1], $argv[2]);
+	$pxwd = crypt($_POST["pxwd"]);
+	userAuth($_POST["user"], $pxwd);
 }
 
 

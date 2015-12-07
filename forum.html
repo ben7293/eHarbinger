@@ -5,23 +5,70 @@
         <title>eHarbinger</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript" src = "design.js"></script>
+		<style>
+		table td{
+			border:1px solid #121212;
+		}
+</style>
 	</head>
 	<body>
-		<button class = "butt" onclick = "logout()"> Log Out </button>
-		<textarea rows="4" cols="50">
-         I think that Mario is a great game.  
-</textarea>
-		<div>
-			<nav>
-				<a href = "suggested.html"> Suggested Games | </a> <a href = "popular.html"> Popular Games in Community | </a> <a href = "achievement.html"> Achievements </a>
-			</nav>
-		</div>
-		<div onload = "getPosts()">
-			Title of Post
-			<p> Fallout 4 is an amazing game but not quite the hype. You should still play </p>
-		</div>
-		<div>
-			<p class = "footer"> <a href = "messages.html" > Messages | </a> <a href = "players.html" > Search For Players | </a> <a href = "contactUs.html"> Meet the Team! </a> </p>
+		<div onload = "getPosts()" style='background-color: #CCCCCC;'>
+			<h2>Title of Post</h2><!-- Insert forum subj here benchan -->
+			<p> Fallout 4 is an amazing game but not quite the hype. You should still play<!-- Insert forum body here benchan --></p>
+			<br/>
+			<table bgcolor=#EEEEEE	 style='border-style: solid;'><!-- comments go here -->
+				<tr><td>@4:10 - Benson:</td><td>Go to my website to see pictures of airplanes<a href='mywebsite.html'> web</a></td></tr>
+				<tr><td><!-- Benchan add timestamp pls -->@4:12 - Priyam:</td><td>STFU BENSAN</td></tr>
+			</table>
+			<br />
+			<!-- Here is form, pls use $GET for action -->
+			<form method='post' action=''>
+			<input type='text' name='comment' autofocus='autofocus' placeholder='Enter a comment here!'>
+			<input type='submit' value='Comment!'>
+			
 		</div>
 	</body>
 </html>
+
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    margin: 10px;
+    float: left;
+    padding: 30px;
+    text-align: center;
+    background-color: lightgray;
+}
+
+p {
+    background-color: white;
+}
+</style>
+</head>
+<body>
+
+<div onmouseenter="myOverFunction()" onmouseleave="myOutFunction()">
+Comment text
+  <p><span id="demo3">Mouse over me!</span></p>
+</div>
+
+<script>
+function myOverFunction() {
+    document.getElementById("demo3").innerHTML = 'BENSON INSERT TEXT HERE';
+}
+
+function myOutFunction() {
+    document.getElementById("demo3").innerHTML = '';
+}
+</script>
+
+</body>
+</html>
+-->

@@ -42,9 +42,9 @@ class User
 {
 	public function __construct($username, $password, $db){
 		$this->conn = $db;
+		$this->user = $username;
 		if ($this->userAuth($username, $password)){
 			$this->isLoggedIn = TRUE;
-			$this->user = $username;
 		}
 	}
 	
