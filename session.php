@@ -20,7 +20,6 @@ if (isset($_SESSION["user"])){
 else{
 	//If there is no session information
 	echo "Session verification failed<br />";
-	echo $_SESSION["user"]->isLoggedIn();
 	if ($_SERVER["REQUEST_URI"] != "/~bt773/eHarbinger/index.php"){
 		Header("Location: index.php");
 	}

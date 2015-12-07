@@ -8,6 +8,7 @@
 		<?php
 			$session_path = "/home/FALL2015/bt773/public_html/eHarbinger/sessions";
 			if (session_save_path() != $session_path){
+				echo session_save_path();
 				session_save_path($session_path);
 				session_start();
 			}
