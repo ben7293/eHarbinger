@@ -6,6 +6,7 @@ session_start();
 
 if (isset($_SESSION["user"])){
 	if ($_SESSION["user"]->isLoggedIn()){
+		echo $_SERVER["REQUEST_URI"];
 		if ($_SERVER["REQUEST_URI"] == "/index.php"){
 			Header("Location: players.php");
 		}			
