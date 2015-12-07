@@ -12,7 +12,7 @@
 	<a href = "players.php" > Search For Players </a>
 	<br>
 	<br>
-	<a href = "contactUs.html"> Meet the Team! </a>
+	<a href = "contactUs.php"> Meet the Team! </a>
 	<br>
 	<br>
 </div>
