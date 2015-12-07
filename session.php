@@ -11,6 +11,7 @@ if (isset($_SESSION["user"])){
 		echo $_SERVER["REQUEST_URI"];
 		echo $_SESSION["user"]->isLoggedIn();
 		echo "Session verification successful<br />";
+		echo session_save_path();
 		if ($_SERVER["REQUEST_URI"] == $index_path){
 			Header("Location: players.php");
 			exit;
