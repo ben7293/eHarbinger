@@ -27,10 +27,16 @@
 }
 
 header{
-	float: top;
+	float: top, center;
+	margin-left: 25%;
+	margin-right: 25%;
 	text-align: center;
 	font-size: 40px;
 	/*background-color: #FFF;*/
+	border: 10px, #FFF;
+	border-width: medium;
+	border-style: solid;
+	border-width: 50%;
 }
 
 .heading{
@@ -38,16 +44,16 @@ header{
 }
 
 .footer{
-	text-align: left;
-	padding-left: 10%;
-	padding-top: 15%;
+	text-align: center;
 	font-size: 15px;
+	padding-top: 5%;
+	margin-top: 25%;
 }
 
 .text{
 	font-style: italic;
 	font-size: 16px;
-	padding-right: 11%;
+	padding-right: 20%;
 }
 
 .text .p1{
@@ -89,7 +95,6 @@ a:active{
 
 a:hover{
 	font-size: 20px;
-	color: #CCFFFF;
 	position: relative;
 	margin-bottom: 75%;
 	padding-bottom: 90%;
@@ -118,7 +123,7 @@ iframe{
 	float: center;
 }
 
-button{
+.button1{
 	position: static;
 	height: 50px;
 	width: 100px;
@@ -135,8 +140,71 @@ button{
 
 input{
 	background-color: #FFF;
+	font:12px arial;
 }
 
 .subHeading{
 	font-size: 24px;
 }
+
+.butt{
+	float: right;
+	margin-left: 80%;
+	height: 40px;
+	width: 75px;
+	background-color: #FFF;
+}
+
+nav{
+	text-align: center;
+	max-width: 100%;
+	padding-left: 8%;
+	position: static;
+	display: inherit;
+}
+form, p, span {
+    margin:0;
+    padding:0; 
+}
+  
+#wrapper, #loginform {
+    margin:0 auto;
+    padding-bottom:25px;
+    background:#EBF4FB;
+    width:504px;
+    border:1px solid #ACD8F0; 
+    position: fixed;
+}
+  
+#loginform { padding-top:18px; }
+  
+#loginform p { margin: 5px; }
+  
+#chatbox {
+    text-align:left;
+    margin:0 auto;
+    margin-bottom:25px;
+    background:#fff;
+    height:270px;
+    width:430px;
+    border:1px solid #ACD8F0;
+    overflow:auto; 
+    position: fixed;
+    padding: 10px;
+}
+  
+#usermsg {
+    width:395px;
+    border:1px solid #ACD8F0; }
+  
+#submit { width: 60px; }
+  
+.error { color: #ff0000; }
+  
+#menu { padding:12.5px 25px 12.5px 25px; }
+  
+.welcome { float:left; }
+  
+.logout { float:right; }
+  
+.msgln { margin:0 0 2px 0; }
