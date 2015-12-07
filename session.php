@@ -18,7 +18,7 @@ if (isset($_SESSION["user"])){
 		echo session_save_path();
 		if ($_SERVER["REQUEST_URI"] == $index_path){
 			Header("Location: players.php");
-			exit;
+			// exit;
 		}
 	}
 
@@ -28,7 +28,7 @@ else{
 	echo "Session verification failed<br />";
 	if ($_SERVER["REQUEST_URI"] != $index_path){
 		Header("Location: index.php");
-		exit;
+		// exit;
 	}
 
 }
