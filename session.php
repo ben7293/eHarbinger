@@ -6,8 +6,12 @@ session_start();
 
 if (isset($_SESSION["user"])){
 	if ($_SESSION["user"]->isLoggedIn()){
+		if ($_SERVER["REQUEST_URI"] == "/index.php"){
+			Header("Location: players.php");
+		}			
 		echo "Session verification successful<br />";
 	}
+
 }
 else{
 	//If there is no session information
