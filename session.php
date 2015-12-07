@@ -7,7 +7,7 @@ $root_path = "/~bt773/eHarbinger/";
 $index_path = $root_path . "index.php";
 
 
-if (session_save_path() != $session_path) {session_save_path($session_path);}
+// if (session_save_path() != $session_path) {session_save_path($session_path);}
 session_start();
 
 
