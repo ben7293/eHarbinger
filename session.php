@@ -3,7 +3,9 @@ include_once("dbconx.php");
 include_once("classes.php");
 
 // $session_path = "/home/FALL2015/bt773/public_html/eHarbinger/sessions";
-$index_path = "/~bt773/eHarbinger/index.php";
+$root_path = "/~bt773/eHarbinger/";
+$index_path = $root_path . "index.php";
+
 
 // session_save_path($session_path);
 session_start();
