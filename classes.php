@@ -9,12 +9,14 @@ class Database
 
 	// Please sanitize this...
 	function queryTable($query){
-		$result = pg_query($query) or die("Query failed: " . pg_last_error());
+		$this->connection = pg_connect( "$this->connstring" ) or die("Connection failed: " . pg_last_error());
+	$result = pg_query($query) or die("Query failed: " . pg_last_error());
 		$fetch = pg_fetch_all($result);
 		return $fetch;
 	}
 
 	function queryArray($query){
+				$this->connection = pg_connect( "$this->connstring" ) or die("Connection failed: " . pg_last_error());
 		$result = pg_query($query) or die("Query failed: " . pg_last_error());
 		$fetch = pg_fetch_assoc($result);	
 		return $fetch;
