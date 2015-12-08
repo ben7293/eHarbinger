@@ -1,14 +1,16 @@
 <?php
-	include_once('classes.php');
-	$conn = new Database();
-	$me = "brian";
+	include_once("session.php");
+	include_once("classes.php");
+	session_start();
+
+	$me = $_SESSION["user"]->getName();
 	$forumid=0;
 	if( isset($_GET['id']) && trim($_GET['id']) ){
 		$forumid = pg_escape_string($_GET['id']);
-		if( $conn->queryTrueFalse("select forumExists($forumid);" )){
+		if( $_SESSION["user"]->query("select forumExists($forumid);", "boolean" )){
 			if( isset($_POST['comment']) && trim($_POST['comment']) ){
 				$comment = pg_escape_string($_POST['comment']);
-				if( $conn->queryTrueFalse("select insertComment($forumid,'$me','$comment');") ){
+				if( $_SESSION["user"]->query("select insertComment($forumid,'$me','$comment');", "boolean") ){
 					header("refresh: 0");
 				}
 				else{
@@ -37,13 +39,13 @@
 	<body>
 		<div onload = "getPosts()" style='background-color: #CCCCCC;'>
 			<?php
-				$forum = $conn->queryArray("select * from getForum($forumid);");
+				$forum = $_SESSION["user"]->query("select * from getForum($forumid);", "array");
 				$fDate = date_create_from_format('Y-m-d H:i:s.u', $forum['forumtimestamp']);
 				$fDateFmt = date_format($fDate,'M d, Y \a\t h:i:sa');
 				echo "<h2>".$forum['forumsubj']."</h2>";
 				echo "<a href='profile.php?user=".$forum['username']."'>".$forum['username']."</a> - ".$fDateFmt;
 				echo "<p>".$forum['forumbody']."</p>";
-				$comments = $conn->queryTable("select * from getComments($forumid);");
+				$comments = $_SESSION["user"]->query("select * from getComments($forumid);", "table");
 				echo "<table bgcolor=#EEEEEE style='border-style: solid;'>";
 				foreach( $comments as $comment ){
 					$cDate = date_create_from_format('Y-m-d H:i:s.u',$comment['commenttimestamp']);
