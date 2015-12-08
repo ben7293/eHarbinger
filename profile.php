@@ -27,14 +27,7 @@
 	</head>
 	<body>
 		<header onload = "dayMessage()">Have a Mass Effect Monday! </header>
-			<button class = "butt" onclick = "logout()"> Log Out </button>
-		<div id = "col-1">
-			<br>
-			<a href = "forum.html" > Forum </a>
-			<br>
-			<br>
-			<a href = "players.html" > Search For Players </a>
-		</div>
+<?php include_once("header.php");?>
 		<div id = "col-2" style='width: 50%;'>
 			<div id = "avatar"> 
 				<img src = "avatar.jpg"> 
