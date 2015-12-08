@@ -7,11 +7,11 @@
 
 	// Get this from $_SESSION
 	$me = $_SESSION["user"]->getName();
-	var_dump($me);
+
 
 	// get this from $_GET
 	$you = $_GET["user"];
-	var_dump($you);
+
 	if( isset($you) && trim($you) ){
 		$you = pg_escape_string($you);
 		if( !$_SESSION["user"]->queryTrueFalse("select userExists('$you');") ){
