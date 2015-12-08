@@ -43,7 +43,7 @@ session_start();
 		}
 	// }
 // }
-//header("Location: players.php");
+header("Location: players.php");
 
 	
 
