@@ -16,7 +16,8 @@ function addUser($user, $pxwd, $email){
 			// Log the user in
 			login($user, $pxwd, $db);
 			$_SESSION["completedPref"] = FALSE;
-			header("Location: signup.php");
+			var_dump($_SESSION);
+			//header("Location: signup.php");
 		}
 	}
 	else{
