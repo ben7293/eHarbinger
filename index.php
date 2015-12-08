@@ -6,7 +6,9 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript" src = "design.js"></script>
 		<?php
-			include_once("session.php");	
+			if (!isset($_GET["err"])){
+				include_once("session.php");
+			}
 		?>
 	</head>
 	<body>
