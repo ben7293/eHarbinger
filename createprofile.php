@@ -7,7 +7,7 @@ session_start();
 
 if (isset($_SESSION["completedPref"])){
 	if (!$_SESSION["completedPref"]){
-		Create csv formatted description
+		//Create csv formatted description
 		$prefCsv = "";
 		
 		if (isset($_POST["Preferences"])){
@@ -23,7 +23,7 @@ if (isset($_SESSION["completedPref"])){
 			}
 		}
 		
-		Send profile data to database
+		//Send profile data to database
 		$username = $_SESSION["user"]->getName();
 		$name = $_POST["name"];
 		$location = $_POST["location"];
