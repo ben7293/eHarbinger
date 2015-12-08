@@ -24,9 +24,7 @@
 	}
 	else{
 			$result = $_SESSION["user"]->query("select * from getrecentforums(10);", "table");
-		foreach($result as $row){	
-			echo $row["forumsubj"];
-		}
+
 	}
 ?>
 <!DOCTYPE HTML>
@@ -45,6 +43,14 @@
 	<body>
 		<div onload = "getPosts()" style='background-color: #CCCCCC;'>
 			<?php
+				foreach($result as $row){
+					$forumid = $row['forumid'];
+					$forumSubj = $row["forumsubj"];
+					$user = $row['username'];
+					$date = date_create_from_format('Y-m-d H:i:s.u',$row['forumtimestamp']);
+					$dateFmt = date_format($date,'M d, Y \a\t h:i:sa');
+					echo "<a href='forum.php?id=$forumid'>$forumSubj</a> posted by <a href='profile.php?user=$user'>$user</a> at $dateFmt";
+				}
 				include_once("header.php");
 				$forum = $_SESSION["user"]->query("select * from getForum($forumid);", "array");
 				$fDate = date_create_from_format('Y-m-d H:i:s.u', $forum['forumtimestamp']);
