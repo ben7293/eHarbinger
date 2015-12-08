@@ -1,6 +1,5 @@
 <?php
 
-include_once("dbconx.php");
 include_once("classes.php");
 include_once("userauth.php"); //I wanted to redirect to userauth.php instead, still figuring this out...
 session_start();
@@ -8,7 +7,7 @@ session_start();
 
 
 function addUser($user, $pxwd, $email){
-	$db = conn_db();
+	$db = new Database();
 	if (!$db->queryTrueFalse("select userExists('$user')")){
 		// If username does not exist
 		if ($db->queryTrueFalse("select insertUser('$user', '$pxwd', '$email')")){
