@@ -36,6 +36,7 @@ if (isset($_SESSION["completedPref"])){
 		// // $prefCsv = "A,B,C";
 		
 		// Update profile
+		var_dump($_SESSION["user"]);
 		$status = $_SESSION["user"]->updateProfile($username, $name, $location, $lang, $prefCsv);
 		if ($status){
 			// Remove profile incomplete marker
