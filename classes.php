@@ -49,6 +49,7 @@ class User
 	}
 	
 	private function userAuth($username, $password){
+		die("g");
 		return $this->query( "select authUser('$username','$password');", "boolean" );
 	}
 		
