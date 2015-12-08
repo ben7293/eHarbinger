@@ -80,34 +80,22 @@ a:link{
 	font-size: 20px;
 	color: #0B3B0B;
 	position: relative;
-	margin-bottom: 75%;
-	padding-bottom: 90%;
-	max-height: 100px;
 }
 
 a:active{
 	font-size: 18px;
 	position: relative;
-	margin-bottom: 75%;
-	padding-bottom: 90%;
-	max-height: 100px;
 }
 
 a:hover{
 	font-size: 20px;
 	position: relative;
-	margin-bottom: 75%;
-	padding-bottom: 90%;
-	max-height: 100px;
 }
 
 a:visited{
 	font-size: 18px;
 	color: #999966;
 	position: relative;
-	margin-bottom: 75%;
-	padding-bottom: 90%;
-	max-height: 100px;
 }
 
 iframe{
