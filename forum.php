@@ -43,35 +43,39 @@
 	<body>
 		<div onload = "getPosts()" style='background-color: #CCCCCC;'>
 			<?php
-				foreach($result as $row){
-					$forumid = $row['forumid'];
-					$forumSubj = $row["forumsubj"];
-					$user = $row['username'];
-					$date = date_create_from_format('Y-m-d H:i:s.u',$row['forumtimestamp']);
-					$dateFmt = date_format($date,'M d, Y \a\t h:i:sa');
-					echo "<a href='forum.php?id=$forumid'>$forumSubj</a> posted by <a href='profile.php?user=$user'>$user</a> at $dateFmt";
+				if( !isset($_GET['id']) ){
+					foreach($result as $row){
+						$forumid = $row['forumid'];
+						$forumSubj = $row["forumsubj"];
+						$user = $row['username'];
+						$date = date_create_from_format('Y-m-d H:i:s.u',$row['forumtimestamp']);
+						$dateFmt = date_format($date,'M d, Y \a\t h:i:sa');
+						echo "<a href='forum.php?id=$forumid'>$forumSubj</a> posted by <a href='profile.php?user=$user'>$user</a> at $dateFmt";
+					}
 				}
-				include_once("header.php");
-				$forum = $_SESSION["user"]->query("select * from getForum($forumid);", "array");
-				$fDate = date_create_from_format('Y-m-d H:i:s.u', $forum['forumtimestamp']);
-				$fDateFmt = date_format($fDate,'M d, Y \a\t h:i:sa');
-				echo "<h2>".$forum['forumsubj']."</h2>";
-				echo "<a href='profile.php?user=".$forum['username']."'>".$forum['username']."</a> - ".$fDateFmt;
-				echo "<p>".$forum['forumbody']."</p>";
-				$comments = $_SESSION["user"]->query("select * from getComments($forumid);", "table");
-				echo "<table bgcolor=#EEEEEE style='border-style: solid;'>";
-				foreach( $comments as $comment ){
-					$cDate = date_create_from_format('Y-m-d H:i:s.u',$comment['commenttimestamp']);
-					$cDateFmt = date_format($cDate, 'M d, Y \a\t h:i:sa');
-					echo "<tr><td>".$cDateFmt." - ".$comment['username']."</td><td>".$comment['commentbody']."</td></tr>";
+				else{
+					include_once("header.php");
+					$forum = $_SESSION["user"]->query("select * from getForum($forumid);", "array");
+					$fDate = date_create_from_format('Y-m-d H:i:s.u', $forum['forumtimestamp']);
+					$fDateFmt = date_format($fDate,'M d, Y \a\t h:i:sa');
+					echo "<h2>".$forum['forumsubj']."</h2>";
+					echo "<a href='profile.php?user=".$forum['username']."'>".$forum['username']."</a> - ".$fDateFmt;
+					echo "<p>".$forum['forumbody']."</p>";
+					$comments = $_SESSION["user"]->query("select * from getComments($forumid);", "table");
+					echo "<table bgcolor=#EEEEEE style='border-style: solid;'>";
+					foreach( $comments as $comment ){
+						$cDate = date_create_from_format('Y-m-d H:i:s.u',$comment['commenttimestamp']);
+						$cDateFmt = date_format($cDate, 'M d, Y \a\t h:i:sa');
+						echo "<tr><td>".$cDateFmt." - ".$comment['username']."</td><td>".$comment['commentbody']."</td></tr>";
+					}
+					echo "</table>";
+					echo "<br />";
+
+					echo "<form method='post' action='forum.php?id=$forumid'>";
+
+					echo "<input type='text' name='comment' autofocus='autofocus' placeholder='Enter a comment here!'>";
+					echo "<input type='submit' value='Comment!'>";
 				}
-				echo "</table>";
-				echo "<br />";
-
-				echo "<form method='post' action='forum.php?id=$forumid'>";
-
-				echo "<input type='text' name='comment' autofocus='autofocus' placeholder='Enter a comment here!'>";
-				echo "<input type='submit' value='Comment!'>";
 			?>
 			
 		</div>
