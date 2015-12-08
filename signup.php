@@ -31,7 +31,7 @@
 			<br>
 			<label class = "subheading">Systems: </label> <br>
 			<br>
-			<form id="system" action="createprofile.php" method="post">
+			<form id="pref" action="createprofile.php" method="post">
 				 <input type="checkbox" name="Preferences[]" value="Xbox">Xbox
 				 <input type="checkbox" name="Preferences[]" value="Playstation">Playstation
 				 <input type="checkbox" name="Preferences[]" value="PC"> PC
