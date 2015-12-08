@@ -22,6 +22,6 @@
 		</div>
 		<br>
 		<br>
-		<p class = "footer"> <a href = "players.html" > Search For Players | </a> <a href = "contactUs.html"> Meet the Team! </a> </p>
+		<p class = "footer"> <a href = "players.php" > Search For Players | </a> <a href = "contactUs.php"> Meet the Team! </a> </p>
 	</body>
 </html>
