@@ -55,6 +55,9 @@
 					if ($_GET["err"] == 2){
 						echo "<font color=\"red\">Username already exists.</font>";
 					}
+					elseif ($_GET["err"] == 3){
+						echo "<font color=\"red\">Your username and/or password is invalid.</font>";
+					}
 				?>								
 				<br><br>
 				<button onclick = "linkInfo()"> Submit </button>
