@@ -14,6 +14,8 @@
 		echo "1";
 		$you = pg_escape_string($_GET["user"]);
 		echo "2.5";
+		var_dump($_SESSION);
+		die("");
 		if( !$_SESSION["user"]->query("select userExists('$you');", "boolean") ){
 			header("Location: messages.php");
 		}
