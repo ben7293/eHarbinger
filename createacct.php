@@ -26,8 +26,8 @@ if (isset($_SESSION["user"])){
 	header("Location: players.php");
 }
 else{
-	$pxwd = crypt($_POST["pxwd"]);
-	var_dump($pxwd);
+	// $pxwd = crypt($_POST["pxwd"]);
+	$pxwd = $_POST["pxwd"];
 	addUser($_POST["user"], $pxwd);	
 }
 
