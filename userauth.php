@@ -35,7 +35,8 @@ if (isset($_GET["logout"])){
 	}
 }
 else{
-	$pxwd = crypt($_POST["pxwd"]);
+	// $pxwd = crypt($_POST["pxwd"]);
+	$pxwd = $_POST["pxwd"];
 	userAuth($_POST["user"], $pxwd);
 }
 
