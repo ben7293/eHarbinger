@@ -11,16 +11,18 @@
 	$you = '';
 
 	if( isset($_GET["user"]) && trim($_GET["user"]) ){
+		echo "1";
 		$you = pg_escape_string($_GET["user"]);
+		
 		if( !$_SESSION["user"]->queryTrueFalse("select userExists('$you');") ){
 			header("Location: messages.php");
 		}
+		echo "2";
 	}
 	else{
 		header("Location: messages.php");
 	}
-	
-	echo "1";
+
 
 	if( isset($_POST['message']) && trim($_POST['message']) ){
 		$msg = pg_escape_string($_POST['message']);
