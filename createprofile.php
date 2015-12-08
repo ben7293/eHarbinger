@@ -5,8 +5,6 @@ session_start();
 
 //=============================================================
 
-var_dump($_SESSION["user"]);
-die("");
 // if (isset($_SESSION["completedPref"])){
 	// if (!$_SESSION["completedPref"]){
 		//Create csv formatted description
