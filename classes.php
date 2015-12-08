@@ -69,13 +69,7 @@ class User
 		$this->updateProfile($username, $name, $location, $lang, $prefCsv);
 	}
 	private function updateProfile($username, $name, $location, $lang, $prefCsv){
-		die('here');
 		echo "in updateProfile()";
-		if( $this->conn->queryTrueFalse( "select authUser('ben7293','baby');" ) )
-		{
-			echo "works";
-		}
-		echo "here";
 		var_dump($this->conn);
 		$status = $this->conn->queryTrueFalse(
 			"select updateprofile('$username','$name','$location','$lang','$prefCsv');"
