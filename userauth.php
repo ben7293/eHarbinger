@@ -9,7 +9,7 @@ function login($user, $pxwd, $db){
 	$newUser = new User($user, $pxwd, $db);
 	if ($newUser->isLoggedIn()){
 		// If authentication successful, start user session...
-		$_SESSION["user"] = $user;
+		$_SESSION["user"] = $newUser;
 	}
 	else{
 		// If authentication failed, destroy new user container...
