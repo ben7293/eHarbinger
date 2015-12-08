@@ -7,8 +7,8 @@ session_start();
 
 function login($user, $pxwd, $db){
 	$newUser = new User($user, $pxwd, $db);
-	var_dump($newUser);
-	die("");
+	// var_dump($newUser);
+	// die("");
 	if ($newUser->isLoggedIn()){
 		// If authentication successful, start user session...
 		$_SESSION["user"] = $newUser;
