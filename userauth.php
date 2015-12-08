@@ -37,7 +37,7 @@ if (isset($_POST["type"])){
 		// $pxwd = crypt($_POST["pxwd"]);
 		$pxwd = $_POST["pxwd"];
 		// Start database connection
-		$db = conn_db();
+		$db = new Database();
 		// Session admittance
 		login($_POST["user"], $pxwd, $db);
 		// And redirect to main page
