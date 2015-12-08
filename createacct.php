@@ -9,15 +9,17 @@ session_start();
 
 function addUser($user, $pxwd){
 	$db = conn_db();
-	if ($db->queryTrueFalse("select insertUser('$user', '$pxwd')")){
-		//Log the user in
-		userAuth($user, $pxwd);
-		// $_POST["user"] = $user;
-		// $_POST["pxwd"] = $pxwd;
-	}
+	if ($db->queryTrueFalse("select userExists('$user')")){
+		if ($db->queryTrueFalse("select insertUser('$user', '$pxwd')")){
+			//Log the user in
+			userAuth($user, $pxwd);
+			// $_POST["user"] = $user;
+			// $_POST["pxwd"] = $pxwd;
+		}
 	else{
 		//Complain
 		header("Location: index.php?err=2");
+	}
 	}
 }
 
