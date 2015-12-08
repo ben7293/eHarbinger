@@ -25,7 +25,7 @@
 		// Send profile data to database
 		// $_SESSION["user"]->conn->queryTrueFalse(
 		include_once("dbconx.php");
-		$db = db_conn()；
+		$db = db_conn();
 		$db->queryTrueFalse(
 			"select updateprofile
 			(
