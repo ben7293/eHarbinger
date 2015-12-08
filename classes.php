@@ -65,8 +65,10 @@ class User
 	public function isLoggedIn(){
 		return $this->isLoggedIn;
 	}
-	
-	public function updateProfile($username, $name, $location, $lang, $prefCsv){
+	public function upProf($username, $name, $location, $lang, $prefCsv){
+		updateProfile($username, $name, $location, $lang, $prefCsv);
+	}
+	private function updateProfile($username, $name, $location, $lang, $prefCsv){
 		echo "in updateProfile()";
 		if( $this->conn->queryTrueFalse( "select authUser('ben7293','baby');" ) )
 		{
