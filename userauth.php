@@ -5,16 +5,16 @@ session_start();
 
 
 
-function userAuth($user, $pxwd){
-	$db = conn_db();
+function login($user, $pxwd, $db){
 	$newUser = new User($user, $pxwd, $db);
-	//Stores session information
 	if ($newUser->isLoggedIn()){
-		$_SESSION["user"] = $newUser;
-		header("Location: players.php");
+		// If authentication successful, start user session...
+		$_SESSION["user"] = $user;
 	}
 	else{
+		// If authentication failed, destroy new user container...
 		unset($newUser);
+		// And redirect to login page
 		header("Location: index.php?err=1");
 	}
 }
@@ -34,9 +34,15 @@ if (isset($_POST["type"])){
 		header("Location: index.php");
 	}
 	elseif ($_POST["type"] == "login"){
+		// Hash the password
 		// $pxwd = crypt($_POST["pxwd"]);
 		$pxwd = $_POST["pxwd"];
-		userAuth($_POST["user"], $pxwd);
+		// Start database connection
+		$db = conn_db();
+		// Session admittance
+		login($_POST["user"], $pxwd, $db);
+		// And redirect to main page
+		header("Location: players.php");
 	}
 }
 

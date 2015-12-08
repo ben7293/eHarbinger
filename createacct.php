@@ -9,13 +9,13 @@ session_start();
 
 function addUser($user, $pxwd){
 	$db = conn_db();
-	var_dump(!$db->queryTrueFalse("select userExists('$user')"));
 	if (!$db->queryTrueFalse("select userExists('$user')")){
+		// If username does not exist
 		if ($db->queryTrueFalse("select insertUser('$user', '$pxwd')")){
-			//Log the user in
-			userAuth($user, $pxwd);
-			// $_POST["user"] = $user;
-			// $_POST["pxwd"] = $pxwd;
+			// Add user information to database
+			// Log the user in
+			userAuth($user, $pxwd, $db);
+			header("Location: signup.php");
 		}
 	}
 	else{

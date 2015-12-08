@@ -5,7 +5,6 @@ include_once("classes.php");
 session_start();
 
 
-var_dump($_POST);
 
 
 //=============================================================
