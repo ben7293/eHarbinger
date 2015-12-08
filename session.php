@@ -1,5 +1,4 @@
 <?php
-include_once("dbconx.php");
 include_once("classes.php");
 
 $session_path = "/home/FALL2015/bt773/public_html/eHarbinger/sessions";

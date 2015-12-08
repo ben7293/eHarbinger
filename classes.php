@@ -15,13 +15,16 @@ class Database
 	}
 
 	function queryArray($query){
+		echo "test";
 		$result = pg_query($query) or die("Query failed: " . pg_last_error());
-		$fetch = pg_fetch_assoc($result);
+		echo "test";
+		$fetch = pg_fetch_row($result);
 		
 		return $fetch;
 	}
 	
 	public function queryTrueFalse($query){
+		// $this->connection = pg_connect( "$this->connstring" ) or die("Connection failed: " . pg_last_error());
 		$result = pg_query($query) or die("Query failed: " . pg_last_error());
 		$fetch = pg_fetch_row($result);
 		if ($fetch[0] == 't') {
@@ -58,11 +61,24 @@ class User
 		}
 	}
 	public function getName(){
-		return $user;
+		return $this->user;
 	}
 	public function isLoggedIn(){
 		return $this->isLoggedIn;
 	}
+	public function upProf($username, $name, $location, $lang, $prefCsv){
+		$this->updateProfile($username, $name, $location, $lang, $prefCsv);
+	}
+	private function updateProfile($username, $name, $location, $lang, $prefCsv){
+		echo "in updateProfile()";
+		echo "$username | $name | $location | $lang | $prefCsv ";
+		var_dump($this->conn);
+		$status = $this->conn->queryTrueFalse(
+			"select updateprofile('$username','$name','$location','$lang','$prefCsv');"
+		);
+		return $status;
+	}
+	
 	public function sendMessage($otherUser, $text){
 		echo "here1";
 		echo $otherUser->getName();
