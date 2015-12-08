@@ -6,8 +6,8 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="design.js"></script>
 	<?php
-		//include_once("session.php");
-		//session_start();
+		include_once("session.php");
+		session_start();
 	?>
 </head>
 <body>
