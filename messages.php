@@ -14,7 +14,7 @@
 		echo "1";
 		$you = pg_escape_string($_GET["user"]);
 		echo "2.5";
-		if( !$_SESSION["user"]->queryTrueFalse("select userExists('$you');") ){
+		if( !$_SESSION["user"]->query("select userExists('$you');", "boolean") ){
 			header("Location: messages.php");
 		}
 		echo "2";
@@ -26,7 +26,7 @@
 
 	if( isset($_POST['message']) && trim($_POST['message']) ){
 		$msg = pg_escape_string($_POST['message']);
-		$result = $_SESSION["user"]->queryTrueFalse("select messageUser('$me','$you','$msg');");
+		$result = $_SESSION["user"]->query("select messageUser('$me','$you','$msg');", "boolean");
 		if( !$result ){
 			echo "An error occured!";
 		}

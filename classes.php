@@ -109,6 +109,19 @@ class User
 		echo "</table>";
 	}
 	
+	public function query($query, $type){
+		if ($type == "table"){
+			
+		}
+		elseif($type == "array"){
+			
+		}
+		elseif($type == "boolean"){
+			return $conn->queryTrueFalse($query);
+		}
+		else return NULL;
+	}
+	
 	private $user;
 	private $conn;
 	private $isLoggedIn = FALSE;
