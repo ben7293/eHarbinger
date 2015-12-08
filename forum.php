@@ -22,6 +22,9 @@
 			header('location: forum.php');
 		}
 	}
+	else{
+		$echo $_SESSION["user"]->query("select * from getrecentforums(10);", "table");
+	}
 ?>
 <!DOCTYPE HTML>
 <html>
