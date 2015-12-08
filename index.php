@@ -26,7 +26,7 @@
 				<label for = "pxwd"> Password: </label>
 				<br>
 				<input type = "password" name = "pxwd"> <br>
-				
+				<input type="hidden" name="type" value="login">
 				<?php
 					if ($_GET["err"] == 1){
 						echo "<font color=\"red\">Incorrect username and/or password.</font>";
@@ -50,7 +50,7 @@
 				<br>
 				<input type = "password" name = "pxwd"> <br>
 				<br>
-				<input type="hidden" name="type" value="login">
+
 				<?php
 					if ($_GET["err"] == 2){
 						echo "<font color=\"red\">Username already exists.</font>";
