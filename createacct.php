@@ -14,7 +14,6 @@ function addUser($user, $pxwd){
 		userAuth($user, $pxwd);
 		// $_POST["user"] = $user;
 		// $_POST["pxwd"] = $pxwd;
-		header("Location: userauth.php");
 	}
 	else{
 		//Complain
