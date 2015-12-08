@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL);
 include_once("classes.php");
 include_once("session.php");
 session_start();
