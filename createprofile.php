@@ -5,8 +5,8 @@ include_once("classes.php");
 
 //=============================================================
 
-if (isset($_SESSION["completedPref"])){
-	if (!$_SESSION["completedPref"]){
+// if (isset($_SESSION["completedPref"])){
+	// if (!$_SESSION["completedPref"]){
 		//Create csv formatted description
 		$prefCsv = "";
 		
@@ -39,9 +39,9 @@ if (isset($_SESSION["completedPref"])){
 		// $_SESSION["user"]->conn->queryTrueFalse(
 			// "select updateprofile('$username','$name','$location','$lang','$prefCsv')"
 		// );
-	}
-}
-header("Location: player.php");
+	// }
+// }
+header("Location: players.php");
 
 	
 
