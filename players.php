@@ -23,7 +23,7 @@
 				Played With: 7 Players<br>
 				Likes: PC, MMO <br>
 				Feedback: +10
-				<form id="message" action="message.php" method="get">
+				<form id="message" action="messages.php" method="get">
 					<button onclick = "send()"> Message </button> 
 					<input type="hidden" name="user" value="ben7293">
 				</form>
