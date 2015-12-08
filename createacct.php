@@ -28,7 +28,8 @@ if (isset($_SESSION["user"])){
 else{
 	// $pxwd = crypt($_POST["pxwd"]);
 	$pxwd = $_POST["pxwd"];
-	addUser($_POST["user"], $pxwd);	
+	// addUser($_POST["user"], $pxwd);	
+	addUser($argv[1], $argv[2]);	
 }
 
 	
