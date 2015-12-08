@@ -31,7 +31,7 @@
 		$lang = $_POST["lang"];
 		
 		include_once("dbconx.php");
-		$db = db_conn();
+		$db = conn_db();
 		$db->queryTrueFalse(
 			"select updateprofile('bm1069','$name','$location','$lang','$prefCsv')"
 		);
