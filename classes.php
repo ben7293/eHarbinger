@@ -68,7 +68,7 @@ class User
 	
 	public function updateProfile($username, $name, $location, $lang, $prefCsv){
 		echo "in updateProfile()";
-		if( $this->$conn->$queryTrueFalse("select userExists('brian');") )
+		if( $this->conn->queryTrueFalse("select userExists('brian');") )
 		{
 			echo "works";
 		}
