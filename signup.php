@@ -27,11 +27,11 @@
 			<br>
 			<label for="Roles" class="heading"> Additional Information </label>
 			<br>
-			Name&nbsp;<input type="text" name="name">
+			Name<input type="text" name="name">
 			<br>
-			Location&nbsp;<input type="text" name="location" placeholder="United States">
+			Location<input type="text" name="location" placeholder="United States">
 			<br>
-			Languages&nbsp;<input type="text" name="lang" placeholder="English">
+			Languages<input type="text" name="lang" placeholder="English">
 			<!--<label for = "Avatar" class = "heading"> Pick Your Avatar: </label>-->
 			<br>
 		</div>
