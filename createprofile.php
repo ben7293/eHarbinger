@@ -32,9 +32,9 @@
 			
 			
 			'bm1069',
-			'$_POST["name"]', 
-			'$_POST["location"]', 
-			'$_POST["lang"]', 
+			'$_POST['name']', 
+			'$_POST['location']', 
+			'$_POST['lang']', 
 			'$prefCsv' 
 			
 			)"
