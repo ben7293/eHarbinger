@@ -23,7 +23,7 @@
 		}
 	}
 	else{
-		$echo $_SESSION["user"]->query("select * from getrecentforums(10);", "table");
+		echo $_SESSION["user"]->query("select * from getrecentforums(10);", "table");
 	}
 ?>
 <!DOCTYPE HTML>
