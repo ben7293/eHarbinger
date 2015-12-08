@@ -67,6 +67,7 @@ class User
 	}
 	
 	public function updateProfile($username, $name, $location, $lang, $prefCsv){
+		echo "in updateProfile()";
 		$status = $this->conn->queryTrueFalse(
 			"select updateprofile('$username','$name','$location','$lang','$prefCsv')"
 		);
