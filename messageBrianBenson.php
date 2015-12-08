@@ -39,13 +39,18 @@
 	echo "<table>";
 	$result = $conn->queryTable("select * from getMessages('$me','$you');");
 	foreach( $result as $row ){
-		echo "<tr>";
+		if( $row['username1'] == $me ){
+			echo "<tr bgcolor='#CCCCFF'>";
+		}
+		else{
+			echo "<tr bgcolor='#EEEEEE'>";
+		}
 		$date = date_create_from_format('Y-m-d H:i:s.u',$row['messagetimestamp']);
 		$dateFmt = date_format($date,'M d, Y \a\t h:i:sa');
 		echo "<td>".$dateFmt."<td>";
 		echo "<td>".$row['username1']."</td>";
 		echo "<td>".$row['message']."</td>";
-		echo "</tr>";
+		echo "</tr>\n";
 	}
 	echo "</table>";
 	echo "<script>var objDiv = document.getElementById('chat'); objDiv.scrollTop = objDiv.scrollHeight;</script>";
