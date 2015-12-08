@@ -25,7 +25,7 @@
 		// Send profile data to database
 		// $_SESSION["user"]->conn->queryTrueFalse(
 		
-		$username = $_SESSION["user"]->getName();
+		// $username = $_SESSION["user"]->getName();
 		$name = $_POST["name"];
 		$location = $_POST["location"];
 		$lang = $_POST["lang"];
