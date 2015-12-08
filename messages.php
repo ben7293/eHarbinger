@@ -30,7 +30,7 @@
 			header("Refresh:0");
 		}
 	}
-	echo("hi");
+
 ?>
 
 <html>
