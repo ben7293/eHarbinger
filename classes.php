@@ -104,7 +104,7 @@ class User
 	}
 	
 	private $user;
-	public $conn;
+	private $conn;
 	private $isLoggedIn = FALSE;
 	
 }
