@@ -22,16 +22,15 @@
 				}
 			}
 		}
-		
-		echo "select updateprofile" . " username_placeholder, " . $_POST["name"].", " . $_POST["location"] . ", " . $_POST["lang"] . ", " . $prefCsv;
-		
-		// $_SESSION["user"]->conn->queryTrueFalse("select updateprofile(
+		// Send profile data to database
+		$_SESSION["user"]->conn->queryTrueFalse("select updateprofile(
 			// '$_SESSION["user"]->getName()',
-			// '$_POST["name"]', 
-			// '$_POST["location"]', 
-			// '$_POST["lang"]', 
-			// '$prefCsv' 
-		// )");
+			'bm1069',
+			'$_POST["name"]', 
+			'$_POST["location"]', 
+			'$_POST["lang"]', 
+			'$prefCsv' 
+		)");
 	// }
 	// else{
 		// header("Location: player.php");
