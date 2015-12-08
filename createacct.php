@@ -37,10 +37,9 @@ else{
 	// $pxwd = crypt($_POST["pxwd"]);
 	if( isset($_POST['user']) && trim($_POST['user']) && isset($_POST['pxwd']) && trim($_POST['pxwd']) && isset($_POST['email']) && trim($_POST['email'])){
 		$user = pg_escape_string(trim($_POST['user']));
-		$pwxd = pg_escape_string(trim($_POST['pxwd']));
+		$pxwd = pg_escape_string(trim($_POST['pxwd']));
 		$email = pg_escape_string(trim($_POST['email']));
-		echo "Password is " . trim($_POST['pxwd']) . " or " . pg_escape_string(trim($_POST['pxwd'])) . " or " . $pxwd;
-		// addUser($user, $pxwd, $email);	
+		addUser($user, $pxwd, $email);	
 	}
 	else{
 		// Complain
