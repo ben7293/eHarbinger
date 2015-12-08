@@ -23,7 +23,10 @@
 		}
 	}
 	else{
-		echo $_SESSION["user"]->query("select * from getrecentforums(10);", "table");
+			$result = $_SESSION["user"]->query("select * from getrecentforums(10);", "table");
+		foreach($result as $row){	
+			echo $row["forumsubj"];
+		}
 	}
 ?>
 <!DOCTYPE HTML>
