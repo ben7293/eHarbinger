@@ -1,8 +1,8 @@
 <div id = "col-1">
 	<img src="resource/logo" height=50px></img>
-	<form action="userauth.php">
+	<form action="userauth.php" method="post">
 		<button type="submit"> Log Out </button>
-		<input type="hidden" name="logout" value="1">
+		<input type="hidden" name="type" value="logout">
 	</form>
 	<br>
 	<br>

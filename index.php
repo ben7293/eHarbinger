@@ -6,7 +6,9 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript" src = "design.js"></script>
 		<?php
-			include_once("session.php");	
+			if (!isset($_GET["err"])){
+				include_once("session.php");
+			}
 		?>
 	</head>
 	<body>
@@ -24,7 +26,7 @@
 				<label for = "pxwd"> Password: </label>
 				<br>
 				<input type = "password" name = "pxwd"> <br>
-				
+				<input type="hidden" name="type" value="login">
 				<?php
 					if ($_GET["err"] == 1){
 						echo "<font color=\"red\">Incorrect username and/or password.</font>";
@@ -48,11 +50,13 @@
 				<br>
 				<input type = "password" name = "pxwd"> <br>
 				<br>
+
 				<?php
 					if ($_GET["err"] == 2){
 						echo "<font color=\"red\">Username already exists.</font>";
 					}
 				?>								
+				<br><br>
 				<button onclick = "linkInfo()"> Submit </button>
 			</form>
 		</div>

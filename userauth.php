@@ -28,16 +28,16 @@ function logout(){
 
 //=============================================================
 
-if (isset($_GET["logout"])){
-	if ($_GET["logout"] == "1"){
+if (isset($_POST["type"])){
+	if ($_POST["type"] == "logout"){
 		logout();
 		header("Location: index.php");
 	}
-}
-else{
-	// $pxwd = crypt($_POST["pxwd"]);
-	$pxwd = $_POST["pxwd"];
-	userAuth($_POST["user"], $pxwd);
+	elseif ($_POST["type"] == "login"){
+		// $pxwd = crypt($_POST["pxwd"]);
+		$pxwd = $_POST["pxwd"];
+		userAuth($_POST["user"], $pxwd);
+	}
 }
 
 

@@ -9,6 +9,7 @@ session_start();
 
 function addUser($user, $pxwd){
 	$db = conn_db();
+	var_dump(!$db->queryTrueFalse("select userExists('$user')"));
 	if (!$db->queryTrueFalse("select userExists('$user')")){
 		if ($db->queryTrueFalse("select insertUser('$user', '$pxwd')")){
 			//Log the user in
