@@ -7,7 +7,7 @@ class Database
 		$this->connection = pg_connect( "$this->connstring" ) or die("Connection failed: " . pg_last_error());
 	}
 
-	// Please sanitize this...
+
 	function queryTable($query){
 		$this->connection = pg_connect( "$this->connstring" ) or die("Connection failed: " . pg_last_error());
 		$result = pg_query($query) or die("Query failed: " . pg_last_error());
@@ -118,7 +118,7 @@ class User
 		}
 		elseif($type == "boolean"){
 			echo "querying";
-			return $conn->queryTrueFalse($query);
+			return $this->conn->queryTrueFalse($query);
 		}
 		else return NULL;
 	}
