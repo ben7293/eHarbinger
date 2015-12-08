@@ -15,6 +15,7 @@ function addUser($user, $pxwd){
 			// Add user information to database
 			// Log the user in
 			userAuth($user, $pxwd, $db);
+			$_SESSION["completedPref"] = FALSE;
 			header("Location: signup.php");
 		}
 	}
