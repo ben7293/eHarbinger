@@ -25,7 +25,6 @@ if (isset($_SESSION["completedPref"])){
 		
 		//Send profile data to database
 		$username = $_SESSION["user"]->getName();
-		$username = "ben7293";
 		$name = $_POST["name"];
 		$location = $_POST["location"];
 		$lang = $_POST["lang"];

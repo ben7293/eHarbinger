@@ -60,7 +60,7 @@ class User
 		}
 	}
 	public function getName(){
-		return $user;
+		return $this->user;
 	}
 	public function isLoggedIn(){
 		return $this->isLoggedIn;
