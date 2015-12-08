@@ -67,9 +67,10 @@ class User
 	}
 	
 	public function updateProfile($username, $name, $location, $lang, $prefCsv){
-		return $this->conn->queryTrueFalse(
+		$status = $this->conn->queryTrueFalse(
 			"select updateprofile('$username','$name','$location','$lang','$prefCsv')"
 		);
+		return $status;
 	}
 	
 	public function sendMessage($otherUser, $text){
