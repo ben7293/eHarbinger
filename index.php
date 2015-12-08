@@ -55,6 +55,7 @@
 						echo "<font color=\"red\">Username already exists.</font>";
 					}
 				?>								
+				<br><br>
 				<button onclick = "linkInfo()"> Submit </button>
 			</form>
 		</div>
