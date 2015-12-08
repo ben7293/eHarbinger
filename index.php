@@ -4,7 +4,7 @@
 		<meta charset="utf-8"> 
         <title>eHarbinger</title>
         <link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="shortcut icon" type="image/ico" href="/favicon.ico"/>
+		<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
         <script type="text/javascript" src = "design.js"></script>
 		<?php
 			if (!isset($_GET["err"])){
