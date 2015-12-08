@@ -10,7 +10,7 @@ CREATE TABLE users(
 -- What did we have here again?
 CREATE TABLE users_public(
 	username varchar(255) REFERENCES users,
-	email varchar(255) NOT NULL,
+	email varchar(255) NOT NULL UNIQUE,
 	name text DEFAULT '',
 	location text DEFAULT '',
 	languages text DEFAULT '',
