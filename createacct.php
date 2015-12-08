@@ -39,8 +39,7 @@ else{
 		$user = pg_escape_string(trim($_POST['user']));
 		$pwxd = pg_escape_string(trim($_POST['pxwd']));
 		$email = pg_escape_string(trim($_POST['email']));
-		echo "$user | $pxwd | $email";
-		// addUser($user, $pxwd, $email);	
+		addUser($user, $pxwd, $email);	
 	}
 	else{
 		// Complain
