@@ -13,7 +13,7 @@ BEGIN
 	SELECT m.username1, m.username2, m.message, m.messagetimestamp
 	FROM users_message_users AS m
 	WHERE (m.username1 = in_username1 AND m.username2 = in_username2) OR (m.username1 = in_username2 AND m.username2 = in_username1)
-	ORDER BY m.messagetimestamp DESC
+	ORDER BY m.messagetimestamp ASC
 	LIMIT 100;
 END
 $$
