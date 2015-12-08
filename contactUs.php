@@ -28,7 +28,7 @@
 			</div>
 		</div>
 		<div>
-			<p class = "footer"> <a href = "messages.html" > Messages | </a> <a href = "players.html" > Search For Players | </a> <a href = "contactUs.html"> Meet the Team! </a> </p>
+			<p class = "footer"> <a href = "messages.php" > Messages | </a> <a href = "players.php" > Search For Players | </a> <a href = "contactUs.php"> Meet the Team! </a> </p>
 		</div>
 	</body>
 </html>
