@@ -2,7 +2,7 @@
 	<img src="resource/logo" height=50px></img>
 	<form action="userauth.php">
 		<button type="submit"> Log Out </button>
-		<input type="hidden" name="logout" value="1">
+		<input type="hidden" name="type" value="logout">
 	</form>
 	<br>
 	<br>
