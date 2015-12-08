@@ -43,10 +43,10 @@
 				<input type = "text" name = "name"> <br>
 				<label for = "Email"> Email: </label>
 				<br>
-				<input type = "email" name = "email"> <br>
+				<input type = "email" name = "user"> <br>
 				<label for = "Password"> Password: </label>
 				<br>
-				<input type = "password" name = "password"> <br>
+				<input type = "password" name = "pxwd"> <br>
 				<br>
 				<?php
 					if ($_GET["err"] == 2){
