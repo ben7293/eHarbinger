@@ -8,6 +8,9 @@
 	<br>
 	<a href = "messages.php" > Messages </a>
 	<br>
+	<br>	
+	<a href = "forum.php" > Forum </a>
+	<br>
 	<br>
 	<a href = "players.php" > Search For Players </a>
 	<br>

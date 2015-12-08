@@ -1,27 +1,64 @@
-<!DOCTYPE HTML>
 <html>
-	<head>
-		<meta charset="utf-8"> 
-        <title>eHarbinger</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <script type="text/javascript" src = "design.js"></script>
-	</head>
-	<body>
-		<header onload = "messages()"> Messages: (1) </header>
-		<button class = "butt" onclick = "logout()"> Log Out </button>
-		<div id = "col-1">
-			
-		</div>
-		<div id = "col-2">
-			<div id = "avatar"> 
-				<img src = "avatar.jpg"> 
-			</div>
-			<div onclick = "open()">
-				You have a Message from TheRealSlimShady
-			</div>
-		</div>
-		<br>
-		<br>
-		<p class = "footer"> <a href = "players.php" > Search For Players | </a> <a href = "contactUs.php"> Meet the Team! </a> </p>
-	</body>
+<head>
+<?php
+	include_once("session.php");
+	include_once("classes.php");
+	session_start();
+
+	// Get this from $_SESSION
+	$me = $_SESSION["user"]->getName();
+
+	// get this from $_GET
+	$you = $_GET["user"];
+	if( isset($you) && trim($you) ){
+		$you = pg_escape_string($you);
+		if( !$_SESSION["user"]->queryTrueFalse("select userExists('$you');") ){
+			header("Location: messages.php");
+		}
+	}
+	else{
+		header("Location: messages.php");
+	}
+
+	if( isset($_POST['message']) && trim($_POST['message']) ){
+		$msg = pg_escape_string($_POST['message']);
+		$result = $conn->queryTrueFalse("select messageUser('$me','$you','$msg');");
+		if( !$result ){
+			echo "An error occured!";
+		}
+		else{
+			header("Refresh:0");
+		}
+	}
+?>
+</head>
+<body>
+<?php
+	echo "<div style='height: 75%; float: right; display: inline-block;'>";
+	echo "<div id='chat' style='height: 100%; overflow-y: scroll;'>";
+	echo "<table>";
+	$result = $_SESSION["user"]->queryTable("select * from getMessages('$me','$you');");
+	foreach( $result as $row ){
+		if( $row['username1'] == $me ){
+			echo "<tr bgcolor='#CCCCFF'>";
+		}
+		else{
+			echo "<tr bgcolor='#EEEEEE'>";
+		}
+		$date = date_create_from_format('Y-m-d H:i:s.u',$row['messagetimestamp']);
+		$dateFmt = date_format($date,'M d, Y \a\t h:i:sa');
+		echo "<td>".$dateFmt."<td>";
+		echo "<td>".$row['username1']."</td>";
+		echo "<td>".$row['message']."</td>";
+		echo "</tr>\n";
+	}
+	echo "</table>";
+	echo "<script>var objDiv = document.getElementById('chat'); objDiv.scrollTop = objDiv.scrollHeight;</script>";
+	echo "</div>";
+	echo "<form method='post' action=''>";
+	echo "<input right;' type='text' name='message' autofocus='autofocus' placeholder='Type a message...'>";
+	echo "<input type='submit'>";
+	echo "</div>";
+?>
+</body>
 </html>
