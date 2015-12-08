@@ -41,11 +41,14 @@
 			</div>
 			<div onload = "info()">
 				<?php
-					$prof = $conn->queryArray("select * from users_public where username='$you'");
+					$prof = $conn->queryArray("select * from getProfile('$you')");
 					$date = date_create_from_format('Y-m-d H:i:s.u',$prof['logintimestamp']);
 					$dateFmt = date_format($date, 'M d, Y \a\t h:i:sa');
-					$rating = $conn->queryArray("select count(username1) as feedback from users_rate_users WHERE username2='$you'");
+					$rating = $conn->queryArray("select * from getRating('$you')");
 					$feedback = $rating['feedback'];
+					if( !$feedback ){
+						$feedback = 0;
+					}
 					// Need to add later
 					$match = 'Baesan pls halp';
 					echo "<table>";
