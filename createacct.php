@@ -14,7 +14,7 @@ function addUser($user, $pxwd, $email){
 		if ($db->queryTrueFalse("select insertUser('$user', '$pxwd', '$email')")){
 			// Add user information to database
 			// Log the user in
-			echo "<script type='text/javascript'>alert('logging in!')</script>"
+			echo "<script type='text/javascript'>alert('logging in!')</script>";
 			login($user, $pxwd, $db);
 			$_SESSION["completedPref"] = FALSE;
 			header("Location: signup.php");
