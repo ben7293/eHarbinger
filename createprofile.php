@@ -33,7 +33,7 @@
 		include_once("dbconx.php");
 		$db = conn_db();
 		$db->queryTrueFalse(
-			"select updateprofile('bm1069','$name','$location','$lang','$prefCsv')"
+			"select updateprofile('brian','$name','$location','$lang','$prefCsv')"
 		);
 	// }
 	// else{
