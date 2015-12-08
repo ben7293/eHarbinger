@@ -14,13 +14,13 @@
 		<div id = "col-1" class = "twoColumnContainer">
 			<label for="Roles" class = "heading"> Roles Played: </label>
             <br>
-            Warrior <input type = checkbox name = Roles value = Warrior>
+            <input type = checkbox name = Roles value = Warrior>Warrior
             <br>
-            Mage <input type = checkbox name = Roles value = Mage>
+            <input type = checkbox name = Roles value = Mage>Mage
             <br>
-            Rogue <input type = checkbox name = Roles value = Rogue>
+             <input type = checkbox name = Roles value = Rogue>Rogue
             <br>
-            Healer <input type = checkbox name = Roles value = Healer>
+             <input type = checkbox name = Roles value = Healer>Healer
             <br>
             <br>
             <label for = "Avatar" class = "heading"> Pick Your Avatar: </label>
@@ -31,27 +31,27 @@
 			<br>
 			<label class = "subheading">Systems: </label> <br>
 			<br>
-            Xbox <input type = checkbox name = Preferences value = Xbox>
-            Playstation <input type = checkbox name = Preferences value = Playstation>
-            PC <input type = checkbox name = Preferences value = PC> 
-            Moblie <input type = checkbox name = Preferences value = Moblie> <br>
+             <input type = checkbox name = Preferences value = Xbox>Xbox
+             <input type = checkbox name = Preferences value = Playstation>Playstation
+             <input type = checkbox name = Preferences value = PC> PC
+             <input type = checkbox name = Preferences value = Moblie> Moblie<br>
             <br>
             <label class = "subheading">Games: </label> <br>
             <br>
-            Racing <input type = checkbox name = Preferences value = Racing>
-            MMO <input type = checkbox name = Preferences value = MMO>
-            Shooting <input type = checkbox name = Preferences value = Shooting>
-            Action <input type = checkbox name = Preferences value = Action>
-            Adventure <input type = checkbox name = Preferences value = Adventure>
-            RPG <input type = checkbox name = Preferences value = RPG>
-            Strategy <input type = checkbox name = Preferences value = Strategy>
-            Sports <input type = checkbox name = Preferences value = Sports>
-            Casual <input type = checkbox name = Preferences value = Casual>
-            Trivia <input type = checkbox name = Preferences value = Trivia>
-            Indie <input type = checkbox name = Preferences value = Indie>
+             <input type = checkbox name = Preferences value = Racing>Racing
+             <input type = checkbox name = Preferences value = MMO>MMO
+             <input type = checkbox name = Preferences value = Shooting>Shooting
+             <input type = checkbox name = Preferences value = Action>Action
+             <input type = checkbox name = Preferences value = Adventure>Adventure
+             <input type = checkbox name = Preferences value = RPG>RPG
+             <input type = checkbox name = Preferences value = Strategy>Strategy
+             <input type = checkbox name = Preferences value = Sports>Sports
+             <input type = checkbox name = Preferences value = Casual>Casual
+             <input type = checkbox name = Preferences value = Trivia>Trivia
+             <input type = checkbox name = Preferences value = Indie>Indie
             <br>
             <br>
-            <button class = "button1" onclick = "newUser()"> Finish Profile </button> 
+            <button class = "button1" onclick = "newUser()"> Complete Profile </button> 
 		</div>
 		</body>
 	</html>
