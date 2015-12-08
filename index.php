@@ -50,7 +50,7 @@
 				<br>
 				<input type = "password" name = "pxwd"> <br>
 				<br>
-				<input type="text" name="type" value="login">
+				<input type="hidden" name="type" value="login">
 				<?php
 					if ($_GET["err"] == 2){
 						echo "<font color=\"red\">Username already exists.</font>";
