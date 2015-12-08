@@ -13,7 +13,7 @@
 	if( isset($_GET["user"]) && trim($_GET["user"]) ){
 		echo "1";
 		$you = pg_escape_string($_GET["user"]);
-		
+		echo "2.5";
 		if( !$_SESSION["user"]->queryTrueFalse("select userExists('$you');") ){
 			header("Location: messages.php");
 		}
