@@ -1,5 +1,3 @@
-<html>
-<head>
 <?php
 	include_once("session.php");
 	include_once("classes.php");
@@ -32,7 +30,11 @@
 			header("Refresh:0");
 		}
 	}
+	echo("hi");
 ?>
+
+<html>
+<head>
 </head>
 <body>
 <?php

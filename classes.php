@@ -40,7 +40,7 @@ class User
 {
 	public function __construct($username, $password, $db){
 		$this->conn = $db;
-		$this->user = $username;
+		$this->user = pg_escape_string($username);
 		if ($this->userAuth($username, $password)){
 			$this->isLoggedIn = TRUE;
 		}
