@@ -23,14 +23,22 @@
 			}
 		}
 		// Send profile data to database
-		$_SESSION["user"]->conn->queryTrueFalse("select updateprofile(
+		// $_SESSION["user"]->conn->queryTrueFalse(
+		include_once("dbconx.php");
+		$db = db_conn()；
+		$db->queryTrueFalse(
+			"select updateprofile
+			(
+			
 			// '$_SESSION["user"]->getName()',
 			'bm1069',
 			'$_POST["name"]', 
 			'$_POST["location"]', 
 			'$_POST["lang"]', 
 			'$prefCsv' 
-		)");
+			
+			)"
+		);
 	// }
 	// else{
 		// header("Location: player.php");
