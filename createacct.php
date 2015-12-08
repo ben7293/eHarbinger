@@ -2,7 +2,7 @@
 
 include_once("dbconx.php");
 include_once("classes.php");
-include_once("userauth.php"); //I wanted to redirect to userauth.php instead, still figuring this out...
+//include_once("userauth.php"); //I wanted to redirect to userauth.php instead, still figuring this out...
 session_start();
 
 
