@@ -35,10 +35,11 @@ if (isset($_SESSION["completedPref"])){
 		// // $lang = "English";		
 		// // $prefCsv = "A,B,C";
 		
-		$_SESSION["user"]->conn->queryTrueFalse(
-			"select updateprofile('$username','$name','$location','$lang','$prefCsv')"
-		);
-		$_SESSION["completedPref"] == TRUE;
+		// Update profile
+		if ($_SESSION["user"]->updateProfile($username, $name, $location, $lang, $prefCsv)){
+			// Remove profile incomplete marker
+			unset($_SESSION["completedPref"]);
+		}
 	}
 }
 //header("Location: players.php");

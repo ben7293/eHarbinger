@@ -15,8 +15,10 @@ class Database
 	}
 
 	function queryArray($query){
+		echo "test";
 		$result = pg_query($query) or die("Query failed: " . pg_last_error());
-		$fetch = pg_fetch_assoc($result);
+		echo "test";
+		$fetch = pg_fetch_row($result);
 		
 		return $fetch;
 	}
@@ -63,6 +65,13 @@ class User
 	public function isLoggedIn(){
 		return $this->isLoggedIn;
 	}
+	
+	public function updateProfile($username, $name, $location, $lang, $prefCsv){
+		return $this->conn->queryTrueFalse(
+			"select updateprofile('$username','$name','$location','$lang','$prefCsv')"
+		);
+	}
+	
 	public function sendMessage($otherUser, $text){
 		echo "here1";
 		echo $otherUser->getName();
