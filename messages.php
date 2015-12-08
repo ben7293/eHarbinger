@@ -9,6 +9,7 @@
 
 	// get this from $_GET
 	$you = $_GET["user"];
+	echo "$you , $me";
 
 	if( isset($you) && trim($you) ){
 		$you = pg_escape_string($you);
