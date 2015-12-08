@@ -61,7 +61,7 @@
 	echo "<script>var objDiv = document.getElementById('chat'); objDiv.scrollTop = objDiv.scrollHeight;</script>";
 	echo "</div>";
 	echo "<form method='post' action=''>";
-	echo "<input right;' type='text' name='message' autofocus='autofocus' placeholder='Type a message...'>";
+	echo "<input right;' type='text' name='message' autofocus='autofocus' placeholder='Type a message...' autocomplete='off'>";
 	echo "<input type='submit'>";
 	echo "</div>";
 ?>
