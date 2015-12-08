@@ -1,37 +1,39 @@
-// <?php
-	// include_once("session.php");
-	// include_once("classes.php");
-	// session_start();
+<?php
+	include_once("session.php");
+	include_once("classes.php");
+	session_start();
 
-	// // Get this from $_SESSION
-	// $me = $_SESSION["user"]->getName();
+	// Get this from $_SESSION
+	$me = $_SESSION["user"]->getName();
 
 
-	// // get this from $_GET
-	// $you = '';
+	// get this from $_GET
+	$you = '';
 
-	// if( isset($_GET["user"]) && trim($_GET["user"]) ){
-		// $you = pg_escape_string($_GET["user"]);
-		// if( !$_SESSION["user"]->queryTrueFalse("select userExists('$you');") ){
-			// header("Location: messages.php");
-		// }
-	// }
-	// else{
-		// header("Location: messages.php");
-	// }
+	if( isset($_GET["user"]) && trim($_GET["user"]) ){
+		$you = pg_escape_string($_GET["user"]);
+		if( !$_SESSION["user"]->queryTrueFalse("select userExists('$you');") ){
+			header("Location: messages.php");
+		}
+	}
+	else{
+		header("Location: messages.php");
+	}
+	
+	echo "1";
 
-	// if( isset($_POST['message']) && trim($_POST['message']) ){
-		// $msg = pg_escape_string($_POST['message']);
-		// $result = $conn->queryTrueFalse("select messageUser('$me','$you','$msg');");
-		// if( !$result ){
-			// echo "An error occured!";
-		// }
-		// else{
-			// header("Refresh:0");
-		// }
-	// }
+	if( isset($_POST['message']) && trim($_POST['message']) ){
+		$msg = pg_escape_string($_POST['message']);
+		$result = $conn->queryTrueFalse("select messageUser('$me','$you','$msg');");
+		if( !$result ){
+			echo "An error occured!";
+		}
+		else{
+			header("Refresh:0");
+		}
+	}
 
-// ?>
+?>
 
 <html>
 <head>
