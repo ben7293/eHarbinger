@@ -1,15 +1,16 @@
 <?php
 
-// include_once("classes.php");
-// include_once("session.php");
-// session_start();
+include_once("classes.php");
+include_once("session.php");
+session_start();
 
 //=============================================================
 
-// if (isset($_SESSION["completedPref"])){
-	// if (!$_SESSION["completedPref"]){
-		// Create csv formatted description
+if (isset($_SESSION["completedPref"])){
+	if (!$_SESSION["completedPref"]){
+		//Create csv formatted description
 		$prefCsv = "";
+		
 		if (isset($_POST["Preferences"])){
 			foreach ($_POST["Preferences"] as $pref){
 				if ($prefCsv == ""){
@@ -22,24 +23,19 @@
 				}
 			}
 		}
-		// Send profile data to database
-		// $_SESSION["user"]->conn->queryTrueFalse(
 		
-		// $username = $_SESSION["user"]->getName();
+		// Send profile data to database
+		$username = $_SESSION["user"]->getName();
 		$name = $_POST["name"];
 		$location = $_POST["location"];
 		$lang = $_POST["lang"];
 		
-		include_once("dbconx.php");
-		$db = conn_db();
-		$db->queryTrueFalse(
-			"select updateprofile('brian','$name','$location','$lang','$prefCsv')"
+		$_SESSION["user"]->conn->queryTrueFalse(
+			"select updateprofile('$username','$name','$location','$lang','$prefCsv')"
 		);
-	// }
-	// else{
-		// header("Location: player.php");
-	// }
-// }
+	}
+}
+header("Location: player.php");
 
 	
 
