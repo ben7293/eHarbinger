@@ -6,6 +6,7 @@ session_start();
 //=============================================================
 
 var_dump($_SESSION);
+var_dump($_POST);
 // if (isset($_SESSION["completedPref"])){
 	// if (!$_SESSION["completedPref"]){
 		// //Create csv formatted description
@@ -41,7 +42,7 @@ var_dump($_SESSION);
 		// );
 	// }
 // }
-header("Location: players.php");
+//header("Location: players.php");
 
 	
 
