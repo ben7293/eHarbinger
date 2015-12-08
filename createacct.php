@@ -8,7 +8,7 @@ session_start();
 
 function addUser($user, $pxwd){
 	$db = conn_db();
-	if ($db->queryTrueFalse("select insertUser($user, $pxwd)")){
+	if ($db->queryTrueFalse("select insertUser('$user', '$pxwd')")){
 		//Log the user in
 		userAuth($user, $pxwd);
 	}
