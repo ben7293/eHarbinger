@@ -11,15 +11,10 @@
 	$you = '';
 
 	if( isset($_GET["user"]) && trim($_GET["user"]) ){
-		echo "1";
 		$you = pg_escape_string($_GET["user"]);
-		echo "2.5";
-		var_dump($_SESSION);
-		// die("");
 		if( !$_SESSION["user"]->query("select userExists('$you');", "boolean") ){
 			header("Location: messages.php");
 		}
-		echo "2";
 	}
 	else{
 		header("Location: messages.php");
@@ -47,7 +42,7 @@
 	echo "<div style='height: 75%; float: right; display: inline-block;'>";
 	echo "<div id='chat' style='height: 100%; overflow-y: scroll;'>";
 	echo "<table>";
-	$result = $_SESSION["user"]->queryTable("select * from getMessages('$me','$you');");
+	$result = $_SESSION["user"]->query("select * from getMessages('$me','$you');", "table");
 	foreach( $result as $row ){
 		if( $row['username1'] == $me ){
 			echo "<tr bgcolor='#CCCCFF'>";
