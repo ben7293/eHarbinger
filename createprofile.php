@@ -5,8 +5,8 @@ session_start();
 
 //=============================================================
 
-if (isset($_SESSION["completedPref"])){
-	if (!$_SESSION["completedPref"]){
+// if (isset($_SESSION["completedPref"])){
+	// if (!$_SESSION["completedPref"]){
 		//Create csv formatted description
 		$prefCsv = "";
 		
@@ -41,8 +41,8 @@ if (isset($_SESSION["completedPref"])){
 			// Remove profile incomplete marker
 			unset($_SESSION["completedPref"]);
 		}
-	}
-}
+	// }
+// }
 //header("Location: players.php");
 
 	
