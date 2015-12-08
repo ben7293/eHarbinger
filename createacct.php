@@ -16,11 +16,12 @@ function addUser($user, $pxwd){
 			// $_POST["user"] = $user;
 			// $_POST["pxwd"] = $pxwd;
 		}
+	}
 	else{
 		//Complain
 		header("Location: index.php?err=2");
 	}
-	}
+	
 }
 
 
