@@ -2,18 +2,19 @@
 -- are we going to use email?
 CREATE TABLE users(
 	username varchar(255) PRIMARY KEY,
-	password varchar(255) NOT NULL
+	password varchar(255) NOT NULL,
+	loginTimestamp timestamp DEFAULT current_timestamp
 );
 
 -- public profile information
 -- What did we have here again?
 CREATE TABLE users_public(
 	username varchar(255) REFERENCES users,
+	email varchar(255) NOT NULL,
 	name text DEFAULT '',
 	location text DEFAULT '',
 	languages text DEFAULT '',
-	description text DEFAULT '',
-	loginTimestamp timestamp DEFAULT current_timestamp
+	description text DEFAULT ''
 );
 
 -- users message other users
