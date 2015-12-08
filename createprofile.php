@@ -23,11 +23,11 @@ if (isset($_SESSION["completedPref"])){
 			}
 		}
 		
-		// //Send profile data to database
-		// $username = $_SESSION["user"]->getName();
-		// $name = $_POST["name"];
-		// $location = $_POST["location"];
-		// $lang = $_POST["lang"];
+		//Send profile data to database
+		$username = $_SESSION["user"]->getName();
+		$name = $_POST["name"];
+		$location = $_POST["location"];
+		$lang = $_POST["lang"];
 		
 		// // $username = "ben7293";
 		// // $name = "Benson Tsai";
