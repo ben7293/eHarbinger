@@ -39,7 +39,7 @@ else{
 		$user = pg_escape_string(trim($_POST['user']));
 		$pwxd = pg_escape_string(trim($_POST['pxwd']));
 		$email = pg_escape_string(trim($_POST['email']));
-		echo "Password is $pxwd";
+		echo "Password is " trim($_POST['pxwd']) . " or " pg_escape_string(trim($_POST['pxwd'])) " or " . $pxwd;
 		// addUser($user, $pxwd, $email);	
 	}
 	else{
