@@ -30,6 +30,8 @@
 			Name&nbsp;<input type="text" name="name">
 			<br>
 			Location&nbsp;<input type="text" name="location" placeholder="United States">
+			<br>
+			Languages$nbsp;<input type="text" name="lang" placeholder="English">
 			<!--<label for = "Avatar" class = "heading"> Pick Your Avatar: </label>-->
 			<br>
 		</div>
