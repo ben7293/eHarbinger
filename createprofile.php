@@ -35,10 +35,10 @@ if (isset($_SESSION["completedPref"])){
 		// // $lang = "English";		
 		// // $prefCsv = "A,B,C";
 		
-		// $_SESSION["user"]->conn->queryTrueFalse(
-			// "select updateprofile('$username','$name','$location','$lang','$prefCsv')"
-		// );
-		// $_SESSION["completedPref"] == TRUE;
+		$_SESSION["user"]->conn->queryTrueFalse(
+			"select updateprofile('$username','$name','$location','$lang','$prefCsv')"
+		);
+		$_SESSION["completedPref"] == TRUE;
 	}
 }
 //header("Location: players.php");
