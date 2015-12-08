@@ -117,6 +117,7 @@ class User
 			
 		}
 		elseif($type == "boolean"){
+			echo "querying";
 			return $conn->queryTrueFalse($query);
 		}
 		else return NULL;
