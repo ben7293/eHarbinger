@@ -49,6 +49,7 @@ class User
 	}
 	
 	private function userAuth($username, $password){
+		die($this->conn);
 		return $this->conn->queryTrueFalse( "select authUser('$username','$password');" );
 	}
 		
