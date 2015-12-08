@@ -8,11 +8,10 @@
 
 
 	// get this from $_GET
-	$you = $_GET["user"];
-	echo "$you , $me";
+	$you = '';
 
-	if( isset($you) && trim($you) ){
-		$you = pg_escape_string($you);
+	if( isset($_GET["user"]) && trim($_GET["user"]) ){
+		$you = pg_escape_string($_GET["user"]);
 		if( !$_SESSION["user"]->queryTrueFalse("select userExists('$you');") ){
 			header("Location: messages.php");
 		}
