@@ -43,13 +43,13 @@ class User
 	public function __construct($username, $password, $db){
 		$this->conn = $db;
 		$this->user = pg_escape_string($username);
-		if ($this->userAuth($username, $password)){
+		
+		if ($this->userAuth($this->user, $password)){
 			$this->isLoggedIn = TRUE;
 		}
 	}
 	
 	private function userAuth($username, $password){
-		die("g");
 		return $this->query( "select authUser('$username','$password');", "boolean" );
 	}
 		
