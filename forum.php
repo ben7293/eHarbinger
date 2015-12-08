@@ -39,6 +39,7 @@
 	<body>
 		<div onload = "getPosts()" style='background-color: #CCCCCC;'>
 			<?php
+				include_once("header.php");
 				$forum = $_SESSION["user"]->query("select * from getForum($forumid);", "array");
 				$fDate = date_create_from_format('Y-m-d H:i:s.u', $forum['forumtimestamp']);
 				$fDateFmt = date_format($fDate,'M d, Y \a\t h:i:sa');
