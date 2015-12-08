@@ -24,20 +24,16 @@
 		}
 		// Send profile data to database
 		// $_SESSION["user"]->conn->queryTrueFalse(
+		
+		$username = $_SESSION["user"]->getName()
+		$name = $_POST["name"];
+		$location = $_POST["location"];
+		$lang = $_POST["lang"];
+		
 		include_once("dbconx.php");
 		$db = db_conn();
 		$db->queryTrueFalse(
-			"select updateprofile
-			(
-			
-			
-			'bm1069',
-			'$_POST['name']', 
-			'$_POST['location']', 
-			'$_POST['lang']', 
-			'$prefCsv' 
-			
-			)"
+			"select updateprofile('bm1069','$name','$location','$lang','$prefCsv')"
 		);
 	// }
 	// else{
