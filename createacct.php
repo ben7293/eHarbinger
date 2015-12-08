@@ -10,7 +10,10 @@ function addUser($user, $pxwd){
 	$db = conn_db();
 	if ($db->queryTrueFalse("select insertUser('$user', '$pxwd')")){
 		//Log the user in
-		userAuth($user, $pxwd);
+		// userAuth($user, $pxwd);
+		$_POST["user"] = $user;
+		$_POST["pxwd"] = $pxwd;
+		header("Location: userauth.php");
 	}
 	else{
 		//Complain
@@ -28,8 +31,8 @@ if (isset($_SESSION["user"])){
 else{
 	// $pxwd = crypt($_POST["pxwd"]);
 	$pxwd = $_POST["pxwd"];
-	// addUser($_POST["user"], $pxwd);	
-	addUser($argv[1], $argv[2]);	
+	addUser($_POST["user"], $pxwd);	
+	// addUser($argv[1], $argv[2]);	
 }
 
 	
