@@ -2,6 +2,7 @@
 
 include_once("dbconx.php");
 include_once("classes.php");
+include_once("userauth.php"); //I wanted to redirect to userauth.php instead, still figuring this out...
 session_start();
 
 
@@ -10,9 +11,9 @@ function addUser($user, $pxwd){
 	$db = conn_db();
 	if ($db->queryTrueFalse("select insertUser('$user', '$pxwd')")){
 		//Log the user in
-		// userAuth($user, $pxwd);
-		$_POST["user"] = $user;
-		$_POST["pxwd"] = $pxwd;
+		userAuth($user, $pxwd);
+		// $_POST["user"] = $user;
+		// $_POST["pxwd"] = $pxwd;
 		header("Location: userauth.php");
 	}
 	else{
