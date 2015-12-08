@@ -30,7 +30,7 @@
 			"select updateprofile
 			(
 			
-			// '$_SESSION["user"]->getName()',
+			
 			'bm1069',
 			'$_POST["name"]', 
 			'$_POST["location"]', 
