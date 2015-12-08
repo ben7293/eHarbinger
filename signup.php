@@ -41,11 +41,11 @@
              <input type = checkbox name = Preferences value = Racing>Racing
              <input type = checkbox name = Preferences value = MMO>MMO
              <input type = checkbox name = Preferences value = Shooting>Shooting
-             <input type = checkbox name = Preferences value = Action>Action
+             <input type = checkbox name = Preferences value = Action>Action<br />
              <input type = checkbox name = Preferences value = Adventure>Adventure
              <input type = checkbox name = Preferences value = RPG>RPG
              <input type = checkbox name = Preferences value = Strategy>Strategy
-             <input type = checkbox name = Preferences value = Sports>Sports
+             <input type = checkbox name = Preferences value = Sports>Sports<br />
              <input type = checkbox name = Preferences value = Casual>Casual
              <input type = checkbox name = Preferences value = Trivia>Trivia
              <input type = checkbox name = Preferences value = Indie>Indie
