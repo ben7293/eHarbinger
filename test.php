@@ -14,8 +14,8 @@
 
 <?php
 
-	unset($_SESSION["user"]);
-	$_SESSION["user"] == NULL;
+	unset($_SESSION);
+	$_SESSION == NULL;
 	session_destroy();
 	echo "Logged out.";
 
