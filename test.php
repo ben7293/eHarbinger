@@ -14,7 +14,9 @@
 
 <?php
 
-
+	unset($_SESSION["user"]);
+	$_SESSION["user"] == NULL;
+	session_destroy();
 
 // $me = new User( 'bm1549', 'babe' );
 // $you = new User( 'ben7293', 'baby' );
