@@ -15,11 +15,8 @@ class Database
 	}
 
 	function queryArray($query){
-		echo "test";
 		$result = pg_query($query) or die("Query failed: " . pg_last_error());
-		echo "test";
-		$fetch = pg_fetch_row($result);
-		
+		$fetch = pg_fetch_assoc($result);	
 		return $fetch;
 	}
 	
