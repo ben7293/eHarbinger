@@ -7,14 +7,15 @@ session_start();
 
 
 
-function addUser($user, $pxwd){
+function addUser($user, $pxwd, $email){
 	$db = conn_db();
 	if (!$db->queryTrueFalse("select userExists('$user')")){
 		// If username does not exist
-		if ($db->queryTrueFalse("select insertUser('$user', '$pxwd')")){
+		if ($db->queryTrueFalse("select insertUser('$user', '$pxwd', '$email')")){
 			// Add user information to database
 			// Log the user in
 			userAuth($user, $pxwd, $db);
+			$_SESSION["completedPref"] = FALSE;
 			header("Location: signup.php");
 		}
 	}
@@ -35,7 +36,7 @@ if (isset($_SESSION["user"])){
 else{
 	// $pxwd = crypt($_POST["pxwd"]);
 	$pxwd = $_POST["pxwd"];
-	addUser($_POST["user"], $pxwd);	
+	addUser($_POST["user"], $pxwd, $_POST["email"]);	
 	// addUser($argv[1], $argv[2]);	
 }
 

@@ -40,12 +40,12 @@
 			<form id="signup" action="createacct.php" method="post">
 				<legend class = "heading"> Sign Up: </legend>
 				<br>
-				<label for = "Name"> Name: </label>
-				<br>
-				<input type = "text" name = "name"> <br>
-				<label for = "Email"> Email: </label>
+				<label for = "Name"> Userame: </label>
 				<br>
 				<input type = "text" name = "user"> <br>
+				<label for = "Email"> Email: </label>
+				<br>
+				<input type = "email" name = "email"> <br>
 				<label for = "Password"> Password: </label>
 				<br>
 				<input type = "password" name = "pxwd"> <br>
