@@ -25,7 +25,7 @@
 				Feedback: +10
 				<form id="message" action="messages.php" method="get">
 					<button onclick = "send()"> Message </button> 
-					<input type="hidden" name="user" value="ben7293">
+					<input type="hidden" name="user" value="brian">
 				</form>
 			</div>
 			<br>
