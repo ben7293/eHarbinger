@@ -12,11 +12,12 @@
 }
 
 #col-1{
-    float: left;
-    position: fixed;
-    padding-left: 10%;
+	float: left;
+    position: static;
+    padding-left: 5%;
     width: 30%;
     margin-top: 15%;
+    max-width: 65%;
 }
 
 #col-2{
@@ -41,6 +42,15 @@ header{
 
 .heading{
 	font-size: 36px;
+}
+
+.shift1{
+	margin-left: 10%;
+}
+
+.shift2{
+	float: center;
+	margin-left: 35%;
 }
 
 .footer{
@@ -80,22 +90,35 @@ a:link{
 	font-size: 20px;
 	color: #0B3B0B;
 	position: relative;
+	margin-bottom: 75%;
+	padding-bottom: 90%;
+	max-height: 100px;
 }
 
 a:active{
 	font-size: 18px;
 	position: relative;
+	margin-bottom: 75%;
+	padding-bottom: 90%;
+	max-height: 100px;
 }
 
 a:hover{
 	font-size: 20px;
 	position: relative;
+	margin-bottom: 75%;
+	padding-bottom: 90%;
+	max-height: 100px;
+	color: #000;
 }
 
 a:visited{
 	font-size: 18px;
 	color: #999966;
 	position: relative;
+	margin-bottom: 75%;
+	padding-bottom: 90%;
+	max-height: 100px;
 }
 
 iframe{
@@ -119,11 +142,20 @@ iframe{
 	margin-left: 10%;
 	margin-right: 65%;
 }
+.button2{
+	position: static;
+	height: 50px;
+	width: 100px;
+	background-color: #FFF;
+	margin-left: 10%;
+	margin-right: 65%;
+}
 
 #avatar{
 	float: right;
 	height: 100px;
 	width: 100px;
+	padding-left: 12%;
 }
 
 input{
@@ -154,45 +186,35 @@ form, p, span {
     margin:0;
     padding:0; 
 }
-  
-#wrapper, #loginform {
-    margin:0 auto;
-    padding-bottom:25px;
-    background:#EBF4FB;
-    width:504px;
-    border:1px solid #ACD8F0; 
-    position: fixed;
+
+#recieved{
+	color: #00F;
+	font-size: 14px;
+	font-style: bold;
 }
-  
-#loginform { padding-top:18px; }
-  
-#loginform p { margin: 5px; }
-  
-#chatbox {
-    text-align:left;
-    margin:0 auto;
-    margin-bottom:25px;
-    background:#fff;
-    height:270px;
-    width:430px;
-    border:1px solid #ACD8F0;
-    overflow:auto; 
-    position: fixed;
-    padding: 10px;
+
+#sent{
+	color: #F00;
+	font-size: 14px;
+	font-style: bold;
 }
-  
-#usermsg {
-    width:395px;
-    border:1px solid #ACD8F0; }
-  
-#submit { width: 60px; }
-  
-.error { color: #ff0000; }
-  
-#menu { padding:12.5px 25px 12.5px 25px; }
-  
-.welcome { float:left; }
-  
-.logout { float:right; }
-  
-.msgln { margin:0 0 2px 0; }
+
+.formum{
+	background-color: #CCCCCC;
+	width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    margin: 10px;
+    float: left;
+    padding: 30px;
+    text-align: center;
+}
+
+.tab{
+	background-color: #EEEEEE;
+	border-style: solid;
+}
+
+td{
+	background-color: #FFF;
+}
