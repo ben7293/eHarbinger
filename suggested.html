@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8"> 
+        <title>eHarbinger</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src = "design.js"></script>
+	</head>
+	<body>
+		<button class = "butt" onclick = "logout()"> Log Out </button>
+		<!--<textarea rows="4" cols="50">
+         I think that Mario is a great game.  
+</textarea>-->
+		<div>
+			<nav>
+				<!--<a href = "forum.html"> General Forum | </a> <a href = "popular.html"> Popular Games in Community | </a> <a href = "achievement.html"> Achievements </a> -->
+			</nav>
+		</div>
+		<div onload = "getPosts()">
+			<h1 class = "heading"> Suggested Games </h1>
+			<!-- Enter information about other posts to be made -->
+			<p class = "text"> eHarbinger Suggests: Fallout 4 is an amazing game but not quite the hype. You should still play </p>
+			<br/>
+			<table class = "tab"><!-- comments go here -->
+				<tr><td>@4:10 - Benson: </td><td>I like airplane simulator</td></tr>
+				<tr><td><!-- Benchan add timestamp pls -->@4:12 - Priyam:</td><td>League is the best</td></tr>
+			</table>
+			<br />
+			<!-- Here is form, pls use $GET for action -->
+			<form method='post' action=''>
+			<input type='text' name='comment' autofocus='autofocus' placeholder='Enter a comment here!'>
+			<input type='submit' value='Comment!'>
+			
+		</div>
+		<div>
+			<p class = "footer"> <a href = "forum.html"> General Forum | </a> <a href = "popular.html"> Popular Games in Community | </a> <a href = "achievement.html"> Achievements </a> </p>
+		</div>
+	</body>
+</html>
