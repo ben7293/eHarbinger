@@ -55,7 +55,7 @@
     <div class="cl">&nbsp;</div>
     <!-- Logo -->
     <div id="logo">
-      <h1><a href="http://all-free-download.com/free-website-templates/">e<span>Harbinger</span></a></h1>
+      <h1><span>Harbinger</span></h1>
       <p class="description">Connect with other gamers</p>
     </div>
     <!-- / Logo -->
@@ -74,10 +74,10 @@
           <div class="cl">&nbsp;</div>
           <ul>
            <!-- <li class="first active first-active"><a href= achievements.html>See Achievements</a><span class="sep">&nbsp;</span></li>-->
-			<li><a href="achievements.html"> See Achievements </a><span class="sep">&nbsp;</span></li>
-            <li><a href="achievements.html"> Find Matches </a><span class="sep">&nbsp;</span></li>
+			<li><a href="achievement.html"> See Achievements </a><span class="sep">&nbsp;</span></li>
+            <li><a href="createprofile.php"> Find Matches </a><span class="sep">&nbsp;</span></li>
             <li><a href="messages.html"> My Messages</a><span class="sep">&nbsp;</span></li>
-            <li><a href= contactUs.html>Contact Us</a><span class="sep">&nbsp;</span></li>
+            <li><a href= "contactUs.html">Contact Us</a><span class="sep">&nbsp;</span></li>
              </ul>
           <div class="cl">&nbsp;</div>
         </div>
@@ -136,7 +136,7 @@
       <div class="block">
         <div class="block-bot">
           <div class="head">
-            <div class="head-cnt"> <a href="http://all-free-download.com/free-website-templates/" class="view-all">view all</a>
+            <div class="head-cnt"> <a href="suggested.html" class="view-all">Our picks</a>
               <h3>Top Reviews</h3>
               <div class="cl">&nbsp;</div>
             </div>
@@ -144,18 +144,18 @@
           <div class="col-articles articles">
             <div class="cl">&nbsp;</div>
             <div class="article">
-              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img4.jpg" alt="" /></a> </div>
-              <h4><a href="http://all-free-download.com/free-website-templates/">F.E.A.R.2</a></h4>
-              <p class="console"><strong>PSP3</strong></p>
-            </div>
-            <div class="article">
-              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img5.jpg" alt="" /></a> </div>
-              <h4><a href="http://all-free-download.com/free-website-templates/">FALLOUT 3</a></h4>
+              <div class="image"> <img src="css/images/img4.jpg" alt="" /></div>
+              <h4>League of Legends</h4>
               <p class="console"><strong>PC</strong></p>
             </div>
             <div class="article">
-              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img6.jpg" alt="" /></a> </div>
-              <h4><a href="http://all-free-download.com/free-website-templates/">STARCRAF II</a></h4>
+              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img5.jpg" alt="" /></a> </div>
+              <h4><a href="http://all-free-download.com/free-website-templates/">Super Mario</a></h4>
+              <p class="console"><strong>PC</strong></p>
+            </div>
+            <div class="article">
+              <div class="image"><img src="css/images/img6.jpg" alt="" /></div>
+              <h4>STARCRAFT II</h4>
               <p class="console"><strong>PC</strong></p>
             </div>
             <div class="cl">&nbsp;</div>
