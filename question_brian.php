@@ -1,11 +1,18 @@
 <?php
-	require_once('classes.php');
+	require_once('session.php');
+	session_start();
+
 	$conn = new Database();
 
-	$me = 'brian';
+        $me = $_SESSION['user']->getName();
+        if( !$_SESSION['user']->isLoggedIn() ){
+                header('location: index.php');
+        }
+
+
 	$result = '';
 	$game = '';
-	$console = FALSE;
+	$console = '';
 	if( isset($_GET['game']) && trim($_GET['game']) && isset($_GET['console']) && trim($_GET['console']) ){
 		$game = pg_escape_string($_GET['game']);	
 		$console = pg_escape_string($_GET['console']);
@@ -44,6 +51,16 @@
 ?>
 
 <html>
+<script type='text/javascript'>
+function toggle(id){
+	var e = document.getElementById(id);
+	if( e.style.display == 'block' )
+		e.style.display = 'none';
+	else
+		e.style.display = 'block';
+}
+</script>
+
 <?php
 	if( $result ){
 
@@ -84,10 +101,11 @@
 	                if( $ans5 ){ echo "<input type='checkbox' name='ans5Oth$i' value='$ans5'>$ans5</input><br/>"; }
 	
 			echo "<br/>How important is this to you on a scale of 1-5?<font color='red'>*</font><br/><select name='imp$i'><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><br/>";
-	
 			$i++;
 		}
+
 		echo "<br/><input type='submit'>";
+		echo "</form>";
 	}
 	?>
 </html>
