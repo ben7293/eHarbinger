@@ -27,7 +27,7 @@
 				echo "<div id = 'avatar'>";
 				echo "</div>";
 					// echo "<img src = 'resource/avatar/$yourUserName' height='50px'>";
-					echo "<img src = 'resource/avatar/avatar height='50px'>";
+					echo "<img src = 'resource/avatar/avatar' height='50px'>";
 				echo "<div>";
 					echo "Username: $yourUserName<br>";
 					echo "Level: Expert<br>";
