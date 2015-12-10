@@ -39,11 +39,12 @@
 					$dateFmt = date_format($date, 'M d, Y \a\t h:i:sa');
 					$rating = $_SESSION["user"]->query("select * from getRating('$you')", "array");
 					$feedback = $rating['feedback'];
+					// $matchPerc = $_SESSION["user"]->query("select * from getMatchPerc('$you')", "array");
+					$matchPerc = $_SESSION["user"]->query("select matchpercent from users_match_users where username1=$me and username2=$you;", "array");
 					if( !$feedback ){
 						$feedback = 0;
 					}
-					// $match = $rating['feedback'];
-					var_dump($prof);
+
 					echo "<table>";
 					echo "<tr><td>Username:</td><td>".$prof['username']."</td></tr>";
 					echo "<tr><td>Name:</td><td>".$prof['name']."</td></tr>";
@@ -52,7 +53,7 @@
 					echo "<tr><td>Description:</td><td>".$prof['description']."</td></tr>";
 					echo "<tr><td>Feedback:</td><td>".$feedback."</td></tr>";
 					echo "<tr><td>Last Login:</td><td>".$dateFmt."</td></tr>";
-					echo "<tr><td>Match</td><td>".$match."<td></tr>";
+					echo "<tr><td>Match</td><td>".$matchPerc[0]."<td></tr>";
 					echo "</table>";
 				?>
 			</div>
