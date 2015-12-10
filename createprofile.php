@@ -18,7 +18,7 @@ session_start();
 				}
 				else{
 					// Following item
-					$prefCsv = $prefCsv . "," . $pref;
+					$prefCsv = $prefCsv . ", " . $pref;
 				}
 			}
 		}

@@ -22,18 +22,18 @@
 			foreach ($matchList as $matchInfo) {
 				// Fetch info of the other user
 				$yourUserName = $matchInfo['username'];
-				// $likeList = $_SESSION["user"]->query("SELECT * FROM users_public WHERE username='$yourUserName';", "array");
-				$likeList = $_SESSION["user"]->query("select getprofile('$yourUserName');", "array");
-				// $ratingList $_SESSION["user"]->query("SELECT sum( FROM users_public WHERE username='$yourUserName';", "array");
+				$yourProfile = $_SESSION["user"]->query("select * from getprofile('$yourUserName');", "array");
+				$likeList = trim($yourProfile["description"], ", ");
 				$rating = $_SESSION["user"]->query("select getrating('$yourUserName');", "array");
 				echo "<div id = 'avatar'>";
 				echo "</div>";
-					echo "<img src = 'resource/avatar/$yourUserName.jpg' height='50px'>";
+					// echo "<img src = 'resource/avatar/$yourUserName' height='50px'>";
+					echo "<img src = 'resource/avatar/avatar' height='50px'>";
 				echo "<div>";
-					echo "Username: $yourUserName<br>";
+					echo "Username: <a href='profile.php?user=$yourUserName'>$yourUserName</a><br>";
 					echo "Level: Expert<br>";
-					echo "Likes: " . $likeList["description"] . "<br>";
-					echo "Feedback: $rating[0]";
+					echo "Likes: " . $likeList . "<br>";
+					echo "Feedback: " . $rating["getrating"];
 					echo "<form id='message' action='messages.php' method='get'>";
 						echo "<button onclick = 'send()'> Message </button>";
 						echo "<input type='hidden' name='user' value='$yourUserName'>";

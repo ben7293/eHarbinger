@@ -12,6 +12,10 @@
 		$result = $conn->queryTable("select * from getQuestion('$game','$console');");
 	}
 
+	if( !$result ){
+                $result = $conn->queryTable("select * from getQuestion('General','General');");
+	}
+
 	$i = 1;
 	while( isset($_POST["qid$i"]) && trim($_POST["qid$i"]) && isset($_POST["ansSelf$i"]) && trim($_POST["ansSelf$i"]) ){
 		$qid = pg_escape_string($_POST["qid$i"]);
@@ -80,11 +84,6 @@
 			$i++;
 		}
 		echo "<br/><input type='submit'>";
-	}
-	else{
-	?>
-		Please select a game, Benson.
-	<?php
 	}
 	?>
 </html>

@@ -42,6 +42,12 @@
 	foreach( $resultGame as $row ){
 		array_push($games, $row['gamename']);
 	}
+
+	$users = Array();
+	$resultUser = $conn->queryTable('select username from users where isadmin=false');
+	foreach( $resultUser as $row ){
+		array_push($users,$row['username']);
+	}
 ?>
 
 <html>
@@ -90,6 +96,13 @@ GameName:<font color='red'>*</font>
 <br/>
 Game Description:
 <input type='textbox' name='newdesc'>
+<br/>
+<input type='submit'>
+</form>
+
+<h1>Add an admin</h1>
+<form method='post'>
+Select user:<font color='red'>*</font><select name='admin'><option>--Select--</option><?php foreach( $users as $user ){ echo "<option value='$user'>$user</option>";}  ?></select>
 <br/>
 <input type='submit'>
 </form>
