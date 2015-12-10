@@ -18,7 +18,7 @@
 			// First, fetch matches...
 			// Should be using a getMatches(), Brian pls
 			$myUserName = $_SESSION["user"]->getName();
-			$matchList = $_SESSION["user"]->query("SELECT * FROM users_match_users WHERE username1='$username';", "table");
+			$matchList = $_SESSION["user"]->query("SELECT * FROM users_match_users WHERE username1='$myUserName';", "table");
 			var_dump($matchList);
 			// Then parse the matches
 			foreach ($matchList as $matchInfo) {
