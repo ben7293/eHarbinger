@@ -74,10 +74,10 @@
           <div class="cl">&nbsp;</div>
           <ul>
            <!-- <li class="first active first-active"><a href= achievements.html>See Achievements</a><span class="sep">&nbsp;</span></li>-->
-			<li><a href="achievements.php"> See Achievements </a><span class="sep">&nbsp;</span></li>
-            <li><a href="players.php"> Find Matches </a><span class="sep">&nbsp;</span></li>
-            <li><a href="messages.php"> My Messages</a><span class="sep">&nbsp;</span></li>
-            <li><a href= contactUs.php>Contact Us</a><span class="sep">&nbsp;</span></li>
+			<li><a href="achievements.html"> See Achievements </a><span class="sep">&nbsp;</span></li>
+            <li><a href="achievements.html"> Find Matches </a><span class="sep">&nbsp;</span></li>
+            <li><a href="messages.html"> My Messages</a><span class="sep">&nbsp;</span></li>
+            <li><a href= contactUs.html>Contact Us</a><span class="sep">&nbsp;</span></li>
              </ul>
           <div class="cl">&nbsp;</div>
         </div>
@@ -91,120 +91,48 @@
     <div id="main-bot">
       <div class="cl">&nbsp;</div>
       <!-- Content -->
-      <div onload = "getPosts()" style='background-color: #CCCCCC;'>
       <div id="content">
         <div class="block">
           <div class="block-bot">
-			<?php
-				if( !isset($_GET['id']) ){
-					foreach($result as $row){
-						$forumid = $row['forumid'];
-						$forumSubj = $row["forumsubj"];
-						$user = $row['username'];
-						$date = date_create_from_format('Y-m-d H:i:s.u',$row['forumtimestamp']);
-						$dateFmt = date_format($date,'M d, Y \a\t h:i:sa');
-						echo "<a href='forum.php?id=$forumid'>$forumSubj</a> posted by <a href='profile.php?user=$user'>$user</a> at $dateFmt";
+            <div class="block-cnt">
+				<?php
+					if( !isset($_GET['id']) ){
+						foreach($result as $row){
+							$forumid = $row['forumid'];
+							$forumSubj = $row["forumsubj"];
+							$user = $row['username'];
+							$date = date_create_from_format('Y-m-d H:i:s.u',$row['forumtimestamp']);
+							$dateFmt = date_format($date,'M d, Y \a\t h:i:sa');
+							echo "<a href='forum.php?id=$forumid'>$forumSubj</a> posted by <a href='profile.php?user=$user'>$user</a> at $dateFmt";
+						}
 					}
-				}
-				else{
-					include_once("header.php");
-					$forum = $_SESSION["user"]->query("select * from getForum($forumid);", "array");
-					$fDate = date_create_from_format('Y-m-d H:i:s.u', $forum['forumtimestamp']);
-					$fDateFmt = date_format($fDate,'M d, Y \a\t h:i:sa');
-					echo "<h2>".$forum['forumsubj']."</h2>";
-					echo "<a href='profile.php?user=".$forum['username']."'>".$forum['username']."</a> - ".$fDateFmt;
-					echo "<p>".$forum['forumbody']."</p>";
-					$comments = $_SESSION["user"]->query("select * from getComments($forumid);", "table");
-					echo "<table bgcolor=#EEEEEE style='border-style: solid;'>";
-					foreach( $comments as $comment ){
-						$cDate = date_create_from_format('Y-m-d H:i:s.u',$comment['commenttimestamp']);
-						$cDateFmt = date_format($cDate, 'M d, Y \a\t h:i:sa');
-						echo "<tr><td>".$cDateFmt." - ".$comment['username']."</td><td>".$comment['commentbody']."</td></tr>";
+					else{
+						include_once("header.php");
+						$forum = $_SESSION["user"]->query("select * from getForum($forumid);", "array");
+						$fDate = date_create_from_format('Y-m-d H:i:s.u', $forum['forumtimestamp']);
+						$fDateFmt = date_format($fDate,'M d, Y \a\t h:i:sa');
+						echo "<h2>".$forum['forumsubj']."</h2>";
+						echo "<a href='profile.php?user=".$forum['username']."'>".$forum['username']."</a> - ".$fDateFmt;
+						echo "<p>".$forum['forumbody']."</p>";
+						$comments = $_SESSION["user"]->query("select * from getComments($forumid);", "table");
+						echo "<table bgcolor=#EEEEEE style='border-style: solid;'>";
+						foreach( $comments as $comment ){
+							$cDate = date_create_from_format('Y-m-d H:i:s.u',$comment['commenttimestamp']);
+							$cDateFmt = date_format($cDate, 'M d, Y \a\t h:i:sa');
+							echo "<tr><td>".$cDateFmt." - ".$comment['username']."</td><td>".$comment['commentbody']."</td></tr>";
+						}
+						echo "</table>";
+						echo "<br />";
+
+						echo "<form method='post' action='forum.php?id=$forumid'>";
+
+						echo "<input type='text' name='comment' autofocus='autofocus' placeholder='Enter a comment here!'>";
+						echo "<input type='submit' value='Comment!'>";
 					}
-					echo "</table>";
-					echo "<br />";
-
-					echo "<form method='post' action='forum.php?id=$forumid'>";
-
-					echo "<input type='text' name='comment' autofocus='autofocus' placeholder='Enter a comment here!'>";
-					echo "<input type='submit' value='Comment!'>";
-				}
-			?>
-          </div>
+				?>
+			</div>
         </div>
       </div>
-      <div class="block">
-        <div class="block-bot">
-          <div class="head">
-            <div class="head-cnt"> <a href="http://all-free-download.com/free-website-templates/" class="view-all">view all</a>
-              <h3>Top Reviews</h3>
-              <div class="cl">&nbsp;</div>
-            </div>
-          </div>
-          <div class="col-articles articles">
-            <div class="cl">&nbsp;</div>
-            <div class="article">
-              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img4.jpg" alt="" /></a> </div>
-              <h4><a href="http://all-free-download.com/free-website-templates/">F.E.A.R.2</a></h4>
-              <p class="console"><strong>PSP3</strong></p>
-            </div>
-            <div class="article">
-              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img5.jpg" alt="" /></a> </div>
-              <h4><a href="http://all-free-download.com/free-website-templates/">FALLOUT 3</a></h4>
-              <p class="console"><strong>PC</strong></p>
-            </div>
-            <div class="article">
-              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img6.jpg" alt="" /></a> </div>
-              <h4><a href="http://all-free-download.com/free-website-templates/">STARCRAF II</a></h4>
-              <p class="console"><strong>PC</strong></p>
-            </div>
-            <div class="cl">&nbsp;</div>
-          </div>
-        </div>
-      </div>
-      <div class="block">
-        <div class="block-bot">
-          <div class="head">
-            <div class="head-cnt"> <a href="http://all-free-download.com/free-website-templates/" class="view-all">view all</a>
-              <h3>Editor`s Pick</h3>
-              <div class="cl">&nbsp;</div>
-            </div>
-          </div>
-          <div class="row-articles articles">
-            <div class="cl">&nbsp;</div>
-            <div class="article">
-              <div class="cl">&nbsp;</div>
-              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img7.jpg" alt="" /></a> </div>
-              <div class="cnt">
-                <h4><a href="http://all-free-download.com/free-website-templates/">F.E.A.R.2</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo sodales sit amet. Curabitur volutpat lorem euismod nunc tincidunt condimentum. Suspendisse gravida elementum mauris, in vulputate justo ultrices sit amet. Maecenas ultricies elit </p>
-              </div>
-              <div class="cl">&nbsp;</div>
-            </div>
-            <div class="article">
-              <div class="cl">&nbsp;</div>
-              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img8.jpg" alt="" /></a> </div>
-              <div class="cnt">
-                <h4><a href="http://all-free-download.com/free-website-templates/">FALLOUT 3</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo sodales sit amet. Curabitur volutpat lorem euismod nunc tincidunt condimentum. Suspendisse gravida elementum mauris, in vulputate justo ultrices sit amet. Maecenas ultricies elit in mi sagittis fringilla.</p>
-              </div>
-              <div class="cl">&nbsp;</div>
-            </div>
-            <div class="article last-article">
-              <div class="cl">&nbsp;</div>
-              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img9.jpg" alt="" /></a> </div>
-              <div class="cnt">
-                <h4><a href="http://all-free-download.com/free-website-templates/">STARCRAF II</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo sodales sit amet. Curabitur volutpat lorem euismod nunc tincidunt condimentum. Suspendisse gravida elementum mauris, in vulputate justo ultrices sit amet. Maecenas ultricies elit in mi sagittis fringilla.</p>
-              </div>
-              <div class="cl">&nbsp;</div>
-            </div>
-            <div class="cl">&nbsp;</div>
-          </div>
-        </div>
-      </div>
-    </div>			
-
       <div class="block">
         <div class="block-bot">
           <div class="head">
@@ -388,14 +316,7 @@
         <div class="navs-bot">
           <div class="cl">&nbsp;</div>
           <ul>
-            <li><a href="http://all-free-download.com/free-website-templates/">community</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">forum</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">video</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">cheats</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">features</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">downloads</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">sports</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">tech</a></li>
+            
           </ul>
           <ul>
             <li><a href="http://all-free-download.com/free-website-templates/">pc</a></li>
