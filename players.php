@@ -23,7 +23,7 @@
 				// Fetch info of the other user
 				$yourUserName = $matchInfo['username'];
 				$yourProfile = $_SESSION["user"]->query("select * from getprofile('$yourUserName');", "array");
-				$likeList = trim($yourProfile, ", ");
+				$likeList = trim($yourProfile["description"], ", ");
 				$rating = $_SESSION["user"]->query("select getrating('$yourUserName');", "array");
 				echo "<div id = 'avatar'>";
 				echo "</div>";
@@ -32,7 +32,7 @@
 				echo "<div>";
 					echo "Username: <a href='profile.php?user=$yourUserName'>$yourUserName</a><br>";
 					echo "Level: Expert<br>";
-					echo "Likes: " . $likeList["description"] . "<br>";
+					echo "Likes: " . $likeList . "<br>";
 					echo "Feedback: " . $rating["getrating"];
 					echo "<form id='message' action='messages.php' method='get'>";
 						echo "<button onclick = 'send()'> Message </button>";
