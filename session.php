@@ -1,7 +1,8 @@
 <?php
 include_once("classes.php");
 
-$index_path = "eHarbinger/index.php";
+$root_path = "eHarbinger/";
+$index_path = $root_path . "index.php";
 
 session_start();
 
