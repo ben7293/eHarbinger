@@ -55,7 +55,7 @@
     <div class="cl">&nbsp;</div>
     <!-- Logo -->
     <div id="logo">
-      <h1><span>Harbinger</span></h1>
+      <h1><span>eHarbinger</span></h1>
       <p class="description">Connect with other gamers</p>
     </div>
     <!-- / Logo -->
@@ -144,17 +144,17 @@
           <div class="col-articles articles">
             <div class="cl">&nbsp;</div>
             <div class="article">
-              <div class="image"> <img src="css/images/img4.jpg" alt="" /></div>
+              <div class="image"> <img src="img4.jpg" alt="" /></div>
               <h4>League of Legends</h4>
-              <p class="console"><strong>PC</strong></p>
+              <p class="console"><strong></strong></p>
             </div>
             <div class="article">
-              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img5.jpg" alt="" /></a> </div>
-              <h4><a href="http://all-free-download.com/free-website-templates/">Super Mario</a></h4>
-              <p class="console"><strong>PC</strong></p>
+              <div class="image"><img src="img5.jpg" alt="" /></a> </div>
+              <h4>Super Mario</h4>
+              <p class="console"><strong>Nintendo</strong></p>
             </div>
             <div class="article">
-              <div class="image"><img src="css/images/img6.jpg" alt="" /></div>
+              <div class="image"><img src="img6.jpg" alt="" /></div>
               <h4>STARCRAFT II</h4>
               <p class="console"><strong>PC</strong></p>
             </div>
@@ -165,8 +165,8 @@
       <div class="block">
         <div class="block-bot">
           <div class="head">
-            <div class="head-cnt"> <a href="http://all-free-download.com/free-website-templates/" class="view-all">view all</a>
-              <h3>Editor`s Pick</h3>
+            <div class="head-cnt"> <a href="suggested.html" class="view-all">Trending</a>
+              <h3>Top Rated Gamer's Pick</h3>
               <div class="cl">&nbsp;</div>
             </div>
           </div>
@@ -174,28 +174,28 @@
             <div class="cl">&nbsp;</div>
             <div class="article">
               <div class="cl">&nbsp;</div>
-              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img7.jpg" alt="" /></a> </div>
+              <div class="image"><img src="img7.jpg" alt="" /></div>
               <div class="cnt">
-                <h4><a href="http://all-free-download.com/free-website-templates/">F.E.A.R.2</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo sodales sit amet. Curabitur volutpat lorem euismod nunc tincidunt condimentum. Suspendisse gravida elementum mauris, in vulputate justo ultrices sit amet. Maecenas ultricies elit </p>
+                <h4>Dota 2</h4>
+                <p> The top rated gamer, Syed suggested Dota 2 for the top game this week and says "You can spend 1000 hours in it but you'll be nowhere close to saying you've mastered it. You as a player progressively improve. There's always something new to learn.</p>
               </div>
               <div class="cl">&nbsp;</div>
             </div>
             <div class="article">
               <div class="cl">&nbsp;</div>
-              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img8.jpg" alt="" /></a> </div>
+              <div class="image"><img src="img8.jpg" alt="" /></div>
               <div class="cnt">
-                <h4><a href="http://all-free-download.com/free-website-templates/">FALLOUT 3</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo sodales sit amet. Curabitur volutpat lorem euismod nunc tincidunt condimentum. Suspendisse gravida elementum mauris, in vulputate justo ultrices sit amet. Maecenas ultricies elit in mi sagittis fringilla.</p>
+                <h4>Battlefield 3</h4>
+                <p>Gamer Vincent says "From the awesome jet fly by’s to walls falling and getting quads to knifing a sniper right before he snags one of your team mates. Battlefield 3, regardless of which side of its fence you sit on, is fun.</p>
               </div>
               <div class="cl">&nbsp;</div>
             </div>
             <div class="article last-article">
               <div class="cl">&nbsp;</div>
-              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img9.jpg" alt="" /></a> </div>
+              <div class="image"><img src="img4.jpg" alt="" /></a> </div>
               <div class="cnt">
-                <h4><a href="http://all-free-download.com/free-website-templates/">STARCRAF II</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo sodales sit amet. Curabitur volutpat lorem euismod nunc tincidunt condimentum. Suspendisse gravida elementum mauris, in vulputate justo ultrices sit amet. Maecenas ultricies elit in mi sagittis fringilla.</p>
+                <h4>League of Legends</h4>
+                <p> Top matched gamer Brian says that he enjoys League as no other game. The champions are designed well and there is so much variety to look forward to. And the skins in the game!</p>
               </div>
               <div class="cl">&nbsp;</div>
             </div>
@@ -215,16 +215,13 @@
         <div class="block-bot">
           <div class="block-cnt">
             <div class="cl">&nbsp;</div>
-<<<<<<< HEAD
-            <a href="admin.php" class="button button-left">sign in</a> <a href="admin.php" class="button button-right">create account</a>
-=======
+            
             <center>
 			<form action="userauth.php" method="post">
 				<button type="submit"> Log Out </button>
 				<input type="hidden" name="type" value="logout">
 			</form>
 			</center>
->>>>>>> b3f60708c201087dfe56f135ada50ceffde51990
             <div class="cl">&nbsp;</div>
             
           </div>
@@ -235,35 +232,35 @@
         <div class="block-bot">
           <div class="head">
             <div class="head-cnt">
-              <h3>Top Games</h3>
+              <h3> What's New</h3>
             </div>
           </div>
           <div class="image-articles articles">
             <div class="cl">&nbsp;</div>
             <div class="article">
               <div class="cl">&nbsp;</div>
-              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img1.gif" alt="" /></a> </div>
+              <div class="image"><img src="im1.jpg" alt="" /></div>
               <div class="cnt">
-                <h4><a href="http://all-free-download.com/free-website-templates/">TMNT</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie </p>
+                <h4>Bloodborne</h4>
+                <p>Bloodborne follows the player character, the Hunter, through the fictional decrepit Gothic city of Yharnam.</p>
               </div>
               <div class="cl">&nbsp;</div>
             </div>
             <div class="article">
               <div class="cl">&nbsp;</div>
-              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img2.gif" alt="" /></a> </div>
+              <div class="image"><img src="im2.jpg" alt="" /></div>
               <div class="cnt">
-                <h4><a href="http://all-free-download.com/free-website-templates/">F.E.A.R.2</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie </p>
+                <h4>Mortal Kombat X </a></h4>
+                <p>Like previous Mortal Kombat games, Mortal Kombat X‍ '​s gameplay consists of two players, or one player and the CPU using character specific attacks</p>
               </div>
               <div class="cl">&nbsp;</div>
             </div>
             <div class="article">
               <div class="cl">&nbsp;</div>
-              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img3.gif" alt="" /></a> </div>
+              <div class="image"><img src= "im3.jpg" alt="" /></div>
               <div class="cnt">
-                <h4><a href="http://all-free-download.com/free-website-templates/">Steel Fury</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie </p>
+                <h4>H1Z1</h4>
+                <p>A zombie survival MMO set in a post-apocalyptic sandbox world where thousands of players must align with friends in order to survive the worldwide infection.</p>
               </div>
               <div class="cl">&nbsp;</div>
             </div>
@@ -277,35 +274,35 @@
         <div class="block-bot">
           <div class="head">
             <div class="head-cnt">
-              <h3>Top Videos</h3>
+              <h3>Shared Links</h3>
             </div>
           </div>
           <div class="image-articles articles">
             <div class="cl">&nbsp;</div>
             <div class="article">
               <div class="cl">&nbsp;</div>
-              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img1.gif" alt="" /></a> </div>
+              <div class="image"> <a href="https://www.youtube.com/watch?v=CriFmT_OFLE"><img src="im4.jpg" alt="" /></a> </div>
               <div class="cnt">
-                <h4><a href="http://all-free-download.com/free-website-templates/">FALLOUT3</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie </p>
+                <h4>Graphics</h4>
+                <p>Check out how graphics factors in the wholesome gaming experience.</p>
               </div>
               <div class="cl">&nbsp;</div>
             </div>
             <div class="article">
               <div class="cl">&nbsp;</div>
-              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img2.gif" alt="" /></a> </div>
+              <div class="image"> <a href="https://www.youtube.com/watch?v=gM8-HNnxJtk"><img src="im5.jpg" alt="" /></a> </div>
               <div class="cnt">
-                <h4><a href="http://all-free-download.com/free-website-templates/">Crysis</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie </p>
+                <h4>PC Multiplayer Games</h4>
+                <p>Some of the most popular video games for your PC are featured. Farcry 2 to Rise of Nations...</p>
               </div>
               <div class="cl">&nbsp;</div>
             </div>
             <div class="article">
               <div class="cl">&nbsp;</div>
-              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img3.gif" alt="" /></a> </div>
+              <div class="image"> <a href="https://www.youtube.com/watch?v=jXU5k4U8x20"><img src="im6.jpg" alt="" /></a> </div>
               <div class="cnt">
-                <h4><a href="http://all-free-download.com/free-website-templates/">F.E.A.R.2</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie </p>
+                <h4>Star Wars Battlefront</h4>
+                <p>Such a thrill where you can battle in epic 40 multiplayer battles reminiscent of The Battle of Hoth. </p>
               </div>
               <div class="cl">&nbsp;</div>
             </div>
@@ -328,19 +325,12 @@
             
           </ul>
           <ul>
-            <li><a href="http://all-free-download.com/free-website-templates/">pc</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">xbox</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">360</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">wii</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">ps3</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">ps2</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">psp</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">ds</a></li>
+
           </ul>
           <div class="cl">&nbsp;</div>
         </div>
       </div>
-      <p class="copy">&copy; Sitename.com. Design by <a href="http://chocotemplates.com">ChocoTemplates.com</a></p>
+      
     </div>
     <!-- / Footer -->
   </div>
@@ -348,5 +338,5 @@
 <!-- / Main -->
 </div>
 <!-- / Page -->
-<div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div></body>
+<div align=center>Feel free to post</div></body>
 </html>
