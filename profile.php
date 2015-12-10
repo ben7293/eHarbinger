@@ -40,7 +40,7 @@
 					$rating = $_SESSION["user"]->query("select * from getRating('$you')", "array");
 					$feedback = $rating['feedback'];
 					// $matchPerc = $_SESSION["user"]->query("select * from getMatchPerc('$you')", "array");
-					$matchPerc = $_SESSION["user"]->query("select matchpercent from users_match_users where username1=$me and username2=$you;", "array");
+					$matchPerc = $_SESSION["user"]->query("select matchpercent from users_match_users where username1='$me' and username2='$you';", "array");
 					if( !$feedback ){
 						$feedback = 0;
 					}
