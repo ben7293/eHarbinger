@@ -8,7 +8,7 @@ DECLARE
 BEGIN
 	IF EXISTS (SELECT * FROM users_match_users WHERE username1 = in_username1 and username2 = in_username2) THEN
 		UPDATE users_match_users SET mathPercent = in_matchPercent WHERE username1 = in_username1 and username2 = in_username2;
-		IF EXISTS (SELECT * FROM users_friend_users WHERE username1 = in_username2 and username2 = in_username1 and matchPercent = in_matchPercent) THEN
+		IF EXISTS (SELECT * FROM users_match_users WHERE username1 = in_username1 and username2 = in_username2 and matchPercent = in_matchPercent) THEN
 			RETURN true;
 		ELSE
 			RETURN false;
