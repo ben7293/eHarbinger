@@ -15,6 +15,9 @@
 		<?php include_once("header.php"); ?>
 		<div id = "col-2"  onload = "playerInfo()">
 			<?php 
+			// First, fetch matches...
+			// Should be using a getMatches(), Brian pls
+			$_SESSION["user"]->query("SELECT * FROM users_match_usrs WHERE username1='$_SESSION["user"]->getName()';", "table");
 			echo "<div id = \"avatar\">";
 				echo "<img src = \"resource/avatar/$user.jpg\">";
 			echo "</div>";

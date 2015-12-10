@@ -74,10 +74,10 @@
           <div class="cl">&nbsp;</div>
           <ul>
            <!-- <li class="first active first-active"><a href= achievements.html>See Achievements</a><span class="sep">&nbsp;</span></li>-->
-			<li><a href="achievements.html"> See Achievements </a><span class="sep">&nbsp;</span></li>
-            <li><a href="achievements.html"> Find Matches </a><span class="sep">&nbsp;</span></li>
-            <li><a href="messages.html"> My Messages</a><span class="sep">&nbsp;</span></li>
-            <li><a href= contactUs.html>Contact Us</a><span class="sep">&nbsp;</span></li>
+			<li><a href="achievements.php"> See Achievements </a><span class="sep">&nbsp;</span></li>
+            <li><a href="players.php"> Find Matches </a><span class="sep">&nbsp;</span></li>
+            <li><a href="messages.php"> My Messages</a><span class="sep">&nbsp;</span></li>
+            <li><a href= contactUs.php>Contact Us</a><span class="sep">&nbsp;</span></li>
              </ul>
           <div class="cl">&nbsp;</div>
         </div>
