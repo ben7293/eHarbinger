@@ -29,7 +29,15 @@ CREATE TABLE users_message_users(
 -- allow psql to use default value in all inserts
 CREATE TABLE questions(
 	questionId serial PRIMARY KEY,
-	questionText text NOT NULL
+	gameName varchar(255),
+	gameConsole varchar(255),
+	FOREIGN KEY( gameName, gameConsole ) REFERENCES games,
+	questionText text NOT NULL,
+	answer1 varchar(255) DEFAULT '',
+	answer2 varchar(255) DEFAULT '',
+	answer3 varchar(255) DEFAULT '',
+	answer4 varchar(255) DEFAULT '',
+	answer5 varchar(255) DEFAULT ''
 );
 
 -- Answer (even with multiple choices) can be encoded in integer
@@ -40,7 +48,7 @@ CREATE TABLE users_answer_questions(
 	username varchar(255) REFERENCES users,
 	questionId integer REFERENCES questions,
 	answerSelf integer NOT NULL,
-	answerOther integer NOT NULL,
+	answerOther varchar(255) NOT NULL,
 	importance integer NOT NULL,
 	CHECK( importance BETWEEN 0 and 5 )	
 );
