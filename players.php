@@ -17,24 +17,32 @@
 			<?php 
 			// First, fetch matches...
 			// Should be using a getMatches(), Brian pls
-			$username = $_SESSION["user"]->getName();
-			$_SESSION["user"]->query("SELECT * FROM users_match_usrs WHERE username1='$username';", "table");
-			echo "<div id = \"avatar\">";
-				echo "<img src = \"resource/avatar/$user.jpg\">";
-			echo "</div>";
-			echo "<div>";
-				echo "Username: champion<br>";
-				echo "Level: Expert<br>";
-				echo "Played With: 7 Players<br>";
-				echo "Likes: PC, MMO <br>";
-				echo "Feedback: +10";
-				echo "<form id="message" action="messages.php" method="get">";
-					echo "<button onclick = "send()"> Message </button>";
-					echo "<input type="hidden" name="user" value="brian">";
-				echo "</form>";
-			echo "</div>";
-			
-			echo "<br>";
+			$myUserName = $_SESSION["user"]->getName();
+			$matchList = $_SESSION["user"]->query("SELECT * FROM users_match_users WHERE username1='$username';", "table");
+			// Then parse the matches
+			foreach $matchList as $matchInfo{
+				// Fetch info of the other user
+				$yourUserName = $matchInfo['username2'];
+				$likeList = $_SESSION["user"]->query("SELECT * FROM users_public WHERE username='$yourUserName';", "array");
+				echo "<div id = 'avatar'>";
+					echo "<img src = 'resource/avatar/$yourUserName.jpg'>";
+				echo "</div>";
+				echo "<div>";
+					echo "Username: $yourUserName<br>";
+					echo "Level: Expert<br>";
+					echo "Played With: 7 Players<br>";
+					echo "Likes: $likeList['description'] <br>";
+					echo "Feedback: +10";
+					echo "<form id='message' action='messages.php' method='get'>";
+						echo "<button onclick = 'send()'> Message </button>";
+						echo "<input type='hidden' name='user' value='$yourUserName'>";
+					echo "</form>";
+				echo "</div>";
+				
+				echo "<br>";
+
+			}
+
 			
 			?>
 			<div id = "avatar"> 
