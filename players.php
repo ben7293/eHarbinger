@@ -20,7 +20,7 @@
 			$myUserName = $_SESSION["user"]->getName();
 			$matchList = $_SESSION["user"]->query("SELECT * FROM users_match_users WHERE username1='$username';", "table");
 			// Then parse the matches
-			foreach $matchList as $matchInfo{
+			foreach ($matchList as $matchInfo) {
 				// Fetch info of the other user
 				$yourUserName = $matchInfo['username2'];
 				$likeList = $_SESSION["user"]->query("SELECT * FROM users_public WHERE username='$yourUserName';", "array");
