@@ -81,3 +81,33 @@
 		</div>
 	</body>
 </html>
+
+<?php
+	include_once("session.php");
+	include_once("classes.php");
+	session_start();
+
+	$me = $_SESSION["user"]->getName();
+	$forumid=0;
+	if( isset($_GET['id']) && trim($_GET['id']) ){
+		$forumid = pg_escape_string($_GET['id']);
+		if( $_SESSION["user"]->query("select forumExists($forumid);", "boolean" )){
+			if( isset($_POST['comment']) && trim($_POST['comment']) ){
+				$comment = pg_escape_string($_POST['comment']);
+				if( $_SESSION["user"]->query("select insertComment($forumid,'$me','$comment');", "boolean") ){
+					header("refresh: 0");
+				}
+				else{
+					echo "Comment failed to post!";
+				}
+			}
+		}
+		else{
+			header('location: forum.php');
+		}
+	}
+	else{
+			$result = $_SESSION["user"]->query("select * from getrecentforums(10);", "table");
+
+	}
+?>
