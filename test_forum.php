@@ -92,6 +92,9 @@
       <div class="cl">&nbsp;</div>
       <!-- Content -->
       <div onload = "getPosts()" style='background-color: #CCCCCC;'>
+      <div id="content">
+        <div class="block">
+          <div class="block-bot">
 			<?php
 				if( !isset($_GET['id']) ){
 					foreach($result as $row){
@@ -127,8 +130,81 @@
 					echo "<input type='submit' value='Comment!'>";
 				}
 			?>
-			
-		</div>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="block-bot">
+          <div class="head">
+            <div class="head-cnt"> <a href="http://all-free-download.com/free-website-templates/" class="view-all">view all</a>
+              <h3>Top Reviews</h3>
+              <div class="cl">&nbsp;</div>
+            </div>
+          </div>
+          <div class="col-articles articles">
+            <div class="cl">&nbsp;</div>
+            <div class="article">
+              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img4.jpg" alt="" /></a> </div>
+              <h4><a href="http://all-free-download.com/free-website-templates/">F.E.A.R.2</a></h4>
+              <p class="console"><strong>PSP3</strong></p>
+            </div>
+            <div class="article">
+              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img5.jpg" alt="" /></a> </div>
+              <h4><a href="http://all-free-download.com/free-website-templates/">FALLOUT 3</a></h4>
+              <p class="console"><strong>PC</strong></p>
+            </div>
+            <div class="article">
+              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img6.jpg" alt="" /></a> </div>
+              <h4><a href="http://all-free-download.com/free-website-templates/">STARCRAF II</a></h4>
+              <p class="console"><strong>PC</strong></p>
+            </div>
+            <div class="cl">&nbsp;</div>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="block-bot">
+          <div class="head">
+            <div class="head-cnt"> <a href="http://all-free-download.com/free-website-templates/" class="view-all">view all</a>
+              <h3>Editor`s Pick</h3>
+              <div class="cl">&nbsp;</div>
+            </div>
+          </div>
+          <div class="row-articles articles">
+            <div class="cl">&nbsp;</div>
+            <div class="article">
+              <div class="cl">&nbsp;</div>
+              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img7.jpg" alt="" /></a> </div>
+              <div class="cnt">
+                <h4><a href="http://all-free-download.com/free-website-templates/">F.E.A.R.2</a></h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo sodales sit amet. Curabitur volutpat lorem euismod nunc tincidunt condimentum. Suspendisse gravida elementum mauris, in vulputate justo ultrices sit amet. Maecenas ultricies elit </p>
+              </div>
+              <div class="cl">&nbsp;</div>
+            </div>
+            <div class="article">
+              <div class="cl">&nbsp;</div>
+              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img8.jpg" alt="" /></a> </div>
+              <div class="cnt">
+                <h4><a href="http://all-free-download.com/free-website-templates/">FALLOUT 3</a></h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo sodales sit amet. Curabitur volutpat lorem euismod nunc tincidunt condimentum. Suspendisse gravida elementum mauris, in vulputate justo ultrices sit amet. Maecenas ultricies elit in mi sagittis fringilla.</p>
+              </div>
+              <div class="cl">&nbsp;</div>
+            </div>
+            <div class="article last-article">
+              <div class="cl">&nbsp;</div>
+              <div class="image"> <a href="http://all-free-download.com/free-website-templates/"><img src="css/images/img9.jpg" alt="" /></a> </div>
+              <div class="cnt">
+                <h4><a href="http://all-free-download.com/free-website-templates/">STARCRAF II</a></h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum molestie urna, id scelerisque leo sodales sit amet. Curabitur volutpat lorem euismod nunc tincidunt condimentum. Suspendisse gravida elementum mauris, in vulputate justo ultrices sit amet. Maecenas ultricies elit in mi sagittis fringilla.</p>
+              </div>
+              <div class="cl">&nbsp;</div>
+            </div>
+            <div class="cl">&nbsp;</div>
+          </div>
+        </div>
+      </div>
+    </div>			
+
       <div class="block">
         <div class="block-bot">
           <div class="head">
