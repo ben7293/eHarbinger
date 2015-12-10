@@ -33,6 +33,7 @@
 					echo "Username: $yourUserName<br>";
 					echo "Level: Expert<br>";
 					echo "Likes: " . $likeList["description"] . "<br>";
+					var_dump($rating);
 					echo "Feedback: $rating[0]";
 					echo "<form id='message' action='messages.php' method='get'>";
 						echo "<button onclick = 'send()'> Message </button>";
