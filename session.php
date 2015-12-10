@@ -18,7 +18,7 @@ if (isset($_SESSION["user"])){
 		// echo $_SESSION["user"]->isLoggedIn();
 		// echo "Session verification successful<br />";
 		// echo $index_path;
-		if ( substr($_SERVER["REQUEST_URI"], -10, 10) == $index_path || $_SERVER["REQUEST_URI"] == $root_path){
+		if ( substr($_SERVER["REQUEST_URI"], -11, 11) == $index_path || $_SERVER["REQUEST_URI"] == $root_path){
 			echo "yes";
 			Header("Location: players.php");
 			exit;
