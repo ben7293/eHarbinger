@@ -53,7 +53,7 @@
 					echo "<tr><td>Description:</td><td>".$prof['description']."</td></tr>";
 					echo "<tr><td>Feedback:</td><td>".$feedback."</td></tr>";
 					echo "<tr><td>Last Login:</td><td>".$dateFmt."</td></tr>";
-					echo "<tr><td>Match</td><td>".$matchPerc['matchpercent']."<td></tr>";
+					echo "<tr><td>Match:</td><td>".$matchPerc['matchpercent']."<td></tr>";
 					echo "</table>";
 				?>
 			</div>
