@@ -4,7 +4,7 @@ include_once("classes.php");
 $index_path = "eHarbinger/index.php";
 session_start();
 
-		$current_path = explode('/', $_SERVER["REQUEST_URI"]);
+		$current_path = explode('/', $_SERVER["REQUEST_URI"])[3];
 
 if (isset($_SESSION["user"])){
 	if ($_SESSION["user"]->isLoggedIn()){
@@ -12,7 +12,7 @@ if (isset($_SESSION["user"])){
 		// echo $_SESSION["user"]->isLoggedIn();
 		// echo "Session verification successful<br />";
 		// echo $index_path;
-		$current_path = explode('/', $_SERVER["REQUEST_URI"]);
+		$current_path = explode('/', $_SERVER["REQUEST_URI"])[3];
 
 		if ( substr($_SERVER["REQUEST_URI"], -10, 10) == $index_path || substr($_SERVER["REQUEST_URI"], -10, 10) == $root_path){
 			echo "yes";
