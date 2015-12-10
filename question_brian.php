@@ -1,11 +1,18 @@
 <?php
-	require_once('classes.php');
+	require_once('session.php');
+	session_start();
+
 	$conn = new Database();
 
-	$me = 'brian';
+        $me = $_SESSION['user']->getName();
+        if( !$_SESSION['user']->isLoggedIn() ){
+                header('location: index.php');
+        }
+
+
 	$result = '';
 	$game = '';
-	$console = FALSE;
+	$console = '';
 	if( isset($_GET['game']) && trim($_GET['game']) && isset($_GET['console']) && trim($_GET['console']) ){
 		$game = pg_escape_string($_GET['game']);	
 		$console = pg_escape_string($_GET['console']);
