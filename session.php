@@ -19,6 +19,8 @@ if (isset($_SESSION["user"])){
 		// echo "Session verification successful<br />";
 		// echo $index_path;
 		if ( substr($_SERVER["REQUEST_URI"], -11, 11) == $index_path || $_SERVER["REQUEST_URI"] == $root_path){
+			var_dump(substr($_SERVER["REQUEST_URI"], -11, 11));
+			die();
 			echo "yes";
 			Header("Location: players.php");
 			exit;
