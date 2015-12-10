@@ -29,7 +29,7 @@
 					// echo "<img src = 'resource/avatar/$yourUserName' height='50px'>";
 					echo "<img src = 'resource/avatar/avatar' height='50px'>";
 				echo "<div>";
-					echo "Username: $yourUserName<br>";
+					echo "Username: <a href='profile.php?user=$yourUserName'>$yourUserName</a><br>";
 					echo "Level: Expert<br>";
 					echo "Likes: " . $likeList["description"] . "<br>";
 					echo "Feedback: " . $rating["getrating"];
