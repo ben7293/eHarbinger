@@ -4,7 +4,7 @@ RETURNS TABLE( feedback bigint ) AS
 $$
 BEGIN
 	RETURN QUERY
-	SELECT count(u.username2) AS feedback
+	SELECT sum(u.rating) AS feedback
 	FROM users_rate_users AS u
 	WHERE username2=in_username
 	GROUP BY username2;

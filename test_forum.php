@@ -215,7 +215,16 @@
         <div class="block-bot">
           <div class="block-cnt">
             <div class="cl">&nbsp;</div>
+<<<<<<< HEAD
             <a href="admin.php" class="button button-left">sign in</a> <a href="admin.php" class="button button-right">create account</a>
+=======
+            <center>
+			<form action="userauth.php" method="post">
+				<button type="submit"> Log Out </button>
+				<input type="hidden" name="type" value="logout">
+			</form>
+			</center>
+>>>>>>> b3f60708c201087dfe56f135ada50ceffde51990
             <div class="cl">&nbsp;</div>
             
           </div>

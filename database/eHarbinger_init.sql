@@ -3,6 +3,7 @@
 CREATE TABLE users(
 	username varchar(255) PRIMARY KEY,
 	password varchar(255) NOT NULL,
+	isAdmin boolean DEFAULT false,
 	loginTimestamp timestamp DEFAULT current_timestamp
 );
 

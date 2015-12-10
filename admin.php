@@ -14,7 +14,7 @@
 		}
 	}
 
-	if( isset($_POST['qtext']) && trim($_POST['qtext']) && isset($_POST['ans1']) && trim($_POST['ans1']) ){
+	if( isset($_POST['qtext']) && trim($_POST['qtext']) && isset($_POST['ans1']) && trim($_POST['ans1']) && isset($_POST['ans2']) && trim($_POST['ans2']) ){
 		$console = pg_escape_string($_POST['console']);
 		$game = pg_escape_string($_POST['game']);
 		$qtext = pg_escape_string($_POST['qtext']);
@@ -47,19 +47,19 @@
 <html>
 <h1>Add a question</h1>
 <form method='post'>
-Select Console:
+Select Console:<font color='red'>*</font>
 <select name='console'><option>--Select--</option><?php foreach( $consoles as $console){ echo "<option value='$console'>$console</option>";}?></select>
 <br/>
-Select Game:
+Select Game:<font color='red'>*</font>
 <select name='game'><option>--Select--</option><?php foreach( $games as $game){ echo "<option value='$game'>$game</option>";} ?></select>
 <br/>
-Question text:
+Question text:<font color='red'>*</font>
 <input type='textbox' name='qtext'>
 <br/>
-Answer 1:
+Answer 1:<font color='red'>*</font>
 <input type='text' name='ans1'>
 <br/>
-Answer 2:
+Answer 2:<font color='red'>*</font>
 <input type='text' name='ans2'>
 <br/>
 Answer 3:
@@ -78,19 +78,17 @@ Answer 5:
 
 <h1>Add a game</h1>
 <form method='post'>
-GameConsole:<br/>
-Select an existing console or add a new one below!
+GameConsole:<font color='red'>*</font><br/>
+Select an existing console or add a new one!
 <br/>
 <select name='oldconsole'><option>--Select--</option><?php foreach( $consoles as $console){ echo "<option value='$console'>$console</option>";}?></select>
  or 
 <input type='text' name='newconsole'>
 <br/>
-GameName
-<br/>
+GameName:<font color='red'>*</font>
 <input type='text' name='newgame'>
 <br/>
-Game Description
-<br/>
+Game Description:
 <input type='textbox' name='newdesc'>
 <br/>
 <input type='submit'>

@@ -2,7 +2,8 @@
 include_once("classes.php");
 
 $session_path = "/home/FALL2015/bt773/public_html/eHarbinger/sessions";
-$root_path = "/~bt773/eHarbinger/";
+// $root_path = "/~bt773/eHarbinger/";
+$root_path = "eHarbinger/";
 $index_path = $root_path . "index.php";
 
 
@@ -17,7 +18,9 @@ if (isset($_SESSION["user"])){
 		// echo $_SESSION["user"]->isLoggedIn();
 		// echo "Session verification successful<br />";
 		// echo $index_path;
-		if ($_SERVER["REQUEST_URI"] == $index_path || $_SERVER["REQUEST_URI"] == $root_path){
+		if ( substr($_SERVER["REQUEST_URI"], -11, 11) == $index_path || $_SERVER["REQUEST_URI"] == $root_path){
+			var_dump(substr($_SERVER["REQUEST_URI"], -11, 11));
+			die();
 			echo "yes";
 			Header("Location: players.php");
 			exit;
