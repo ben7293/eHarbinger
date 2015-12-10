@@ -31,6 +31,7 @@
 				echo "<div>";
 					echo "Username: <a href='profile.php?user=$yourUserName'>$yourUserName</a><br>";
 					echo "Level: Expert<br>";
+					var_dump($likeList);
 					echo "Likes: " . $likeList["description"] . "<br>";
 					echo "Feedback: " . $rating["getrating"];
 					echo "<form id='message' action='messages.php' method='get'>";
