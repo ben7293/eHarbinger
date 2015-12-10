@@ -37,7 +37,7 @@
 					$prof = $_SESSION["user"]->query("select * from getProfile('$you')", "array");
 					$date = date_create_from_format('Y-m-d H:i:s.u',$prof['logintimestamp']);
 					$dateFmt = date_format($date, 'M d, Y \a\t h:i:sa');
-					$rating = $_SESSION["user"]->query("select * from getMatches('$myUserName', 5)", "table");
+					$rating = $_SESSION["user"]->query("select * from getRating('$you')", "table");
 					$feedback = $rating['feedback'];
 					if( !$feedback ){
 						$feedback = 0;
