@@ -22,13 +22,12 @@
 			foreach ($matchList as $matchInfo) {
 				// Fetch info of the other user
 				$yourUserName = $matchInfo['username'];
-				// $likeList = $_SESSION["user"]->query("SELECT * FROM users_public WHERE username='$yourUserName';", "array");
 				$likeList = $_SESSION["user"]->query("select getprofile('$yourUserName');", "array");
-				// $ratingList $_SESSION["user"]->query("SELECT sum( FROM users_public WHERE username='$yourUserName';", "array");
 				$rating = $_SESSION["user"]->query("select getrating('$yourUserName');", "array");
 				echo "<div id = 'avatar'>";
 				echo "</div>";
-					echo "<img src = 'resource/avatar/$yourUserName.jpg' height='50px'>";
+					// echo "<img src = 'resource/avatar/$yourUserName.jpg' height='50px'>";
+					echo "<img src = 'resource/avatar/avatar.jpg' height='50px'>";
 				echo "<div>";
 					echo "Username: $yourUserName<br>";
 					echo "Level: Expert<br>";
