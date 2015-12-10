@@ -19,7 +19,6 @@
 			// Should be using a getMatches(), Brian pls
 			$myUserName = $_SESSION["user"]->getName();
 			$matchList = $_SESSION["user"]->query("SELECT * FROM users_match_users WHERE username1='$myUserName';", "table");
-			var_dump($matchList);
 			// Then parse the matches
 			foreach ($matchList as $matchInfo) {
 				// Fetch info of the other user
@@ -27,7 +26,7 @@
 				$likeList = $_SESSION["user"]->query("SELECT * FROM users_public WHERE username='$yourUserName';", "array");
 				echo "<div id = 'avatar'>";
 				echo "</div>";
-					echo "<img src = 'resource/avatar/$yourUserName.jpg'>";
+					echo "<img src = 'resource/avatar/$yourUserName.jpg' height="50px">";
 				echo "<div>";
 					echo "Username: $yourUserName<br>";
 					echo "Level: Expert<br>";
