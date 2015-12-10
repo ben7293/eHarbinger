@@ -215,7 +215,7 @@
         <div class="block-bot">
           <div class="block-cnt">
             <div class="cl">&nbsp;</div>
-            <a href="http://all-free-download.com/free-website-templates/" class="button button-left">sign in</a> <a href="http://all-free-download.com/free-website-templates/" class="button button-right">create account</a>
+            <a href="index.php" class="button button-left">sign in</a> <a href="index.php"button button-right">create account</a>
             <div class="cl">&nbsp;</div>
             
           </div>

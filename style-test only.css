@@ -1,0 +1,220 @@
+/* CSS file for hw 2 */
+* {
+	box-sizing: border-box;
+	font-family: Helvetica, sans-serif;
+	text-color: #141414;
+	background-color: #DDFFDD;
+}
+
+.twoColumnContainer {
+    max-width: 100%;
+    display: inline-block;
+}
+
+#col-1{
+	float: left;
+    position: static;
+    padding-left: 5%;
+    width: 30%;
+    margin-top: 15%;
+    max-width: 65%;
+}
+
+#col-2{
+    padding-left: 15%;
+    margin-left: 35%;
+    padding-right: 15%;
+    margin-top: 15%;
+}
+
+header{
+	float: top, center;
+	margin-left: 25%;
+	margin-right: 25%;
+	text-align: center;
+	font-size: 40px;
+	/*background-color: #FFF;*/
+	border: 10px, #FFF;
+	border-width: medium;
+	border-style: solid;
+	border-width: 50%;
+}
+
+.heading{
+	font-size: 36px;
+}
+
+.shift1{
+	margin-left: 10%;
+}
+
+.shift2{
+	float: center;
+	margin-left: 35%;
+}
+
+.footer{
+	text-align: center;
+	font-size: 15px;
+	padding-top: 5%;
+	margin-top: 25%;
+}
+
+.text{
+	font-style: italic;
+	font-size: 16px;
+	padding-right: 20%;
+}
+
+.text .p1{
+	font-style: underline;
+	font-size: 20px;
+	margin-top: 20%;
+	text-align: right;
+}
+
+.text .p2{
+	font-style: bold;
+	font-size: 18px;
+	margin-top: 20%;
+	text-align: right;
+}
+
+.newDocImg img{
+	padding-top: 20%;
+	height: 650px;
+	width: 350px;
+}
+
+a:link{
+	font-size: 20px;
+	color: #0B3B0B;
+	position: relative;
+	margin-bottom: 75%;
+	padding-bottom: 90%;
+	max-height: 100px;
+}
+
+a:active{
+	font-size: 18px;
+	position: relative;
+	margin-bottom: 75%;
+	padding-bottom: 90%;
+	max-height: 100px;
+}
+
+a:hover{
+	font-size: 20px;
+	position: relative;
+	margin-bottom: 75%;
+	padding-bottom: 90%;
+	max-height: 100px;
+	color: #000;
+}
+
+a:visited{
+	font-size: 18px;
+	color: #999966;
+	position: relative;
+	margin-bottom: 75%;
+	padding-bottom: 90%;
+	max-height: 100px;
+}
+
+iframe{
+	margin-left: 50%;
+	float: right;
+}
+
+.contact1{
+	float: center;
+}
+
+.contact2{
+	float: center;
+}
+
+.button1{
+	position: static;
+	height: 50px;
+	width: 100px;
+	background-color: #FFF;
+	margin-left: 10%;
+	margin-right: 65%;
+}
+.button2{
+	position: static;
+	height: 50px;
+	width: 100px;
+	background-color: #FFF;
+	margin-left: 10%;
+	margin-right: 65%;
+}
+
+#avatar{
+	float: right;
+	height: 100px;
+	width: 100px;
+	padding-left: 12%;
+}
+
+input{
+	background-color: #FFF;
+	font:12px arial;
+}
+
+.subHeading{
+	font-size: 24px;
+}
+
+.butt{
+	float: right;
+	margin-left: 80%;
+	height: 40px;
+	width: 75px;
+	background-color: #FFF;
+}
+
+nav{
+	text-align: center;
+	max-width: 100%;
+	padding-left: 8%;
+	position: static;
+	display: inherit;
+}
+form, p, span {
+    margin:0;
+    padding:0; 
+}
+
+#recieved{
+	color: #00F;
+	font-size: 14px;
+	font-style: bold;
+}
+
+#sent{
+	color: #F00;
+	font-size: 14px;
+	font-style: bold;
+}
+
+.formum{
+	background-color: #CCCCCC;
+	width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    margin: 10px;
+    float: left;
+    padding: 30px;
+    text-align: center;
+}
+
+.tab{
+	background-color: #EEEEEE;
+	border-style: solid;
+}
+
+td{
+	background-color: #FFF;
+}
