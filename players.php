@@ -31,7 +31,7 @@
 					echo "Username: $yourUserName<br>";
 					echo "Level: Expert<br>";
 					echo "Played With: 7 Players<br>";
-					echo "Likes: $likeList['description'] <br>";
+					//echo "Likes: $likeList['description'] <br>";
 					echo "Feedback: +10";
 					echo "<form id='message' action='messages.php' method='get'>";
 						echo "<button onclick = 'send()'> Message </button>";
