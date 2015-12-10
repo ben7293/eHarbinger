@@ -1,5 +1,16 @@
 <?php
-	include_once('classes.php');
+	include_once('session.php');
+	session_start();
+
+	$me = $_SESSION['user']->getName();
+	if( !$_SESSION['user']->isLoggedIn() ){
+		header('location: index.php');
+	}
+	elseif( !$_SESSION['user']->query("select isAdmin('$me');",'boolean' ))
+	{
+		header('location: index.php');
+	}
+
 	$conn = new Database();
 
 	if( ((isset($_POST['newconsole']) && trim($_POST['newconsole'])) || (isset($_POST['oldconsole']) && trim($_POST['oldconsole']))) && isset($_POST['newgame']) && trim($_POST['newgame']) ){
@@ -30,6 +41,21 @@
 
 	}
 
+	if( isset($_POST['addAdmin']) && trim($_POST['addAdmin']) ){
+		$admin = pg_escape_string($_POST['addAdmin']);
+		
+		if( !$conn->queryTrueFalse("select addAdmin('$admin');") ){
+			echo "Error: Failed to add admin: $admin";
+		}
+	}
+
+        if( isset($_POST['rmAdmin']) && trim($_POST['rmAdmin']) ){
+                $admin = pg_escape_string($_POST['rmAdmin']);
+
+                if( !$conn->queryTrueFalse("select rmAdmin('$admin');") ){
+                        echo "Error: Failed to remove admin: $admin";
+                }
+        }
 
 	$resultCon = $conn->queryTable('select DISTINCT gameConsole FROM games');
 	$consoles = Array();
@@ -44,9 +70,12 @@
 	}
 
 	$users = Array();
-	$resultUser = $conn->queryTable('select username from users where isadmin=false');
+	$admins = Array();
+	$resultUser = $conn->queryTable("select username,isadmin from users where username!='$me' and username!='brian'");
 	foreach( $resultUser as $row ){
-		array_push($users,$row['username']);
+		
+		if( $row['isadmin'] == 'f') {array_push($users,$row['username']); }
+		else{ array_push($admins,$row['username']); }
 	}
 ?>
 
@@ -102,8 +131,16 @@ Game Description:
 
 <h1>Add an admin</h1>
 <form method='post'>
-Select user:<font color='red'>*</font><select name='admin'><option>--Select--</option><?php foreach( $users as $user ){ echo "<option value='$user'>$user</option>";}  ?></select>
+Select user:<font color='red'>*</font><select name='addAdmin'><option>--Select--</option><?php foreach( $users as $user ){ echo "<option value='$user'>$user</option>";}  ?></select>
 <br/>
 <input type='submit'>
 </form>
+
+<h1>Remove an admin</h1>
+<form method='post'>
+Select admin:<font color='red'>*</font><select name='rmAdmin'><option>--Select--</option><?php foreach( $admins as $user ){ echo "<option value='$user'>$user</option>";}  ?></select>
+<br/>
+<input type='submit'>
+</form>
+
 </html>
