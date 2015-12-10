@@ -18,8 +18,8 @@
 			// First, fetch matches...
 			// Should be using a getMatches(), Brian pls
 			$myUserName = $_SESSION["user"]->getName();
-			var_dump($myUserName);
 			$matchList = $_SESSION["user"]->query("SELECT * FROM users_match_users WHERE username1='$username';", "table");
+			var_dump($matchList);
 			// Then parse the matches
 			foreach ($matchList as $matchInfo) {
 				// Fetch info of the other user
