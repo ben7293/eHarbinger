@@ -11,6 +11,11 @@ RETURNS boolean AS
 $$
 DECLARE
 BEGIN
+	IF NOT EXISTS (SELECT * FROM games WHERE gameConsole=in_gameConsole AND gameName=in_gameName)
+		THEN
+		RETURN false;
+	END IF;
+
 	INSERT INTO questions VALUES (DEFAULT, in_gameName, in_gameConsole, in_questionText, in_answer1, in_answer2, in_answer3, in_answer4, in_answer5);
 	IF EXISTS (SELECT * FROM questions WHERE gameName=in_gameName AND gameConsole=in_gameConsole AND questionText=in_questionText)
 		THEN

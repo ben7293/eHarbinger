@@ -55,8 +55,8 @@ CREATE TABLE users_answer_questions(
 
 -- needs gameId and gameConsole. Description optional
 CREATE TABLE games(
-	gameName varchar(255) NOT NULL,
-	gameConsole varchar(255) NOT NULL,
+	gameName varchar(255),
+	gameConsole varchar(255),
 	PRIMARY KEY( gameName, gameConsole ),
 	gameDesc text
 );

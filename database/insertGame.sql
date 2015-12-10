@@ -6,12 +6,14 @@ RETURNS boolean AS
 $$
 DECLARE
 BEGIN
-	INSERT INTO games VALUES (in_GameName, in_GameConsole, in_GameDesc);
 	IF EXISTS (SELECT * FROM games WHERE gameName = in_gameName AND gameConsole = in_gameConsole) THEN
-		RETURN true;
+		UPDATE games
+		SET gamedesc=in_gameDesc
+		WHERE gamename=in_gameName AND gameconsole = in_gameConsole;
 	ELSE
-		RETURN false;
+		INSERT INTO games VALUES (in_GameName, in_GameConsole, in_GameDesc);
 	END IF;
+	RETURN true;
 END;
 $$
 LANGUAGE plpgsql;
