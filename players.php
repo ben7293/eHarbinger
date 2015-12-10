@@ -18,6 +18,7 @@
 			// First, fetch matches...
 			// Should be using a getMatches(), Brian pls
 			$myUserName = $_SESSION["user"]->getName();
+			var_dump($myUserName);
 			$matchList = $_SESSION["user"]->query("SELECT * FROM users_match_users WHERE username1='$username';", "table");
 			// Then parse the matches
 			foreach ($matchList as $matchInfo) {
@@ -45,33 +46,6 @@
 
 			
 			?>
-			<div id = "avatar"> 
-				<img src = "avatar.jpg"> 
-			</div>
-			<div>
-				Username: champion<br>
-				Level: Expert<br>
-				Played With: 7 Players<br>
-				Likes: PC, MMO <br>
-				Feedback: +10
-				<form id="message" action="messages.php" method="get">
-					<button onclick = "send()"> Message </button> 
-					<input type="hidden" name="user" value="brian">
-				</form>
-			</div>
-			
-			<br>
-			<div id = "avatar"> 
-				<img src = "avatar.jpg"> 
-			</div>
-			<div>
-				Username: n00b<br>
-				Level: Newbie<br>
-				Played With: 2 Players<br>
-				Likes: Xbox, RPG <br>
-				Feedback: +1
-				<button onclick = "send()"> Message </button>
-			</div>
 		</div>
 	</body>
 </html>
