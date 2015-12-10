@@ -26,7 +26,7 @@
 				$likeList = $_SESSION["user"]->query("SELECT * FROM users_public WHERE username='$yourUserName';", "array");
 				echo "<div id = 'avatar'>";
 				echo "</div>";
-					echo "<img src = 'resource/avatar/$yourUserName.jpg' height="50px">";
+					echo "<img src = 'resource/avatar/$yourUserName.jpg' height='50px'>";
 				echo "<div>";
 					echo "Username: $yourUserName<br>";
 					echo "Level: Expert<br>";
