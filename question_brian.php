@@ -47,6 +47,8 @@
 
 		if( $game == 'General' && $console == 'General' ){
 			echo "<h1>You're Answering General Gaming Questions</h1>";
+			echo "<h2> Answering these questions helps us find the best matches for you. Please be honest to find a compatible gamer.</h2>";
+			echo "<div style ='font:11px/21px Arial,tahoma,sans-serif;color:#ff0000'> Priyam hates git pulls</div>";
 		}
 		else{
 			echo "<h1>You're Answering Questions About $game For $console</h1>";
