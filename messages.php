@@ -5,7 +5,7 @@
 
 	// Get this from $_SESSION
 	$me = $_SESSION["user"]->getName();
-	if( !$_SESSION['isLoggedIn'] ){
+	if( !$_SESSION['user']->isLoggedIn() ){
 		header('location: index.php');
 	}
 
@@ -37,7 +37,7 @@
 </head>
 <body>
 <?php
-	if( !isset($_GET['user']) ){
+	if( isset($_GET['user']) ){
 
 		echo "<div style='height: 75%; float: right; display: inline-block;'>";
 		echo "<div id='chat' style='height: 100%; overflow-y: scroll;'>";
@@ -66,8 +66,8 @@
 		echo "</div>";
 	}
 	else{
-		echo "Please select a user to talk to like";
-		echo "<a href='messages.php?ben7293'>Benson</a>";
+		echo "Please select a user to talk to like ";
+		echo "<a href='messages.php?user=ben7293'>Benson</a>";
 	}
 	?>
 

@@ -8,7 +8,7 @@
         <script type="text/javascript" src = "design.js"></script>
 		<?php
 			if (!isset($_GET["err"])){
-				include_once("session.php");
+//				include_once("session.php");
 			}
 		?>
 	</head>
