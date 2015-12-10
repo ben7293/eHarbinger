@@ -22,7 +22,8 @@
 			foreach ($matchList as $matchInfo) {
 				// Fetch info of the other user
 				$yourUserName = $matchInfo['username'];
-				$likeList = $_SESSION["user"]->query("select * from getprofile('$yourUserName');", "array");
+				$yourProfile = $_SESSION["user"]->query("select * from getprofile('$yourUserName');", "array");
+				$likeList = trim($yourProfile, ", ");
 				$rating = $_SESSION["user"]->query("select getrating('$yourUserName');", "array");
 				echo "<div id = 'avatar'>";
 				echo "</div>";
