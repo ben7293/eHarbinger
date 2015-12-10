@@ -14,11 +14,10 @@
 
 <?php
 
-	unset($_SESSION);
-	$_SESSION == NULL;
-	session_destroy();
-	echo "Logged out.";
-
+ $db = new Database();
+ $result = $db->queryArray("select * from users;");
+ var_dump($result);
+ 
 // $me = new User( 'bm1549', 'babe' );
 // $you = new User( 'ben7293', 'baby' );
 // //echo "getinfo";
