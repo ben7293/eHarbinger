@@ -13,7 +13,7 @@ if (isset($_SESSION["user"])){
 		// echo "Session verification successful<br />";
 		// echo $index_path;
 		$current_path = $_SERVER["REQUEST_URI"];
-		die(var_dump($_SERVER["REQUEST_URI"]));
+
 		if ( substr($_SERVER["REQUEST_URI"], -10, 10) == $index_path || substr($_SERVER["REQUEST_URI"], -10, 10) == $root_path){
 			echo "yes";
 			Header("Location: players.php");
@@ -26,7 +26,7 @@ else{
 	//If there is no session information
 	// echo "Session verification failed<br />";
 	if (substr($_SERVER["REQUEST_URI"], -10, 10) != $index_path){
-		die (var_dump(substr($_SERVER["REQUEST_URI"], -10, 10)));
+		die(var_dump($_SERVER["REQUEST_URI"]));
 		Header("Location: index.php");
 		exit;
 	}
