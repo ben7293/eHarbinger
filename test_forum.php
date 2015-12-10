@@ -215,7 +215,12 @@
         <div class="block-bot">
           <div class="block-cnt">
             <div class="cl">&nbsp;</div>
-            <a href="index.php" class="button button-left">sign in</a> <a href="index.php"button button-right">create account</a>
+            <center>
+			<form action="userauth.php" method="post">
+				<button type="submit"> Log Out </button>
+				<input type="hidden" name="type" value="logout">
+			</form>
+			</center>
             <div class="cl">&nbsp;</div>
             
           </div>

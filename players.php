@@ -26,8 +26,8 @@
 				$yourUserName = $matchInfo['username2'];
 				$likeList = $_SESSION["user"]->query("SELECT * FROM users_public WHERE username='$yourUserName';", "array");
 				echo "<div id = 'avatar'>";
-					echo "<img src = 'resource/avatar/$yourUserName.jpg'>";
 				echo "</div>";
+					echo "<img src = 'resource/avatar/$yourUserName.jpg'>";
 				echo "<div>";
 					echo "Username: $yourUserName<br>";
 					echo "Level: Expert<br>";
