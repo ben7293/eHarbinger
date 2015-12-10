@@ -26,7 +26,7 @@ else{
 	//If there is no session information
 	// echo "Session verification failed<br />";
 	if (substr($_SERVER["REQUEST_URI"], -10, 10) != $index_path){
-		var_dump($current_path);
+		die(var_dump($current_path));
 		Header("Location: index.php");
 		exit;
 	}
