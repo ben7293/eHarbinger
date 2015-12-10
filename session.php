@@ -12,7 +12,7 @@ if (isset($_SESSION["user"])){
 		// echo $_SESSION["user"]->isLoggedIn();
 		// echo "Session verification successful<br />";
 		// echo $index_path;
-		if ( $current_path == $index_path || $current_path == ""){
+		if ( $current_path[3] == $index_path || $current_path[3] == ""){
 			echo "yes";
 			Header("Location: players.php");
 			exit;
@@ -23,8 +23,7 @@ if (isset($_SESSION["user"])){
 else{
 	//If there is no session information
 	// echo "Session verification failed<br />";
-	if ($current_path != $index_path){
-		die($current_path);
+	if ($current_path[3] != $index_path){
 		Header("Location: index.php");
 		exit;
 	}
