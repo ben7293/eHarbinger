@@ -43,7 +43,7 @@
 						$feedback = 0;
 					}
 					// $match = $rating['feedback'];
-					var_dump($rating);
+					var_dump($prof);
 					echo "<table>";
 					echo "<tr><td>Username:</td><td>".$prof['username']."</td></tr>";
 					echo "<tr><td>Name:</td><td>".$prof['name']."</td></tr>";
