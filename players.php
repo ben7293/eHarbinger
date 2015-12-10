@@ -14,6 +14,25 @@
 		<header> You Have This Many Matches: (2) </header>
 		<?php include_once("header.php"); ?>
 		<div id = "col-2"  onload = "playerInfo()">
+			<?php 
+			echo "<div id = \"avatar\">";
+				echo "<img src = \"resource/avatar/$user.jpg\">";
+			echo "</div>";
+			echo "<div>";
+				echo "Username: champion<br>";
+				echo "Level: Expert<br>";
+				echo "Played With: 7 Players<br>";
+				echo "Likes: PC, MMO <br>";
+				echo "Feedback: +10";
+				echo "<form id="message" action="messages.php" method="get">";
+					echo "<button onclick = "send()"> Message </button>";
+					echo "<input type="hidden" name="user" value="brian">";
+				echo "</form>";
+			echo "</div>";
+			
+			echo "<br>";
+			
+			?>
 			<div id = "avatar"> 
 				<img src = "avatar.jpg"> 
 			</div>
@@ -28,6 +47,7 @@
 					<input type="hidden" name="user" value="brian">
 				</form>
 			</div>
+			
 			<br>
 			<div id = "avatar"> 
 				<img src = "avatar.jpg"> 
