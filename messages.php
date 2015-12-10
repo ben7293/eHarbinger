@@ -38,7 +38,9 @@
 <body>
 <?php
 	if( isset($_GET['user']) ){
-
+		echo "<div style='float: left;'>";
+		include_once("header.php");
+		echo "</div>";
 		echo "<div style='height: 75%; float: right; display: inline-block;'>";
 		echo "<div id='chat' style='height: 100%; overflow-y: scroll;'>";
 		echo "<table>";
