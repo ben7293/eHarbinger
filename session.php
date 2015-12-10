@@ -3,7 +3,6 @@ include_once("classes.php");
 
 $index_path = "index.php";
 $current_path = explode('/', $_SERVER["REQUEST_URI"]);
-die(var_dump($current_path));
 session_start();
 
 
