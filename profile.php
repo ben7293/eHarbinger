@@ -1,14 +1,14 @@
 <?php
 	require_once('classes.php');
-	$conn = new Database();
-
-	//. $_SESSION pls
-	$me = pg_escape_string($_GET['me']);
+	include_once('session.php');
+	session_start();
+	
+	$me = $_SESSION["user"]->getName();
 
 	$you = '';
 	if( isset($_GET['user']) && trim($_GET['user']) ){
 		$you = pg_escape_string($_GET['user']);
-		if( $me != $you && !$conn->queryTrueFalse("select userExists('$you');") ){
+		if( $me != $you && !$_SESSION["user"]->query("select userExists('$you');", "boolean") ){
 			header("Location: profile.php?user=$me");
 		}
 	}
@@ -34,16 +34,17 @@
 			</div>
 			<div onload = "info()">
 				<?php
-					$prof = $conn->queryArray("select * from getProfile('$you')");
+					$prof = $_SESSION["user"]->query("select * from getProfile('$you')", "array");
 					$date = date_create_from_format('Y-m-d H:i:s.u',$prof['logintimestamp']);
 					$dateFmt = date_format($date, 'M d, Y \a\t h:i:sa');
-					$rating = $conn->queryArray("select * from getRating('$you')");
+					$rating = $_SESSION["user"]->query("select * from getRating('$you')", "array");
 					$feedback = $rating['feedback'];
+					// $matchPerc = $_SESSION["user"]->query("select * from getMatchPerc('$you')", "array");
+					$matchPerc = $_SESSION["user"]->query("select matchpercent from users_match_users where username1='$me' and username2='$you';", "array");
 					if( !$feedback ){
 						$feedback = 0;
 					}
-					// Need to add later
-					$match = 'Baesan pls halp';
+
 					echo "<table>";
 					echo "<tr><td>Username:</td><td>".$prof['username']."</td></tr>";
 					echo "<tr><td>Name:</td><td>".$prof['name']."</td></tr>";
@@ -52,7 +53,7 @@
 					echo "<tr><td>Description:</td><td>".$prof['description']."</td></tr>";
 					echo "<tr><td>Feedback:</td><td>".$feedback."</td></tr>";
 					echo "<tr><td>Last Login:</td><td>".$dateFmt."</td></tr>";
-					echo "<tr><td>Match</td><td>".$match."<td></tr>";
+					echo "<tr><td>Match:</td><td>".$matchPerc['matchpercent']."<td></tr>";
 					echo "</table>";
 				?>
 			</div>
