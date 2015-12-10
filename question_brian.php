@@ -13,7 +13,9 @@
 	}
 
 	if( !$result ){
-                $result = $conn->queryTable("select * from getQuestion('General','General');");
+                $game = 'General';
+		$console = 'General';
+		$result = $conn->queryTable("select * from getQuestion('$game','$console');");
 	}
 
 	$i = 1;
