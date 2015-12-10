@@ -10,14 +10,15 @@
 		?>
 	</head>
 	<body>
-			
-		<header> You Have This Many Matches: (2) </header>
 		<?php include_once("header.php"); ?>
 		<div id = "col-2"  onload = "playerInfo()">
 			<?php 
 			// First, fetch matches...
 			$myUserName = $_SESSION["user"]->getName();
 			$matchList = $_SESSION["user"]->query("select * from getMatches('$myUserName', 5)", "table");
+			$numMatches = count($matchList);
+			if( !$matchList ){ $numMatches = 0; }
+			echo "<h3>You have ($numMatches) matches!</h3>";
 			// Then parse the matches
 			foreach ($matchList as $matchInfo) {
 				// Fetch info of the other user
