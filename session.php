@@ -2,9 +2,6 @@
 include_once("classes.php");
 
 $index_path = "eHarbinger/index.php";
-
-
-// if (session_save_path() != $session_path) {session_save_path($session_path);}
 session_start();
 
 
@@ -15,6 +12,8 @@ if (isset($_SESSION["user"])){
 		// echo $_SESSION["user"]->isLoggedIn();
 		// echo "Session verification successful<br />";
 		// echo $index_path;
+		$current_path = $_SERVER["REQUEST_URI"];
+		die(var_dump($_SERVER["REQUEST_URI"]));
 		if ( substr($_SERVER["REQUEST_URI"], -10, 10) == $index_path || substr($_SERVER["REQUEST_URI"], -10, 10) == $root_path){
 			echo "yes";
 			Header("Location: players.php");
