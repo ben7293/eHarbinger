@@ -44,7 +44,7 @@
 					if( !$feedback ){
 						$feedback = 0;
 					}
-
+					var_dump($matchPerc);
 					echo "<table>";
 					echo "<tr><td>Username:</td><td>".$prof['username']."</td></tr>";
 					echo "<tr><td>Name:</td><td>".$prof['name']."</td></tr>";
