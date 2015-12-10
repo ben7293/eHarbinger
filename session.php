@@ -24,6 +24,7 @@ else{
 	//If there is no session information
 	// echo "Session verification failed<br />";
 	if ($current_path != $index_path){
+		die($current_path);
 		Header("Location: index.php");
 		exit;
 	}
