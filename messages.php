@@ -32,10 +32,25 @@
 
 ?>
 
-<html>
+<html>	
 <head>
+	<meta charset='utf-8'>
+	<title>eHarbinger</title>
+	<link rel='stylesheet' type='text/css' href='css/main.css'>
 </head>
 <body>
+<section id='banner'>
+<div class = 'inner split'>
+	<section>
++		<h2> Messages for You! </h2>
++	</section>
++	<section>
++		<p> Talk to other players here :) </p>
++	</section>
++</div>
+</section>
+<div class='wrapper'>
+
 <?php
 	if( isset($_GET['user']) ){
 		echo "<div style='float: left;'>";
@@ -72,6 +87,6 @@
 		echo "<a href='messages.php?user=ben7293'>Benson</a>";
 	}
 	?>
-
+</div>
 </body>
 </html>
