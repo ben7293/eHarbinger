@@ -59,13 +59,16 @@
 </head>
 <body>
 <section id = 'banner'>
+	<section>
+	<h2> Survey Time! </h2>
+</section>
 	<div class = 'inner split'>
 		<section>
-			Survey Time!
+		<!--  BENSON Need to be able to change with question numbers -->
+			<h2> Question </h2>
 		</section>
 		<section>
-		<!-- Need to be able to change with question numbers -->
-			Question 4
+			<p> Your preferred response: </p>
 		</section>
 	</div>
 </section>

@@ -68,7 +68,7 @@
 			<h2> Question 4! </h2>
 		</section>
 		<section>
-			<p> Your peferred response: </p>
+			<p> Your preferred response: </p>
 		</section>
 	</div>
 </section>
@@ -76,17 +76,19 @@
 <div class = 'inner split'>
 	<section>
 	<!-- Need to load questions -->
-		<h2>Pick the scenario below that best describes where you usually would play games?</h2>
+		<h2>How long have you played multiplayer games?</h2>
 	</section>
 	<section>
 	<!-- Need to load answer choices -->
-		<input type = 'radio' name = 'ques4' value = 'betweenClasses'> You are in between classes and have a long break. You head to the school's cafeteria and start a League session. 
+		<input type = 'radio' name = 'ques1' value = 'betweenClasses' id = '1'><label for ='1'> About 1 year </label>
 		<br>
-		<input type = 'radio' name = 'ques4' value = 'afterWork'> You come back from work at 8pm. You are in front of your computer at 8:30pm with your dinner by your side and a League game on.
+		<input type = 'radio' name = 'ques1' value = 'afterWork' id = '2'><label for = '2'> 2 - 4 years </label>
 		<br>
-		<input type = 'radio' name = 'ques4' value = 'studyLounge'> You are sitting in your study lounge with your headphones on about to start a new game. 
+		<input type = 'radio' name = 'ques1' value = 'studyLounge' id = '3'><label for = '3'> 5 - 8 years </label>
 		<br>
-		<input type = 'radio' name = 'ques4' value = 'anywhere'> I can play in any location, quiet or loud, as long as I have my computer in front of me. 
+		<input type = 'radio' name = 'ques1' value = 'anywhere' id = '4'> <label for = '4'> 9 - 12 </label>
+		<br>
+		<input type = 'radio' name = 'ques1' value = 'anywhere' id = '5'> <label for = '5'> More than 12 years </label>
 		<br>
 		<!-- Need back end of saving answers and go to next html -->
 		<input type = 'submit' value = 'Next Question!'>  
