@@ -3,46 +3,42 @@
 	<head>
 		<meta charset="utf-8"> 
         <title>eHarbinger</title>
-        <link rel="stylesheet" type="text/css" href="style_for_achievements.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
         <script type="text/javascript" src = "design.js"></script>
 	</head>
-	<header padding-top = "2cm;">
-			Wall of Fame
-			<br>
-		</header>
-		<body background = "wall.jpg" style="overflow:hidden;">
-		<button class = "butt" onclick = "logout()"> Log Out </button>
-		<div>
-			<nav>
-				<!--<a href = "suggested.html"> Suggested Games | </a> <a href = "popular.html"> Popular Games in Community | </a> <a href = "forum.html"> General Forum </a>-->
-			</nav>
+	<body>
+		<!-- Is this needed for here??? 
+		<textarea rows="4" cols="50">
+         I think that Mario is a great game.  
+</textarea> -->
+	<section id = 'banner'>
+		<div onload = "getPosts()" class = 'inner split'>
+			<section>
+				<h2> Achievements </h2>
+			</section>
+			<section>
+			<!-- Need log out to work -->
+				<button> Log Out </button>
+			</section>
 		</div>
-		<div onload = "getPosts()">
-			<h1 class = "heading" style = "color:white" font-family = "verdana" text-align = "center" padding-top = "1cm" padding-bottom = "1cm;"> Congratulations champions!</h1>
-			<p class = "text" style = "color:white;"> <font size="4">Check out the following achievements made by players..</font></p>
-		</div>
-		<div>
+	</section>
+	<section class = 'wrapper'>
+		<div class = 'align-center'>
 			<!-- Enter information of players here -->
 			<br/>
-			<table class = "tab"><!-- comments go here -->
-			<tr>
-            <th>Gamer's Name</th>
-            <th>Accomplishment</th>
-            </tr>
-				<tr>
-    <td>Benson</td>
-    <td> Hats off to Benson for having the maximum matches this week</td>
-  </tr>
-    <tr>
-    <td>Priyam</td>
-    <td>Keep the ratings up! Highest ratings this week.</td>
-  </tr>
-</table>
-					
+			<p> Check out the following achievements made by players! </p>
+			<br>
+			<table class = "tab"><!-- Backend for achievements made -->
+				<tr><td>Benson:</td><td>Has the most poitive feedback!</a></td></tr>
+				<tr><td>Priyam:</td><td>Matched with the most players!</td></tr>
+			</table>
+			<br>
+			
 		</div>
 		<div>
-			<p class = "footer" padding-top = "1cm;"> <a href = "suggested.html"> Suggested Games | </a> <a href = "popular.html"> Popular Games in Community | </a> <a href = "forum.html"> General Forum </a </p>
+			<footer> 
+				<a href = "suggested.html"> Suggested Games | </a> <a href = "popular.html"> Popular Games in Community | </a> <a href = "forum.html"> General Forum | </a> <a href = "profile.html"> My Profile </a> 
+			</footer>
 		</div>
 	</body>
-	
-	</html>
+</html>

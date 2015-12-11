@@ -5,9 +5,7 @@
 
 	// Get this from $_SESSION
 	$me = $_SESSION["user"]->getName();
-	if( !$_SESSION['user']->isLoggedIn() ){
-		header('location: index.php');
-	}
+
 
 	// get this from $_GET
 	$you = '';
@@ -18,6 +16,10 @@
 			header("Location: messages.php");
 		}
 	}
+	else{
+		header("Location: messages.php");
+	}
+
 
 	if( isset($_POST['message']) && trim($_POST['message']) ){
 		$msg = pg_escape_string($_POST['message']);
@@ -34,44 +36,49 @@
 
 <html>
 <head>
+	<meta charset="utf-8"> 
+    <title>eHarbinger</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
+<section id = 'banner'>
+<div class = 'inner split'>
+	<section>
+		<h2> Messages for You! </h2>
+	</section>
+	<section>
+		<p> Talk to other players here :) </p>
+	</section>
+</div>
+</section>
+<div class = 'wrapper>
 <?php
-	if( isset($_GET['user']) ){
-		echo "<div style='float: left;'>";
-		include_once("header.php");
-		echo "</div>";
-		echo "<div style='height: 75%; float: right; display: inline-block;'>";
-		echo "<div id='chat' style='height: 100%; overflow-y: scroll;'>";
-		echo "<table>";
-		$result = $_SESSION["user"]->query("select * from getMessages('$me','$you');", "table");
-		foreach( $result as $row ){
-			if( $row['username1'] == $me ){
-				echo "<tr bgcolor='#CCCCFF'>";
-			}
-			else{
-				echo "<tr bgcolor='#EEEEEE'>";
-			}
-			$date = date_create_from_format('Y-m-d H:i:s.u',$row['messagetimestamp']);
-			$dateFmt = date_format($date,'M d, Y \a\t h:i:sa');
-			echo "<td>".$dateFmt."<td>";
-			echo "<td>".$row['username1']."</td>";
-			echo "<td>".$row['message']."</td>";
-			echo "</tr>\n";
+	echo "<div style='height: 75%; float: right; display: inline-block;'>";
+	echo "<div id='chat' style='height: 100%; overflow-y: scroll;'>";
+	echo "<table>";
+	$result = $_SESSION["user"]->query("select * from getMessages('$me','$you');", "table");
+	foreach( $result as $row ){
+		if( $row['username1'] == $me ){
+			echo "<tr bgcolor='#CCCCFF'>";
 		}
-		echo "</table>";
-		echo "<script>var objDiv = document.getElementById('chat'); objDiv.scrollTop = objDiv.scrollHeight;</script>";
-		echo "</div>";
-		echo "<form method='post' action=''>";
-		echo "<input right;' type='text' name='message' autofocus='autofocus' placeholder='Type a message...' autocomplete='off'>";
-		echo "<input type='submit'>";
-		echo "</div>";
+		else{
+			echo "<tr bgcolor='#EEEEEE'>";
+		}
+		$date = date_create_from_format('Y-m-d H:i:s.u',$row['messagetimestamp']);
+		$dateFmt = date_format($date,'M d, Y \a\t h:i:sa');
+		echo "<td>".$dateFmt."<td>";
+		echo "<td>".$row['username1']."</td>";
+		echo "<td>".$row['message']."</td>";
+		echo "</tr>\n";
 	}
-	else{
-		echo "Please select a user to talk to like ";
-		echo "<a href='messages.php?user=ben7293'>Benson</a>";
-	}
-	?>
-
+	echo "</table>";
+	echo "<script>var objDiv = document.getElementById('chat'); objDiv.scrollTop = objDiv.scrollHeight;</script>";
+	echo "</div>";
+	echo "<form method='post' action=''>";
+	echo "<input right;' type='text' name='message' autofocus='autofocus' placeholder='Type a message...' autocomplete='off'>";
+	echo "<input type='submit'>";
+	echo "</div>";
+?>
+</div>
 </body>
 </html>

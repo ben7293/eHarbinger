@@ -1,28 +1,50 @@
 <!DOCTYPE HTML>
-<html>
+<<html>
 	<head>
 		<meta charset="utf-8"> 
         <title>eHarbinger</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <script type="text/javascript" src = "design.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <!--<script type="text/javascript" src = "design.js"></script>-->
 	</head>
 	<body>
-		<button class = "butt" onclick = "logout()"> Log Out </button>
-		<textarea rows="4" cols="50">
-         I think that Mario is a great game.  
-</textarea>
-		<div>
-			<nav>
-				<!--<a href = "suggested.html"> Suggested Games | </a> <a href = "forum.html"> General Forum | </a> <a href = "achievement.html"> Achievements </a> -->
-			</nav>
+		<div id = 'banner'>
+		<section class = 'inner split'>
+			<div>
+				<h2> Popular Games! </h2>
+			</div>
+			<div>
+			<!--Back end to log out of profile -->
+				<button class = 'button-right' onclick = "logout()"> Log Out </button>
+			</div>
+		</section>
 		</div>
+		<!-- Back end to load posts -->
 		<div onload = "getPosts()">
-			<h1 class = "heading">Popular Games </h1>
-			<!-- Enter information about popular games -->
-			<p class = "text"> eHarbinger says: Fallout 4 is the most played game from our users! </p>
+		<section class = 'wrapper'>
+			<div class = 'align-center'>
+				<h1> Check out this week's popular games!</h1>
+				<!-- Enter information about other posts to be made -->
+				<p> The #1 game people have been playing this week is League of Legends. </p>
+				<p> Star Wars Battlefront has been released and has been given rave reviews. </p>
+				<p> Fallout 4 has no multiplayer, but has still been highly recommended by players </p>
+			</div>
+			<br>
+		</section>
+			<table><!-- comments go here -->
+				<tr><td>@4:10 - Benson: </td><td>Why is everyone still talking about League?</td></tr>
+				<tr><td><!-- Benchan add timestamp pls -->@4:12 - Priyam:</td><td>League is the best</td></tr>
+			</table>
+			<br />
+			<!-- Here is form, pls use $GET for action -->
+			<form method='post' action=''>
+			<input type='text' name='comment' autofocus='autofocus' placeholder='Enter a comment here!'>
+			<br>
+			<input type='submit' value='Comment!'>	
 		</div>
 		<div>
-			<p class = "footer"> <a href = "suggested.html"> Suggested Games | </a> <a href = "forum.html"> General Forum | </a> <a href = "achievement.html"> Achievements </a> </p>
+			<footer> 
+				<a href = "suggested.html"> Suggested Games | </a> <a href = "forum.html"> General Forum | </a> <a href = "achievement.html"> Achievements | </a> <a href = "profile.html">My Profile </a> 
+			</footer>
 		</div>
 	</body>
 </html>
