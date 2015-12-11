@@ -1,3 +1,4 @@
+<!DOCTYPE>
 <?php
 	require_once('session.php');
 	session_start();
@@ -49,8 +50,53 @@
 		$i++;
 	}
 ?>
-
+<!-- Used Question 4 as example for static info -->
 <html>
+<head>
+	<meta charset="utf-8"> 
+    <title>eHarbinger</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+<section id = 'banner'>
+	<div class = 'inner split'>
+		<section>
+			Survey Time!
+		</section>
+		<section>
+		<!-- Need to be able to change with question numbers -->
+			Question 4
+		</section>
+	</div>
+</section>
+<section class = 'wrapper'>
+<div class = 'inner split'>
+	<section>
+	<!-- Need to load questions -->
+		<h1>Pick the scenario below that best describes where you usually would play games?</h1>
+	</section>
+	<section>
+	<!-- Need to load answer choices -->
+		<input type = 'radio' name = 'ques4' value = 'betweenClasses'> You are in between classes and have a long break. You head to the school's cafeteria and start a League session. 
+		<br>
+		<input type = 'radio' name = 'ques4' value = 'afterWork'> You come back from work at 8pm. You are in front of your computer at 8:30pm with your dinner by your side and a League game on.
+		<br>
+		<input type = 'radio' name = 'ques4' value = 'studyLounge'> You are sitting in your study lounge with your headphones on about to start a new game. 
+		<br>
+		<input type = 'radio' name = 'ques4' value = 'anywhere'> I can play in any location, quiet or loud, as long as I have my computer in front of me. 
+		<br>
+		<!-- Need back end of saving answers and go to next html -->
+		<input type = 'submit' value = 'Next Question!'>  
+	</section>
+</div>
+<div class = 'align-center'>
+	<p> If you don't want to continue, click the button below to immediately create profile. </p>
+	<p> Just know that it will be harder to match you to compatible players and you will need to answer our last question on game preferences. </p>
+	<br>
+	<!-- Need button to skip to last question -->
+	<button> Skip to Last </button> 
+</div>
+</section>
 <script type='text/javascript'>
 function toggle(id){
 	var e = document.getElementById(id);
@@ -108,4 +154,5 @@ function toggle(id){
 		echo "</form>";
 	}
 	?>
+</body>
 </html>
