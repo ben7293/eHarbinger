@@ -75,8 +75,8 @@
           <ul>
            <!-- <li class="first active first-active"><a href= achievements.html>See Achievements</a><span class="sep">&nbsp;</span></li>-->
 			<li><a href="achievement.html"> See Achievements </a><span class="sep">&nbsp;</span></li>
-            <li><a href="createprofile.php"> Find Matches </a><span class="sep">&nbsp;</span></li>
-            <li><a href="messages.html"> My Messages</a><span class="sep">&nbsp;</span></li>
+            <li><a href="players.html"> Find Matches </a><span class="sep">&nbsp;</span></li>
+            <li><a href="messages.php"> My Messages</a><span class="sep">&nbsp;</span></li>
             <li><a href= "contactUs.html">Contact Us</a><span class="sep">&nbsp;</span></li>
              </ul>
           <div class="cl">&nbsp;</div>
@@ -150,7 +150,7 @@
             </div>
 			
             <div class="article">
-              <div class="image"><img src="img5.jpg" alt="" /></a> </div>
+              <div class="image"><img src="img5.jpg" alt="" /></div>
               <h4>Super Mario</h4>
               <p class="console"><strong>Nintendo</strong></p>
             </div>
@@ -187,13 +187,14 @@
               <div class="image"><img src="img8.jpg" alt="" /></div>
               <div class="cnt">
                 <h4>Battlefield 3</h4>
-                <p>Gamer Vincent says "From the awesome jet fly by’s to walls falling and getting quads to knifing a sniper right before he snags one of your team mates. Battlefield 3, regardless of which side of its fence you sit on, is fun.</p>
+                <p>Gamer Vincent says "From the awesome jet fly by’s to walls falling and getting quads to knifing a sniper right before he snags one of your team mates. Battlefield 3, regardless of which side of its fence you sit on, is fun. Battlefield has the scale of a real war. The largest CoD map is maybe the same size as the smallest BF map.
+Battlefield has vehicles. CoD killstreaks are vehicles too, but don't give complete control, can't be upgraded, only have one seat, and are not supplied at the beginning of the game."</p>
               </div>
               <div class="cl">&nbsp;</div>
             </div>
             <div class="article last-article">
               <div class="cl">&nbsp;</div>
-              <div class="image"><img src="img4.jpg" alt="" /></a> </div>
+              <div class="image"><img src="img4.jpg" alt="" /></div>
               <div class="cnt">
                 <h4>League of Legends</h4>
                 <p> Top matched gamer Brian says that he enjoys League as no other game. The champions are designed well and there is so much variety to look forward to. And the skins in the game!</p>
