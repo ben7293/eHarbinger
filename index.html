@@ -36,20 +36,20 @@
 				<div class="inner split">
 					<section>
 						<h2>Log In</h2>
-						<form action="#" method="POST">
+						<form action="userauth.php" method="POST">
 							<div>
 								<input type = "text" name="username" placeholder = "Username">
 								<br>
 								<input type = "text" name="password" placeholder = "Password">
 								<br>
  							</div>
-							<!-- Need to put with back end -->
+							<input type="hidden" name="type" value="login">
 							<input value="Log In" type = "submit">
  						</form>
 					</section>
 					<section>
 						<h2>Sign Up</h2>
-						<form action = "#" method="POST">
+						<form action = "createacct.php" method="POST">
 							<div>
 								<input type = "text" name = "name" placeholder = "Full Name">
 								<br>
