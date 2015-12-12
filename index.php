@@ -33,21 +33,22 @@
 			</div>
 		</section>
 			<section class="wrapper">
+				<section class="errorMsg">
+					<!-- Megham pls-->
+					<?php
+						if ($_GET["err"] == 1){
+							echo "Incorrect username and/or password.";
+						}
+						elseif ($_GET["err"] == 2){
+							echo "Username already exists.";
+						}
+						elseif ($_GET["err"] == 3){
+							echo "Your username and/or password is invalid.";
+						}						
+					?>						
+				</section>			
 				<div class="inner split">
-					<section class="errorMsg">
-						<!-- Megham pls-->
-						<?php
-							if ($_GET["err"] == 1){
-								echo "Incorrect username and/or password.";
-							}
-							elseif ($_GET["err"] == 2){
-								echo "Username already exists.";
-							}
-							elseif ($_GET["err"] == 3){
-								echo "Your username and/or password is invalid.";
-							}						
-						?>						
-					</section>
+
 					<section>
 						<h2>Log In</h2>
 						<form action="userauth.php" method="POST">
