@@ -98,96 +98,59 @@
 			$ans3 = $row['answer3'];
 			$ans4 = $row['answer4'];
 			$ans5 = $row['answer5'];
-	
-			echo "<section class='wrapper'>";
-			echo "<div class='inner split'>";
-
-			echo "<section>";
-			echo "<h2 style='color:#cc0052;'>Question $i</h2>";
-			echo "<h2 style='color:#3333cc;'>$text</h2>";
-			echo "<input type='hidden' name='qid$i' value='$id'>";
-			echo "</section>";
-
-			echo "<section>";
+			?>
+<section class = 'wrapper'>
+	<div class = 'inner split'>
+		<section>
+		<h2 style="color:#cc0052;">Question <?php echo $i; ?></h2>
+		<h2 style="color:#3333cc;"><?php echo $text; ?></h2>
+		</section>
+		<section>
+		<?php
 			if( $ans1 ){ echo "<input type='radio' name='ansSelf$i' value='1' checked>$ans1</input><br/>"; }
 			if( $ans2 ){ echo "<input type='radio' name='ansSelf$i' value='2'>$ans2</input><br/>"; }
 			if( $ans3 ){ echo "<input type='radio' name='ansSelf$i' value='3'>$ans3</input><br/>"; }
 			if( $ans4 ){ echo "<input type='radio' name='ansSelf$i' value='4'>$ans4</input><br/>"; }
 			if( $ans5 ){ echo "<input type='radio' name='ansSelf$i' value='5'>$ans5</input><br/>"; }
-			echo "</section>";
-			echo "</div>";
-			
-			echo "<div class='inner split'>";
-			echo "<section>";
-			echo "<h2 style='color:#3333cc;'>What response would you accept from others?</h2>";
-			echo "</section>";
-			
-			echo "<section>";
-			if( $ans1 ){ echo "<input type='checkbox' name='ans1Oth$i' value='$ans1'>$ans1</input><br/>"; }
-			if( $ans2 ){ echo "<input type='checkbox' name='ans2Oth$i' value='$ans2'>$ans2</input><br/>"; }
-			if( $ans3 ){ echo "<input type='checkbox' name='ans3Oth$i' value='$ans3'>$ans3</input><br/>"; }
-			if( $ans4 ){ echo "<input type='checkbox' name='ans4Oth$i' value='$ans4'>$ans4</input><br/>"; }
-			if( $ans5 ){ echo "<input type='checkbox' name='ans5Oth$i' value='$ans5'>$ans5</input><br/>"; }
-			echo "</section>";
-			echo "</div>";
-			echo "<div class = 'inner split'>
-			<section>
-			<h2 style='color:#3333cc;'> How important would you rate this in a potential match with the following scale? </h2>
-				<p padding-left = '10px;'> 1: Very Important </p>
-				<p padding-left = '10px;'> 2: Somewhat Important</p>
-				<p padding = '0px;'> 3: Neutral</p>
-				<p padding = '0px;'> 4: A little important</p>
-				<p padding = '0px;'> 5: Not important</p>
-			</section>
-			<section>";
-			
-			echo "<select name='imp$i'><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select>";
-			echo "</section>";
-			echo "</div>";
-		
-			$i++;
-		}
-		echo "<br/><input type='submit'>";
-		echo "</form>";
 		
 		?>
-		</select>
 		</section>
-		</form>
-		</div>
-		
-		</section>		
-
-
-			<?php			
-			
-			
-			
-			echo "$text<font color='red'>*</font></br>";
-			echo "<input type='hidden' name='qid$i' value='$id'>";
-			
-			if( $ans1 ){ echo "<input type='radio' name='ansSelf$i' value='1' checked>$ans1</input><br/>"; }
-			if( $ans2 ){ echo "<input type='radio' name='ansSelf$i' value='2'>$ans2</input><br/>"; }
-			if( $ans3 ){ echo "<input type='radio' name='ansSelf$i' value='3'>$ans3</input><br/>"; }
-			if( $ans4 ){ echo "<input type='radio' name='ansSelf$i' value='4'>$ans4</input><br/>"; }
-			if( $ans5 ){ echo "<input type='radio' name='ansSelf$i' value='5'>$ans5</input><br/>"; }
-	
-			echo "<br/>What answers will you accept from others?<br/>";
+	</div>
+	<div class = 'inner split'>
+		<section>
+			<h2 style="color:#3333cc;">What response would you accept from others?</h2>
+		</section>
+		<section>
+		<?php
 			if( $ans1 ){ echo "<input type='checkbox' name='ans1Oth$i' value='$ans1'>$ans1</input><br/>"; }
 			if( $ans2 ){ echo "<input type='checkbox' name='ans2Oth$i' value='$ans2'>$ans2</input><br/>"; }
 			if( $ans3 ){ echo "<input type='checkbox' name='ans3Oth$i' value='$ans3'>$ans3</input><br/>"; }
 			if( $ans4 ){ echo "<input type='checkbox' name='ans4Oth$i' value='$ans4'>$ans4</input><br/>"; }
 			if( $ans5 ){ echo "<input type='checkbox' name='ans5Oth$i' value='$ans5'>$ans5</input><br/>"; }
-	
-			echo "<br/>How important is this to you on a scale of 1-5?<font color='red'>*</font><br/><select name='imp$i'><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><br/>";
-			$i++;
+
+		?>
+		</section>
+	</div>
+	<div class = 'inner split'>
+		<section>
+			<h2 style="color:#3333cc;"> How important would you rate this in a potential match with the following scale? </h2>
+			<p padding-left = "10px;"> 1: Very Important </p>
+			<p padding-left = "10px;"> 2: Somewhat Important</p>
+			<p padding = "0px;"> 3: Neutral</p>
+			<p padding = "0px;"> 4: Not important</p>
+			<p padding = "0px;"> 5: Pls</p>			
+		</section>
+		<section>
+			<?php echo "<select name='imp$i'><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select>"; ?>
+		</section>
+	</div>
+</section>
+<?php
+		$i++;
 		}
-
-		echo "<br/><input type='submit'>";
-		echo "</form>";
-	}
-
 ?>
+<input type = 'submit' style="font-face: 'Comic Sans MS'; margin-left: 45%; font-size: larger; color: teal; background-color: #FFFFC0; border: 3pt ridge lightgrey" value = 'Finish!'>
+</form>
 
 <section class = 'wrapper'>
 <div class = 'inner split'>
