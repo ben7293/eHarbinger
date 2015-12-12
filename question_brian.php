@@ -100,15 +100,6 @@
 	<button> Skip to Last </button> 
 </div>
 </section>
-<script type='text/javascript'>
-function toggle(id){
-	var e = document.getElementById(id);
-	if( e.style.display == 'block' )
-		e.style.display = 'none';
-	else
-		e.style.display = 'block';
-}
-</script>
 
 <?php
 	if( $result ){

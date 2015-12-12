@@ -1,4 +1,4 @@
-<?
+<?php
 	require_once('session.php');
 	session_start();
 
@@ -55,7 +55,7 @@
 <head>
 	<meta charset="utf-8"> 
     <title>eHarbinger</title>
-    <link rel="stylesheet" type="text/css" href="meg.css">
+    <link rel="stylesheet" type="text/css" href="css/meg.css">
 </head>
 <body>
 <section id = 'banner'>
@@ -103,11 +103,12 @@
 					</section>
 					<section>
 					<?php
-						if( $ans1 ){ echo "<input type='radio' name='ansSelf$i' value='1' checked>$ans1</input><br/>"; }
-						if( $ans2 ){ echo "<input type='radio' name='ansSelf$i' value='2'>$ans2</input><br/>"; }
-						if( $ans3 ){ echo "<input type='radio' name='ansSelf$i' value='3'>$ans3</input><br/>"; }
-						if( $ans4 ){ echo "<input type='radio' name='ansSelf$i' value='4'>$ans4</input><br/>"; }
-						if( $ans5 ){ echo "<input type='radio' name='ansSelf$i' value='5'>$ans5</input><br/>"; }
+						echo "<input type='hidden' name='qid$i' value='$id'>";
+						if( $ans1 ){ echo "<input type='radio' name='ansSelf$i' value='1' checked><label>$ans1</label><br/>"; }
+						if( $ans2 ){ echo "<input type='radio' name='ansSelf$i' value='2'><label>$ans2</label><br/>"; }
+						if( $ans3 ){ echo "<input type='radio' name='ansSelf$i' value='3'><label>$ans3</label><br/>"; }
+						if( $ans4 ){ echo "<input type='radio' name='ansSelf$i' value='4'><label>$ans4</label><br/>"; }
+						if( $ans5 ){ echo "<input type='radio' name='ansSelf$i' value='5'><label>$ans5</label><br/>"; }
 					
 					?>
 					</section>
@@ -118,11 +119,11 @@
 					</section>
 					<section>
 					<?php
-						if( $ans1 ){ echo "<input type='checkbox' name='ans1Oth$i' value='$ans1'>$ans1</input><br/>"; }
-						if( $ans2 ){ echo "<input type='checkbox' name='ans2Oth$i' value='$ans2'>$ans2</input><br/>"; }
-						if( $ans3 ){ echo "<input type='checkbox' name='ans3Oth$i' value='$ans3'>$ans3</input><br/>"; }
-						if( $ans4 ){ echo "<input type='checkbox' name='ans4Oth$i' value='$ans4'>$ans4</input><br/>"; }
-						if( $ans5 ){ echo "<input type='checkbox' name='ans5Oth$i' value='$ans5'>$ans5</input><br/>"; }
+						if( $ans1 ){ echo "<input type='checkbox' name='ans1Oth$i' value='$ans1'><label>$ans1</label><br/>"; }
+						if( $ans2 ){ echo "<input type='checkbox' name='ans2Oth$i' value='$ans2'><label>$ans2</label><br/>"; }
+						if( $ans3 ){ echo "<input type='checkbox' name='ans3Oth$i' value='$ans3'><label>$ans3</label><br/>"; }
+						if( $ans4 ){ echo "<input type='checkbox' name='ans4Oth$i' value='$ans4'><label>$ans4</label><br/>"; }
+						if( $ans5 ){ echo "<input type='checkbox' name='ans5Oth$i' value='$ans5'><label>$ans5</label><br/>"; }
 
 					?>
 					</section>
