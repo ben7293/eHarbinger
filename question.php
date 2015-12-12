@@ -59,9 +59,9 @@
 </head>
 <body>
 <section id = 'banner'>
-<section>
-	<h2>Profile Information</h2>
-	<br>
+	<section>
+		<h2>Profile Information</h2>
+		<br>
 	</section>
 	<div class = 'inner split'>
 		<section>
@@ -131,11 +131,11 @@
 				<div class = 'inner split'>
 					<section>
 						<h2 style="color:#3333cc;"> How important would you rate this in a potential match with the following scale? </h2>
-						<p padding-left = "10px;"> 1: Very Important </p>
-						<p padding-left = "10px;"> 2: Somewhat Important</p>
-						<p padding = "0px;"> 3: Neutral</p>
-						<p padding = "0px;"> 4: Not important</p>
-						<p padding = "0px;"> 5: Pls</p>			
+						<p padding-left = "10px;"> 1: Can't go without it </p>
+						<p padding-left = "10px;"> 2: Somewhat important </p>
+						<p padding = "0px;"> 3: Neutral </p>
+						<p padding = "0px;"> 4: Barely Important </p>
+						<p padding = "0px;"> 5: Not Important </p>			
 					</section>
 					<section>
 						<?php echo "<select name='imp$i'><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select>"; ?>
