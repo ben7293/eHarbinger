@@ -3,41 +3,69 @@
 	<head>
 		<meta charset="utf-8"> 
         <title>eHarbinger</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="meg.css">
         <script type="text/javascript" src = "design.js"></script>
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	</head>
 	<body>
+	<section id = 'banner'>
 		<!-- Benson, need to change number of messages given -->
-		<header> You Have This Many Matches: (2) </header>
-		<button class = "butt" onclick = "logout()"> Log Out </button>
-		<div id = "col-1">
+		<div class = 'inner split'>
+			<section><h2> You Have This Many Matches: (2) </h2></section>
+			<section><button onclick = "logout()"> Log Out </button></section>
 		</div>
+	</section>
+		<div class = "wrapper">
 		<!-- Need to be able to upload matches of different players -->
-		<div id = "col-2"  onload = "playerInfo()">
-			<div id = "avatar"> 
-				<img src = "avatar.jpg"> 
-			</div>
-			<div>
+		<div class = 'inner split'  onload = "playerInfo()">
+			<section> 
+				<img src = "images/plainPic.gif"> 
+			</section>
+			<section>
 				Username: champion<br>
 				Level: Expert<br>
 				Played With: 7 Players<br>
 				Likes: PC, MMO <br>
-				Feedback: +10
+				Feedback level
+				<br>
+				<!--BENSON, insert number of likes/dislikes here -->
+				
+					<a href="#" class="btn btn-default"><span class="glyphicon glyphicon-heart"></span> Good Match</a>
+				
+				<br>
+				<a href="#" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span> I didn't like my match</a>
+				<br>
+				<br>
 				<button class = "button1" onclick = "send()"> Message </button> 
-			</div>
+			</section>
 			<br>
-			<div id = "avatar"> 
-				<img src = "avatar.jpg"> 
-			</div>
-			<div>
+		</div>
+		<div class = 'inner split' onload() = "playerInfo)"> 
+			<section>
+				<img src = "images/plainPic.gif"> 
+			</section>
+			<section>
 				Username: n00b<br>
 				Level: Newbie<br>
 				Played With: 2 Players<br>
 				Likes: Xbox, RPG <br>
-				Feedback: +1
-				<button class = "button1" onclick = "send()"> Message </button>
-			</div>
+				Feedback level
+				<br>
+				<!--BENSON, insert number of likes/dislikes here -->
+				<a href="#" class="btn btn-default"><span class="glyphicon glyphicon-heart"></span> Good Match</a>
+				<br>
+				<a href="#" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span> I didn't like my match</a>
+				<br>
+				<br>
+				<button class = "button1" onclick = "send()"> Message </button> 
+		</section>
 		</div>
-		<p class = "footer"> <a href = "messages.html" > Messages | </a> <a href = "contactUs.html"> Meet the Team! </a> </p>
+		</div>
+		<footer> <a href = "forum.html"> General Forum | </a> <a href = "messages.php"> Messages | </a> <a href = "contactUs.html"> Meet the Team! </a> </footer>
 	</body>
 </html>

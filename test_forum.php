@@ -144,7 +144,7 @@
           <div class="col-articles articles">
             <div class="cl">&nbsp;</div>
             <div class="article">
-              <div class="image"> <img src="images/img4.jpg" alt="" /></div>
+              <div class="image"><img src="images/img4.jpg" alt="" /></div>
               <h4>League of Legends</h4>
               <p class="console"><strong></strong></p>
             </div>
