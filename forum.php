@@ -7,7 +7,7 @@
 
 	$me = $_SESSION["user"]->getName();
 	$forumid=0;
-	if( isset($_GET['id']) && trim($_GET['id']) ){
+	if( isset($_GET['id']) && trim($_GET['id']) && $_GET['id'] != 'new' ){
 		$forumid = pg_escape_string($_GET['id']);
 		if( $_SESSION["user"]->query("select forumExists($forumid);", "boolean" )){
 			if( isset($_POST['comment']) && trim($_POST['comment']) ){
@@ -24,10 +24,17 @@
 			header('location: forum.php');
 		}
 	}
-	else{
-			$result = $_SESSION["user"]->query("select * from getrecentforums(10);", "table");
-
+	
+	if( isset($_POST['forumsubj']) && trim($_POST['forumsubj']) && isset($_POST['forumbody']) && trim($_POST['forumbody']) ){
+		$forumsubj = pg_escape_string($_POST['forumsubj']);
+		$forumbody = pg_escape_string($_POST['forumbody']);
+		if( !$_SESSION['user']->query("select insertForum('$me','$forumsubj','$forumbody');","table") ){
+			echo "Forum failed to post!";
+		} else{
+			header('Location: forum.php');
+		}
 	}
+	$result = $_SESSION["user"]->query("select * from getrecentforums(10);", "table");
 
 	
 ?>
@@ -108,28 +115,56 @@
 							$dateFmt = date_format($date,'M d, Y \a\t h:i:sa');
 							echo "<h3><a href='forum.php?id=$forumid'>$forumSubj</a> posted by <a href='profile.php?user=$user'>$user</a> at $dateFmt <br/><br/></h3>";
 						}
+						echo "<h3>Or <a href='forum.php?id=new'>Post something new!</a></h3>";
 					}
-					else{
+					elseif( $_GET['id'] != 'new' ){
 						$forum = $_SESSION["user"]->query("select * from getForum($forumid);", "array");
 						$fDate = date_create_from_format('Y-m-d H:i:s.u', $forum['forumtimestamp']);
 						$fDateFmt = date_format($fDate,'M d, Y \a\t h:i:sa');
-						echo "<h2>".$forum['forumsubj']."</h2>";
-						echo "<a href='profile.php?user=".$forum['username']."'>".$forum['username']."</a> - ".$fDateFmt;
-						echo "<p>".$forum['forumbody']."</p>";
+						echo "<div style='color: black; font-size: 150%; background-color: #888888;'>";
+						echo "<h1>".$forum['forumsubj']."</h1>";
+						echo "<a style='color: black;' href='profile.php?user=".$forum['username']."'>".$forum['username']."</a> - ".$fDateFmt;
+						echo "<p style='font-size: 125%;'>".$forum['forumbody']."</p>";
 						$comments = $_SESSION["user"]->query("select * from getComments($forumid);", "table");
 						echo "<table bgcolor=#EEEEEE style='border-style: solid;'>";
 						foreach( $comments as $comment ){
 							$cDate = date_create_from_format('Y-m-d H:i:s.u',$comment['commenttimestamp']);
 							$cDateFmt = date_format($cDate, 'M d, Y \a\t h:i:sa');
-							echo "<tr><td>".$cDateFmt." - ".$comment['username']."</td><td>".$comment['commentbody']."</td></tr>";
+							echo "<tr><td>".$comment['username']."@".$cDateFmt."</td><td>  -  ".$comment['commentbody']."</td></tr>";
 						}
 						echo "</table>";
 						echo "<br />";
 
 						echo "<form method='post'>";
 
-						echo "<input type='text' name='comment' autofocus='autofocus' placeholder='Enter a comment here!'>";
+						echo "<input type='text' name='comment' autofocus='autofocus' placeholder='Enter a comment here!'><br/>";
 						echo "<input type='submit' value='Comment!'>";
+						echo "</div>";
+
+                                                echo "<br/><br/><br/>";
+						echo "<h1>See these other recent forum posts</h1>";
+                                                foreach($result as $row){
+                                                        $forumid = $row['forumid'];
+                                                        $forumSubj = $row["forumsubj"];
+                                                        $user = $row['username'];
+                                                        $date = date_create_from_format('Y-m-d H:i:s.u',$row['forumtimestamp']);
+                                                        $dateFmt = date_format($date,'M d, Y \a\t h:i:sa');
+							if( $forumid != $_GET['id']) {
+	                                                        echo "<h3><a href='forum.php?id=$forumid'>$forumSubj</a> posted by <a href='profile.php?user=$user'>$user</a> at $dateFmt <br/><br/></h3>";
+							}       
+                                         	}
+						echo "<h3>Or <a href='forum.php?id=new'>Post something new!</a></h3>";
+
+					}
+					else{
+						echo "<h1>Post a new forum entry here!</h1><br/>";
+						echo "<form method='post'>";
+						echo "<h3>Subject</h3>";
+						echo "<input type='text' name='forumsubj' autofocus='autofocus' placeholder='Type the subject of your entry' style='width: 100%; height: 40px;'><br/><br/>";
+						echo "<h3>Body</h3>";
+						echo "<textarea name='forumbody' placeholder='Type the body of your entry' style='width: 100%; height: 100px;'></textarea><br/>";
+						echo "<input type='submit' value='Submit'>";
+						echo "</form>";
 					}
 				?>
 			</div>
