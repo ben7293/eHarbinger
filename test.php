@@ -13,12 +13,15 @@
 </form>
 
 <?php
- include_once("classes.php");
- $db = new Database();
- $result = $db->queryArray("select * from users;");
- var_dump($result);
-  $result = $db->queryTable("select * from users;");
- var_dump($result);
+ CRYPT_STD_DES = 1;
+ echo crypt('abc');
+ 
+ // include_once("classes.php");
+ // $db = new Database();
+ // $result = $db->queryArray("select * from users;");
+ // var_dump($result);
+  // $result = $db->queryTable("select * from users;");
+ // var_dump($result);
  
 // $me = new User( 'bm1549', 'babe' );
 // $you = new User( 'ben7293', 'baby' );

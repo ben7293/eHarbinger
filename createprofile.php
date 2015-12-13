@@ -106,16 +106,16 @@
             <div class = 'wrapper' style="width:50%; margin-left:auto; margin-right:auto">
 			<section>
 				<label for="pub_profie" class="heading">Tell us a little more about yourself</label>
-				<p style="padding-left: 32px;">This information will be visible to anyone viewing your profile.</p>
+				This information will be visible to anyone viewing your profile.
 				<form action="createprofile.php" method="POST">
 					<label>Location</label>
-					<input type="text" name="pub_prof['location'] size="10" placeholder="e.g. United States" style="padding-left: 32px;">
+					<input type="text" name="pub_prof['location'] size="10" placeholder="e.g. United States">
 					<br>
 					<label>Language</label>
-					<input type="text" name="pub_prof['language']" size="10" placeholder="e.g. English" style="padding-left: 32px;">
+					<input type="text" name="pub_prof['language']" size="10" placeholder="e.g. English">
 					<br>
 					<label>About you</label>
-					<textarea rows="3" name="pub_prof['description']" style="padding-left: 32px;"></textarea>
+					<textarea rows="3" name="pub_prof['description']"></textarea>
 					<br>
 					<button class = 'button-center' type="submit">Finish Profile</button> 
 				</form>
