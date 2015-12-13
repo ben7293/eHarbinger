@@ -14,7 +14,8 @@
 
 <?php
  CRYPT_STD_DES = 1;
- echo crypt('abc');
+ $hashed = crypt('abc');
+ echo $hashed;
  
  // include_once("classes.php");
  // $db = new Database();
