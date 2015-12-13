@@ -108,11 +108,17 @@
 				<label for="pub_profie" class="heading">Tell us a little more about yourself</label>
 				This information will be visible to anyone viewing your profile.
 				<form action="createprofile.php" method="POST">
-					<label>Location</label> <input type="text" name="pub_prof['location']" length="40" placeholder="e.g. United States">
+					<label>Location</label>
 					<br>
-					<label>Language</label> <input type="text" name="pub_prof['language']" length="40" placeholder="e.g. English">
+					<input type="text" name="pub_prof['location']" size="40" placeholder="e.g. United States">
 					<br>
-					<label>About you</label> <textarea rows="3" name="pub_prof['description']"></textarea>
+					<label>Language</label>
+					<br>
+					<input type="text" name="pub_prof['language']" size="40" placeholder="e.g. English">
+					<br>
+					<label>About you</label>
+					<br>
+					<textarea rows="3" name="pub_prof['description']"></textarea>
 					<br>
 					<button class = 'button-center' type="submit">Finish Profile</button> 
 				</form>
