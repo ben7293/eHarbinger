@@ -41,14 +41,17 @@ if (!isset($_SESSION["user"])){
 }
 
 if (isset($_POST["pub_prof"])){
-	die ("send prof");
+	
 	//Send profile data to database
 	$username = $_SESSION["user"]->getName();
 	$name = $_SESSION["name"];
 	$location = pg_escape_string($_POST["pub_prof"]["location"]);
 	$language = pg_escape_string($_POST["pub_prof"]["language"]);
 	$description = pg_escape_string($_POST["pub_prof"]["description"]);
-
+	var_dump($location);
+	var_dump($language);
+	var_dump($description);
+	die();
 	// Update profile
 	// $status = $_SESSION["user"]->upProf($username, $name, $location, $lang, $prefCsv);
 	$status = $_SESSION["user"]->upProf($username, $name, $location, $language, $description);
