@@ -57,14 +57,14 @@
                 }
         }
 
-	$resultCon = $conn->queryTable('select DISTINCT gameConsole FROM games');
+	$resultCon = $conn->queryTable('select DISTINCT gameConsole FROM games ORDER BY gameConsole ASC');
 	$consoles = Array();
 	foreach( $resultCon as $row ){
 		array_push($consoles,$row['gameconsole']);
 	}
 
 	$games = Array();
-	$resultGame = $conn->queryTable('select DISTINCT gamename FROM games');
+	$resultGame = $conn->queryTable('select DISTINCT gamename FROM games ORDER BY gamename ASC');
 	foreach( $resultGame as $row ){
 		array_push($games, $row['gamename']);
 	}

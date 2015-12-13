@@ -19,12 +19,6 @@
 		$result = $conn->queryTable("select * from getQuestion('$game','$console');");
 	}
 
-	if( !$result ){
-                $game = 'General';
-		$console = 'General';
-		$result = $conn->queryTable("select * from getQuestion('$game','$console');");
-	}
-
 	$i = 1;
 	while( isset($_POST["qid$i"]) && trim($_POST["qid$i"]) && isset($_POST["ansSelf$i"]) && trim($_POST["ansSelf$i"]) ){
 		$qid = pg_escape_string($_POST["qid$i"]);
@@ -83,7 +77,7 @@
 <?php
 	if( $result ){
 	?>
-		<form method='post'>
+		<form method='post' action='question.php'>
 	<?php
 		$i = 1;
 		foreach( $result as $row ){
@@ -149,6 +143,16 @@
 		<input type = 'submit' style="font-face: 'Comic Sans MS'; margin-left: 45%; font-size: larger; color: teal; background-color: #FFFFC0; border: 3pt ridge lightgrey" value = 'Finish!'>
 		</form>
 <?php
+	} else{
+		echo "<h3>Answer <a href='question.php?game=General&console=General'>General Questions</a></h3>";
+		$games = $conn->queryTable("select * from getGameQuestions('$me');");
+		foreach( $games as $row ){
+			$game = $row['gamename'];
+			$console = $row['gameconsole'];
+			echo "<h3>Answer questions about <a href='question.php?game=$game&console=$console'>$game For $console</a></h3>";
+		}
+		echo "<h3><a href='players.php'>Go to matches</a></h3>";
+
 	}
 ?>
 </body>

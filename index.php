@@ -1,9 +1,12 @@
+<?php
+	include_once('classes.php');
+	session_start();
+
+	if( isset($_SESSION['user']) && $_SESSION['user']->isLoggedIn() ){
+		header('location: profile.php');
+	}
+?>
 <!DOCTYPE HTML>
-<!--
-	Prism by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html>
 	<head>
 		<title> eHarbginer</title>
@@ -37,13 +40,13 @@
 					<!-- Megham pls-->
 					<?php
 						if ($_GET["err"] == 1){
-							echo "Incorrect username and/or password.";
+							echo "<font color='red'>Incorrect username and/or password.</font>";
 						}
 						elseif ($_GET["err"] == 2){
-							echo "Username already exists.";
+							echo "<font color='red'>Username already exists.</font>";
 						}
 						elseif ($_GET["err"] == 3){
-							echo "Your username and/or password is invalid.";
+							echo "<font color='red'>Your username and/or password is invalid.</font>";
 						}						
 					?>						
 				</section>			
@@ -53,9 +56,9 @@
 						<h2>Log In</h2>
 						<form action="userauth.php" method="POST">
 							<div>
-								<input type = "text" name="username" placeholder = "Username">
+								<input type = "text" name="user" placeholder = "Username" autofocus='autofocus'>
 								<br>
-								<input type = "text" name="password" placeholder = "Password">
+								<input type = "password" name="pxwd" placeholder = "Password">
 								<br>
  							</div>
 							<input type="hidden" name="type" value="login">
@@ -66,11 +69,11 @@
 						<h2>Sign Up</h2>
 						<form action = "createacct.php" method="POST">
 							<div>
-								<input type = "text" name = "name" placeholder = "Full Name">
+								<input type = "text" name = "user" placeholder = "Username" autocomplete='off'>
 								<br>
-								<input type = "email" name = "email" placeholder = "Email">
+								<input type = "email" name = "email" placeholder = "Email" autocomplete='off'>
 								<br>
-								<input type = "text" name = "password" placeholder = "Password">
+								<input type = "password" name = "pxwd" placeholder = "Password" autocomplete='off'>
 								<br>
 							</div>
 							<!-- Need to put with back end -->

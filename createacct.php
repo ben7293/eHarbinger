@@ -15,7 +15,8 @@ function addUser($user, $pxwd, $email){
 			// Log the user in
 			login($user, $pxwd, $db);
 			$_SESSION["completedPref"] = FALSE;
-			header("Location: signup.php");
+			header("Location: games.php");
+			//header("Location: question.php?game=General&console=General");
 		}
 	}
 	else{

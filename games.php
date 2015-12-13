@@ -1,3 +1,34 @@
+<?php
+                        include_once("session.php");
+                        include_once("classes.php");
+                        session_start();
+
+                        // Get this from $_SESSION
+                        $me = $_SESSION["user"]->getName();
+                        if( !$_SESSION['user']->isLoggedIn() ){
+                                header('location: index.php');
+                        }
+
+                        $conn = new Database();
+                        $result = $conn->queryTable("select * from getGames('$me');");
+
+                        if( isset ($_POST['games'] ) ){
+                                foreach( $_POST['games'] as $game )
+                                {
+                                        $split = split('#', $game);
+                                        $game = pg_escape_string($split[0]);
+                                        $console = pg_escape_string($split[1]);
+                                        if( !$conn->queryTrueFalse("select likeGame('$me','$game','$console');") ){
+                                                die('Please contact benson');
+                                        } else{
+                                                header('Location: question.php');
+                                        }
+                                }
+                        }
+
+
+?>
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -37,7 +68,7 @@ $('#search').keyup(function() {
 	<section class = 'wrapper'>
 		<form method='post'>
 		<?php
-		        include_once("session.php");
+/*		        include_once("session.php");
 		        include_once("classes.php");
 		        session_start();
 
@@ -63,7 +94,7 @@ $('#search').keyup(function() {
 					}
 				}
 			}
-
+*/
 			$i=1;
 			echo "<input type='text' id='search' placeholder='Type to search' autofocus='autofocus' autocomplete='off'>";
 			echo "<table id='table'>";
