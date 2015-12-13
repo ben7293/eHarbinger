@@ -110,11 +110,11 @@
 				<form action="createprofile.php" method="POST">
 					<label>Location</label>
 					<br>
-					<input type="text" name="pub_prof['location']" size="40" placeholder="e.g. United States">
+					<input type="text" name="pub_prof['location']" size="10" placeholder="e.g. United States">
 					<br>
 					<label>Language</label>
 					<br>
-					<input type="text" name="pub_prof['language']" size="40" placeholder="e.g. English">
+					<input type="text" name="pub_prof['language']" size="10" placeholder="e.g. English">
 					<br>
 					<label>About you</label>
 					<br>
