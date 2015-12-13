@@ -39,8 +39,9 @@ if (!isset($_SESSION["user"])){
 		header("Location: index.php?err=3");
 	}
 }
-echo "send prof";
+
 if (isset($_POST["pub_prof"])){
+	echo "send prof";
 	//Send profile data to database
 	$username = $_SESSION["user"]->getName();
 	$name = $_SESSION["name"];
@@ -54,8 +55,9 @@ if (isset($_POST["pub_prof"])){
 	header("Location: players.php");
 
 }
-echo "set session";
+
 if (!isset($_SESSION["name"])){
+	echo "set session";
 	$_SESSION["name"] = $_POST["name"];
 }
 
