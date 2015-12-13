@@ -42,12 +42,12 @@
 <section id='banner'>
 <div class = 'inner split'>
 	<section>
-+		<h2> Messages for You! </h2>
-+	</section>
-+	<section>
-+		<p> Talk to other players here :) </p>
-+	</section>
-+</div>
+		<h2 style = "color = 'black';"> Messages for You! </h2>
+	</section>
+	<section>
+		<p> Talk to other players here :) </p>
+	</section>
+</div>
 </section>
 <div class='wrapper'>
 
