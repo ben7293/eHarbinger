@@ -103,7 +103,7 @@
             <!-- Information to be filled out by user -->
             <br>
             <br>
-            <div class = 'wrapper' style="width:50%">
+            <div class = 'wrapper' style="width:50%; margin-left:auto; margin-right:auto">
 			<section>
 				<label for="pub_profie" class="heading">Tell us a little more about yourself</label>
 				This information will be visible to anyone viewing your profile.
