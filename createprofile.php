@@ -112,10 +112,10 @@
 					<input type="text" name="pub_prof['location'] size="10" placeholder="e.g. United States" style="padding-left: 32px;">
 					<br>
 					<label>Language</label>
-					<style="padding-left: 32px;"><input type="text" name="pub_prof['language']" size="10" placeholder="e.g. English" style="padding-left: 32px;">
+					<input type="text" name="pub_prof['language']" size="10" placeholder="e.g. English" style="padding-left: 32px;">
 					<br>
 					<label>About you</label>
-					<style="padding-left: 32px;"><textarea rows="3" name="pub_prof['description']"></textarea>
+					<textarea rows="3" name="pub_prof['description']" style="padding-left: 32px;"></textarea>
 					<br>
 					<button class = 'button-center' type="submit">Finish Profile</button> 
 				</form>
