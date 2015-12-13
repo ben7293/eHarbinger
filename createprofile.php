@@ -6,7 +6,9 @@ function addUser($user, $pxwd, $email){
 	$db = new Database();
 	if (!$db->queryTrueFalse("select userExists('$user')")){
 		// If username does not exist
+		echo "first level";
 		if ($db->queryTrueFalse("select insertUser('$user', '$pxwd', '$email')")){
+			echo "second level";
 			// Add user information to database
 			// Log the user in
 			login($user, $pxwd, $db);
