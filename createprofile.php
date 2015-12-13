@@ -52,7 +52,7 @@ if (isset($_POST["pub_prof"])){
 
 }
 
-if (!isset($_SESSION["name"])){}
+if (!isset($_SESSION["name"])){
 	$_SESSION["name"] = $_POST["name"];
 }
 
