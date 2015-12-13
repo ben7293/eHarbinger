@@ -1,3 +1,63 @@
+<?php
+include_once("classes.php");
+include_once("session.php");
+session_start();
+
+function addUser($user, $pxwd, $email){
+	$db = new Database();
+	if (!$db->queryTrueFalse("select userExists('$user')")){
+		// If username does not exist
+		if ($db->queryTrueFalse("select insertUser('$user', '$pxwd', '$email')")){
+			// Add user information to database
+			// Log the user in
+			login($user, $pxwd, $db);
+			$_SESSION["completedPref"] = FALSE;
+			header("Location: signup.php");
+		}
+	}
+	else{
+		//Complain
+		header("Location: index.php?err=2");
+	}
+	
+}
+
+// // if (isset($_SESSION["completedPref"])){
+	// // if (!$_SESSION["completedPref"]){
+		// //Create csv formatted description
+		// $prefCsv = "";
+		
+		// if (isset($_POST["Preferences"])){
+			// foreach ($_POST["Preferences"] as $pref){
+				// if ($prefCsv == ""){
+					// // First item
+					// $prefCsv = $pref;
+				// }
+				// else{
+					// // Following item
+					// $prefCsv = $prefCsv . ", " . $pref;
+				// }
+			// }
+		// }
+		
+		// //Send profile data to database
+		// $username = $_SESSION["user"]->getName();
+		// $name = $_POST["name"];
+		// $location = $_POST["location"];
+		// $lang = $_POST["lang"];
+
+		// // Update profile
+		// $status = $_SESSION["user"]->upProf($username, $name, $location, $lang, $prefCsv);
+		// if ($status){
+			// // Remove profile incomplete marker
+			// unset($_SESSION["completedPref"]);
+		// }
+	// // }
+// // }
+// // header("Location: players.php");
+
+?>
+
 <DOCTYPE HTML!>
 	<html>
 		<head>
@@ -15,53 +75,20 @@
             <br>
             <br>
             <div class = 'wrapper'>
-			<section class = 'inner split'>
-				<div>
-				<label for="Roles"> Roles Played: </label>
-                  <br>
-				  <input type = 'checkbox' name = 'Roles' value = 'Warrior' id = '1'><label for = '1'> Warrior </label>
-				  <input type = 'checkbox' name = 'Roles' value = 'Mage' id = '2'><label for = '2'> Mage </label>
-                  <input type = 'checkbox' name = 'Roles' value = 'Rogue' id = '3'><label for = '3'> Rogue </label>
-                  <input type = 'checkbox' name = 'Roles' value = 'Healer' id = '4'><label for = '4'> Healer </label>
-                  <br>
-                  <br>
-				</div>
-				<div>
-                  <label for = "Avatar" > Pick Your Avatar: </label>
-                  <br>
-                  <p> Until we can get a graphic designer, this is the only avatar to use. If you are a graphic design, please visit our contact page for a possible partnership! </p>
-                  <br>
-                  <img src = "images/plainPic.gif">
-                  <br>
-				  </div>
-			</section>
 			<section>
-		      <label for="Preferences"> Preferences: </label><br>
-		      <label>Systems: </label> 
-                  <input type = 'checkbox' name = 'Preferences' value = 'Xbox' id = '1'><label for = '1'> Xbox </label>
-                  <input type = 'checkbox' name = 'Preferences' value = 'Playstation' id = '2'><label for = '2'> Playstation </label>
-                  <input type = 'checkbox' name = 'Preferences' value = 'PC' id = '3'><label for = '3'> PC </label>
-                  <input type = 'checkbox' name = 'Preferences' value = 'Moblie' id = '4'><label for = '4'> Moblie </label>
-                  <br>
-                  <label>Games: </label> <br>
-                  <input type = 'checkbox' name = 'Preferences' value = 'Racing' id = '1'><label for = '1'> Racing </label>
-                  <input type = 'checkbox' name = 'Preferences' value = 'MMO' id = '2'><label for = '2'> MMO </label>
-                  <input type = 'checkbox' name = 'Preferences' value = 'Shooting' id = '3'><label for ='3'> Shooting </label>
-                  <input type = 'checkbox' name = 'Preferences' value = 'Action' id = '4'><label for = '4'> Action </label>
-                  <input type = 'checkbox' name = 'Preferences' value = 'Adventure' id = '5'><label for = '5'> Adventure </label>
-                  <input type = 'checkbox' name = 'Preferences' value = 'RPG' id = '6'><label for = '6'> RPG </label>
-                  <input type = 'checkbox' name = 'Preferences' value = 'Strategy' id = '7'><label for = '7'> Strategy </label>
-                  <input type = 'checkbox' name = 'Preferences' value = 'Sports' id = '8'><label for = '8'> Sports </label>
-                  <input type = 'checkbox' name = 'Preferences' value = 'Casual' id = '9'><label for = '9'> Casual </label>
-                  <input type = 'checkbox' name = 'Preferences' value = 'Trivia' id = '10'><label for = '10'> Trivia </label>
-                  <input type = 'checkbox' name = 'Preferences' value = 'Indie' id = '11'><label for = '11'> Indie </label>
-                  <br>
-                  <br>
-                  <!-- Submition here needs to connect to back end of new profile -->
-                  <button class = 'button-center' onclick = "newUser()"> Finish Profile </button> 
+				This information will be visible to anyone viewing your profile.
+				<form action="createprofile.php" method="POST">
+					<label for="Preferences"> Preferences: </label><br>
+					<label>Location</label> <input type="text" name="location" placeholder="e.g. United States">
+					<br>
+					<label>Language</label> <input type="text" name="lang" placeholder="e.g. English">
+					<br>
+					<label>Description</label> <textarea rows="3" name="description"></textarea>
+					<br>
+					<!-- Submition here needs to connect to back end of new profile -->
+					<button class = 'button-center' onclick = "newUser()"> Finish Profile </button> 
+				</form>
 			</section>
             </div>
 		</body>
 	</html>
-
-
