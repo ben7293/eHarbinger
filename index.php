@@ -67,7 +67,7 @@
 					</section>
 					<section>
 						<h2>Sign Up</h2>
-						<form action = "createacct.php" method="POST">
+						<form action = "createprofile.php" method="POST">
 							<div>
 								<input type = "text" name = "user" placeholder = "Username" autocomplete='off'>
 								<br>

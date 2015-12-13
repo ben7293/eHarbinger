@@ -1,91 +1,96 @@
-// <?php
-// include_once("classes.php");
-// include_once("session.php");
-// session_start();
+<?php
+include_once("classes.php");
+session_start();
 
-// function addUser($user, $pxwd, $email){
-	// $db = new Database();
-	// if (!$db->queryTrueFalse("select userExists('$user')")){
-		// // If username does not exist
-		// if ($db->queryTrueFalse("select insertUser('$user', '$pxwd', '$email')")){
-			// // Add user information to database
-			// // Log the user in
-			// login($user, $pxwd, $db);
-			// // $_SESSION["completedPref"] = FALSE;
+function addUser($user, $pxwd, $email){
+	$db = new Database();
+	if (!$db->queryTrueFalse("select userExists('$user')")){
+		// If username does not exist
+		if ($db->queryTrueFalse("select insertUser('$user', '$pxwd', '$email')")){
+			// Add user information to database
+			// Log the user in
+			login($user, $pxwd, $db);
+			// $_SESSION["completedPref"] = FALSE;
 			// header("Location: signup.php");
-		// }
-	// }
-	// else{
-		// //Complain
-		// header("Location: index.php?err=2");
-	// }
+		}
+	}
+	else{
+		//Complain
+		header("Location: index.php?err=2");
+	}
 	
-// }
+}
 
-// if (!isset($_SESSION["user"])){
-	// // New user, create an account and log in
-	// // $pxwd = crypt($_POST["pxwd"]);
-	// if( isset($_POST['user']) && trim($_POST['user']) && isset($_POST['pxwd']) && trim($_POST['pxwd']) && isset($_POST['email']) && trim($_POST['email'])){
-		// // If all fields are satisfactory
-		// $user = pg_escape_string(trim($_POST['user']));
-		// $pxwd = pg_escape_string(trim($_POST['pxwd']));
-		// $email = pg_escape_string(trim($_POST['email']));
-		// addUser($user, $pxwd, $email);	
-	// }
-	// else{
-		// // Otherwise, complain
-		// header("Location: index.php?err=3");
-	// }
-// }
+if (!isset($_SESSION["user"])){
+	// New user, create an account and log in
+	// $pxwd = crypt($_POST["pxwd"]);
+	if( isset($_POST['user']) && trim($_POST['user']) && isset($_POST['pxwd']) && trim($_POST['pxwd']) && isset($_POST['email']) && trim($_POST['email'])){
+		// If all fields are satisfactory
+		$user = pg_escape_string(trim($_POST['user']));
+		$pxwd = pg_escape_string(trim($_POST['pxwd']));
+		$email = pg_escape_string(trim($_POST['email']));
+		addUser($user, $pxwd, $email);	
+	}
+	else{
+		// Otherwise, complain
+		header("Location: index.php?err=3");
+	}
+}
 
-// if (isset($_POST['pub_prof'])){
-	// //Send profile data to database
-	// $username = $_SESSION["user"]->getName();
-	// $name = $_SESSION["name"];
-	// $location = $_POST["location"];
-	// $lang = $_POST["lang"];
+if (isset($_POST["pub_prof"])){
+	//Send profile data to database
+	$username = $_SESSION["user"]->getName();
+	$name = $_SESSION["name"];
+	$location = pg_escape_string($_POST["pub_prof"]["location"]);
+	$language = pg_escape_string($_POST["pub_prof"]["language"]);
+	$description = pg_escape_string($_POST["pub_prof"]["description"]);
 
-	// // Update profile
+	// Update profile
 	// $status = $_SESSION["user"]->upProf($username, $name, $location, $lang, $prefCsv);
+	$status = $_SESSION["user"]->upProf($username, $name, $location, $language, $description);
+	header("Location: players.php");
 
-// }
+}
 
-// $_SESSION["name"] = $_POST["name"];
-// // // if (isset($_SESSION["completedPref"])){
-	// // // if (!$_SESSION["completedPref"]){
-		// // //Create csv formatted description
-		// // $prefCsv = "";
+if (!isset($_SESSION["name"])){}
+	$_SESSION["name"] = $_POST["name"];
+}
+
+// // if (isset($_SESSION["completedPref"])){
+	// // if (!$_SESSION["completedPref"]){
+		// //Create csv formatted description
+		// $prefCsv = "";
 		
-		// // if (isset($_POST["Preferences"])){
-			// // foreach ($_POST["Preferences"] as $pref){
-				// // if ($prefCsv == ""){
-					// // // First item
-					// // $prefCsv = $pref;
-				// // }
-				// // else{
-					// // // Following item
-					// // $prefCsv = $prefCsv . ", " . $pref;
-				// // }
-			// // }
-		// // }
+		// if (isset($_POST["Preferences"])){
+			// foreach ($_POST["Preferences"] as $pref){
+				// if ($prefCsv == ""){
+					// // First item
+					// $prefCsv = $pref;
+				// }
+				// else{
+					// // Following item
+					// $prefCsv = $prefCsv . ", " . $pref;
+				// }
+			// }
+		// }
 		
-		// // //Send profile data to database
-		// // $username = $_SESSION["user"]->getName();
-		// // $name = $_POST["name"];
-		// // $location = $_POST["location"];
-		// // $lang = $_POST["lang"];
+		// //Send profile data to database
+		// $username = $_SESSION["user"]->getName();
+		// $name = $_POST["name"];
+		// $location = $_POST["location"];
+		// $lang = $_POST["lang"];
 
-		// // // Update profile
-		// // $status = $_SESSION["user"]->upProf($username, $name, $location, $lang, $prefCsv);
-		// // if ($status){
-			// // // Remove profile incomplete marker
-			// // unset($_SESSION["completedPref"]);
-		// // }
-	// // // }
-// // // }
-// // // header("Location: players.php");
+		// // Update profile
+		// $status = $_SESSION["user"]->upProf($username, $name, $location, $lang, $prefCsv);
+		// if ($status){
+			// // Remove profile incomplete marker
+			// unset($_SESSION["completedPref"]);
+		// }
+	// // }
+// // }
+// // header("Location: players.php");
 
-// ?>
+?>
 
 <DOCTYPE HTML!>
 	<html>
