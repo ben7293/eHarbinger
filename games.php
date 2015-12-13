@@ -54,8 +54,8 @@ $('#search').keyup(function() {
 				foreach( $_POST['games'] as $game )
 				{
 					$split = split('#', $game);
-					$game = $split[0];
-					$console = $split[1];
+					$game = pg_escape_string($split[0]);
+					$console = pg_escape_string($split[1]);
 					if( !$conn->queryTrueFalse("select likeGame('$me','$game','$console');") ){
 						die('Please contact benson');
 					} else{
