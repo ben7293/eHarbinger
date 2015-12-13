@@ -26,9 +26,11 @@ if (!isset($_SESSION["user"])){
 	// $pxwd = crypt($_POST["pxwd"]);
 	if( isset($_POST['user']) && trim($_POST['user']) && isset($_POST['pxwd']) && trim($_POST['pxwd']) && isset($_POST['email']) && trim($_POST['email'])){
 		// If all fields are satisfactory
+		echo "trimming arguments";
 		$user = pg_escape_string(trim($_POST['user']));
 		$pxwd = pg_escape_string(trim($_POST['pxwd']));
 		$email = pg_escape_string(trim($_POST['email']));
+		echo "adding user";
 		addUser($user, $pxwd, $email);	
 	}
 	else{
