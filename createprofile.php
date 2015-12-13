@@ -103,21 +103,18 @@
             <!-- Information to be filled out by user -->
             <br>
             <br>
-            <div class = 'wrapper'>
+            <div class = 'wrapper' style="width:50%">
 			<section>
 				<label for="pub_profie" class="heading">Tell us a little more about yourself</label>
 				This information will be visible to anyone viewing your profile.
 				<form action="createprofile.php" method="POST">
 					<label>Location</label>
-					<br>
 					<input type="text" name="pub_prof['location']" size="10" placeholder="e.g. United States">
 					<br>
 					<label>Language</label>
-					<br>
 					<input type="text" name="pub_prof['language']" size="10" placeholder="e.g. English">
 					<br>
 					<label>About you</label>
-					<br>
 					<textarea rows="3" name="pub_prof['description']"></textarea>
 					<br>
 					<button class = 'button-center' type="submit">Finish Profile</button> 
