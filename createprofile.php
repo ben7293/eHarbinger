@@ -122,7 +122,7 @@ if (!isset($_SESSION["name"])){
 				This information will be visible to anyone viewing your profile.
 				<form action="createprofile.php" method="POST">
 					<label>Location</label>
-					<input type="text" name="pub_prof['location'] size="10" placeholder="e.g. United States">
+					<input type="text" name="pub_prof['location']" size="10" placeholder="e.g. United States">
 					<br>
 					<label>Language</label>
 					<input type="text" name="pub_prof['language']" size="10" placeholder="e.g. English">
