@@ -41,7 +41,7 @@ if (!isset($_SESSION["user"])){
 }
 
 if (isset($_POST["pub_prof"])){
-	echo "send prof";
+	die ("send prof");
 	//Send profile data to database
 	$username = $_SESSION["user"]->getName();
 	$name = $_SESSION["name"];
