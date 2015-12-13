@@ -20,7 +20,7 @@ function addUser($user, $pxwd, $email){
 	}
 	
 }
-
+echo "Start";
 if (!isset($_SESSION["user"])){
 	// New user, create an account and log in
 	// $pxwd = crypt($_POST["pxwd"]);
@@ -36,7 +36,7 @@ if (!isset($_SESSION["user"])){
 		header("Location: index.php?err=3");
 	}
 }
-
+echo "send prof";
 if (isset($_POST["pub_prof"])){
 	//Send profile data to database
 	$username = $_SESSION["user"]->getName();
@@ -51,7 +51,7 @@ if (isset($_POST["pub_prof"])){
 	header("Location: players.php");
 
 }
-
+echo "set session";
 if (!isset($_SESSION["name"])){
 	$_SESSION["name"] = $_POST["name"];
 }
