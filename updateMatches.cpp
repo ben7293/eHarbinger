@@ -26,7 +26,7 @@ int matchOneQuestion(work& conn, const string& questionID, const string& myUserN
 	int index = yourAnswer[0]["answerself"].as<int>();
 	char theAns = answerOther[ index-1 ];
 	
-	// cout << "QID = " << questionID << ", myAnswer = " << answerOther << " yourAnswer = " << theAns;	
+	cout << "QID = " << questionID << ", myAnswer = " << answerOther << " yourAnswer = " << theAns;	
 	
 	if ( theAns == '1' ){
 		// cout << ", it's a match!";
