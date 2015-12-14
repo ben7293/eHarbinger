@@ -13,9 +13,10 @@
 			$matchList = $_SESSION["user"]->query("select * from getMatches('$myUserName', 5)", "table");
 			$numMatches = count($matchList);
 			if( !$matchList ){ $numMatches = 0; }
+			 echo "Match number is $numMatches";
 			if ($numMatches = 0){
 				// If no matches, find some for the poor user
-				echo "running match because match number is $numMatches";
+				echo "running match";
 				exec("matchusers.exe $myUserName");
 				// header("Refresh:0")
 			}
