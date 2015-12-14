@@ -37,15 +37,16 @@ int main(){
 	// Connect to database
 	connection db("dbname=bt773 user=bt773 password=bt773");
 	work conn(db);
-	int questionID = 2;
+	string questionID = "2";
 	string myUserName = "ben7293";
 	string yourUserName = "brian";
-	string myExpQuery = "select answerother, importance from users_answer_questions where questionID=" + questionID + "and username=" + myUserName + ";";
-	string yourAnsQuery = "select answerself from users_answer_questions where questionID=" + questionID + "and username=" + yourUserName + ";";
+	string myExpQuery = "select answerother, importance from users_answer_questions where questionID=" + string(questionID) + "and username=" + string(myUserName) + ";";
+	string yourAnsQuery = "select answerself from users_answer_questions where questionID=" + string(questionID) + "and username=" + string(yourUserName) + ";";
 	
 	result myExpectation = conn.exec(myExpQuery);
 	result yourAnswer = conn.exec(yourAnsQuery);
-	if ( myExpectation[0]["answerother"][ yourAnswer[0]["answerself"] ] == 1){
+	int index = yourAnswer[0]["answerself"];
+	if ( myExpectation[0]["answerother"][ index ] == 1){
 		// If your answer is in my expectations
 		cout << "It's a match!\n";
 		// score += myExpectation[0]["importance"];
