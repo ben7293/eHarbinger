@@ -99,5 +99,6 @@ int main(int argc, char* argv[]){
 	
 	conn.commit();
 	db.disconnect();
+	cout << "Executed\n";
 	return 0;
 }
