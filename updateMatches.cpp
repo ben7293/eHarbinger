@@ -5,15 +5,29 @@ using namespace std;
 using namespace pqxx;
 
 
-// void matchOneQuestion(work& conn, const int questionID, const string& myUsername, const string& yourUserName){
-	// // Pull answers for each user
-	// result myExpectation = conn.exec("select answerother, importance from users_answer_questions;");
-	// result yourAnswer = conn.exec("select answerself from users_answer_questions;");
-	// if ( myExpectation[0]["answerother"][ yourAnswer[0]["answerself"] ] == 1){
-		// // If your answer is in my expectations
-		// score += myExpectation[0]["importance"];
-	// }
-// }
+void matchOneQuestion(work& conn, const int questionID, const string& myUsername, const string& yourUserName){
+	// Pull answers for each user
+	string myExpQuery = "select answerother, importance from users_answer_questions where questionID=" + string(questionID) + "and username='" + string(myUserName) + "';";
+	string yourAnsQuery = "select answerself from users_answer_questions where questionID=" + string(questionID) + "and username='" + string(yourUserName) + "';";
+	
+	result myExpectation = conn.exec(myExpQuery);
+	result yourAnswer = conn.exec(yourAnsQuery);
+	
+	string answerOther = myExpectation[0]["answerother"].as<string>();
+	int index = yourAnswer[0]["answerself"].as<int>();
+	int theAns = answerOther[ index-1 ];
+	
+	if ( theAns == '1' ){
+		// If your answer is in my expectations
+		cout << "It's a match!\n";
+		score += myExpectation[0]["importance"];
+		
+	}
+	else{
+		cout << "It's not a match :(\n";
+	}
+	
+}
 
 // void matchOneUserWithOthers(work& conn, const string& myUserName){
 	// // First, grab a list of all users...
@@ -40,22 +54,13 @@ int main(){
 	string questionID = "2";
 	string myUserName = "brian";
 	string yourUserName = "ben7293";
-	string myExpQuery = "select answerother, importance from users_answer_questions where questionID=" + string(questionID) + "and username='" + string(myUserName) + "';";
-	string yourAnsQuery = "select answerself from users_answer_questions where questionID=" + string(questionID) + "and username='" + string(yourUserName) + "';";
+
+	// string myExpQuery = "select answerother, importance from users_answer_questions where questionID=" + string(questionID) + "and username='" + string(myUserName) + "';";
+	// string yourAnsQuery = "select answerself from users_answer_questions where questionID=" + string(questionID) + "and username='" + string(yourUserName) + "';";
 	
-	result myExpectation = conn.exec(myExpQuery);
-	result yourAnswer = conn.exec(yourAnsQuery);
-	string answerOther = myExpectation[0]["answerother"].as<string>();
-	int index = yourAnswer[0]["answerself"].as<int>();
-	int theAns = answerOther[ index-1 ];
-	if ( theAns == '1' ){
-		// If your answer is in my expectations
-		cout << "It's a match!\n";
-		// score += myExpectation[0]["importance"];
-	}
-	else{
-		cout << "It's not a match :(\n";
-	}
+	// result myExpectation = conn.exec(myExpQuery);
+	// result yourAnswer = conn.exec(yourAnsQuery);
+	matchOneQuestion(conn, 2, myUserName, yourUserName);
 	
 	
 	db.disconnect();
