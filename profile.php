@@ -80,7 +80,7 @@ else{
 						echo "</form>";		
 					}					
 					else{
-						echo "<a href = "createprofile.php">Edit Profile Here</a>";
+						echo "<a href = 'createprofile.php'>Edit Profile Here</a>";
 					}
 					echo "<br><br><br>";
 					
