@@ -47,6 +47,7 @@ if (isset($_POST["pub_prof"])){
 	$language = pg_escape_string(trim($_POST["pub_prof"]["language"]));
 	$description = pg_escape_string(trim($_POST["pub_prof"]["description"]));
 	var_dump($_POST);
+	var_dump($_POST["pub_prof"]["location"]);
 	var_dump($username);
 	var_dump($name);
 	var_dump($location);
