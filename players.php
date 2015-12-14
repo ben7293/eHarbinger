@@ -13,14 +13,12 @@
 			$matchList = $_SESSION["user"]->query("select * from getMatches('$myUserName', 5)", "table");
 			$numMatches = count($matchList);
 			if( !$matchList ){ $numMatches = 0; }
-			 echo "Match number is $numMatches";
-			if ($numMatches = 0){
+			if ($numMatches == 0){
 				// If no matches, find some for the poor user
 				echo "running match";
 				exec("matchusers.exe $myUserName");
 				// header("Refresh:0")
 			}
-			echo "or nah";
 		?>		
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
