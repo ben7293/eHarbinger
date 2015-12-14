@@ -42,8 +42,8 @@ void matchOneUserWithOthers(work& conn, const string& myUserName){
 	result userList = conn.exec("select username from users;");
 	for (int i=0; i < userList.size(); ++i){
 		// For each user
-		cout << "myUserName = " << myUserName << ", yourUserName = " << userList[i]["username"] << endl;
-		if (myUserName != userList[i]["username"]){
+		cout << "myUserName = " << myUserName << ", yourUserName = " << userList[i]["username"].as<string>() << endl;
+		if (myUserName != userList[i]["username"].as<string>()){
 			// We don't want to self-match
 			// Grab a list of questions I have answered
 			string myQIDQuery = "select questionid from users_answer_questions where username='" + myUserName + "';";
@@ -52,7 +52,7 @@ void matchOneUserWithOthers(work& conn, const string& myUserName){
 			result yourQuestionNum = conn.exec(yourQIDQuery);
 			
 			for (int j=0; j < myQuestionNum.size(); ++j){
-				if ( isInList(questionNum[j]["questionid"], yourQuestionNum) ){
+				if ( isInList(questionNum[j]["questionid"].as<string>(), yourQuestionNum) ){
 					// If this question is answered by you
 					bool result = matchOneQuestion(conn, questionNum[j]["questionid"], myUserName, userList[i]["username"]);
 				}
