@@ -90,7 +90,7 @@ int main(int argc, char* argv[]){
 	// Connect to database
 	connection db("dbname=bt773 user=bt773 password=bt773");
 	work conn(db);
-	if (agrv[1]){
+	if (agrc == 2){
 		matchOneUserWithOthers(conn, argv[1]);	
 	}
 	else{
