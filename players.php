@@ -11,8 +11,8 @@
 		// If no matches, find some for the poor user
 		echo "running match";
 		shell_exec("pwd", $dir);
-		shell_exec("$dir/matchusers.exe $myUserName");
-		exec("matchusers.exe $myUserName", $output);
+		shell_exec(escapeshellcmd("$dir/matchusers.exe $myUserName"));
+		exec(escapeshellcmd("./matchusers.exe $myUserName"), $output);
 		var_dump($output);
 		header("Refresh:0");
 	}
