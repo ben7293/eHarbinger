@@ -9,10 +9,8 @@
 	if( !$matchList ){ $numMatches = 0; }
 	if ($numMatches == 0){
 		// If no matches, find some for the poor user
-		echo "running match";
 		shell_exec("pwd", $dir);
-		shell_exec("$dir/matchusers.exe $myUserName");
-		shell_exec("./run.sh");
+		shell_exec("$dir/matchusers.exe $myUserName2>&1");
 	}
 ?>		
 
