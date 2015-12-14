@@ -29,7 +29,6 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-	<a href="webrun:./matchusers.exe">Run</a>
 	<section id = 'banner'>
 		<!-- Benson, need to change number of messages given -->
 		<div class = 'inner split'>
