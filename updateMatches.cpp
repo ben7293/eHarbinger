@@ -14,7 +14,7 @@ bool isInList(const string& target, result list){
 	return false;
 }
 
-bool matchOneQuestion(work& conn, const string& questionID, const string& myUserName, const string& yourUserName){
+int matchOneQuestion(work& conn, const string& questionID, const string& myUserName, const string& yourUserName){
 	// Pull answers for each user
 	string myExpQuery = "select answerother, importance from users_answer_questions where questionID=" + questionID + "and username='" + string(myUserName) + "';";
 	string yourAnsQuery = "select answerself from users_answer_questions where questionID=" + questionID + "and username='" + string(yourUserName) + "';";
@@ -30,10 +30,10 @@ bool matchOneQuestion(work& conn, const string& questionID, const string& myUser
 	
 	if ( theAns == '1' ){
 		cout << ", it's a match!";
-		return true;
+		return int(string(myExpectation[0]["importance"]));
 	}
 	cout << ", it's not a match.";
-	return false;
+	return 0;
 	
 }
 
@@ -42,6 +42,7 @@ void matchOneUserWithOthers(work& conn, const string& myUserName){
 	result userList = conn.exec("select username from users;");
 	for (int i=0; i < userList.size(); ++i){
 		// For each user
+		totalScore = 0;
 		cout << "myUserName = " << myUserName << ", yourUserName = " << userList[i]["username"].as<string>() << endl;
 		if (myUserName != userList[i]["username"].as<string>()){
 			// We don't want to self-match
@@ -54,8 +55,8 @@ void matchOneUserWithOthers(work& conn, const string& myUserName){
 			for (int j=0; j < myQuestionNums.size(); ++j){
 				if ( isInList(myQuestionNums[j]["questionid"].as<string>(), yourQuestionNums) ){
 					// If this question is answered by you
-					bool result = matchOneQuestion(conn, myQuestionNums[j]["questionid"].as<string>(), myUserName, userList[i]["username"].as<string>());
-					cout << endl;
+					int score = matchOneQuestion(conn, myQuestionNums[j]["questionid"].as<string>(), myUserName, userList[i]["username"].as<string>());
+					cout << " Score value added is " << score << endl;
 				}
 			}
 			
