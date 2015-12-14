@@ -10,7 +10,7 @@
 	if ($numMatches == 0){
 		// If no matches, find some for the poor user
 		shell_exec("pwd", $dir);
-		exec("$dir/matchuserss.exe $myUserName");
+		exec("$dir/matchusers.exe $myUserName");
 	}
 ?>		
 

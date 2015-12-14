@@ -13,9 +13,15 @@
 </form>
 
 <?php
- exec("./matchusers.exe");
- $hashed = crypt('abc');
- echo $hashed;
+//exec("/bin/ls",$output);
+//var_dump($output);
+//exec("whoami",$output);
+exec("./matchusers.exe",$output,$exit);
+//foreach( $output as $out ){
+//	echo "$out <br/>";
+//}
+// $hashed = crypt('abc');
+// echo $hashed;
  
  // include_once("classes.php");
  // $db = new Database();

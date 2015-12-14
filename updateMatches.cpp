@@ -88,7 +88,9 @@ void matchAllUsers(work& conn){
 
 int main(int argc, char* argv[]){
 	// Connect to database
+	cout << "Starting!" << endl;
 	connection db("dbname=bt773 user=bt773 password=bt773");
+	cout << "Connection successful!" << endl;
 	work conn(db);
 	if (argc == 2){
 		matchOneUserWithOthers(conn, argv[1]);	
