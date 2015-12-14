@@ -11,7 +11,9 @@
 		// If no matches, find some for the poor user
 		echo "running match";
 		// system("./matchusers.exe");
-		exec("./matchusers.o $myUserName");
+		$execString = "./matchusers.o $myUserName";
+		var_dump($execString);
+		exec($execString);
 		header("Refresh:0");
 	}
 ?>		
