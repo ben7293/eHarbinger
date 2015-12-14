@@ -8,6 +8,9 @@ if (isset($_POST["rating"])){
 	$you = $_POST["rateduser"];
 	$rating = $_POST['rating'];
 	$_SESSION["user"]->query("select rateuser('$me', '$you', '$rating')","boolean");
+	if ($rating == '-1'){
+		$_SESSION["user"]->query("select hidematch('$me', '$you')","boolean");	
+	}
 }
 header("Location: players.php");
 
