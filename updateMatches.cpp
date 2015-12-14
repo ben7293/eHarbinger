@@ -55,7 +55,7 @@ int main(){
 		cout << "It's a match!\n";
 		// score += myExpectation[0]["importance"];
 	}	
-	
+	cout << "It's not a match :(\n";
 	
 	
 	db.disconnect();
