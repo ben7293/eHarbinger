@@ -68,6 +68,7 @@
 						echo "<input type='hidden' name='user' value='$yourUserName'>";
 					echo "</form>";
 				echo "</section>";
+				echo "/div";
 				
 				echo "<br>";
 
