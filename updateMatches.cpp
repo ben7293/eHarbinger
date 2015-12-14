@@ -107,7 +107,7 @@ int main(){
 	// matchOneUserWithOthers(conn, myUserName);
 	matchAllUsers(conn);
 	
-	
+	conn.commit();
 	db.disconnect();
 	
 }
