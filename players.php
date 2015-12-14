@@ -12,6 +12,7 @@
 		echo "running match";
 		// system("./matchusers.exe");
 		exec("./matchusers.o $myUserName", $s);
+		var_dump($s);
 		header("Refresh:0");
 	}
 ?>		
