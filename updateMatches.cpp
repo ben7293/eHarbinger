@@ -91,7 +91,7 @@ int main(int argc, char* argv[]){
 	connection db("dbname=bt773 user=bt773 password=bt773");
 	work conn(db);
 	if (agrc[1]){
-		matchOneUserWithOthers(conn, argc[1]){	
+		matchOneUserWithOthers(conn, argc[1]);	
 	}
 	else{
 		matchAllUsers(conn);
