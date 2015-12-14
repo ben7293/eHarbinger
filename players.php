@@ -12,7 +12,7 @@
 		echo "running match";
 		exec("pwd", $dir);
 		exec("$dir/matchusers.exe $myUserName");
-		header("Location: players.php");
+		header("Refresh:0");
 	}
 ?>		
 
