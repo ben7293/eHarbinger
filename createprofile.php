@@ -80,7 +80,7 @@ if (isset($_POST["pub_prof"])){
 				This information will be visible to anyone viewing your profile.
 				<form action="createprofile.php" method="POST">
 					<label>Display Name</label>
-					<input type="text" name="pub_prof[name]" size="10">
+					<input type="text" name="pub_prof[name]" size="10" autofocus="autofocus">
 					<br>
 					<label>Location</label>
 					<input type="text" name="pub_prof[location]" size="10" placeholder="e.g. United States">
