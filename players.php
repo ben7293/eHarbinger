@@ -17,7 +17,7 @@
 				// If no matches, find some for the poor user
 				echo "running match";
 				exec("./matchusers.exe $myUserName");
-				// header("Refresh:0")
+				header("Refresh:0")
 			}
 		?>		
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
