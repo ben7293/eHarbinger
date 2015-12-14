@@ -59,45 +59,6 @@ if (isset($_POST["pub_prof"])){
 
 }
 
-if (!isset($_SESSION["name"])){
-	echo "set session";
-	$_SESSION["name"] = $_POST["name"];
-	var_dump($_SESSION["name"]);
-}
-
-// // if (isset($_SESSION["completedPref"])){
-	// // if (!$_SESSION["completedPref"]){
-		// //Create csv formatted description
-		// $prefCsv = "";
-		
-		// if (isset($_POST["Preferences"])){
-			// foreach ($_POST["Preferences"] as $pref){
-				// if ($prefCsv == ""){
-					// // First item
-					// $prefCsv = $pref;
-				// }
-				// else{
-					// // Following item
-					// $prefCsv = $prefCsv . ", " . $pref;
-				// }
-			// }
-		// }
-		
-		// //Send profile data to database
-		// $username = $_SESSION["user"]->getName();
-		// $name = $_POST["name"];
-		// $location = $_POST["location"];
-		// $lang = $_POST["lang"];
-
-		// // Update profile
-		// $status = $_SESSION["user"]->upProf($username, $name, $location, $lang, $prefCsv);
-		// if ($status){
-			// // Remove profile incomplete marker
-			// unset($_SESSION["completedPref"]);
-		// }
-	// // }
-// // }
-// // header("Location: players.php");
 
 ?>
 
