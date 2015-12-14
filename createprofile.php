@@ -62,6 +62,7 @@ if (isset($_POST["pub_prof"])){
 if (!isset($_SESSION["name"])){
 	echo "set session";
 	$_SESSION["name"] = $_POST["name"];
+	var_dump($_SESSION["name"]);
 }
 
 // // if (isset($_SESSION["completedPref"])){
