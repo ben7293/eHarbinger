@@ -50,7 +50,7 @@ if (isset($_POST["pub_prof"])){
 	// Update profile
 	// $status = $_SESSION["user"]->upProf($username, $name, $location, $lang, $prefCsv);
 	$status = $_SESSION["user"]->upProf($username, $name, $location, $language, $description);
-	header("Location: profile.php");
+	header("Location: games.php");
 
 }
 
