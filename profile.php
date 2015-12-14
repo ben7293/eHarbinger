@@ -55,7 +55,7 @@ else{
 					$description = $profile["description"];
 					$rating = $_SESSION["user"]->query("select getrating('$username');", "array");
 					echo "Username: $username<br>";
-					echo "Level: Expert<br>"
+					echo "Level: Expert<br>";
 					echo "Feedback:" . $rating["getrating"];
 					echo "About the gamer: " . $description . "<br>";
 					if ($username != $me){
