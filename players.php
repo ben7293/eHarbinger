@@ -8,6 +8,15 @@
 		<?php
 			include_once("session.php");
 			session_start();
+			// First, fetch matches...
+			$myUserName = $_SESSION["user"]->getName();
+			$matchList = $_SESSION["user"]->query("select * from getMatches('$myUserName', 5)", "table");
+			$numMatches = count($matchList);
+			if( !$matchList ){ $numMatches = 0; }
+			if ($numMatches = 0){
+				// If no matches, find some for the poor user
+				exec("matchusers.exe $myUserName");
+			}
 		?>		
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -32,11 +41,7 @@
 		<div class = "wrapper">
 		<!-- Need to be able to upload matches of different players -->
 			<?php 
-			// First, fetch matches...
-			$myUserName = $_SESSION["user"]->getName();
-			$matchList = $_SESSION["user"]->query("select * from getMatches('$myUserName', 5)", "table");
-			$numMatches = count($matchList);
-			if( !$matchList ){ $numMatches = 0; }
+
 			echo "<h3>You have ($numMatches) matches!</h3>";
 			// Then parse the matches
 			foreach ($matchList as $matchInfo) {
