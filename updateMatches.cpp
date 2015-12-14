@@ -29,10 +29,10 @@ bool matchOneQuestion(work& conn, const string& questionID, const string& myUser
 	cout << "QID = " << questionID << ", myAnswer = " << answerOther << " yourAnswer = " << theAns;	
 	
 	if ( theAns == '1' ){
-		cout << ", it's a match!";
+		cout << ", it's a match!" << endl;;
 		return true;
 	}
-	cout << ", it's not a match.";
+	cout << ", it's not a match." << endl;;
 	return false;
 	
 }
