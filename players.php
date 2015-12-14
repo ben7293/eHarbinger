@@ -42,7 +42,7 @@
 				$rating = $_SESSION["user"]->query("select getrating('$yourUserName');", "array");
 				echo "<div class = 'inner split'  onload = 'playerInfo()'>";
 					echo "<section>";
-						echo "<img src = "images/plainPic.gif">";
+						echo "<img src = 'images/plainPic.gif'>";
 					echo "</section>";
 					echo "<section>";
 				echo "<section>";
