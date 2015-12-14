@@ -37,7 +37,7 @@ int main(){
 	// Connect to database
 	connection db("dbname=bt773 user=bt773 password=bt773");
 	work conn(db);
-	int questionID = 2;
+	string questionID = "2";
 	string myUserName = "ben7293";
 	string yourUserName = "brian";
 	string myExpQuery = "select answerother, importance from users_answer_questions where questionID=" + string(questionID) + "and username=" + string(myUserName) + ";";
