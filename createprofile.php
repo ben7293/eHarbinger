@@ -89,13 +89,13 @@ if (isset($_POST["pub_prof"])){
 				This information will be visible to anyone viewing your profile.
 				<form action="createprofile.php" method="POST">
 					<label>Location</label>
-					<input type="text" name="pub_prof['location']" size="10" placeholder="e.g. United States">
+					<input type="text" name="pub_prof[location]" size="10" placeholder="e.g. United States">
 					<br>
 					<label>Language</label>
-					<input type="text" name="pub_prof['language']" size="10" placeholder="e.g. English">
+					<input type="text" name="pub_prof[language]" size="10" placeholder="e.g. English">
 					<br>
 					<label>About you</label>
-					<textarea rows="3" name="pub_prof['description']"></textarea>
+					<textarea rows="3" name="pub_prof[description]"></textarea>
 					<br>
 					<button class = 'button-center' type="submit">Finish Profile</button> 
 				</form>
