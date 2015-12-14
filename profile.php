@@ -79,10 +79,13 @@ else{
 							echo "<button>I didn't like my match</button>";
 						echo "</form>";		
 					}					
+					else{
+						echo "<a href = "createprofile.php">Edit Profile Here</a>";
+					}
 					echo "<br><br><br>";
 					
 				?>
-				<a href = "createprofile.php">Edit Profile Here</a>
+
 			</section>
 			</div>
 		</div>
