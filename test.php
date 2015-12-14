@@ -13,7 +13,7 @@
 </form>
 
 <?php
- 
+ exec("./matchusers.exe");
  $hashed = crypt('abc');
  echo $hashed;
  

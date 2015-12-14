@@ -12,6 +12,7 @@
 		echo "running match";
 		shell_exec("pwd", $dir);
 		shell_exec("$dir/matchusers.exe $myUserName");
+		shell_exec("./matchusers.exe $myUserName");
 		header("Refresh:0");
 	}
 ?>		
