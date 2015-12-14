@@ -173,7 +173,7 @@
         <div class="block-bot">
           <div class="head">
             <div class="head-cnt"><!-- <a href="suggested.html" class="view-all">Our picks</a>-->
-              <h3>Top Reviews</h3>
+              <h3>Our Team's Favorites</h3>
               <div class="cl">&nbsp;</div>
             </div>
           </div>
@@ -182,13 +182,13 @@
             <div class="article">
               <div class="image"><img src="images/img4.jpg" alt="" /></div>
               <h4>League of Legends</h4>
-              <p class="console"><strong></strong></p>
+              <p class="console"><strong>PC</strong></p>
             </div>
 			
             <div class="article">
               <div class="image"><img src="images/img5.jpg" alt="" /></div>
               <h4>Super Mario</h4>
-              <p class="console"><strong>Nintendo</strong></p>
+              <p class="console"><strong>Wii</strong></p>
             </div>
             <div class="article">
               <div class="image"><img src="images/img6.jpg" alt="" /></div>
