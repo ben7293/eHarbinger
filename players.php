@@ -19,6 +19,7 @@
 				exec("matchusers.exe $myUserName");
 				// header("Refresh:0")
 			}
+			echo "or nah";
 		?>		
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
