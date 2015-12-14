@@ -86,25 +86,18 @@ void matchAllUsers(work& conn){
 	}		
 }
 
-int main(){
+int main(int argc, char* argv[]){
 	// Connect to database
 	connection db("dbname=bt773 user=bt773 password=bt773");
 	work conn(db);
-
-	// string questionID = "2";
-	// string myUserName = "brian";
-	// string yourUserName = "ben7293";
-
-	// string myExpQuery = "select answerother, importance from users_answer_questions where questionID=" + string(questionID) + "and username='" + string(myUserName) + "';";
-	// string yourAnsQuery = "select answerself from users_answer_questions where questionID=" + string(questionID) + "and username='" + string(yourUserName) + "';";
-	
-	// result myExpectation = conn.exec(myExpQuery);
-	// result yourAnswer = conn.exec(yourAnsQuery);
-	// cout << matchOneQuestion(conn, "2", myUserName, yourUserName);
-	// matchOneUserWithOthers(conn, myUserName);
-	matchAllUsers(conn);
+	if (agrc[1]){
+		matchOneUserWithOthers(conn, argc[1]){	
+	}
+	else{
+		matchAllUsers(conn);
+	}
 	
 	conn.commit();
 	db.disconnect();
-	
+	return 0;
 }
