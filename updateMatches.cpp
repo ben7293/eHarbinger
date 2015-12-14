@@ -52,7 +52,7 @@ int main(){
 	cout << answerOther[ index-1 ];
 	if ( int(answerOther[ index-1 ]) == 1){
 		// If your answer is in my expectations
-		cout << " It's a match!\n";
+		cout << "It's a match!\n";
 		// score += myExpectation[0]["importance"];
 	}	
 	
