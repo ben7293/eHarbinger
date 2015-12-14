@@ -10,8 +10,8 @@
 	if ($numMatches == 0){
 		// If no matches, find some for the poor user
 		echo "running match";
-		system("./matchusers.exe");
-		// system("./matchusers.exe $myUserName");
+		// system("./matchusers.exe");
+		system("./matchusers.o $myUserName");
 		header("Refresh:0");
 	}
 ?>		
