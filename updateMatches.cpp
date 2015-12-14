@@ -48,7 +48,7 @@ int main(){
 	string answerOther = myExpectation[0]["answerother"].as<string>();
 	cout << "answerOther = " << answerOther << endl;
 	int index = yourAnswer[0]["answerself"].as<int>();
-	int theAns = answerOther[ index-1 ];
+	int theAns = int(answerOther[ index-1 ]);
 	cout << "index = " << index-1 << endl;
 	cout << "theAns = " << answerOther[ index-1 ] << endl;
 	if ( theAns == 1){
