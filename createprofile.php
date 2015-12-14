@@ -46,17 +46,7 @@ if (isset($_POST["pub_prof"])){
 	$location = pg_escape_string(trim($_POST["pub_prof"]["location"]));
 	$language = pg_escape_string(trim($_POST["pub_prof"]["language"]));
 	$description = pg_escape_string(trim($_POST["pub_prof"]["description"]));
-	var_dump($_POST);
-	$theArray = $_POST["pub_prof"];
-	
-	var_dump($_POST["pub_prof"]["location"]);
-	var_dump($theArray["location"]);
-	var_dump($username);
-	var_dump($name);
-	var_dump($location);
-	var_dump($language);
-	var_dump($description);
-	die();
+
 	// Update profile
 	// $status = $_SESSION["user"]->upProf($username, $name, $location, $lang, $prefCsv);
 	$status = $_SESSION["user"]->upProf($username, $name, $location, $language, $description);
@@ -68,6 +58,7 @@ if (isset($_POST["pub_prof"])){
 ?>
 
 <DOCTYPE HTML!>
+
 	<html>
 		<head>
 		<meta charset="utf-8"> 
