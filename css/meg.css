@@ -292,7 +292,7 @@
 	#banner {
 		background-image: url("../images/op2.jpg");
 		background-size: 100px 100px, cover;
-		color: #EEE;
+		/* color: #EEE; */
 		padding: 50px 50px;
 		max-height: 200px;
 		
