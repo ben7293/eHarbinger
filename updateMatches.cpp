@@ -72,8 +72,6 @@ void matchOneUserWithOthers(work& conn, const string& myUserName){
 			cout << endl << matchQuery << endl;
 			result res = conn.exec(matchQuery);
 			cout << res[0][0].as<string>() << endl;
-			res = conn.exec("select matchuser('ben7', 'brian', 1)");
-			cout << res[0][0].as<string>() << endl;
 		}
 	}
 	
