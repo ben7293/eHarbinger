@@ -46,6 +46,7 @@ int main(){
 	result myExpectation = conn.exec(myExpQuery);
 	result yourAnswer = conn.exec(yourAnsQuery);
 	string answerOther = myExpectation[0]["answerother"].as<string>();
+	cout << "answerOther = " << answerOther << endl;
 	int index = yourAnswer[0]["answerself"].as<int>();
 	cout << (int)answerOther[ index ];
 	if ( (int)answerOther[ index ] == 1){
