@@ -34,7 +34,7 @@
 	<head>
 		<meta charset="utf-8"> 
         <title>eHarbinger</title>
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/meg.css">
 	<script type='text/javascript' src='//code.jquery.com/jquery-1.7.1.js'></script>
 	<script type='text/javascript'>//<![CDATA[
 $(window).load(function(){
@@ -56,14 +56,19 @@ $('#search').keyup(function() {
 	</head>
 	<body>
 	<section id = 'banner'>
-	<div class = 'inner split'>
-		<section>
-			<h2> Pick Any Games </h2>
-		</section>
-		<section>
-			<p> In order to match you with other players, click on each game you love to play.</p>
-		</section>
-	</div>
+			<div class = 'inner split'>
+			<form action="userauth.php" method="post">
+        		<button> Log Out </button>
+        		<input type="hidden" name="type" value="logout">
+        		</form>
+
+			<section>
+				<h2> Pick Any Games </h2>
+			</section>
+			<section>
+				<p> In order to match you with other players, click on each game you love to play.</p>
+			</section>
+		</div>
 	</section>
 	<section class = 'wrapper'>
 		<form method='post'>
