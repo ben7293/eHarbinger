@@ -66,7 +66,7 @@
 			</section>
 			<section>
 				<h1> Benson Tsai </h1>
-				<p> Benson Tsai is the main back end developer for eHarbinger. He is going to get his B.S in Computer Science at NYU School of Engineering to work full time after graduation. Benson likes to play any game with online his friends. If you wish to contact him, you can email him at benson.tsai[at]nyu.edu </p>
+				<p> Benson Tsai is the main back end developer for eHarbinger. He is expected to graduate with B.S./M.S. degrees in Computer Science at NYU School of Engineering in 2017. Benson is a devoted enthusiast of flight simulation, and most of his gaming interest falls in simulation and strategy games such as Locomotion, SimCity, Cities:Skyline and Cities in Motion. Contact Benson at benson.tsai[at]nyu.edu. </p>
 			</section>
 		</div>
 		<footer>
