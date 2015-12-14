@@ -26,7 +26,7 @@ int matchOneQuestion(work& conn, const string& questionID, const string& myUserN
 	int index = yourAnswer[0]["answerself"].as<int>();
 	char theAns = answerOther[ index-1 ];
 	
-	cout << "QID = " << questionID << ", myAnswer = " << answerOther << " yourAnswer = " << theAns;	
+	cout << "QID = " << questionID << ", myAnswer = " << answerOther << " yourAnswer = " << theAns << endl;	
 	
 	if ( theAns == '1' ){
 		// cout << ", it's a match!";
@@ -44,7 +44,7 @@ void matchOneUserWithOthers(work& conn, const string& myUserName){
 		// For each user
 		int totalScore = 0;
 		int totalPossibleScore = 0;
-		// cout << "myUserName = " << myUserName << ", yourUserName = " << userList[i]["username"].as<string>() << endl;
+		cout << "myUserName = " << myUserName << ", yourUserName = " << userList[i]["username"].as<string>() << endl;
 		if (myUserName != userList[i]["username"].as<string>()){
 			// We don't want to self-match
 			// Grab a list of questions I have answered
