@@ -51,7 +51,7 @@ void matchOneUserWithOthers(work& conn, const string& myUserName){
 			result myQuestionNums = conn.exec(myQIDQuery);
 			result yourQuestionNums = conn.exec(yourQIDQuery);
 			
-			for (int j=0; j < myQuestionNum.size(); ++j){
+			for (int j=0; j < myQuestionNums.size(); ++j){
 				if ( isInList(myQuestionNums[j]["questionid"].as<string>(), yourQuestionNums) ){
 					// If this question is answered by you
 					bool result = matchOneQuestion(conn, myQuestionNums[j]["questionid"].as<string>(), myUserName, userList[i]["username"].as<string>());
