@@ -10,10 +10,10 @@
 	if ($numMatches == 0){
 		// If no matches, find some for the poor user
 		echo "running match";
-		// system("./matchusers.exe");
-		exec("./matchusers.o $myUserName", $s);
-		var_dump($s);
-		header("Refresh:0");
+		exec("pwd", $dir);
+		// exec("$dir/matchusers.o $myUserName", $s);
+		var_dump($dir);
+		// header("Refresh:0");
 	}
 ?>		
 
