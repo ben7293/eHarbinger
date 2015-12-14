@@ -42,7 +42,7 @@ if (isset($_POST["pub_prof"])){
 	
 	//Send profile data to database
 	$username = $_SESSION["user"]->getName();
-	$name = $_SESSION["name"];
+	$name = pg_escape_string(trim($_POST["pub_prof"]["name"]));
 	$location = pg_escape_string(trim($_POST["pub_prof"]["location"]));
 	$language = pg_escape_string(trim($_POST["pub_prof"]["language"]));
 	$description = pg_escape_string(trim($_POST["pub_prof"]["description"]));
@@ -50,7 +50,7 @@ if (isset($_POST["pub_prof"])){
 	// Update profile
 	// $status = $_SESSION["user"]->upProf($username, $name, $location, $lang, $prefCsv);
 	$status = $_SESSION["user"]->upProf($username, $name, $location, $language, $description);
-	header("Location: players.php");
+	header("Location: profile.php");
 
 }
 
@@ -79,6 +79,9 @@ if (isset($_POST["pub_prof"])){
 				<label for="pub_profie" class="heading">Tell us a little more about yourself</label>
 				This information will be visible to anyone viewing your profile.
 				<form action="createprofile.php" method="POST">
+					<label>Name</label>
+					<input type="text" name="pub_prof[name]" size="10">
+					<br>
 					<label>Location</label>
 					<input type="text" name="pub_prof[location]" size="10" placeholder="e.g. United States">
 					<br>
