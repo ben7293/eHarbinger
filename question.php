@@ -79,6 +79,7 @@
 	?>
 		<form method='post' action='question.php'>
 	<?php
+		$label = 0;
 		$i = 1;
 		foreach( $result as $row ){
 			$id = $row['questionid'];
@@ -98,11 +99,11 @@
 					<section>
 					<?php
 						echo "<input type='hidden' name='qid$i' value='$id'>";
-						if( $ans1 ){ echo "<input type='radio' name='ansSelf$i' value='1' checked><label>$ans1</label><br/>"; }
-						if( $ans2 ){ echo "<input type='radio' name='ansSelf$i' value='2'><label>$ans2</label><br/>"; }
-						if( $ans3 ){ echo "<input type='radio' name='ansSelf$i' value='3'><label>$ans3</label><br/>"; }
-						if( $ans4 ){ echo "<input type='radio' name='ansSelf$i' value='4'><label>$ans4</label><br/>"; }
-						if( $ans5 ){ echo "<input type='radio' name='ansSelf$i' value='5'><label>$ans5</label><br/>"; }
+						if( $ans1 ){ echo "<input type='radio' name='ansSelf$i' value='1' id='".++$label."' checked><label for='$label'>$ans1</label><br/>"; }
+						if( $ans2 ){ echo "<input type='radio' name='ansSelf$i' value='2' id='".++$label."'><label for='$label'>$ans2</label><br/>"; }
+						if( $ans3 ){ echo "<input type='radio' name='ansSelf$i' value='3' id='".++$label."'><label for='$label'>$ans3</label><br/>"; }
+						if( $ans4 ){ echo "<input type='radio' name='ansSelf$i' value='4' id='".++$label."'><label for='$label'>$ans4</label><br/>"; }
+						if( $ans5 ){ echo "<input type='radio' name='ansSelf$i' value='5' id='".++$label."'><label for='$label'>$ans5</label><br/>"; }
 					
 					?>
 					</section>
@@ -113,11 +114,11 @@
 					</section>
 					<section>
 					<?php
-						if( $ans1 ){ echo "<input type='checkbox' name='ans1Oth$i' value='$ans1'><label>$ans1</label><br/>"; }
-						if( $ans2 ){ echo "<input type='checkbox' name='ans2Oth$i' value='$ans2'><label>$ans2</label><br/>"; }
-						if( $ans3 ){ echo "<input type='checkbox' name='ans3Oth$i' value='$ans3'><label>$ans3</label><br/>"; }
-						if( $ans4 ){ echo "<input type='checkbox' name='ans4Oth$i' value='$ans4'><label>$ans4</label><br/>"; }
-						if( $ans5 ){ echo "<input type='checkbox' name='ans5Oth$i' value='$ans5'><label>$ans5</label><br/>"; }
+						if( $ans1 ){ echo "<input type='checkbox' name='ans1Oth$i' value='$ans1' id='".++$label."'><label for='$label'>$ans1</label><br/>"; }
+						if( $ans2 ){ echo "<input type='checkbox' name='ans2Oth$i' value='$ans2' id='".++$label."'><label for='$label'>$ans2</label><br/>"; }
+						if( $ans3 ){ echo "<input type='checkbox' name='ans3Oth$i' value='$ans3' id='".++$label."'><label for='$label'>$ans3</label><br/>"; }
+						if( $ans4 ){ echo "<input type='checkbox' name='ans4Oth$i' value='$ans4' id='".++$label."'><label for='$label'>$ans4</label><br/>"; }
+						if( $ans5 ){ echo "<input type='checkbox' name='ans5Oth$i' value='$ans5' id='".++$label."'><label for='$label'>$ans5</label><br/>"; }
 
 					?>
 					</section>
