@@ -18,7 +18,7 @@
 				echo "running match";
 				system("./matchusers.exe");
 				// system("./matchusers.exe $myUserName");
-				header("Refresh:0");
+				header("Header: players.php");
 			}
 		?>		
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
