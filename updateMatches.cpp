@@ -37,12 +37,13 @@ int matchOneQuestion(work& conn, const string& questionID, const string& myUserN
 	
 }
 
-void matchOneUserWithOthers(work& conn, const string& myUserName){
+int matchOneUserWithOthers(work& conn, const string& myUserName){
 	// First, grab a list of all users...
 	result userList = conn.exec("select username from users;");
 	for (int i=0; i < userList.size(); ++i){
 		// For each user
 		int totalScore = 0;
+		int totalPossibleScore = 0;
 		cout << "myUserName = " << myUserName << ", yourUserName = " << userList[i]["username"].as<string>() << endl;
 		if (myUserName != userList[i]["username"].as<string>()){
 			// We don't want to self-match
@@ -55,14 +56,20 @@ void matchOneUserWithOthers(work& conn, const string& myUserName){
 			for (int j=0; j < myQuestionNums.size(); ++j){
 				if ( isInList(myQuestionNums[j]["questionid"].as<string>(), yourQuestionNums) ){
 					// If this question is answered by you
-					int score = matchOneQuestion(conn, myQuestionNums[j]["questionid"].as<string>(), myUserName, userList[i]["username"].as<string>());
-					cout << " Score value added is " << score << endl;
+					int subScore = matchOneQuestion(conn, myQuestionNums[j]["questionid"].as<string>(), myUserName, userList[i]["username"].as<string>());
+					totalPossibleScore += 5;
+					totalScore += subScore;
+					cout << " Score value added is " << subScore << endl;
 				}
 			}
 			
 		}
+		float matchRate = totalScore/totalPossibleScore;
+		int intMatchRate = int(matchRate*100);
+		cout << "Final score is " << totalScore << ", highest possible score is " << totalPossibleScore << ", your match rate is " << intMatchRate << endl;
 		
 	}
+	
 
 }
 
