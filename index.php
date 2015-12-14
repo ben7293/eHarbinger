@@ -30,7 +30,7 @@
 					<p>eHarbinger was created with the gamer in mind. We've developed a safe environment for gamers to be able to find others to play with. Our algorithm uses each person's game preferences and personality to match them with other gamers with the same qualities.</p>
 				</section>
 				<section>
-					<img class = "image-left" src = "images/logo.jpg" />
+					<img class = "image-left" src = "images/logo.png" />
 				</section>
 			</div>
 		</section>

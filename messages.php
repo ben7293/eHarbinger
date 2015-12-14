@@ -56,7 +56,7 @@
 		echo "<div style='float: left;'>";
 		?>
 		<div id = "col-1">
-        		<img src="images/logo.jpg" height=150px></img>
+        		<img src="images/logo.png" height=150px></img>
         		<form action="userauth.php" method="post">
                 		<button type="submit"> Log Out </button>
                 		<input type="hidden" name="type" value="logout">
