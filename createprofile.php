@@ -79,7 +79,7 @@ if (isset($_POST["pub_prof"])){
 				<label for="pub_profie" class="heading">Tell us a little more about yourself</label>
 				This information will be visible to anyone viewing your profile.
 				<form action="createprofile.php" method="POST">
-					<label>Name</label>
+					<label>Display Name</label>
 					<input type="text" name="pub_prof[name]" size="10">
 					<br>
 					<label>Location</label>

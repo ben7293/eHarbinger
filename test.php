@@ -13,7 +13,7 @@
 </form>
 
 <?php
- $CRYPT_STD_DES = 1;
+ 
  $hashed = crypt('abc');
  echo $hashed;
  
