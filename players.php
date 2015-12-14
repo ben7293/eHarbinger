@@ -10,7 +10,6 @@
 	if ($numMatches == 0){
 		// If no matches, find some for the poor user
 		exec("./matchusers.exe $myUserName");
-		header('refresh:0');
 	}
 ?>		
 
@@ -45,7 +44,10 @@
 		<!-- Need to be able to upload matches of different players -->
 			<?php 
 
-			echo "<h3>You have ($numMatches) matches!</h3>";
+			echo "<h3>You have $numMatches matches!</h3>";
+			if ($numMatches == 0){
+				echo "Refresh again or come back later to check if you have new matches.";
+			}
 			// Then parse the matches
 			foreach ($matchList as $matchInfo) {
 				// Fetch info of the other user
