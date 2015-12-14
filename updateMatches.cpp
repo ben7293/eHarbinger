@@ -67,6 +67,8 @@ void matchOneUserWithOthers(work& conn, const string& myUserName){
 			float matchRate = float(totalScore) / float(totalPossibleScore);
 			int intMatchRate = int(matchRate*100);
 			
+			string matchQuery = "select matchuser('" + myUserName + "', '" + userList[i]["username"].as<string>() + "', " + string(intMatchRate) + ")";
+			conn.exec(matchQuery);
 			cout << ", your match rate is " << intMatchRate << endl;
 		}
 	}
