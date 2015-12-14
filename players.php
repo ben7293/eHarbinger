@@ -12,7 +12,7 @@
 		echo "running match";
 		exec("pwd", $dir);
 		exec("$dir/matchusers.o $myUserName", $s);
-		// var_dump($dir);
+		var_dump($s);
 		header("Refresh:0");
 	}
 ?>		
