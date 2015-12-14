@@ -78,10 +78,15 @@ else{
 							echo "<input type='hidden' name='rating' value='-1'>";
 							echo "<button>I didn't like my match</button>";
 						echo "</form>";		
-						echo "<a href = 'messages.php?user=$username'>Message</a>";
+						echo "<form id='message' action='messages.php' method='get'>";
+							echo "<button onclick = 'send()'> Message </button>";
+							echo "<input type='hidden' name='user' value='$username'>";
+						echo "</form>";						
 					}					
 					else{
-						echo "<a href = 'createprofile.php'>Edit Profile</a>";
+						echo "<form id='message' action='createprofile.php'>";
+							echo "<button onclick = 'send()'> Edit Profile </button>";
+						echo "</form>";						
 					}
 					echo "<br><br><br>";
 					
