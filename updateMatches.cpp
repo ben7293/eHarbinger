@@ -24,7 +24,7 @@ bool matchOneQuestion(work& conn, const string& questionID, const string& myUser
 	
 	string answerOther = myExpectation[0]["answerother"].as<string>();
 	int index = yourAnswer[0]["answerself"].as<int>();
-	int theAns = answerOther[ index-1 ];
+	char theAns = answerOther[ index-1 ];
 	
 	cout << "QID = " << questionID << ", myAnswer = " << answerOther << " yourAnswer = " << theAns << endl;	
 	
@@ -78,7 +78,7 @@ int main(){
 	
 	// result myExpectation = conn.exec(myExpQuery);
 	// result yourAnswer = conn.exec(yourAnsQuery);
-	matchOneQuestion(conn, "2", myUserName, yourUserName);
+	cout << matchOneQuestion(conn, "2", myUserName, yourUserName);
 	
 	
 	db.disconnect();
