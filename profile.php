@@ -69,12 +69,12 @@ else{
 					echo "About the gamer: " . $description . "<br>";
 					if ($username != $me){
 						echo "<form id='likeMatch' action='rateuser.php' method='post'>";
-							echo "<input type='hidden' name='rateduser' value='$yourUserName'>";
+							echo "<input type='hidden' name='rateduser' value='$username'>";
 							echo "<input type='hidden' name='rating' value='1'>";
 							echo "<button>Good match</button>";
 						echo "</form>";
 						echo "<form id='unlikeMatch' action='rateuser.php' method='post'>";
-							echo "<input type='hidden' name='rateduser' value='$yourUserName'>";
+							echo "<input type='hidden' name='rateduser' value='$username'>";
 							echo "<input type='hidden' name='rating' value='-1'>";
 							echo "<button>I didn't like my match</button>";
 						echo "</form>";		
