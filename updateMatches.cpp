@@ -91,9 +91,10 @@ int main(){
 	// Connect to database
 	connection db("dbname=bt773 user=bt773 password=bt773");
 	work conn(db);
-	string questionID = "2";
-	string myUserName = "brian";
-	string yourUserName = "ben7293";
+
+	// string questionID = "2";
+	// string myUserName = "brian";
+	// string yourUserName = "ben7293";
 
 	// string myExpQuery = "select answerother, importance from users_answer_questions where questionID=" + string(questionID) + "and username='" + string(myUserName) + "';";
 	// string yourAnsQuery = "select answerself from users_answer_questions where questionID=" + string(questionID) + "and username='" + string(yourUserName) + "';";
