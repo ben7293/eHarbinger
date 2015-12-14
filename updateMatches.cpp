@@ -46,13 +46,9 @@ int main(){
 	result myExpectation = conn.exec(myExpQuery);
 	result yourAnswer = conn.exec(yourAnsQuery);
 	string answerOther = myExpectation[0]["answerother"].as<string>();
-	cout << "answerOther = " << answerOther << endl;
 	int index = yourAnswer[0]["answerself"].as<int>();
 	int theAns = int(answerOther[ index-1 ]);
-	cout << "index = " << index-1 << endl;
-	cout << "theAns = >" << answerOther[ index-1 ] << "<" << endl;
-	int testy = '1';
-	if ( theAns == testy ){
+	if ( theAns == '1' ){
 		// If your answer is in my expectations
 		cout << "It's a match!\n";
 		// score += myExpectation[0]["importance"];
