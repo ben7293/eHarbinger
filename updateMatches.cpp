@@ -47,7 +47,7 @@ void matchOneUserWithOthers(work& conn, const string& myUserName){
 			// We don't want to self-match
 			// Grab a list of questions I have answered
 			string myQIDQuery = "select questionid from users_answer_questions where username='" + myUserName + "';";
-			string yourQIDQuery = "select questionid from users_answer_questions where username='" + userList[i]["username"] + "';";
+			string yourQIDQuery = "select questionid from users_answer_questions where username='" + userList[i]["username"].as<string>() + "';";
 			result myQuestionNum = conn.exec(myQIDQuery);
 			result yourQuestionNum = conn.exec(yourQIDQuery);
 			
