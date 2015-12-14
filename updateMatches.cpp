@@ -45,7 +45,8 @@ int main(){
 	
 	result myExpectation = conn.exec(myExpQuery);
 	result yourAnswer = conn.exec(yourAnsQuery);
-	if ( myExpectation[0]["answerother"][ yourAnswer[0]["answerself"].as<int> ].as<int> == 1){
+	int index = yourAnswer[0]["answerself"].as<int>;
+	if ( myExpectation[0]["answerother"][ index ].as<int> == 1){
 		// If your answer is in my expectations
 		cout << "It's a match!\n";
 		// score += myExpectation[0]["importance"];
