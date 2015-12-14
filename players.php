@@ -58,7 +58,7 @@
 					echo "<form id='unlikeMatch' action='rateuser.php' method='post'>";
 						echo "<input type='hidden' name='rateduser' value='$yourUserName'>";
 						echo "<input type='hidden' name='rating' value='-1'>";
-						echo "<button>I didn\'t like my match</button>";
+						echo "<button>I didn't like my match</button>";
 					echo "</form>";
 					echo "<br>";
 					//echo "<a href='#' class='btn btn-default'><span class='glyphicon glyphicon-trash'></span> I didn't like my match</a>";
