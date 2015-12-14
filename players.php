@@ -11,7 +11,7 @@
 		// If no matches, find some for the poor user
 		shell_exec("pwd", $dir);
 		$result = exec("$dir/matchusers.exe $myUserName2>&1");
-		echo $result;
+		var_dump($result);
 	}
 ?>		
 
