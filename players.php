@@ -53,7 +53,6 @@
 					echo "<section>";
 				echo "<section>";
 					echo "Username: <a href='profile.php?user=$yourUserName'>$yourUserName</a><br>";
-					echo "Level: Expert<br>";
 					echo "Feedback: " . $rating["getrating"] . "<br>";
 					echo "About the gamer: " . $description . "<br>";
 					//echo "<a href='#' class='btn btn-default'><span class='glyphicon glyphicon-heart'></span> Good Match</a>";
