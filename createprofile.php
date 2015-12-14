@@ -43,9 +43,9 @@ if (isset($_POST["pub_prof"])){
 	//Send profile data to database
 	$username = $_SESSION["user"]->getName();
 	$name = $_SESSION["name"];
-	$location = pg_escape_string($_POST["pub_prof"]['location']);
-	$language = pg_escape_string($_POST["pub_prof"]['language']);
-	$description = pg_escape_string($_POST["pub_prof"]['description']);
+	$location = pg_escape_string(trim($_POST["pub_prof"]["location"]));
+	$language = pg_escape_string(trim($_POST["pub_prof"]["language"]));
+	$description = pg_escape_string(trim($_POST["pub_prof"]["description"]));
 	var_dump($_POST);
 	var_dump($username);
 	var_dump($name);
