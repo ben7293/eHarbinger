@@ -36,7 +36,7 @@
 <head>
 	<meta charset='utf-8'>
 	<title>eHarbinger</title>
-	<link rel='stylesheet' type='text/css' href='css/main.css'>
+	<link rel='stylesheet' type='text/css' href='css/meg.css'>
 </head>
 <body>
 <section id='banner'>
@@ -56,7 +56,7 @@
 		echo "<div style='float: left;'>";
 		include_once("header.php");
 		echo "</div>";
-		echo "<div style='height: 75%; float: right; display: inline-block;'>";
+		echo "<div style='height: 70%; float: right; display: inline-block;'>";
 		echo "<div id='chat' style='height: 100%; overflow-y: scroll;'>";
 		echo "<table>";
 		$result = $_SESSION["user"]->query("select * from getMessages('$me','$you');", "table");
@@ -78,7 +78,7 @@
 		echo "<script>var objDiv = document.getElementById('chat'); objDiv.scrollTop = objDiv.scrollHeight;</script>";
 		echo "</div>";
 		echo "<form method='post' action=''>";
-		echo "<input right;' type='text' name='message' autofocus='autofocus' placeholder='Type a message...' autocomplete='off'>";
+		echo "<input right;' type='text' name='message' autofocus='autofocus' placeholder='Type a message...' autocomplete='off'><br/>";
 		echo "<input type='submit'>";
 		echo "</div>";
 	}
