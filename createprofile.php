@@ -21,17 +21,15 @@ function addUser($user, $pxwd, $email){
 	}
 	
 }
-echo "Start";
 if (!isset($_SESSION["user"])){
 	// New user, create an account and log in
 	// $pxwd = crypt($_POST["pxwd"]);
 	if( isset($_POST['user']) && trim($_POST['user']) && isset($_POST['pxwd']) && trim($_POST['pxwd']) && isset($_POST['email']) && trim($_POST['email'])){
 		// If all fields are satisfactory
-		echo "trimming arguments";
 		$user = pg_escape_string(trim($_POST['user']));
 		$pxwd = pg_escape_string(trim($_POST['pxwd']));
 		$email = pg_escape_string(trim($_POST['email']));
-		echo "adding user";
+		
 		addUser($user, $pxwd, $email);	
 	}
 	else{
@@ -45,9 +43,11 @@ if (isset($_POST["pub_prof"])){
 	//Send profile data to database
 	$username = $_SESSION["user"]->getName();
 	$name = $_SESSION["name"];
-	$location = pg_escape_string($_POST["pub_prof"]["location"]);
-	$language = pg_escape_string($_POST["pub_prof"]["language"]);
-	$description = pg_escape_string($_POST["pub_prof"]["description"]);
+	$location = pg_escape_string($_POST["pub_prof"]['location']);
+	$language = pg_escape_string($_POST["pub_prof"]['language']);
+	$description = pg_escape_string($_POST["pub_prof"]['description']);
+	var_dump($username);
+	var_dump($name);
 	var_dump($location);
 	var_dump($language);
 	var_dump($description);
