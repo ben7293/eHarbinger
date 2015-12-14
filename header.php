@@ -4,18 +4,5 @@
 		<button type="submit"> Log Out </button>
 		<input type="hidden" name="type" value="logout">
 	</form>
-	<br>
-	<br>
-	<a href = "messages.php" > Messages </a>
-	<br>
-	<br>	
-	<a href = "forum.php" > Forum </a>
-	<br>
-	<br>
-	<a href = "players.php" > Search For Players </a>
-	<br>
-	<br>
-	<a href = "contactUs.php"> Meet the Team! </a>
-	<br>
-	<br>
+	<?php include('footer.html'); ?>
 </div>
