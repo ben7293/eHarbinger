@@ -36,10 +36,13 @@ else{
 		<section id = 'banner'>
 		<div class = 'inner split'>
 			<section>
-				<h2> My Profile </h2>
+				<h2> User Profile </h2>
 			</section>
 			<section>
-				<button> Log Out </button>
+				<form action="userauth.php" method="post">
+				<button type="submit"> Log Out </button>
+				<input type="hidden" name="type" value="logout">
+				</form>
 			</section>
 		</div>
 		</section>
@@ -78,6 +81,6 @@ else{
 			</section>
 			</div>
 		</div>
-		<footer> <a href = "forum.html"> General Forum | </a> <a href = "Search for Players"> Search for Players | </a> <a href = "contactUs.html"> Meet the Team! </a> </footer>
+		<footer> <a href = "forum.php"> General Forum | </a> <a href = players.php"> Search for Players | </a> <a href = "contactUs.php"> Meet the Team! </a> </footer>
 	</body>
 </html>

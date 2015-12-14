@@ -21,7 +21,12 @@
 		<!-- Benson, need to change number of messages given -->
 		<div class = 'inner split'>
 			<section><h2> You Have This Many Matches: (2) </h2></section>
-			<section><button onclick = "logout()"> Log Out </button></section>
+			<section>
+				<form action="userauth.php" method="post">
+					<button type="submit"> Log Out </button>
+					<input type="hidden" name="type" value="logout">
+				</form>
+			</section>
 		</div>
 	</section>
 		<div class = "wrapper">
@@ -78,6 +83,6 @@
 
 			
 			?>				
-		<footer> <a href = "forum.html"> General Forum | </a> <a href = "messages.php"> Messages | </a> <a href = "contactUs.html"> Meet the Team! </a> </footer>
+		<footer> <a href = "forum.php"> General Forum | </a> <a href = "messages.php"> Messages | </a> <a href = "contactUs.php"> Meet the Team! </a> </footer>
 	</body>
 </html>
