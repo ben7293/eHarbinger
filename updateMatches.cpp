@@ -14,10 +14,10 @@ bool isInList(const int target, result list){
 	return false;
 }
 
-bool matchOneQuestion(work& conn, const int questionID, const string& myUserName, const string& yourUserName){
+bool matchOneQuestion(work& conn, const string& questionID, const string& myUserName, const string& yourUserName){
 	// Pull answers for each user
-	string myExpQuery = "select answerother, importance from users_answer_questions where questionID=" + questionID.as<string>() + "and username='" + string(myUserName) + "';";
-	string yourAnsQuery = "select answerself from users_answer_questions where questionID=" + questionID.as<string>() + "and username='" + string(yourUserName) + "';";
+	string myExpQuery = "select answerother, importance from users_answer_questions where questionID=" + questionID + "and username='" + string(myUserName) + "';";
+	string yourAnsQuery = "select answerself from users_answer_questions where questionID=" + questionID + "and username='" + string(yourUserName) + "';";
 	
 	result myExpectation = conn.exec(myExpQuery);
 	result yourAnswer = conn.exec(yourAnsQuery);
@@ -78,7 +78,7 @@ int main(){
 	
 	// result myExpectation = conn.exec(myExpQuery);
 	// result yourAnswer = conn.exec(yourAnsQuery);
-	matchOneQuestion(conn, 2, myUserName, yourUserName);
+	matchOneQuestion(conn, "2", myUserName, yourUserName);
 	
 	
 	db.disconnect();
