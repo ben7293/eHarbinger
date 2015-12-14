@@ -30,7 +30,7 @@ int matchOneQuestion(work& conn, const string& questionID, const string& myUserN
 	
 	if ( theAns == '1' ){
 		cout << ", it's a match!";
-		return int(myExpectation[0]["importance"]);
+		return myExpectation[0]["importance"].as<int>();
 	}
 	cout << ", it's not a match.";
 	return 0;
