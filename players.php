@@ -10,6 +10,7 @@
 	if ($numMatches == 0){
 		// If no matches, find some for the poor user
 		exec("./matchusers.exe $myUserName");
+		header('refresh:0');
 	}
 ?>		
 
