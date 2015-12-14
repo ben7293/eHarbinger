@@ -5,7 +5,7 @@ using namespace std;
 using namespace pqxx;
 
 
-void matchOneQuestion(work& conn, const int questionID, const string& myUserName, const string& yourUserName){
+void matchOneQuestion(work& conn, const int questionID, string& myUserName, string& yourUserName){
 	// Pull answers for each user
 	string myExpQuery = "select answerother, importance from users_answer_questions where questionID=" + string(questionID) + "and username='" + string(myUserName) + "';";
 	string yourAnsQuery = "select answerself from users_answer_questions where questionID=" + string(questionID) + "and username='" + string(yourUserName) + "';";
@@ -20,7 +20,7 @@ void matchOneQuestion(work& conn, const int questionID, const string& myUserName
 	if ( theAns == '1' ){
 		// If your answer is in my expectations
 		cout << "It's a match!\n";
-		score += myExpectation[0]["importance"];
+		// score += myExpectation[0]["importance"];
 		
 	}
 	else{
