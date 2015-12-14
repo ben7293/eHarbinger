@@ -12,7 +12,7 @@
 		echo "running match";
 		system("./matchusers.exe");
 		// system("./matchusers.exe $myUserName");
-		header("Header: players.php");
+		header("Refresh:0");
 	}
 ?>		
 
