@@ -52,13 +52,6 @@ int main(){
 	cout << "index = " << index-1 << endl;
 	cout << "theAns = >" << answerOther[ index-1 ] << "<" << endl;
 	int testy = '1';
-	if( theAns > testy ){
-		cout << "here1\n";
-	} else if( theAns < testy ){
-		cout << "here2\n";
-	} else{
-		cout << "here3\n";
-	}
 	if ( theAns == testy ){
 		// If your answer is in my expectations
 		cout << "It's a match!\n";
