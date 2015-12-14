@@ -78,9 +78,10 @@ else{
 							echo "<input type='hidden' name='rating' value='-1'>";
 							echo "<button>I didn't like my match</button>";
 						echo "</form>";		
+						echo "<a href = 'messages.php?user=$username'>Message</a>";
 					}					
 					else{
-						echo "<a href = 'createprofile.php'>Edit Profile Here</a>";
+						echo "<a href = 'createprofile.php'>Edit Profile</a>";
 					}
 					echo "<br><br><br>";
 					

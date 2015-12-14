@@ -81,7 +81,6 @@
 					echo "<br>";
 					//echo "<a href='#' class='btn btn-default'><span class='glyphicon glyphicon-trash'></span> I didn't like my match</a>";
 					echo "<form id='message' action='messages.php' method='get'>";
-						echo "<input type='hidden' name='rateduser' value='$yourUserName'>";
 						echo "<button onclick = 'send()'> Message </button>";
 						echo "<input type='hidden' name='user' value='$yourUserName'>";
 					echo "</form>";
