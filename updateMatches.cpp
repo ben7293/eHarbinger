@@ -48,13 +48,13 @@ void matchOneUserWithOthers(work& conn, const string& myUserName){
 			// Grab a list of questions I have answered
 			string myQIDQuery = "select questionid from users_answer_questions where username='" + myUserName + "';";
 			string yourQIDQuery = "select questionid from users_answer_questions where username='" + userList[i]["username"].as<string>() + "';";
-			result myQuestionNum = conn.exec(myQIDQuery);
-			result yourQuestionNum = conn.exec(yourQIDQuery);
+			result myQuestionNums = conn.exec(myQIDQuery);
+			result yourQuestionNums = conn.exec(yourQIDQuery);
 			
 			for (int j=0; j < myQuestionNum.size(); ++j){
-				if ( isInList(questionNum[j]["questionid"].as<string>(), yourQuestionNum) ){
+				if ( isInList(myQuestionNums[j]["questionid"].as<string>(), yourQuestionNums) ){
 					// If this question is answered by you
-					bool result = matchOneQuestion(conn, questionNum[j]["questionid"], myUserName, userList[i]["username"]);
+					bool result = matchOneQuestion(conn, myQuestionNums[j]["questionid"].as<string>(), myUserName, userList[i]["username"].as<string>());
 				}
 			}
 			
