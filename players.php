@@ -52,6 +52,7 @@
 					echo "Feedback: " . $rating["getrating"];
 					//echo "<a href='#' class='btn btn-default'><span class='glyphicon glyphicon-heart'></span> Good Match</a>";
 					echo "<form id='likeMatch' action='rateuser.php' method='post'>";
+						echo "<input type='hidden' name='rateduser' value='$yourUserName'>";
 						echo "<input type='hidden' name='rating' value='1'>";
 						echo "<button>Good match</button>";
 					echo "</form>";
