@@ -82,7 +82,8 @@ int main(){
 	
 	// result myExpectation = conn.exec(myExpQuery);
 	// result yourAnswer = conn.exec(yourAnsQuery);
-	cout << matchOneQuestion(conn, "2", myUserName, yourUserName);
+	// cout << matchOneQuestion(conn, "2", myUserName, yourUserName);
+	matchOneUserWithOthers(conn, myUserName);
 	
 	
 	db.disconnect();
