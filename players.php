@@ -77,28 +77,6 @@
 
 			
 			?>				
-		<div class = 'inner split'  onload = "playerInfo()">
-			<section> 
-				<img src = "images/plainPic.gif"> 
-			</section>
-			<section>
-				Username: champion<br>
-				Level: Expert<br>
-				Played With: 7 Players<br>
-				Likes: PC, MMO <br>
-				Feedback level
-				<br>
-
-				<a href="#" class="btn btn-default"><span class="glyphicon glyphicon-heart"></span> Good Match</a>
-				<br>
-				<a href="#" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span> I didn't like my match</a>
-				<br>
-				<br>
-				<button onclick = "send()"> Message </button> 
-			</section>
-			<br>
-		</div>
-		</div>
 		<footer> <a href = "forum.html"> General Forum | </a> <a href = "messages.php"> Messages | </a> <a href = "contactUs.html"> Meet the Team! </a> </footer>
 	</body>
 </html>
