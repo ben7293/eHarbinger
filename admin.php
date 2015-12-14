@@ -83,6 +83,12 @@
 	}
 	if( isset($_POST['rmuser']) && trim($_POST['rmuser'])){
 		$rmuser = pg_escape_string($_POST['rmuser']);
+		if( $conn->queryTrueFalse("select rmUser('$rmuser');")){
+			header('refresh:0');
+		} else{
+			echo "Failed to remove user: $rmuser";
+		}
+		/*
 		$conn->queryTrueFalse("DELETE FROM users_public WHERE username='$rmuser';");
 	        $conn->queryTrueFalse("DELETE FROM users_answer_questions WHERE username='$rmuser';");
 	        $conn->queryTrueFalse("DELETE FROM users_rate_users WHERE username1='$rmuser' or username2='$rmuser';");
@@ -93,6 +99,7 @@
 	        $conn->queryTrueFalse("DELETE FROM users_message_users WHERE username1='$rmuser' or username2='$rmuser';");
 	        $conn->queryTrueFalse("DELETE FROM users WHERE username='$rmuser';");
 		header('refresh:0');
+		*/
 	}
 ?>
 

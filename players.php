@@ -9,8 +9,8 @@
 	if( !$matchList ){ $numMatches = 0; }
 	if ($numMatches == 0){
 		// If no matches, find some for the poor user
-		shell_exec("pwd", $dir);
-		exec("$dir/matchusers.exe $myUserName");
+		exec("./matchusers.exe $myUserName");
+		header('refresh:0');
 	}
 ?>		
 
