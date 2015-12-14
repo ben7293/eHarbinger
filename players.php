@@ -23,7 +23,7 @@
 			<section><h2> You Have This Many Matches: (2) </h2></section>
 			<section>
 				<form action="userauth.php" method="post">
-					<button type="submit"> Log Out </button>
+					<button> Log Out </button>
 					<input type="hidden" name="type" value="logout">
 				</form>
 			</section>
