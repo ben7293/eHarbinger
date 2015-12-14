@@ -37,7 +37,7 @@ int matchOneQuestion(work& conn, const string& questionID, const string& myUserN
 	
 }
 
-int matchOneUserWithOthers(work& conn, const string& myUserName){
+void matchOneUserWithOthers(work& conn, const string& myUserName){
 	// First, grab a list of all users...
 	result userList = conn.exec("select username from users;");
 	for (int i=0; i < userList.size(); ++i){
@@ -67,18 +67,21 @@ int matchOneUserWithOthers(work& conn, const string& myUserName){
 			float matchRate = float(totalScore) / float(totalPossibleScore);
 			int intMatchRate = int(matchRate*100);
 			
-			cout << ", your match rate is " << matchRate << endl;
+			cout << ", your match rate is " << intMatchRate << endl;
 		}
-
-		
 	}
 	
 
 }
 
-// void matchAllUsers(){
-	
-// }
+void matchAllUsers(work& conn){
+	// First, grab a list of all users...
+	result userList = conn.exec("select username from users;");
+	for (int i=0; i < userList.size(); ++i){
+		// For each user, match with everyone else
+		matchOneUserWithOthers(conn, userList[i]["username"].as<string>());
+	}		
+}
 
 int main(){
 	// Connect to database
@@ -94,7 +97,8 @@ int main(){
 	// result myExpectation = conn.exec(myExpQuery);
 	// result yourAnswer = conn.exec(yourAnsQuery);
 	// cout << matchOneQuestion(conn, "2", myUserName, yourUserName);
-	matchOneUserWithOthers(conn, myUserName);
+	// matchOneUserWithOthers(conn, myUserName);
+	matchAllUsers(conn);
 	
 	
 	db.disconnect();
