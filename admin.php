@@ -1,4 +1,5 @@
 <?php
+	// Could include some db functions in later release
 	include_once('session.php');
 	session_start();
 
@@ -77,6 +78,22 @@
 		if( $row['isadmin'] == 'f') {array_push($users,$row['username']); }
 		else{ array_push($admins,$row['username']); }
 	}
+	if( isset($_POST['rematch']) && $_POST['rematch'] == 'rematch' ){
+		exec('./matchusers.exe', $output, $exit);
+	}
+	if( isset($_POST['rmuser']) && trim($_POST['rmuser'])){
+		$rmuser = pg_escape_string($_POST['rmuser']);
+		$conn->queryTrueFalse("DELETE FROM users_public WHERE username='$rmuser';");
+	        $conn->queryTrueFalse("DELETE FROM users_answer_questions WHERE username='$rmuser';");
+	        $conn->queryTrueFalse("DELETE FROM users_rate_users WHERE username1='$rmuser' or username2='$rmuser';");
+	        $conn->queryTrueFalse("DELETE FROM users_match_users WHERE username1='$rmuser' or username2='$rmuser';");
+	        $conn->queryTrueFalse("DELETE FROM forums WHERE username='$rmuser';");
+	        $conn->queryTrueFalse("DELETE FROM forums_comment WHERE username='$rmuser';");
+	        $conn->queryTrueFalse("DELETE FROM users_like_games WHERE username='$rmuser';");
+	        $conn->queryTrueFalse("DELETE FROM users_message_users WHERE username1='$rmuser' or username2='$rmuser';");
+	        $conn->queryTrueFalse("DELETE FROM users WHERE username='$rmuser';");
+		header('refresh:0');
+	}
 ?>
 
 <html>
@@ -142,5 +159,20 @@ Select admin:<font color='red'>*</font><select name='rmAdmin'><option>--Select--
 <br/>
 <input type='submit'>
 </form>
+
+<h1>Remove a user</h1>
+<form method='post'>
+Select user:<font color='red'>*</font><select name='rmuser'><option>--Select--</option><?php foreach( $users as $user ){ echo "<option value='$user'>$user</option>";}  ?></select>
+<br/>
+<input type='submit'>
+</form>
+
+
+<h1>Rematch all</h1>
+<form method='post'>
+<input type='hidden' name='rematch' value='rematch'>
+<input type='submit'>
+</form>
+
 <footer><?php include('footer.html');?></footer>
 </html>

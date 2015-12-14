@@ -50,6 +50,7 @@
 			foreach ($matchList as $matchInfo) {
 				// Fetch info of the other user
 				$yourUserName = $matchInfo['username'];
+				$matchScore = $matchInfo['matchpercent'];
 				$yourProfile = $_SESSION["user"]->query("select * from getprofile('$yourUserName');", "array");
 				$description = trim($yourProfile["description"], ", ");
 				$rating = $_SESSION["user"]->query("select getrating('$yourUserName');", "array");
@@ -61,6 +62,7 @@
 					echo "<section>";
 				echo "<section>";
 					echo "Username: <a href='profile.php?user=$yourUserName'>$yourUserName</a><br>";
+					echo "Match score: $matchScore%<br/>";
 					echo "Feedback: " . $rating["getrating"] . "<br>";
 					echo "About the gamer: " . $description . "<br>";
 					//echo "<a href='#' class='btn btn-default'><span class='glyphicon glyphicon-heart'></span> Good Match</a>";
