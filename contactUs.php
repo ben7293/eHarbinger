@@ -19,7 +19,10 @@
 			</section>
 			<section>
 				<!-- Needs button to be able to log out -->
-				<button class = 'button-right' onclick = "logout()"> Log Out </button>
+				<form action="userauth.php" method="post">
+					<button type="submit"> Log Out </button>
+					<input type="hidden" name="type" value="logout">
+				</form>
 			</section>
 			</div>
 		</header>
