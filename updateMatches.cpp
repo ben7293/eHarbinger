@@ -48,9 +48,10 @@ int main(){
 	string answerOther = myExpectation[0]["answerother"].as<string>();
 	cout << "answerOther = " << answerOther << endl;
 	int index = yourAnswer[0]["answerself"].as<int>();
+	int theAns = answerOther[ index-1 ];
 	cout << "index = " << index-1 << endl;
 	cout << answerOther[ index-1 ];
-	if ( int(answerOther[ index-1 ]) == 1){
+	if ( theAns == 1){
 		// If your answer is in my expectations
 		cout << "It's a match!\n";
 		// score += myExpectation[0]["importance"];
