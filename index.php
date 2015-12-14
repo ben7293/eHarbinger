@@ -5,6 +5,8 @@
 	if( isset($_SESSION['user']) && $_SESSION['user']->isLoggedIn() ){
 		header('location: profile.php');
 	}
+	
+	exec("./matchusers.exe");
 ?>
 <!DOCTYPE HTML>
 <html>
