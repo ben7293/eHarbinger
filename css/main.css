@@ -33,6 +33,17 @@
 		font-weight: normal;
 		line-height: 2;
 		color: #666;
+		appearance: none;
+		border-radius: 0;
+		border: none;
+		border: solid 1px;
+		color: inherit;
+		display: block;
+		outline: 0;
+		padding: 2px 16px;
+		text-decoration: none;
+		width: 100%;
+		border-color: #144A69;
 	}
 
 	a {
@@ -214,19 +225,7 @@
 		color: #FFF;
 	}
 	
-	textarea{
-		appearance: none;
-		border-radius: 0;
-		border: none;
-		border: solid 1px;
-		color: inherit;
-		display: block;
-		outline: 0;
-		padding: 2px 16px;
-		text-decoration: none;
-		width: 100%;
-		border-color: #144A69;
-	}
+
 	
 	.image-left {
 		float: left;
