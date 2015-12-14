@@ -15,7 +15,7 @@
 			if( !$matchList ){ $numMatches = 0; }
 			if ($numMatches = 0){
 				// If no matches, find some for the poor user
-				echo "running match";
+				echo "running match because match number is $numMatches";
 				exec("matchusers.exe $myUserName");
 				// header("Refresh:0")
 			}
