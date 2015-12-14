@@ -81,6 +81,6 @@ else{
 			</section>
 			</div>
 		</div>
-		<footer> <a href = "forum.php"> General Forum | </a> <a href = "players.php"> Search for Players | </a> <a href = "contactUs.php"> Meet the Team! </a> </footer>
 	</body>
+<footer><?php include('footer.html');?></footer>
 </html>

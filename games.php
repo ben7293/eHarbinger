@@ -115,4 +115,5 @@ $('#search').keyup(function() {
 		</form>
 	</section>
 	</body>
+<footer><?php include('footer.html');?></footer>
 </html>

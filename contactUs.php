@@ -70,7 +70,7 @@
 			</section>
 		</div>
 		<footer>
-			<a href = "messages.html" > Messages | </a> <a href = "players.html" > Search For Players | </a> <a href = "contactUs.html"> Meet the Team! </a>
+			<?php include('footer.html');?>
 		</footer>
 	</body>
 </html>

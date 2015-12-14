@@ -100,4 +100,5 @@ if (isset($_POST["pub_prof"])){
 			</section>
             </div>
 		</body>
+<footer><?php include('footer.html');?></footer>
 	</html>

@@ -378,4 +378,5 @@ Battlefield has vehicles. CoD killstreaks are vehicles too, but don't give compl
 </div>
 <!-- / Page -->
 <div align=center>Feel free to post</div></body>
+<footer><?php include('footer.html');?></footer>
 </html>
