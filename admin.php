@@ -80,6 +80,9 @@
 	}
 	if( isset($_POST['rematch']) && $_POST['rematch'] == 'rematch' ){
 		exec('./matchusers.exe', $output, $exit);
+		if( $exit != '0' ){
+			echo "Rematch failed!";
+		}
 	}
 	if( isset($_POST['rmuser']) && trim($_POST['rmuser'])){
 		$rmuser = pg_escape_string($_POST['rmuser']);
@@ -88,18 +91,6 @@
 		} else{
 			echo "Failed to remove user: $rmuser";
 		}
-		/*
-		$conn->queryTrueFalse("DELETE FROM users_public WHERE username='$rmuser';");
-	        $conn->queryTrueFalse("DELETE FROM users_answer_questions WHERE username='$rmuser';");
-	        $conn->queryTrueFalse("DELETE FROM users_rate_users WHERE username1='$rmuser' or username2='$rmuser';");
-	        $conn->queryTrueFalse("DELETE FROM users_match_users WHERE username1='$rmuser' or username2='$rmuser';");
-	        $conn->queryTrueFalse("DELETE FROM forums WHERE username='$rmuser';");
-	        $conn->queryTrueFalse("DELETE FROM forums_comment WHERE username='$rmuser';");
-	        $conn->queryTrueFalse("DELETE FROM users_like_games WHERE username='$rmuser';");
-	        $conn->queryTrueFalse("DELETE FROM users_message_users WHERE username1='$rmuser' or username2='$rmuser';");
-	        $conn->queryTrueFalse("DELETE FROM users WHERE username='$rmuser';");
-		header('refresh:0');
-		*/
 	}
 ?>
 
