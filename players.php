@@ -13,7 +13,7 @@
 		exec("pwd", $dir);
 		exec("$dir/matchusers.out $myUserName", $s);
 		var_dump($s);
-		header("Refresh:0");
+		// header("Refresh:0");
 	}
 ?>		
 
