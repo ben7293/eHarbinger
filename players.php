@@ -40,6 +40,7 @@
 				$yourProfile = $_SESSION["user"]->query("select * from getprofile('$yourUserName');", "array");
 				$description = trim($yourProfile["description"], ", ");
 				$rating = $_SESSION["user"]->query("select getrating('$yourUserName');", "array");
+				if (!$rating) {$rating = 0;}
 				echo "<div class = 'inner split'  onload = 'playerInfo()'>";
 					echo "<section>";
 						echo "<img src = 'images/plainPic.gif'>";
