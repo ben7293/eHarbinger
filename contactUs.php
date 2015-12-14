@@ -40,7 +40,7 @@
 		<br>
 		<div class = 'inner split'>
 			<section>
-				<img src = "images/brian.jpg" height = "300px" width = "250px">
+				<img src = "images/brian.jpg" height = "300px" width = "250px" style="float: right;">
 			</section>
 			<section>
 				<h1> Brian Marks </h1>
@@ -62,7 +62,7 @@
 		<br>
 		<div class = 'inner split'>
 			<section>
-				<img src = 'images/benson.jpg' height = '300px' width = '250px'>
+				<img src = 'images/benson.jpg' height = '300px' width = '250px' style="float: right;">
 			</section>
 			<section>
 				<h1> Benson Tsai </h1>
