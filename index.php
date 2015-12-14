@@ -19,9 +19,6 @@
 				<section>
 					<h2>Welcome to eHarbinger!!</h2>
 				</section>
-				<section>
-					<p>Log In or Sign up for our wonderful "matchmaking" company!</p>
-				</section>
 			</div>
 		</section>
 		<section id="one" class="wrapper">
