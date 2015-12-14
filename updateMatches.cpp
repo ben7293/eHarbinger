@@ -51,7 +51,8 @@ int main(){
 	int theAns = int(answerOther[ index-1 ]);
 	cout << "index = " << index-1 << endl;
 	cout << "theAns = >" << answerOther[ index-1 ] << "<" << endl;
-	if ( theAns == "1"){
+	int testy = 1;
+	if ( theAns == testy ){
 		// If your answer is in my expectations
 		cout << "It's a match!\n";
 		// score += myExpectation[0]["importance"];
