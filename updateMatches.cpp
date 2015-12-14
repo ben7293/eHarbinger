@@ -16,8 +16,8 @@ bool isInList(const int target, result list){
 
 bool matchOneQuestion(work& conn, const int questionID, const string& myUserName, const string& yourUserName){
 	// Pull answers for each user
-	string myExpQuery = "select answerother, importance from users_answer_questions where questionID=" + string(questionID) + "and username='" + string(myUserName) + "';";
-	string yourAnsQuery = "select answerself from users_answer_questions where questionID=" + string(questionID) + "and username='" + string(yourUserName) + "';";
+	string myExpQuery = "select answerother, importance from users_answer_questions where questionID=" + questionID + "and username='" + string(myUserName) + "';";
+	string yourAnsQuery = "select answerself from users_answer_questions where questionID=" + questionID + "and username='" + string(yourUserName) + "';";
 	
 	result myExpectation = conn.exec(myExpQuery);
 	result yourAnswer = conn.exec(yourAnsQuery);
@@ -26,7 +26,7 @@ bool matchOneQuestion(work& conn, const int questionID, const string& myUserName
 	int index = yourAnswer[0]["answerself"].as<int>();
 	int theAns = answerOther[ index-1 ];
 	
-	cout << "QID = " questionID << ", myAnswer = " << answerOther << " yourAnswer = " << theAns;	
+	cout << "QID = " questionID << ", myAnswer = " << answerOther << " yourAnswer = " << theAns << endl;	
 	
 	if ( theAns == '1' ){
 		return true;
