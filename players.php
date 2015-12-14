@@ -1,26 +1,28 @@
 <!DOCTYPE HTML>
+<?php
+	include_once("session.php");
+	session_start();
+	// First, fetch matches...
+	$myUserName = $_SESSION["user"]->getName();
+	$matchList = $_SESSION["user"]->query("select * from getMatches('$myUserName', 5)", "table");
+	$numMatches = count($matchList);
+	if( !$matchList ){ $numMatches = 0; }
+	if ($numMatches == 0){
+		// If no matches, find some for the poor user
+		echo "running match";
+		system("./matchusers.exe");
+		// system("./matchusers.exe $myUserName");
+		header("Header: players.php");
+	}
+?>		
+
 <html>
 	<head>
 		<meta charset="utf-8"> 
         <title>eHarbinger</title>
         <link rel="stylesheet" type="text/css" href="css/meg.css">
         <script type="text/javascript" src = "design.js"></script>
-		<?php
-			include_once("session.php");
-			session_start();
-			// First, fetch matches...
-			$myUserName = $_SESSION["user"]->getName();
-			$matchList = $_SESSION["user"]->query("select * from getMatches('$myUserName', 5)", "table");
-			$numMatches = count($matchList);
-			if( !$matchList ){ $numMatches = 0; }
-			if ($numMatches == 0){
-				// If no matches, find some for the poor user
-				echo "running match";
-				system("./matchusers.exe");
-				// system("./matchusers.exe $myUserName");
-				header("Header: players.php");
-			}
-		?>		
+
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="main.css">
