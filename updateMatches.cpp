@@ -63,7 +63,7 @@ int matchOneUserWithOthers(work& conn, const string& myUserName){
 				}
 			}
 			
-			long matchRate = (totalScore / totalPossibleScore)*100;
+			long matchRate = (totalScore / totalPossibleScore)*10000;
 			int intMatchRate = int(matchRate);
 			cout << "Final score is " << totalScore << ", highest possible score is " << totalPossibleScore << ", your match rate is " << intMatchRate << endl;
 		}
