@@ -30,7 +30,7 @@ int matchOneQuestion(work& conn, const string& questionID, const string& myUserN
 	
 	if ( theAns == '1' ){
 		cout << ", it's a match!";
-		return int(string(myExpectation[0]["importance"]));
+		return int(myExpectation[0]["importance"]);
 	}
 	cout << ", it's not a match.";
 	return 0;
@@ -42,7 +42,7 @@ void matchOneUserWithOthers(work& conn, const string& myUserName){
 	result userList = conn.exec("select username from users;");
 	for (int i=0; i < userList.size(); ++i){
 		// For each user
-		totalScore = 0;
+		int totalScore = 0;
 		cout << "myUserName = " << myUserName << ", yourUserName = " << userList[i]["username"].as<string>() << endl;
 		if (myUserName != userList[i]["username"].as<string>()){
 			// We don't want to self-match
@@ -63,7 +63,6 @@ void matchOneUserWithOthers(work& conn, const string& myUserName){
 		}
 		
 	}
-	int totalscore = 0;
 
 }
 
