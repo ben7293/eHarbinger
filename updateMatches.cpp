@@ -72,6 +72,7 @@ void matchOneUserWithOthers(work& conn, const string& myUserName){
 			cout << ", your match rate is " << intMatchRate << endl;\
 			result res = conn.exec(matchQuery);
 			cout << res[0][0].as<string>();
+			cout << res[0][1].as<string>();
 		}
 	}
 	
