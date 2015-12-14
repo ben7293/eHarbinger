@@ -11,9 +11,9 @@
 		// If no matches, find some for the poor user
 		echo "running match";
 		exec("pwd", $dir);
-		// exec("$dir/matchusers.o $myUserName", $s);
-		var_dump($dir);
-		// header("Refresh:0");
+		exec("$dir/matchusers.o $myUserName", $s);
+		// var_dump($dir);
+		header("Refresh:0");
 	}
 ?>		
 
