@@ -5,7 +5,16 @@ using namespace std;
 using namespace pqxx;
 
 
-void matchOneQuestion(work& conn, const int questionID, const string& myUserName, const string& yourUserName){
+bool isInList(const int target, result list){
+	for (int i=0; i < list.size(); ++i){
+		if (list[i]["questionid"] == target){
+			return true;
+		}
+	}
+	return false;
+}
+
+bool matchOneQuestion(work& conn, const int questionID, const string& myUserName, const string& yourUserName){
 	// Pull answers for each user
 	string myExpQuery = "select answerother, importance from users_answer_questions where questionID=" + questionID + "and username='" + string(myUserName) + "';";
 	string yourAnsQuery = "select answerself from users_answer_questions where questionID=" + questionID + "and username='" + string(yourUserName) + "';";
@@ -17,15 +26,12 @@ void matchOneQuestion(work& conn, const int questionID, const string& myUserName
 	int index = yourAnswer[0]["answerself"].as<int>();
 	int theAns = answerOther[ index-1 ];
 	
+	cout << "QID = " questionID << ", myAnswer = " << answerOther << " yourAnswer = " << theAns;	
+	
 	if ( theAns == '1' ){
-		// If your answer is in my expectations
-		cout << "It's a match!\n";
-		// score += myExpectation[0]["importance"];
-		
+		return true;
 	}
-	else{
-		cout << "It's not a match :(\n";
-	}
+	return false;
 	
 }
 
@@ -36,7 +42,19 @@ void matchOneQuestion(work& conn, const int questionID, const string& myUserName
 		// // For each user
 		// if (myUserName != userList[i]["username"]){
 			// // We don't want to self-match
-			// matchEachQuestions();
+			// // Grab a list of questions I have answered
+			// string myQIDQuery = "select questionid from users_answer_questions where username='" + myUserName + "';";
+			// string yourQIDQuery = "select questionid from users_answer_questions where username='" + userList[i]["username"] + "';";
+			// result myQuestionNum = conn.exec(myQIDQuery);
+			// result yourQuestionNum = conn.exec(yourQIDQuery);
+			
+			// for (int j=0; j < myQuestionNum.size(); ++j){
+				// if ( isInList(questionNum[j]["questionid"], yourQuestionNum) ){
+					// // If this question is answered by you
+					// bool result = matchOneQuestion(conn, questionNum[j]["questionid"], myUserName, userList[i]["username"]);
+				// }
+			// }
+			
 		// }
 	// }
 	// int totalscore = 0;
