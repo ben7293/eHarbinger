@@ -57,7 +57,7 @@ else{
 					if (!$rating) {$rating = '0';}
 					echo "Username: $username<br>";
 					echo "Level: Expert<br>";
-					echo "Feedback:" . $rating["getrating"] . "<br>";
+					echo "Feedback: " . $rating["getrating"] . "<br>";
 					echo "About the gamer: " . $description . "<br>";
 					if ($username != $me){
 						echo "<form id='likeMatch' action='rateuser.php' method='post'>";
