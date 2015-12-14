@@ -70,6 +70,10 @@ if (isset($_POST["pub_prof"])){
 		<header id = 'banner'>
 			<h2>Welcome! Please Fill In Your Information:</h2>
 			<br>
+		<form action="userauth.php" method="post">
+                	<button> Log Out </button>
+                	<input type="hidden" name="type" value="logout">
+                </form>
 		</header>
             <!-- Information to be filled out by user -->
             <br>

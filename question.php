@@ -52,7 +52,7 @@
     <link rel="stylesheet" type="text/css" href="css/meg.css">
 </head>
 <body>
-<section id = 'banner'>
+<section id = 'banner' style='max-height: 250;'>
 	<section>
 		<h2>Profile Information</h2>
 		<br>
@@ -70,6 +70,10 @@
 		</section>
 		<section>
 			<p font = "Arial" font-size = "7" style="color:#ffd9b3;"> Choose the response</p>
+<form action="userauth.php" method="post">
+                                        <button> Log Out </button>
+                                        <input type="hidden" name="type" value="logout">
+                                </form>
 		</section>
 	</div>
 </section>
