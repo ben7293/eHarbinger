@@ -26,13 +26,13 @@ int matchOneQuestion(work& conn, const string& questionID, const string& myUserN
 	int index = yourAnswer[0]["answerself"].as<int>();
 	char theAns = answerOther[ index-1 ];
 	
-	cout << "QID = " << questionID << ", myAnswer = " << answerOther << " yourAnswer = " << theAns;	
+	// cout << "QID = " << questionID << ", myAnswer = " << answerOther << " yourAnswer = " << theAns;	
 	
 	if ( theAns == '1' ){
-		cout << ", it's a match!";
+		// cout << ", it's a match!";
 		return myExpectation[0]["importance"].as<int>();
 	}
-	cout << ", it's not a match.";
+	// cout << ", it's not a match.";
 	return 0;
 	
 }
@@ -44,7 +44,7 @@ void matchOneUserWithOthers(work& conn, const string& myUserName){
 		// For each user
 		int totalScore = 0;
 		int totalPossibleScore = 0;
-		cout << "myUserName = " << myUserName << ", yourUserName = " << userList[i]["username"].as<string>() << endl;
+		// cout << "myUserName = " << myUserName << ", yourUserName = " << userList[i]["username"].as<string>() << endl;
 		if (myUserName != userList[i]["username"].as<string>()){
 			// We don't want to self-match
 			// Grab a list of questions I have answered
@@ -59,17 +59,17 @@ void matchOneUserWithOthers(work& conn, const string& myUserName){
 					int subScore = matchOneQuestion(conn, myQuestionNums[j]["questionid"].as<string>(), myUserName, userList[i]["username"].as<string>());
 					totalPossibleScore += 5;
 					totalScore += subScore;
-					cout << " Score value added is " << subScore << endl;
+					// cout << " Score value added is " << subScore << endl;
 				}
 			}
 			
-			cout << "Final score is " << totalScore << ", highest possible score is " << totalPossibleScore;
+			// cout << "Final score is " << totalScore << ", highest possible score is " << totalPossibleScore;
 			float matchRate = float(totalScore) / float(totalPossibleScore);
 			int intMatchRate = int(matchRate*100);
 			
 			string matchQuery = "select matchuser('" + myUserName + "', '" + userList[i]["username"].as<string>() + "', " + to_string(intMatchRate) + ");";
-			cout << ", your match rate is " << intMatchRate << endl;\
-			cout << endl << matchQuery << endl;
+			// cout << ", your match rate is " << intMatchRate << endl;\
+			// cout << endl << matchQuery << endl;
 			conn.exec(matchQuery);
 		}
 	}
