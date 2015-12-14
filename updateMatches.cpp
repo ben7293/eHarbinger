@@ -5,9 +5,9 @@ using namespace std;
 using namespace pqxx;
 
 
-bool isInList(const int target, result list){
+bool isInList(const string& target, result list){
 	for (int i=0; i < list.size(); ++i){
-		if (list[i]["questionid"].as<int>() == target){
+		if (list[i]["questionid"].as<string>() == target){
 			return true;
 		}
 	}
