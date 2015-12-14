@@ -70,10 +70,7 @@ void matchOneUserWithOthers(work& conn, const string& myUserName){
 			string matchQuery = "select matchuser('" + myUserName + "', '" + userList[i]["username"].as<string>() + "', " + to_string(intMatchRate) + ");";
 			cout << ", your match rate is " << intMatchRate << endl;\
 			cout << endl << matchQuery << endl;
-			result res = conn.exec(matchQuery);
-			cout << res[0][0].as<string>() << endl;
-			res = conn.exec("select matchuser('ben7293', 'brian', 1)");
-			cout << res[0][0].as<string>() << endl;
+			conn.exec(matchQuery);
 		}
 	}
 	
