@@ -51,7 +51,7 @@ int main(){
 	int theAns = int(answerOther[ index-1 ]);
 	cout << "index = " << index-1 << endl;
 	cout << "theAns = >" << answerOther[ index-1 ] << "<" << endl;
-	int testy = 1;
+	int testy = '1';
 	if( theAns > testy ){
 		cout << "here1\n";
 	} else if( theAns < testy ){
