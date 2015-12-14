@@ -26,40 +26,44 @@ bool matchOneQuestion(work& conn, const string& questionID, const string& myUser
 	int index = yourAnswer[0]["answerself"].as<int>();
 	char theAns = answerOther[ index-1 ];
 	
-	cout << "QID = " << questionID << ", myAnswer = " << answerOther << " yourAnswer = " << theAns << endl;	
+	cout << "QID = " << questionID << ", myAnswer = " << answerOther << " yourAnswer = " << theAns;	
 	
 	if ( theAns == '1' ){
+		cout << ", it's a match!";
 		return true;
 	}
+	cout << ", it's not a match.";
 	return false;
 	
 }
 
-// void matchOneUserWithOthers(work& conn, const string& myUserName){
-	// // First, grab a list of all users...
-	// result userList = conn.exec("select username from users;");
-	// for (int i=0; i < userList.size(); ++i){
-		// // For each user
-		// if (myUserName != userList[i]["username"]){
-			// // We don't want to self-match
-			// // Grab a list of questions I have answered
-			// string myQIDQuery = "select questionid from users_answer_questions where username='" + myUserName + "';";
-			// string yourQIDQuery = "select questionid from users_answer_questions where username='" + userList[i]["username"] + "';";
-			// result myQuestionNum = conn.exec(myQIDQuery);
-			// result yourQuestionNum = conn.exec(yourQIDQuery);
+void matchOneUserWithOthers(work& conn, const string& myUserName){
+	// First, grab a list of all users...
+	result userList = conn.exec("select username from users;");
+	for (int i=0; i < userList.size(); ++i){
+		// For each user
+		cout << "myUserName = " << myUserName << ", yourUserName = " << userList[i]["username"] << endl;
+		if (myUserName != userList[i]["username"]){
+			// We don't want to self-match
+			// Grab a list of questions I have answered
+			string myQIDQuery = "select questionid from users_answer_questions where username='" + myUserName + "';";
+			string yourQIDQuery = "select questionid from users_answer_questions where username='" + userList[i]["username"] + "';";
+			result myQuestionNum = conn.exec(myQIDQuery);
+			result yourQuestionNum = conn.exec(yourQIDQuery);
 			
-			// for (int j=0; j < myQuestionNum.size(); ++j){
-				// if ( isInList(questionNum[j]["questionid"], yourQuestionNum) ){
-					// // If this question is answered by you
-					// bool result = matchOneQuestion(conn, questionNum[j]["questionid"], myUserName, userList[i]["username"]);
-				// }
-			// }
+			for (int j=0; j < myQuestionNum.size(); ++j){
+				if ( isInList(questionNum[j]["questionid"], yourQuestionNum) ){
+					// If this question is answered by you
+					bool result = matchOneQuestion(conn, questionNum[j]["questionid"], myUserName, userList[i]["username"]);
+				}
+			}
 			
-		// }
-	// }
-	// int totalscore = 0;
+		}
+		
+	}
+	int totalscore = 0;
 
-// }
+}
 
 // void matchAllUsers(){
 	
