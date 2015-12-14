@@ -71,8 +71,9 @@ else{
 						echo "</form>";		
 					}					
 					echo "<br><br><br>";
-					<a href = "editProfile.html"> Edit Profile Here </a>
+					
 				?>
+				<a href = "editProfile.html"> Edit Profile Here </a>
 			</section>
 			</div>
 		</div>
