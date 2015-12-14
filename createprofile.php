@@ -38,6 +38,11 @@ if (!isset($_SESSION["user"])){
 	}
 }
 
+$name = 'hello';
+$location = '';
+$languages = '';
+$description = '';
+
 if (isset($_POST["pub_prof"])){
 	
 	//Send profile data to database
@@ -52,7 +57,16 @@ if (isset($_POST["pub_prof"])){
 	$status = $_SESSION["user"]->upProf($username, $name, $location, $language, $description);
 	header("Location: games.php");
 
+} else{
+	$username = $_SESSION["user"]->getName();
+	$profile = $_SESSION["user"]->query("select * from getprofile('$username');", "array");
+        $description = $profile["description"];
+        $name = $profile['name'];
+        $location = $profile['location'];
+        $languages = $profile['languages'];
+
 }
+
 
 
 ?>
@@ -84,20 +98,21 @@ if (isset($_POST["pub_prof"])){
 				This information will be visible to anyone viewing your profile.
 				<form action="createprofile.php" method="POST">
 					<label>Display Name</label>
-					<input type="text" name="pub_prof[name]" size="10" autofocus="autofocus">
+					<input type="text" name="pub_prof[name]" size="10" autofocus="autofocus" value='<?php echo $name;?>'>
 					<br>
 					<label>Location</label>
-					<input type="text" name="pub_prof[location]" size="10" placeholder="e.g. United States">
+					<input type="text" name="pub_prof[location]" size="10" placeholder="e.g. United States" value='<?php echo $location; ?>'>
 					<br>
 					<label>Language</label>
-					<input type="text" name="pub_prof[language]" size="10" placeholder="e.g. English">
+					<input type="text" name="pub_prof[language]" size="10" placeholder="e.g. English" value='<?php echo $languages; ?>'>
 					<br>
 					<label>About you</label>
-					<textarea rows="3" name="pub_prof[description]"></textarea>
+					<textarea rows="3" name="pub_prof[description]"><?php echo $description; ?></textarea>
 					<br>
 					<button class = 'button-center' type="submit">Finish Profile</button> 
 				</form>
 			</section>
             </div>
 		</body>
+<footer><?php include('footer.html');?></footer>
 	</html>

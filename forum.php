@@ -54,7 +54,7 @@
     <!-- Top Navigation -->
     <div id="top-nav">
       <ul>
-        <li class="home"><a href = "popular.html">Now Trending</a></li>
+        <!--<li class="home"><a href = "popular.html">Now Trending</a></li>-->
        <!-- <li><a href= achievements.html>Top Achievements</a></li>
         <li><a href= messages.php>My Messages</a></li>-->
 		
@@ -82,10 +82,9 @@
         <div class="bg-left">
           <div class="cl">&nbsp;</div>
           <ul>
-           <!-- <li class="first active first-active"><a href= achievements.html>See Achievements</a><span class="sep">&nbsp;</span></li>-->
-			<li><a href="achievement.html"> See Achievements </a><span class="sep">&nbsp;</span></li>
-            <li><a href="players.php"> Find Matches </a><span class="sep">&nbsp;</span></li>
-            <li><a href="messages.php"> My Messages</a><span class="sep">&nbsp;</span></li>
+			<li><span class="sep">&nbsp;</span></li>
+            <li><a href="players.php">Find Matches</a><span class="sep">&nbsp;</span></li>
+            <li><a href="messages.php">My Messages</a><span class="sep">&nbsp;</span></li>
             <li><a href= "contactUs.php">Contact Us</a><span class="sep">&nbsp;</span></li>
              </ul>
           <div class="cl">&nbsp;</div>
@@ -173,8 +172,8 @@
       <div class="block">
         <div class="block-bot">
           <div class="head">
-            <div class="head-cnt"> <a href="suggested.html" class="view-all">Our picks</a>
-              <h3>Top Reviews</h3>
+            <div class="head-cnt"><!-- <a href="suggested.html" class="view-all">Our picks</a>-->
+              <h3>Our Team's Favorites</h3>
               <div class="cl">&nbsp;</div>
             </div>
           </div>
@@ -183,13 +182,13 @@
             <div class="article">
               <div class="image"><img src="images/img4.jpg" alt="" /></div>
               <h4>League of Legends</h4>
-              <p class="console"><strong></strong></p>
+              <p class="console"><strong>PC</strong></p>
             </div>
 			
             <div class="article">
               <div class="image"><img src="images/img5.jpg" alt="" /></div>
               <h4>Super Mario</h4>
-              <p class="console"><strong>Nintendo</strong></p>
+              <p class="console"><strong>Wii</strong></p>
             </div>
             <div class="article">
               <div class="image"><img src="images/img6.jpg" alt="" /></div>
@@ -203,7 +202,7 @@
       <div class="block">
         <div class="block-bot">
           <div class="head">
-            <div class="head-cnt"> <a href="suggested.html" class="view-all">Trending</a>
+            <div class="head-cnt"><!-- <a href="suggested.html" class="view-all">Trending</a>-->
               <h3>Top Rated Gamer's Pick</h3>
               <div class="cl">&nbsp;</div>
             </div>
@@ -378,4 +377,5 @@ Battlefield has vehicles. CoD killstreaks are vehicles too, but don't give compl
 </div>
 <!-- / Page -->
 <div align=center>Feel free to post</div></body>
+<footer><?php include('footer.html');?></footer>
 </html>

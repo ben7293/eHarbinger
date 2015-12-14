@@ -142,5 +142,5 @@ Select admin:<font color='red'>*</font><select name='rmAdmin'><option>--Select--
 <br/>
 <input type='submit'>
 </form>
-
+<footer><?php include('footer.html');?></footer>
 </html>

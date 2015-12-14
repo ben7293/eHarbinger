@@ -20,7 +20,7 @@
 	<section id = 'banner'>
 		<!-- Benson, need to change number of messages given -->
 		<div class = 'inner split'>
-			<section><h2> You Have This Many Matches: (2) </h2></section>
+			<section><h2>Talk to your matches</h2></section>
 			<section>
 				<form action="userauth.php" method="post">
 					<button> Log Out </button>
@@ -53,7 +53,6 @@
 					echo "<section>";
 				echo "<section>";
 					echo "Username: <a href='profile.php?user=$yourUserName'>$yourUserName</a><br>";
-					echo "Level: Expert<br>";
 					echo "Feedback: " . $rating["getrating"] . "<br>";
 					echo "About the gamer: " . $description . "<br>";
 					//echo "<a href='#' class='btn btn-default'><span class='glyphicon glyphicon-heart'></span> Good Match</a>";
@@ -82,7 +81,7 @@
 			}
 
 			
-			?>				
-		<footer> <a href = "forum.php"> General Forum | </a> <a href = "messages.php"> Messages | </a> <a href = "contactUs.php"> Meet the Team! </a> </footer>
+			?>
+	<footer><?php include('footer.html');?></footer>
 	</body>
 </html>

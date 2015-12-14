@@ -56,10 +56,15 @@ else{
 					$username = $_GET["user"];
 					$profile = $_SESSION["user"]->query("select * from getprofile('$username');", "array");
 					$description = $profile["description"];
+					$display = $profile['name'];
+					$location = $profile['location'];
+					$languages = $profile['languages'];
 					$rating = $_SESSION["user"]->query("select getrating('$username');", "array");
 					if (!$rating) {$rating = '0';}
 					echo "Username: $username<br>";
-					echo "Level: Expert<br>";
+					echo "Display name: $display<br/>";
+					echo "Location: $location<br/>";
+					echo "Languages: $languages<br/>";
 					echo "Feedback: " . $rating["getrating"] . "<br>";
 					echo "About the gamer: " . $description . "<br>";
 					if ($username != $me){
@@ -77,10 +82,10 @@ else{
 					echo "<br><br><br>";
 					
 				?>
-				<a href = "editProfile.html"> Edit Profile Here </a>
+				<a href = "createprofile.php">Edit Profile Here</a>
 			</section>
 			</div>
 		</div>
-		<footer> <a href = "forum.php"> General Forum | </a> <a href = "players.php"> Search for Players | </a> <a href = "contactUs.php"> Meet the Team! </a> </footer>
 	</body>
+<footer><?php include('footer.html');?></footer>
 </html>
