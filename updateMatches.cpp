@@ -40,8 +40,8 @@ int main(){
 	int questionID = 2;
 	string myUserName = "ben7293";
 	string yourUserName = "brian";
-	string myExpQuery = "select answerother, importance from users_answer_questions where questionID=" + questionID + "and username=" + myUserName + ";";
-	string yourAnsQuery = "select answerself from users_answer_questions where questionID=" + questionID + "and username=" + yourUserName + ";";
+	string myExpQuery = "select answerother, importance from users_answer_questions where questionID=" + string(questionID) + "and username=" + string(myUserName) + ";";
+	string yourAnsQuery = "select answerself from users_answer_questions where questionID=" + string(questionID) + "and username=" + string(yourUserName) + ";";
 	
 	result myExpectation = conn.exec(myExpQuery);
 	result yourAnswer = conn.exec(yourAnsQuery);
