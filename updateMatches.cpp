@@ -29,10 +29,10 @@ bool matchOneQuestion(work& conn, const string& questionID, const string& myUser
 	cout << "QID = " << questionID << ", myAnswer = " << answerOther << " yourAnswer = " << theAns;	
 	
 	if ( theAns == '1' ){
-		cout << ", it's a match!" << endl;;
+		cout << ", it's a match!";
 		return true;
 	}
-	cout << ", it's not a match." << endl;;
+	cout << ", it's not a match.";
 	return false;
 	
 }
@@ -55,6 +55,7 @@ void matchOneUserWithOthers(work& conn, const string& myUserName){
 				if ( isInList(myQuestionNums[j]["questionid"].as<string>(), yourQuestionNums) ){
 					// If this question is answered by you
 					bool result = matchOneQuestion(conn, myQuestionNums[j]["questionid"].as<string>(), myUserName, userList[i]["username"].as<string>());
+					cout << endl;
 				}
 			}
 			
