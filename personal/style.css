@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "justbeautifulsimplicity";
+    src: url("resource/justbeautifulsimplicity.ttf");
+}
+
+.bgimg{
+	height: 100%;
+}
+
+a{
+	color: #57068c;
+}
+
+.textbox{
+	position:absolute; 
+	left: 100px;
+	top: 80px;
+	width: 500px;
+	text-indent: 50px;
+	background-color: #FFFFFF;
+	color: #57068c;
+	opacity: 0.8;
+}
+
+#helloText{
+	font-family: "justbeautifulsimplicity", Sans-serif;
+	font-size: 200px;
+}
+
+.iAmIntro{
+	font-family: "msgothic.ttf", Sans-serif;
+	font-size: 40px;
+}
